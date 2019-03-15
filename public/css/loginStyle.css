@@ -1,0 +1,68 @@
+/* Css file for login form */
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-image: linear-gradient(to right,rgba(0,0,0,0.9),rgba(0,0,0,0.1), rgba(0,0,0,0.9)), url('../resources/images/loginBackground.jpg') ;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.loginFormContainer{
+  text-align: center;
+  background: white;
+  margin: auto;
+  margin-top: 15vh;
+  padding-top: 4vh;
+  padding-bottom: 6vh;
+  padding-right: 4vw;
+  padding-left: 4vw;
+  width: 330px;
+  border: 10px solid rgba(100, 0, 250, 0.2);
+}
+
+.loginFormContainer form{
+  margin-top: 40px;
+}
+
+.loginFormContainer form input{
+  width: 290px;
+  height: 40px;
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.loginFormContainer form input[type=text], .loginFormContainer form input[type=password]{
+  border: none;
+  border: 1px solid lightgrey;
+}
+
+.loginFormContainer form input[type=submit]{
+  margin-top: 30px;
+  width: 305px;
+  height: 50px;
+}
+
+
+/* Screen sizes less than 600px */
+@media only screen and (max-width: 600px) {
+
+
+  .loginFormContainer{
+    margin-top: 10vh;
+    width: 250px;
+  }
+
+  .loginFormContainer form input[type=text], .loginFormContainer form input[type=password]{
+    width: 220px;
+  }
+
+  .loginFormContainer form input[type=submit]{
+    width: 235px;
+  }
+}
