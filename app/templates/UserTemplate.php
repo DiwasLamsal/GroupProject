@@ -66,7 +66,12 @@
 				<div id = "headerRight">
 
 					<span id = "userActions">
-						<h5><img src = "resources/images/avatar.svg" alt = "">Username</h5>
+						<h5>
+							<img src = "resources/images/avatar.svg" alt = "">
+							Bishownath Dhakal &nbsp;
+							<!-- https://www.w3schools.com/howto/howto_css_arrows.asp -->
+							<i class="downArrow"></i>
+						</h5>
 					</span>
 
 				</div>
