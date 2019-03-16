@@ -5,6 +5,7 @@
 @import url('https://fonts.googleapis.com/css?family=Catamaran');
 @import url('https://fonts.googleapis.com/css?family=Francois+One');
 @import url('https://fonts.googleapis.com/css?family=Cinzel:400,700');
+@import url('https://fonts.googleapis.com/css?family=Carrois+Gothic+SC');
 
 
 p{font-family: 'Catamaran', sans-serif;}
@@ -14,6 +15,8 @@ h3{font-family: 'Noto Sans KR', sans-serif;}
 h4{font-family: 'Noto Sans KR', sans-serif;}
 h5{font-family: 'Francois One', sans-serif;}
 
+
+a{text-decoration: none; color: black;}
 
 /* CSS Start */
 
@@ -180,7 +183,7 @@ header input[type=submit]{
 
 
 .contentArea{
-  background: rgb(245, 245, 245);
+  background: rgb(235, 235, 235);
   padding: 15px;
   min-height: 85vh;
 }
@@ -281,6 +284,8 @@ footer{
   height: 30px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  font-family: 'Carrois Gothic SC', sans-serif;
+  font-size: 17px;
 }
 
 

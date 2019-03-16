@@ -7,17 +7,10 @@
       $template = '../app/views/administrators/AdminHome.php';
       $content = loadTemplate($template, []);
 
+      $title = "Admin - Dashboard";
 
+      require_once "../app/controllers/adminLoadView.php";
 
-      $template = '../app/templates/UserTemplate.php';
-      $contents = [
-        'title'=>'Administrator Dashboard',
-        'navigation'=>'',
-        'content'=>$content
-      ];
-      $content = loadTemplate($template, $contents);
-
-      $this->view($content);
 
     }
 

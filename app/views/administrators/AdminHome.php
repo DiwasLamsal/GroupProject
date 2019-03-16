@@ -28,12 +28,14 @@
 
 <div class = "boxesContainer">
   <div class = "contentBoxLarge tutorialVideo">
-    <div class = "title" style="background: red;">Tutorial</div>
-    <div class = "content"></div>
+    <div class = "title" style="background: olive;">Tutorial</div>
+    <div class = "content">
+      <video src = "resources/videos/tutorial.mp4#t=07,20" width="100%" controls>Video Not Found</video>
+    </div>
   </div>
 
   <div class = "contentBoxLarge recentAnnouncements">
-    <div class = "title" style="background: olive;">Recent Announcements</div>
+    <div class = "title" style="background: red;">Recent Announcements</div>
     <div class = "content"></div>
   </div>
 

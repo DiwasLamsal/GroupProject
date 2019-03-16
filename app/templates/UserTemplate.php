@@ -23,17 +23,10 @@
 			<a href = "./"><img src = "resources/images/logorectangle.bmp" alt = "" width="99.8%"></a>
 
 			<ul>
-				<li><a href = "#">Dashboard</a></li>
-				<li><a href = "#">Administrators</a></li>
-				<li><a href = "#">Module Leaders</a></li>
-				<li><a href = "#">Students</a></li>
-				<li><a href = "#">Courses</a></li>
-				<li><a href = "#">Modules</a></li>
-				<li><a href = "#">Announcements</a></li>
-			</ul>
-
+		
 	    <!-- Contents for the navigation go here -->
 	    <?php echo $navigation;?>
+		</ul>
 
 	  </nav>
 

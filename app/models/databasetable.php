@@ -50,6 +50,7 @@ class DatabaseTable{
 	    $stmt->execute($criteria);
 	    return $stmt;
 	}
+	
 	function findAll() {
 	    global $pdo;
 	    $stmt = $pdo->prepare('SELECT * FROM ' . $this->table);
