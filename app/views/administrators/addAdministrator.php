@@ -4,6 +4,7 @@
 <div class = "formTitle"><h1 class = "formHeading">Add new Administrator</h1></div>
 
 <div class = "formHolder">
+  
   <div class = "formColumn1">
     <label for = "firstname">First Name: </label>
     <input type = "text" name = "user[fname]" required>

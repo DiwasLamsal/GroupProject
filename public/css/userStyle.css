@@ -5,7 +5,8 @@
 @import url('https://fonts.googleapis.com/css?family=Francois+One');
 @import url('https://fonts.googleapis.com/css?family=Cinzel:400,700');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
-
+@import url('https://fonts.googleapis.com/css?family=Bitter');
+@import url('https://fonts.googleapis.com/css?family=Bitter|ZCOOL+XiaoWei');
 
 p{font-family: 'Catamaran', sans-serif;}
 h1{font-family: 'Noto Sans KR', sans-serif;}
@@ -300,11 +301,11 @@ footer{
 .tableTitle, .formTitle{
   margin-left: -10px;
   margin-top: -10px;
-  background: red;
+  background: #1DC5A3;
   padding-top: 5px;
   padding-bottom: 5px;
   width: calc(100% + 20px);
-  margin-bottom: calc(1% + 5px);
+  margin-bottom: calc(1.5% + 10px);
   color: white;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -317,22 +318,27 @@ footer{
 .adminManageTable table{
   border-collapse: collapse;
   width: 100%;
+  margin-top: -10px;
+  margin-bottom: 1.5%;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+
 }
 
 .adminManageTable td, th {
   border: 1px solid white;
-  padding: 8px;
+  padding: 5px;
+
 }
 
 .adminManageTable tr:nth-child(even){background-color: #fff;}
 
-.adminManageTable tr:hover {background-color: rgb(235, 235, 250);}
+.adminManageTable tr:hover {background-color: rgb(235, 235, 200);}
 
 .adminManageTable th {
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
-  background-color: #00cccc;
+  background-color: gray;
   color: white;
 }
 
@@ -367,16 +373,84 @@ footer{
 
 }
 
-
 .userForm label{
+  width: 95%;
+  margin: 5px;
+  margin-bottom: 10px;
   display: block;
+  font-family: 'ZCOOL XiaoWei', serif;
+  font-size: 18px;
+  color: rgb(50, 50, 50);
 }
 
-.userForm input{
+.userForm input:not([type="submit"]), select, textarea{
+  width: 95%;
+  margin: 5px;
   display: block;
+  height: 30px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid lightgray;
+  outline: none;
+  -webkit-transition: border-bottom 0.5s;
+  transition: border-bottom 0.5s;
+  font-size: calc(0.5rem + 10px);
 }
 
+.userForm input:not([type="submit"]):focus, select:focus, textarea:focus{
+  border-bottom: 1px solid black;
+  color: brown;
+}
 
+.userForm select{
+  width: 96%;
+}
+
+.userForm textarea{
+  max-width: 95.5%;
+  min-width: 95.5%;
+  max-height: 200px;
+}
+
+.userForm input[type=submit]{
+  margin: 1%;
+  margin-top: 25px;
+  width: 98%;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background: #8075B6;
+  transition: background .3s;
+  font-family: 'Bitter', serif;
+  font-size: 16px;
+
+}
+
+.userForm input[type=submit]:hover{
+  cursor: pointer;
+  background: #8785B6;
+}
+
+.formHolder{
+  display: flex;
+}
+
+.formColumn1{
+  width: 49%;
+  padding: 5px;
+}
+
+.formColumnSeparator{
+  width: 1px;
+  background: lightgray;
+}
+
+.formColumn2{
+  width: 49%;
+  padding: 5px;
+}
 
 
 
