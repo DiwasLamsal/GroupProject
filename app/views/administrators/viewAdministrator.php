@@ -1,6 +1,7 @@
 <?php?>
 
 
+
 <div class = "boxesContainer boxesContainerManage">
 
   <div class = "contentBoxLarge contentBoxLargeManage addNewBox">
@@ -25,29 +26,12 @@
     <br>
 
     <br>
-    Even though the system is suitable for mobile usage, for the best experience, use a desktop browser.
+    For a good experience, use a desktop browser to use the system.
 
     <?php
       }
       else {
-        if($val=="editsuccess"){
-          echo 'Succesfully Edited Record';
-        }
-        else if($val=="addsuccess"){
-          echo 'Successfully Added Record';
-        }
-        else if($val=="deletesuccess"){
-          echo 'Successfully Deleted Record';
-        }
-        else if($val=="archivesuccess"){
-          echo 'Succesfully Changed Archive Status of Record';
-        }
-        else if($val=="nosuchuser"){
-          echo 'Error! No Such User was Found';
-        }
-        else{
-          header("Location:..");
-        }
+        echo $val;
       }
     ?>
 
@@ -79,23 +63,19 @@
     </tr>
     <?php
 
+    $viewIcon = '<a href = "#">
+                      <img class = "tableIcon" src = "/GroupProject/public/resources/images/view.svg">
+                    </a>';
+    $deleteIcon = '<a href = "#">
+                      <img class = "tableIcon" src = "/GroupProject/public/resources/images/delete.svg">
+                    </a>';
 
+    $archiveIcon = '<a href = "#">
+                      <img class = "tableIcon" src = "/GroupProject/public/resources/images/archive.svg">
+                    </a>';
 
     $count = 0;
       while($user = $users->fetch()){
-
-        $viewIcon = '<a href = "/GroupProject/public/ManageAdministrators/browse/'.$user['uid'].'">
-                          <img class = "tableIcon" src = "/GroupProject/public/resources/images/view.svg">
-                        </a>';
-
-        $archiveIcon = '<a href = "/GroupProject/public/ManageAdministrators/archive/'.$user['uid'].'">
-                          <img class = "tableIcon" src = "/GroupProject/public/resources/images/archive.svg">
-                        </a>';
-
-        $statusText = $user['ustatus']=="Y" ? '<font color = "green">Visible</font>':
-                                                           '<font color = "red">Archived</font>';
-
-
         $count++;
         echo '<tr>
                 <td>'.$count.'</td>
@@ -105,8 +85,8 @@
                 <td>'.$user['birthdate'].'</td>
                 <td>'.$user['uaddress'].'</td>
                 <td><a href = "mailto:'.$user['uemail'].'">'.$user['uemail'].'</a></td>
-                <td>'.$viewIcon.' &nbsp;'.$archiveIcon.'</td>
-                <td>'.$statusText.'</td>
+                <td>'.$viewIcon.' &nbsp;'.$deleteIcon.' &nbsp;'.$archiveIcon.'</td>
+                <td>'.$user['ustatus'].'</td>
         ';
 
       }

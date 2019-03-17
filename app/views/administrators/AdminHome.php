@@ -29,7 +29,7 @@
 <div class = "boxesContainer">
   <div class = "contentBoxLarge tutorialVideo">
     <div class = "title" style="background: olive;">Tutorial</div>
-    <div class = "content">
+    <div class = "content" style="margin:0;">
       <video src = "resources/videos/tutorial.mp4#t=07,20" width="100%" controls>Video Not Found</video>
     </div>
   </div>

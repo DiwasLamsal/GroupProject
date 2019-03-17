@@ -182,7 +182,7 @@ header input[type=submit]{
 
 
 .contentArea{
-  background: rgb(245, 245, 245);
+  background: rgb(235, 235, 235);
   padding: 15px;
   min-height: 85vh;
 }
@@ -211,6 +211,11 @@ footer{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.boxesContainer .content{
+  margin: 10px;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+  color: black;
 }
 
 .adminDashboardBox{
@@ -281,6 +286,8 @@ footer{
   width: 100%;
   padding-top: 10px;
   height: 30px;
+  font-family: 'Cinzel', serif;
+  font-weight: bolder;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
@@ -327,18 +334,22 @@ footer{
 .adminManageTable td, th {
   border: 1px solid white;
   padding: 5px;
-
+  
 }
 
-.adminManageTable tr:nth-child(even){background-color: #fff;}
+.adminManageTable tr{
+  transition: background-color 0.1s;
+}
 
-.adminManageTable tr:hover {background-color: rgb(235, 235, 200);}
+.adminManageTable tr:hover {
+  background-color: rgb(235, 235, 235);
+}
 
 .adminManageTable th {
   padding-top: 10px;
   padding-bottom: 10px;
   text-align: center;
-  background-color: gray;
+  background-color: slategray;
   color: white;
 }
 
@@ -346,26 +357,57 @@ footer{
   width: 20px;
 }
 
+.tableIcon:hover{
+  transform: scale(1.1);
+}
+
 .adminManageTable a{
   color: blue;
 }
 
 
-/* Add new Box */
+/* Manage Area Boxes */
 
-.addNewBox{
-  width: 300px;
-  background: green;
-  margin: auto;
-  margin-top: 15px;
-  text-align: center;
-  padding-bottom: 20px;
-  height: 70px;
-  color: white;
-  font-family: 'Roboto Slab', serif;
-  border-radius: 5px;
+.boxesContainerManage{
+  width: calc(100% + 10px);
+  margin-left: -10px;
+  padding: 5px;
 }
 
+.contentBoxLargeManage{
+  width: 50%;
+  min-height: 150px;
+}
+
+
+.addNewBox, .deleteBox{
+  background: #9ACD32;
+  opacity: 0.8;
+  text-align: center;
+  color: white;
+  font-family: 'Cinzel', serif;
+  font-weight: bolder;
+  font-size: 19px;
+  border-radius: 5px;
+  transition: opacity 0.3s;
+}
+
+.deleteBox{
+  background: red;
+}
+
+.addNewBox:hover, .deleteBox:hover{
+  opacity: 1.0;
+}
+
+
+.deleteBox img{
+  transition: transform 0.3s;
+}
+
+.deleteBox:hover img{
+  transform: scale(1.1);
+}
 
 /* Add Form */
 
@@ -400,7 +442,6 @@ footer{
 
 .userForm input:not([type="submit"]):focus, select:focus, textarea:focus{
   border-bottom: 1px solid black;
-  color: brown;
 }
 
 .userForm select{

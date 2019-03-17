@@ -56,7 +56,7 @@ if(isset($user)){
   <h1 class = "formHeading">
     <?php if(isset($user))echo 'Edit '.$user['fname'].' '.$user['mname'].' '.$user['lname'].'\'s details';
     else {?>
-    Add new Administrator
+    Add new Module Leader
   <?php } ?>
   </h1>
 </div>

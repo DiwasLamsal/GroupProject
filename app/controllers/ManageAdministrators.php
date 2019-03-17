@@ -1,45 +1,97 @@
 <?php
 
-  class ManageAdministrators extends Controller{
+class ManageAdministrators extends Controller{
 
-    public function index($val=""){
-      $userClass = new DatabaseTable('users');
-      $users = $userClass->findAll();
+  public function index($val=""){
+    $userClass = new DatabaseTable('users');
+    $users = $userClass->findAll();
 
-      $template = '../app/views/administrators/manageAdministrators.php';
-      $content = loadTemplate($template, ['val'=>$val, 'users'=>$users]);
+    $template = '../app/views/administrators/manageAdministrators.php';
+    $content = loadTemplate($template, ['val'=>$val, 'users'=>$users]);
 
-      $title = "Admin - Staff";
-      require_once "../app/controllers/adminLoadView.php";
+    $title = "Admin - Staff";
+    require_once "../app/controllers/adminLoadView.php";
 
+  }
+
+  public function add(){
+    $userClass = new DatabaseTable('users');
+
+    if(isset($_POST['submit'])){
+      $_POST['user']['urole']="Administrator";
+      $_POST['user']['ustatus']="Y";
+      $_POST['user']['password']=password_hash($_POST['users']['password'], PASSWORD_DEFAULT);
+      $userClass->save($_POST['user']);
+      header("Location:../ManageAdministrators/index/addsuccess");
     }
 
+    $template = '../app/views/administrators/addAdministrator.php';
+    $content = loadTemplate($template, []);
 
-    public function add(){
-      $userClass = new DatabaseTable('users');
+    $title = "Admin - Add new Staff";
 
+    require_once "../app/controllers/adminLoadView.php";
+  }
+
+
+  public function browse($val = ""){
+    $userClass = new DatabaseTable('users');
+    $user = $userClass->find('uid',$val);
+
+    if($user->rowCount()>0){
       if(isset($_POST['submit'])){
+        $_POST['user']['uid']=$val;
+        $userClass->save($_POST['user'], 'uid');
 
-        $_POST['user']['urole']="Administrator";
-        $_POST['user']['ustatus']="Y";
-
-        $_POST['user']['password']=password_hash($_POST['users']['password'], PASSWORD_DEFAULT);
-
-        $userClass->save($_POST['user']);
-
-        header("Location:../ManageAdministrators/index/successful");
+        header("Location:../index/editsuccess");
       }
 
-
       $template = '../app/views/administrators/addAdministrator.php';
-      $content = loadTemplate($template, []);
+      $content = loadTemplate($template, ['user'=>$user]);
 
-      $title = "Admin - Add new Staff";
-
+      $title = "Admin - Browse Administrator";
       require_once "../app/controllers/adminLoadView.php";
+    }
 
+    else{
+      header("Location:../index/nosuchuser");
     }
 
   }
+
+
+  public function delete($val = ""){
+    $userClass = new DatabaseTable('users');
+    $user = $userClass->find('uid',$val);
+    if($user->rowCount()>0){
+      $userClass->delete('uid', $val);
+      header("Location:../index/deletesuccess");
+    }
+    else{
+      header("Location:../index/nosuchuser");
+    }
+
+  }
+
+  public function archive($val = ""){
+    $userClass = new DatabaseTable('users');
+    $user = $userClass->find('uid',$val);
+    if($user->rowCount()>0){
+
+      $ustatus = $user->fetch()['ustatus']=="Y"? "N" : "Y";
+      $criteria = [
+        'uid'=>$val,
+        'ustatus'=>$ustatus
+      ];
+      $userClass->save($criteria, 'uid');
+      header("Location:../index/archivesuccess");
+    }
+    else{
+      header("Location:../index/nosuchuser");
+    }
+  }
+
+
+}
 
 ?>
