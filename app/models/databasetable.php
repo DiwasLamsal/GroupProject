@@ -58,6 +58,22 @@ class DatabaseTable{
 	    return $stmt;
 	}
 
+	function findAllReverse($field) {
+	    global $pdo;
+	    $stmt = $pdo->prepare('SELECT * FROM ' . $this->table . ' ORDER BY '.$field . ' DESC');
+	    $stmt->execute();
+	    return $stmt;
+	}
+
+	function findLimitReverse($field, $limit) {
+	    global $pdo;
+	    $stmt = $pdo->prepare('SELECT * FROM ' . $this->table . ' ORDER BY '.$field . ' DESC
+				LIMIT '.$limit);
+	    $stmt->execute();
+	    return $stmt;
+	}
+
+
 	function delete($field, $value){
 	    global $pdo;
 	    $stmt = $pdo->prepare("DELETE FROM $this->table WHERE $field = :pk");

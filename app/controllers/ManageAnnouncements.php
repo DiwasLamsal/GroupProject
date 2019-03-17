@@ -4,7 +4,7 @@
 
     public function index($val=""){
       $announcementClass = new DatabaseTable('announcements');
-      $announcements = $announcementClass->findAll();
+      $announcements = $announcementClass->findAllReverse('anid');
 
       $template = '../app/views/administrators/manageAnnouncements.php';
       $content = loadTemplate($template, ['announcements'=>$announcements, 'val'=>$val]);
@@ -17,7 +17,6 @@
 
     public function add(){
       $announcementClass = new DatabaseTable('announcements');
-
       if(isset($_POST['submit'])){
         $_POST['announcement']['anstatus']="Y";
 
@@ -32,6 +31,7 @@
 
       require_once "../app/controllers/adminLoadView.php";
     }
+
 
     public function browse($val = ""){
       $announcementClass = new DatabaseTable('announcements');

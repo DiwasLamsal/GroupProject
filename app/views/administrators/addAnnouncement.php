@@ -10,7 +10,7 @@ if(isset($announcement)){
 
   <div class = "contentBoxLarge contentBoxLargeEdit">
 
-    <div class = "title" style="background: tomato;">
+    <div class = "title">
       <?php echo $announcement['antitle']; ?>
       </div>
     <div class = "content" style="text-align: left; margin: 15px; line-height: 1.6;">

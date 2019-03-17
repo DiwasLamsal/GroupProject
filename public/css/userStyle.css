@@ -29,6 +29,65 @@ body{
 }
 
 
+/*------------------------------------LOADING ANIMATION------------------------------------------------------------*/
+
+
+/********************************************************************************************************************/
+
+.load {
+		width: 100%;
+		height: 100%;
+		z-index: 1000;
+		background: white;
+		position: fixed;
+		top:0px;
+		left: 0px;
+}
+
+.loader {
+		position: fixed;
+		top: 40%;
+		left: 47%;
+		display: inline-block;
+		background: white;
+	}
+
+
+.loader .bar{
+		float: left;
+		background: red;
+		height: 25px;
+		width: 5px;
+		margin: 2px;
+		animation-name: loadinganimation;
+		animation-duration: .72s;
+		animation-iteration-count: infinite;
+		border-radius: 5px;
+
+	}
+
+	@keyframes loadinganimation {
+		0%,20%,80%,100% { transform: scale(1);}
+		50% {transform: scaleY(1.8);}
+	}
+
+	.firstBar{}
+	.secondBar{animation-delay: 0.08s;}
+	.thirdBar{animation-delay: 0.16s;}
+	.fourthBar{animation-delay: 0.32s;}
+	.fifthBar{animation-delay: 0.40s;}
+	.sixthBar{animation-delay: 0.48s;}
+	.seventhBar{animation-delay: 0.56s;}
+	.eighthBar{animation-delay: 0.64s;}
+
+@media screen and (max-width: 500px){
+	.loader {
+		left:40%;
+	}
+}
+
+
+
 main{
   display: flex;
   flex-direction: row;
@@ -218,6 +277,45 @@ footer{
   color: black;
 }
 
+.subContentList{
+  background: white;
+  padding: 15px;
+  height: 25px;
+  border-bottom: 1px solid lightgray;
+}
+
+
+#customScroll::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 15px;
+	background-color: #F5E5E5;
+}
+
+#customScroll::-webkit-scrollbar
+{
+	width: 7px;
+	background-color: #FEF5E5;
+}
+
+#customScroll::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(10,10,50,.5);
+	background-color: #999;
+}
+
+#customScroll::-webkit-scrollbar-thumb:hover
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(10,10,50,.7);
+	background-color: #777;
+}
+
+.subContentList:hover{
+  background: #E1EAEB;
+}
+
 .adminDashboardBox{
   width: 24%;
   height: 150px;
@@ -282,7 +380,7 @@ footer{
 }
 
 .contentBoxLarge .title{
-  background: red;
+  background: #DAA520;
   width: 100%;
   padding-top: 10px;
   height: 30px;
@@ -393,7 +491,7 @@ footer{
 }
 
 .deleteBox{
-  background: red;
+  background: rgb(250, 80, 80);
 }
 
 .addNewBox:hover, .deleteBox:hover{

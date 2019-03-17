@@ -13,7 +13,7 @@ if(isset($moduleLeader))
 
   <div class = "contentBoxLarge contentBoxLargeEdit">
 
-    <div class = "title" style="background: tomato;">
+    <div class = "title">
       <?php echo $user['fname'].' '.$user['mname'].' '.$user['lname']; ?>
       </div>
     <div class = "content" style="text-align: left; margin: 15px; line-height: 1.6;">
@@ -49,7 +49,7 @@ if(isset($moduleLeader))
 
 <div class = "adminManageTable">
 
-  <div class = "tableTitle" style="background: limegreen;">
+  <div class = "tableTitle" style="background: #6495ED;">
     <h1 class = "tableHeading">Other Module Leader Details</h1>
   </div>
 
@@ -72,8 +72,8 @@ if(isset($moduleLeader))
 
 <div class = "adminManageTable">
 
-  <div class = "tableTitle" style="background: blueviolet;">
-    <h1 class = "tableHeading">Assign Module Leader to Module</h1>
+  <div class = "tableTitle" style="background: #D2B48C;">
+    <h1 class = "tableHeading">Assign Module</h1>
   </div>
 
 

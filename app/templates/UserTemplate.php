@@ -10,12 +10,29 @@
 
 <!DOCTYPE html>
 <html>
-	<head>
-		<link rel="stylesheet" href="/GroupProject/public/css/userStyle.css"/>
-		<title><?php echo $title;?></title>
+<head>
+	<link rel="stylesheet" href="/GroupProject/public/css/userStyle.css"/>
+	<title><?php echo $title;?></title>
+	<script src = "/GroupProject/public/script/script.js"></script>
+</head>
 
-	</head>
-	<body>
+<body>
+
+<!--################### -LOADER SECTION- #################-->
+<!--################### -MUST NOT BE EDITED- #################-->
+  <div class="load">
+  	<div class = "loader">
+	  	<div class ="firstBar bar"></div>
+	  	<div class ="secondBar bar"></div>
+	  	<div class ="thirdBar bar"></div>
+	  	<div class ="fourthBar bar"></div>
+	  	<div class ="fifthBar bar"></div>
+	  	<div class ="sixthBar bar"></div>
+	  	<div class ="seventhBar bar"></div>
+	  	<div class ="eighthBar bar"></div>
+  	</div>
+  </div>
+
 
 	<main>
 

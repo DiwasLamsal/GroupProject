@@ -6,7 +6,7 @@
   <div class = "contentBoxLarge contentBoxLargeManage addNewBox">
     <a href = "/GroupProject/public/ManageAnnouncements/add">
       <div style="width: 100%; height: 80%; padding-top: 4%;">
-        <img src = "/GroupProject/public/resources/images/addcourse.png" width="50"><br>
+        <img src = "/GroupProject/public/resources/images/addannouncement.png" width="50"><br>
         Add new Announcement
       </div>
     </a>
@@ -21,7 +21,7 @@
       if($val==""){
     ?>
 
-    Manage or add courses from this section.
+    Manage or add announcements from this section.
     <br>
 
     <br>
