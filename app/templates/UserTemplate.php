@@ -20,10 +20,12 @@
 	<main>
 
 	  <nav>
-			<a href = "./"><img src = "resources/images/logorectangle.bmp" alt = "" width="99.8%"></a>
+			<a href = "/GroupProject/public/Home">
+				<img src = "/GroupProject/public/resources/images/logorectangle.bmp" alt = "" width="99.8%">
+			</a>
 
 			<ul>
-		
+
 	    <!-- Contents for the navigation go here -->
 	    <?php echo $navigation;?>
 		</ul>
@@ -60,7 +62,7 @@
 
 					<span id = "userActions">
 						<h5>
-							<img src = "resources/images/avatar.svg" alt = "">
+							<img src = "/GroupProject/public/resources/images/avatar.svg" alt = "">
 							Bishownath Dhakal &nbsp;
 							<!-- https://www.w3schools.com/howto/howto_css_arrows.asp -->
 							<i class="downArrow"></i>

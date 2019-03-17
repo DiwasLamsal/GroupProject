@@ -1,11 +1,10 @@
-
 /* Fonts */
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 @import url('https://fonts.googleapis.com/css?family=Catamaran');
 @import url('https://fonts.googleapis.com/css?family=Francois+One');
 @import url('https://fonts.googleapis.com/css?family=Cinzel:400,700');
-@import url('https://fonts.googleapis.com/css?family=Carrois+Gothic+SC');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
 
 
 p{font-family: 'Catamaran', sans-serif;}
@@ -14,9 +13,8 @@ h2{font-family: 'Josefin Sans', sans-serif;}
 h3{font-family: 'Noto Sans KR', sans-serif;}
 h4{font-family: 'Noto Sans KR', sans-serif;}
 h5{font-family: 'Francois One', sans-serif;}
+a{color: white; text-decoration: none;}
 
-
-a{text-decoration: none; color: black;}
 
 /* CSS Start */
 
@@ -183,7 +181,7 @@ header input[type=submit]{
 
 
 .contentArea{
-  background: rgb(235, 235, 235);
+  background: rgb(245, 245, 245);
   padding: 15px;
   min-height: 85vh;
 }
@@ -284,28 +282,99 @@ footer{
   height: 30px;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  font-family: 'Carrois Gothic SC', sans-serif;
-  font-size: 17px;
 }
 
 
 
 
+/* Manage Administrators */
+
+.adminManageTable, .userForm{
+  width: calc(100% - 20px);
+  background: white;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: calc(1% + 10px);
+}
+
+.tableTitle, .formTitle{
+  margin-left: -10px;
+  margin-top: -10px;
+  background: red;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: calc(100% + 20px);
+  margin-bottom: calc(1% + 5px);
+  color: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.tableHeading, .formHeading{
+  text-align: center;
+}
+
+.adminManageTable table{
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.adminManageTable td, th {
+  border: 1px solid white;
+  padding: 8px;
+}
+
+.adminManageTable tr:nth-child(even){background-color: #fff;}
+
+.adminManageTable tr:hover {background-color: rgb(235, 235, 250);}
+
+.adminManageTable th {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  background-color: #00cccc;
+  color: white;
+}
+
+.tableIcon{
+  width: 20px;
+}
+
+.adminManageTable a{
+  color: blue;
+}
 
 
+/* Add new Box */
+
+.addNewBox{
+  width: 300px;
+  background: green;
+  margin: auto;
+  margin-top: 15px;
+  text-align: center;
+  padding-bottom: 20px;
+  height: 70px;
+  color: white;
+  font-family: 'Roboto Slab', serif;
+  border-radius: 5px;
+}
 
 
+/* Add Form */
+
+.userForm{
+
+}
 
 
+.userForm label{
+  display: block;
+}
 
-
-
-
-
-
-
-
-
+.userForm input{
+  display: block;
+}
 
 
 
