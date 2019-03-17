@@ -4,7 +4,7 @@ class ManageAdministrators extends Controller{
 
   public function index($val=""){
     $userClass = new DatabaseTable('users');
-    $users = $userClass->findAll();
+    $users = $userClass->find('urole', 'Administrator');
 
     $template = '../app/views/administrators/manageAdministrators.php';
     $content = loadTemplate($template, ['val'=>$val, 'users'=>$users]);
@@ -20,7 +20,7 @@ class ManageAdministrators extends Controller{
     if(isset($_POST['submit'])){
       $_POST['user']['urole']="Administrator";
       $_POST['user']['ustatus']="Y";
-      $_POST['user']['password']=password_hash($_POST['users']['password'], PASSWORD_DEFAULT);
+      $_POST['user']['password']=password_hash($_POST['user']['password'], PASSWORD_DEFAULT);
       $userClass->save($_POST['user']);
       header("Location:../ManageAdministrators/index/addsuccess");
     }

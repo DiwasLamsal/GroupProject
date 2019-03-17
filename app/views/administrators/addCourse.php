@@ -59,7 +59,7 @@ if(isset($course)){
   <div class = "formColumn1">
     <label>Course Title: </label>
     <input type = "text" name = "course[ctitle]" required
-    <?php if(isset($course))echo 'value='.$course['ctitle'];?>>
+    <?php if(isset($course))echo 'value='.$course['ctitle'].'"';?>>
 
     <label>Course Leader: </label>
     <select>

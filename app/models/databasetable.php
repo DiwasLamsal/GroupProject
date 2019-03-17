@@ -50,7 +50,7 @@ class DatabaseTable{
 	    $stmt->execute($criteria);
 	    return $stmt;
 	}
-	
+
 	function findAll() {
 	    global $pdo;
 	    $stmt = $pdo->prepare('SELECT * FROM ' . $this->table);
@@ -67,5 +67,15 @@ class DatabaseTable{
 	    $stmt->execute($criteria);
 	    return $stmt;
 	}
+
+
+
+	function findLastRecordId($field){
+		global $pdo;
+		$stmt = $pdo->prepare('SELECT * FROM '.$this->table.' ORDER BY '.$field.' DESC LIMIT 1');
+		$stmt->execute();
+		return $stmt;
+	}
+
 
 }

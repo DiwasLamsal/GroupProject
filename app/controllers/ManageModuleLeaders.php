@@ -23,12 +23,21 @@
 
     public function add(){
       $userClass = new DatabaseTable('users');
+      $moduleLeaderClass = new DatabaseTable('lecturers');
 
       if(isset($_POST['submit'])){
         $_POST['user']['urole']="Module Leader";
         $_POST['user']['ustatus']="Y";
-        $_POST['user']['password']=password_hash($_POST['users']['password'], PASSWORD_DEFAULT);
+        $_POST['user']['password']=password_hash($_POST['user']['password'], PASSWORD_DEFAULT);
         $userClass->save($_POST['user']);
+
+        $moduleLeaderId = $userClass->findLastRecordId('uid');
+        $moduleLeaderId = $moduleLeaderId->fetch()['uid'];
+
+        $criteria = ['luid'=>$moduleLeaderId, 'lexperience'=>$_POST['lecturer']['lexperience'],
+                      'lbiography'=>$_POST['lecturer']['lbiography']];
+        $moduleLeaderClass->save($criteria);
+
         header("Location:../ManageModuleLeaders/index/addsuccess");
       }
 
@@ -41,22 +50,30 @@
     }
 
 
+
     public function browse($val = ""){
       $userClass = new DatabaseTable('users');
       $user = $userClass->find('uid',$val);
+
+      $moduleLeaderClass = new DatabaseTable('lecturers');
+      $moduleLeader = $moduleLeaderClass->find('luid', $val);
 
       if($user->rowCount()>0){
         if(isset($_POST['submit'])){
           $_POST['user']['uid']=$val;
           $userClass->save($_POST['user'], 'uid');
 
+          $criteria = ['luid'=>$val, 'lexperience'=>$_POST['lecturer']['lexperience'],
+                        'lbiography'=>$_POST['lecturer']['lbiography']];
+          $moduleLeaderClass->update($criteria, 'luid');
+
           header("Location:../index/editsuccess");
         }
 
-        $template = '../app/views/administrators/addAdministrator.php';
-        $content = loadTemplate($template, ['user'=>$user]);
+        $template = '../app/views/administrators/addModuleLeader.php';
+        $content = loadTemplate($template, ['user'=>$user, 'moduleLeader'=>$moduleLeader]);
 
-        $title = "Admin - Browse Administrator";
+        $title = "Admin - Browse Module Leader";
         require_once "../app/controllers/adminLoadView.php";
       }
 

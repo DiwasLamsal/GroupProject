@@ -51,7 +51,7 @@
       }
 
       else{
-        header("Location:../index/nosuchuser");
+        header("Location:../index/nosuchrecord");
       }
 
     }

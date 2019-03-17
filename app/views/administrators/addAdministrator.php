@@ -102,15 +102,15 @@ if(isset($user)){
     <label for = "birthdate">Birth Date: </label>
     <input type = "date" name = "user[birthdate]" <?php if(isset($user))echo 'value='.$user['birthdate'];?>>
 
-    <label for = "address" required>Address: </label>
-    <textarea name = "user[uaddress]"><?php if(isset($user))echo $user['uaddress'];?></textarea>
+    <label for = "address">Address: </label>
+    <textarea name = "user[uaddress]" required><?php if(isset($user))echo $user['uaddress'];?></textarea>
 
-    <label for = "contact" required>Contact Number: </label>
-    <input type = "contact" name = "user[ucontact]"
+    <label for = "contact">Contact Number: </label>
+    <input type = "contact" name = "user[ucontact]" required
     <?php if(isset($user))echo 'value='.$user['ucontact'];?>>
 
-    <label for = "email" required>Email Address: </label>
-    <input type = "email" name = "user[uemail]"
+    <label for = "email">Email Address: </label>
+    <input type = "email" name = "user[uemail]" required
     <?php if(isset($user))echo 'value='.$user['uemail'];?>>
 
   </div>

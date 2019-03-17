@@ -212,7 +212,7 @@ footer{
   flex-direction: row;
   justify-content: space-between;
 }
-.boxesContainer .content{
+.boxesContainer .content, .adminManageTable .content, .userForm .content{
   margin: 10px;
   font-family: "Trebuchet MS", Arial, sans-serif;
   color: black;
@@ -334,7 +334,7 @@ footer{
 .adminManageTable td, th {
   border: 1px solid white;
   padding: 5px;
-  
+
 }
 
 .adminManageTable tr{

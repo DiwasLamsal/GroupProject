@@ -3,6 +3,9 @@
 if(isset($user)){
   $user=$user->fetch();
 
+if(isset($moduleLeader))
+  $moduleLeader=$moduleLeader->fetch();
+
 ?>
 
 
@@ -31,7 +34,7 @@ if(isset($user)){
   </div>
 
   <div class = "contentBoxLarge contentBoxLargeEdit deleteBox">
-    <a href = "/GroupProject/public/ManageAdministrators/delete/<?php echo $user['uid'];?>">
+    <a href = "/GroupProject/public/ManageModuleLeaders/delete/<?php echo $user['uid'];?>">
       <div style="width: 100%; height: 80%; padding-top: 4%;">
         <br>
         <img src = "/GroupProject/public/resources/images/deleteuser.png" width="150"><br><br>
@@ -39,6 +42,47 @@ if(isset($user)){
       </div>
     </a>
   </div>
+
+
+</div>
+
+
+<div class = "adminManageTable">
+
+  <div class = "tableTitle" style="background: limegreen;">
+    <h1 class = "tableHeading">Other Module Leader Details</h1>
+  </div>
+
+  <div class = "content" style="text-align: left; margin: 15px; line-height: 1.6;">
+    <b>Module Leader Other Role(s): </b>
+    <?php if($moduleLeader['lrole']==""){
+      echo "Not Available";
+      }
+      else
+        echo $moduleLeader['lrole'];
+      ?><br>
+
+    <b>Experience: </b><?php echo $moduleLeader['lexperience'];?><br>
+    <b>Biography: </b><?php echo $moduleLeader['lbiography'];?><br>
+
+    <b>Modules Assigned: </b><br>
+  </div>
+
+</div>
+
+<div class = "adminManageTable">
+
+  <div class = "tableTitle" style="background: blueviolet;">
+    <h1 class = "tableHeading">Assign Module Leader to Module</h1>
+  </div>
+
+
+
+
+
+
+
+
 
 
 </div>
@@ -66,15 +110,15 @@ if(isset($user)){
   <div class = "formColumn1">
     <label for = "firstname">First Name: </label>
     <input type = "text" name = "user[fname]" required
-    <?php if(isset($user))echo 'value='.$user['fname'];?>>
+    <?php if(isset($user))echo 'value="'.$user['fname'].'"';?>>
 
     <label for = "middlename">Middle Name: </label>
     <input type = "text" name = "user[mname]"
-    <?php if(isset($user))echo 'value='.$user['mname'];?>>
+    <?php if(isset($user))echo 'value="'.$user['mname'].'"';?>>
 
     <label for = "lastname">Surame: </label>
     <input type = "text" name = "user[lname]" required
-    <?php if(isset($user))echo 'value='.$user['lname'];?>>
+    <?php if(isset($user))echo 'value="'.$user['lname'].'"';?>>
 
 <?php if(!isset($user)){?>
     <label for = "password">Password: </label>
@@ -92,6 +136,11 @@ if(isset($user)){
       <option value = "Other" <?php if(isset($user) && $user['gender']=="Other")echo 'selected';?>>Other</option>
     </select>
 
+
+    <label for = "experience">Biography: </label>
+    <textarea name = "lecturer[lbiography]" style="height: 150px;"><?php
+     if(isset($moduleLeader))echo $moduleLeader['lbiography'];?></textarea>
+
   </div>
 
 
@@ -102,16 +151,22 @@ if(isset($user)){
     <label for = "birthdate">Birth Date: </label>
     <input type = "date" name = "user[birthdate]" <?php if(isset($user))echo 'value='.$user['birthdate'];?>>
 
-    <label for = "address" required>Address: </label>
-    <textarea name = "user[uaddress]"><?php if(isset($user))echo $user['uaddress'];?></textarea>
+    <label for = "address">Address: </label>
+    <textarea name = "user[uaddress]"  required><?php if(isset($user))echo $user['uaddress'];?></textarea>
 
-    <label for = "contact" required>Contact Number: </label>
-    <input type = "contact" name = "user[ucontact]"
+    <label for = "contact">Contact Number: </label>
+    <input type = "contact" name = "user[ucontact]"  required
     <?php if(isset($user))echo 'value='.$user['ucontact'];?>>
 
-    <label for = "email" required>Email Address: </label>
-    <input type = "email" name = "user[uemail]"
+    <label for = "email">Email Address: </label>
+    <input type = "email" name = "user[uemail]"  required
     <?php if(isset($user))echo 'value='.$user['uemail'];?>>
+
+
+    <label for = "experience">Experience(Example: 3 Years): </label>
+    <input type = "text" name = "lecturer[lexperience]"
+    <?php if(isset($moduleLeader))echo 'value="'.$moduleLeader['lexperience'].'"';?>>
+
 
   </div>
 </div>

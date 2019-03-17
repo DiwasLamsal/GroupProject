@@ -68,7 +68,7 @@
   <table>
     <tr>
       <th>S.N.</th>
-      <th>College ID</th>
+      <th>Login ID</th>
       <th>Full Name</th>
       <th>Gender</th>
       <th>Birthdate</th>
