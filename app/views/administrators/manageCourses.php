@@ -12,48 +12,9 @@
     </a>
   </div>
 
-
-<div class = "contentBoxLarge contentBoxLargeManage userNotesBox">
-  <div class = "title" style="background: #EF767A;">User Notes</div>
-  <div class = "content">
-
-    <?php
-      if($val==""){
-    ?>
-
-    Manage or add courses from this section.
-    <br>
-
-    <br>
-    Even though the system is suitable for mobile usage, for the best experience, use a desktop browser.
-
-    <?php
-      }
-      else {
-        if($val=="editsuccess"){
-          echo 'Succesfully Edited Record';
-        }
-        else if($val=="addsuccess"){
-          echo 'Successfully Added Record';
-        }
-        else if($val=="deletesuccess"){
-          echo 'Successfully Deleted Record';
-        }
-        else if($val=="archivesuccess"){
-          echo 'Succesfully Changed Archive Status of Record';
-        }
-        else if($val=="nosuchrecord"){
-          echo 'Error! No Such Record was Found';
-        }
-        else{
-          header("Location:..");
-        }
-      }
-    ?>
-
-  </div>
-</div>
-
+  <?php
+    echo $note;
+  ?>
 
 
 </div>
@@ -91,12 +52,18 @@
         $statusText = $course['cstatus']=="Y" ? '<font color = "green">Visible</font>':
                                                            '<font color = "red">Archived</font>';
 
+       $leader = getUserById($course['cuid'])->fetch();
+
+
+       $link = '<u><a target="_blank" style="color:tomato;" href = "/GroupProject/public/ManageModuleLeaders/browse/'.$leader['uid'].'">'.
+                 $leader['fname'].' '.$leader['mname'].' '.$leader['lname'].'</a></u>';
+
 
         $count++;
         echo '<tr>
                 <td>'.$count.'</td>
                 <td>'.$course['ctitle'].'</td>
-                <td>'.$course['cuid'].'</td>
+                <td>'.$link.'</td>
                 <td>'.$course['cdescription'].'</td>
                 <td>'.$viewIcon.' &nbsp;'.$archiveIcon.'</td>
                 <td>'.$statusText.'</td>

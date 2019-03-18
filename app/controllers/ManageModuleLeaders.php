@@ -10,8 +10,12 @@
       $moduleLeaderClass = new DatabaseTable('lecturers');
       $moduleLeaders = $moduleLeaderClass->findall();
 
+      $manage = "module leaders";
+      $template = '../app/views/administrators/userNote.php';
+      $note = loadTemplate($template, ['val'=>$val, 'manage'=>$manage]);
+
       $template = '../app/views/administrators/manageModuleLeaders.php';
-      $content = loadTemplate($template, ['val'=>$val, 'users'=>$users, 'moduleLeaders'=>$moduleLeaders]);
+      $content = loadTemplate($template, ['val'=>$val, 'users'=>$users,'note'=>$note, 'moduleLeaders'=>$moduleLeaders]);
 
       $title = "Admin - Module Leaders";
 

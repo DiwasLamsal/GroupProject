@@ -6,8 +6,12 @@
       $announcementClass = new DatabaseTable('announcements');
       $announcements = $announcementClass->findAllReverse('anid');
 
+      $manage = "announcements";
+      $template = '../app/views/administrators/userNote.php';
+      $note = loadTemplate($template, ['val'=>$val, 'manage'=>$manage]);
+
       $template = '../app/views/administrators/manageAnnouncements.php';
-      $content = loadTemplate($template, ['announcements'=>$announcements, 'val'=>$val]);
+      $content = loadTemplate($template, ['announcements'=>$announcements, 'val'=>$val, 'note'=>$note]);
 
       $title = "Admin - Announcements";
 

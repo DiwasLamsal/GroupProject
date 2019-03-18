@@ -6,8 +6,13 @@
       $levelClass = new DatabaseTable('levels');
       $levels = $levelClass->findAll();
 
+      $manage = "levels";
+      $template = '../app/views/administrators/userNote.php';
+      $note = loadTemplate($template, ['val'=>$val, 'manage'=>$manage]);
+
+
       $template = '../app/views/administrators/manageLevels.php';
-      $content = loadTemplate($template, ['levels'=>$levels, 'val'=>$val]);
+      $content = loadTemplate($template, ['levels'=>$levels, 'val'=>$val, 'note'=>$note]);
 
       $title = "Admin - Levels";
 

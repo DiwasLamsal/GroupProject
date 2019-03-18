@@ -6,8 +6,12 @@ class ManageAdministrators extends Controller{
     $userClass = new DatabaseTable('users');
     $users = $userClass->find('urole', 'Administrator');
 
+    $manage = "administrator";
+    $template = '../app/views/administrators/userNote.php';
+    $note = loadTemplate($template, ['val'=>$val, 'manage'=>$manage]);
+
     $template = '../app/views/administrators/manageAdministrators.php';
-    $content = loadTemplate($template, ['val'=>$val, 'users'=>$users]);
+    $content = loadTemplate($template, ['val'=>$val, 'users'=>$users, 'note'=>$note]);
 
     $title = "Admin - Staff";
     require_once "../app/controllers/adminLoadView.php";

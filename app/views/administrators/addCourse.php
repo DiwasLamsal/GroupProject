@@ -3,6 +3,8 @@
 if(isset($course)){
   $course=$course->fetch();
 
+  $leader = getUserById($course['cuid'])->fetch();
+
 ?>
 
 
@@ -15,8 +17,15 @@ if(isset($course)){
       </div>
     <div class = "content" style="text-align: left; margin: 15px; line-height: 1.6;">
       <b>Course Title: </b><?php echo $course['ctitle'];?><br>
-      <b>Course Description: </b><?php echo $course['cdescription'];?><br>
-      <b>Course Leader: </b><?php echo $course['cuid'];?><br>
+      <b>Course Description: </b><?php echo $course['cdescription'];?><br><br>
+      <b>Course Leader:
+      <?php
+        $link = '<a target="_blank" style="color:tomato;" href = "/GroupProject/public/ManageModuleLeaders/browse/'.$leader['uid'].'">'.
+                  $leader['fname'].' '.$leader['mname'].' '.$leader['lname'].'</a>';
+        echo $link;
+      ?>
+      </b>
+      <br>
       <b>Status: </b><?php echo $course['cstatus']=="Y" ? '<font color = "green">Visible</font>':
                                                          '<font color = "red">Archived</font>';?><br>
 
@@ -35,6 +44,25 @@ if(isset($course)){
 
 
 </div>
+
+
+<div class = "adminManageTable">
+
+  <div class = "tableTitle" style="background: #6495ED;">
+    <h1 class = "tableHeading">Modules Under this Course</h1>
+  </div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
 
 
 <?php
@@ -59,12 +87,11 @@ if(isset($course)){
   <div class = "formColumn1">
     <label>Course Title: </label>
     <input type = "text" name = "course[ctitle]" required
-    <?php if(isset($course))echo 'value='.$course['ctitle'].'"';?>>
+    <?php if(isset($course))echo 'value="'.$course['ctitle'].'"';?>>
 
     <label>Course Leader: </label>
 
-    <select name = "course['cuid']">
-
+    <select name = "leader">
     <?php
       while($user = $users->fetch()){
     ?>
@@ -72,7 +99,6 @@ if(isset($course)){
         <?php echo $user['fname'].' '.$user['mname'].' '.$user['lname'];?>
       </option>
     <?php }?>
-
     </select>
   </div>
 
@@ -80,7 +106,7 @@ if(isset($course)){
 
   <div class = "formColumn2">
     <label>Course Description: </label>
-    <textarea style="height: 130px;" name = "course[cdescription]"><?php if(isset($course))echo $course['cdescription'];?></textarea>
+    <textarea style="height: 108px;" name = "course[cdescription]"><?php if(isset($course))echo $course['cdescription'];?></textarea>
 
   </div>
 

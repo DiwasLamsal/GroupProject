@@ -8,4 +8,15 @@ function loadTemplate($fileName, $templateVars) {
   return $contents;
 }
 
+
+
+
+
+function getUserById($id){
+  $userClass = new DatabaseTable('users');
+  $user = $userClass->find('uid', $id);
+  return $user;
+}
+
+
 ?>

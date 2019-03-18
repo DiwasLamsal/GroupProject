@@ -6,8 +6,12 @@
       $courseClass = new DatabaseTable('courses');
       $courses = $courseClass->findAll();
 
+      $manage = "courses";
+      $template = '../app/views/administrators/userNote.php';
+      $note = loadTemplate($template, ['val'=>$val, 'manage'=>$manage]);
+
       $template = '../app/views/administrators/manageCourses.php';
-      $content = loadTemplate($template, ['courses'=>$courses, 'val'=>$val]);
+      $content = loadTemplate($template, ['courses'=>$courses, 'val'=>$val, 'note'=>$note]);
 
       $title = "Admin - Courses";
       require_once "../app/controllers/adminLoadView.php";
@@ -23,6 +27,7 @@
 
       if(isset($_POST['submit'])){
         $_POST['course']['cstatus']="Y";
+        $_POST['course']['cuid']=$_POST['leader'];
 
         $courseClass->save($_POST['course']);
         header("Location:../ManageCourses/index/addsuccess");
@@ -41,14 +46,20 @@
       $courseClass = new DatabaseTable('courses');
       $course = $courseClass->find('cid',$val);
 
+      $userClass = new DatabaseTable('users');
+      $users = $userClass->find('urole','Module Leader');
+
+
       if($course->rowCount()>0){
         if(isset($_POST['submit'])){
           $_POST['course']['cid']=$val;
+          $_POST['course']['cuid']=$_POST['leader'];
+
           $courseClass->save($_POST['course'], 'cid');
           header("Location:../index/editsuccess");
         }
         $template = '../app/views/administrators/addCourse.php';
-        $content = loadTemplate($template, ['course'=>$course]);
+        $content = loadTemplate($template, ['users'=>$users, 'course'=>$course]);
 
         $title = "Admin - Browse Course";
         require_once "../app/controllers/adminLoadView.php";
