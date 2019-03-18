@@ -17,6 +17,10 @@
     public function add(){
       $courseClass = new DatabaseTable('courses');
 
+      $userClass = new DatabaseTable('users');
+      $users = $userClass->find('urole','Module Leader');
+
+
       if(isset($_POST['submit'])){
         $_POST['course']['cstatus']="Y";
 
@@ -25,7 +29,7 @@
       }
 
       $template = '../app/views/administrators/addCourse.php';
-      $content = loadTemplate($template, []);
+      $content = loadTemplate($template, ['users'=>$users]);
 
       $title = "Admin - Add new Course";
 

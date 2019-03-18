@@ -35,7 +35,7 @@ if(isset($moduleLeader))
 
   <div class = "contentBoxLarge contentBoxLargeEdit deleteBox">
     <a href = "/GroupProject/public/ManageModuleLeaders/delete/<?php echo $user['uid'];?>">
-      <div style="width: 100%; height: 80%; padding-top: 4%;">
+      <div style="width: 100%; height: 92%; padding-top: 4%;">
         <br>
         <img src = "/GroupProject/public/resources/images/deleteuser.png" width="150"><br><br>
         Delete User

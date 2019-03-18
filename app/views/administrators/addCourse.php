@@ -25,7 +25,7 @@ if(isset($course)){
 
   <div class = "contentBoxLarge contentBoxLargeEdit deleteBox">
     <a href = "/GroupProject/public/ManageCourses/delete/<?php echo $course['cid'];?>">
-      <div style="width: 100%; height: 80%; padding-top: 4%;">
+      <div style="width: 100%; height: 92%; padding-top: 4%;">
         <br>
         <img src = "/GroupProject/public/resources/images/deleteuser.png" width="150"><br><br>
         Delete Course
@@ -62,10 +62,17 @@ if(isset($course)){
     <?php if(isset($course))echo 'value='.$course['ctitle'].'"';?>>
 
     <label>Course Leader: </label>
-    <select>
-      <option value = "NULL">Ram</option>
-      <option value = "NULL">Chandra</option>
-      <option value = "NULL">Thakur</option>
+
+    <select name = "course['cuid']">
+
+    <?php
+      while($user = $users->fetch()){
+    ?>
+      <option value = "<?php echo $user['uid'];?>" <?php if(isset($course) && $course['cuid']==$user['uid'])echo 'selected';?>>
+        <?php echo $user['fname'].' '.$user['mname'].' '.$user['lname'];?>
+      </option>
+    <?php }?>
+
     </select>
   </div>
 
