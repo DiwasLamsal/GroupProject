@@ -115,7 +115,7 @@ if(isset($student))
 
 </div>
 
-<input type = "submit" value = "Submit" name = "passsubmit">
+<input type = "submit" value = "Submit" name = "passubmit">
 
 
 

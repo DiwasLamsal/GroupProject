@@ -94,6 +94,13 @@ class DatabaseTable{
 	}
 
 
-	
+	function getCount($field){
+		global $pdo;
+		$stmt = $pdo->prepare('SELECT COUNT('.$field.') FROM '.$this->table);
+		$stmt->execute();
+		return $stmt;
+	}
+
+
 
 }

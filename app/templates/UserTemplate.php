@@ -69,7 +69,7 @@
 
 				<div id = "headerMiddle">
 					<form method = "get">
-						<input type = "text" name = "search" placeholder="Search">
+						<input type = "text" name = "search" placeholder="Search Student">
 						<input type = "submit" value = "Go">
 					</form>
 				</div>

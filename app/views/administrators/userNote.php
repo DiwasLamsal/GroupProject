@@ -30,6 +30,9 @@
         else if($val=="nosuchuser"){
           echo 'Error! No Such User was Found';
         }
+        else if($val=="nosuchrecord"){
+          echo 'Error! No Such Record was Found';
+        }
         else{
           header("Location:..");
         }

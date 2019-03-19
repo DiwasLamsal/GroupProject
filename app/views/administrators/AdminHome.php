@@ -5,7 +5,7 @@
   <div class = "adminDashboardBox adbstudents">
     <a href = "/GroupProject/public/ManageStudents">
       <img src = "resources/images/student.png" alt = "Students">
-      200 Students
+      <?php echo $count['students']; ?> Students
     </a>
   </div>
 
@@ -13,7 +13,7 @@
   <div class = "adminDashboardBox adbmoduleleaders">
     <a href = "/GroupProject/public/ManageModuleLeaders">
       <img src = "resources/images/teacher.png" alt = "Module Leaders">
-      150 Module Leaders
+      <?php echo $count['moduleLeaders']; ?> Module Leaders
     </a>
   </div>
 
@@ -21,7 +21,7 @@
   <div class = "adminDashboardBox adbcourses">
     <a href = "/GroupProject/public/ManageCourses">
       <img src = "resources/images/course.png" alt = "Courses">
-      12 Courses
+      <?php echo $count['courses']; ?> Courses
     </a>
   </div>
 
@@ -29,7 +29,7 @@
   <div class = "adminDashboardBox adbmodules">
     <a href = "/GroupProject/public/ManageModules">
       <img src = "resources/images/module.png" alt = "Modules">
-      64 Modules
+      <?php echo $count['modules']; ?> Modules
     </a>
   </div>
 
