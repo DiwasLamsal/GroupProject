@@ -70,22 +70,6 @@ if(isset($moduleLeader))
 
 </div>
 
-<div class = "adminManageTable">
-
-  <div class = "tableTitle" style="background: #D2B48C;">
-    <h1 class = "tableHeading">Assign Module</h1>
-  </div>
-
-
-
-
-
-
-
-
-
-
-</div>
 
 
 <?php

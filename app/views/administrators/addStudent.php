@@ -6,6 +6,11 @@ if(isset($user)){
 if(isset($student))
   $student=$student->fetch();
 
+  $pat = getUserById($student['puid'])->fetch();
+  $enCourse = getCourseById($student['cid'])->fetch();
+  $enLevel = getLevelById($student['slvid'])->fetch();
+
+
 ?>
 
 
@@ -27,7 +32,7 @@ if(isset($student))
       <b>Contact No: </b><?php echo $user['ucontact'];?><br>
       <b>Email Address: </b><?php echo $user['uemail'];?><br>
       <b>Role: </b><?php echo $user['urole'];?><br>
-      <b>Status: </b><?php echo $user['ustatus']=="Live" ? '<font color = "green">Live</font>':
+      <b>Status: </b><?php echo $student['rstatus']=="Live" ? '<font color = "green">Live</font>':
                                                          '<font color = "red">Dormant</font>';?><br>
 
     </div>
@@ -54,11 +59,30 @@ if(isset($student))
   </div>
 
   <div class = "content" style="text-align: left; margin: 15px; line-height: 1.6;">
-    <b>Other Student Details: </b>
 
-    <b>PAT: </b><?php echo "";?><br>
-    <b>Course: </b><?php echo "";?><br>
-    <b>Level: </b><?php echo "";?><br>
+    <b>PAT: </b>
+    <?php
+      $link = '<a target="_blank" style="color:blue;" href = "/GroupProject/public/ManageModuleLeaders/browse/'.$pat['uid'].'">'.
+                $pat['fname'].' '.$pat['mname'].' '.$pat['lname'].'</a>';
+      echo $link;
+    ?>
+    <br>
+
+    <b>Course: </b>
+    <?php
+      $link = '<a target="_blank" style="color:blue;" href = "/GroupProject/public/ManageCourses/browse/'.$enCourse['cid'].'">'.
+                $enCourse['ctitle'].'</a>';
+      echo $link;
+    ?>
+    <br>
+
+    <b>Level: </b>
+    <?php
+      $link = '<a target="_blank" style="color:blue;" href = "/GroupProject/public/ManageLevels/browse/'.$enLevel['lvid'].'">'.
+                $enLevel['lvtitle'].' - '.$enLevel['lvaltname'].'</a>';
+      echo $link;
+    ?>
+    <br>
 
   </div>
 
@@ -66,12 +90,9 @@ if(isset($student))
 
 <form method = "POST" class = "userForm">
 
-  <div class = "formTitle">
+  <div class = "formTitle" style="background: orangered;">
     <h1 class = "formHeading">
-      <?php if(isset($user))echo 'Edit '.$user['fname'].' '.$user['mname'].' '.$user['lname'].'\'s details';
-      else {?>
-      Add new Student
-    <?php } ?>
+      <?php if(isset($user))echo 'Change '.$user['fname'].' '.$user['mname'].' '.$user['lname'].'\'s Password';?>
     </h1>
   </div>
 
@@ -79,18 +100,26 @@ if(isset($student))
   <div class = "formHolder">
 
     <div class = "formColumn1">
-          <label for = "password">Password: </label>
-          <input type = "password" name = "user[password]" required>
+        <label for = "password">Password: </label>
+        <input type = "password" name = "user[password]" required>
 
-          <label for = "confirmpassword">Confirm Password: </label>
-          <input type = "password" name = "confirmpassword" required>
+        <label for = "confirmpassword">Confirm Password: </label>
+        <input type = "password" name = "confirmpassword" required>
     </div>
 
     <div class = "formColumnSeparator"></div>
 
-    <div class = "formColumn2"></div>
+    <div class = "formColumn2">
+      <label style="color: red;">Note: If the student lost their password, you can change it from here.</label>
+    </div>
 
 </div>
+
+<input type = "submit" value = "Submit" name = "passsubmit">
+
+
+
+</form>
 
 
 <?php
@@ -141,7 +170,8 @@ if(isset($student))
           if($course['status']=="N")
             continue;
       ?>
-        <option value = "<?php echo $course['cid'];?>">
+        <option value = "<?php echo $course['cid'];?>"
+          <?php if(isset($enCourse)&& $student['cid']==$course['cid'])echo 'selected';?>>
           <?php echo $course['ctitle'];?>
         </option>
       <?php }?>
@@ -155,7 +185,8 @@ if(isset($student))
           if($level['status']=="N")
             continue;
       ?>
-        <option value = "<?php echo $level['lvid'];?>">
+        <option value = "<?php echo $level['lvid'];?>"
+          <?php if(isset($enLevel)&& $student['slvid']==$level['lvid'])echo 'selected';?>>
           <?php echo $level['lvtitle'].' - '.$level['lvaltname'];?>
         </option>
       <?php }?>
@@ -192,7 +223,8 @@ if(isset($student))
           if($user['status']=="N")
             continue;
       ?>
-        <option value = "<?php echo $user['uid'];?>">
+        <option value = "<?php echo $user['uid'];?>"
+          <?php if(isset($pat)&& $student['puid']==$pat['uid'])echo 'selected';?>>
           <?php echo $user['fname'].' '.$user['mname'].' '.$user['lname'];?>
         </option>
       <?php }?>

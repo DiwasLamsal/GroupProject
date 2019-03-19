@@ -7,7 +7,7 @@
     <a href = "/GroupProject/public/ManageStudents/add">
       <div style="width: 100%; height: 80%; padding-top: 4%;">
         <img src = "/GroupProject/public/resources/images/addstudent.png" width="50"><br>
-        Add new Student
+        Student Admission
       </div>
     </a>
   </div>
@@ -34,7 +34,8 @@
       <th>Full Name</th>
       <th>Gender</th>
       <th>Birthdate</th>
-      <th>Address</th>
+      <th>Level</th>
+      <th>Course</th>
       <th>Email</th>
       <th>Manage</th>
       <th>Status</th>
@@ -46,16 +47,21 @@
     $count = 0;
       while($user = $users->fetch()){
 
-        $viewIcon = '<a href = "/GroupProject/public/ManageModuleLeaders/browse/'.$user['uid'].'">
+
+        $student=getStudentById($user['uid'])->fetch();
+        $enCourse = getCourseById($student['cid'])->fetch();
+        $enLevel = getLevelById($student['slvid'])->fetch();
+
+        $viewIcon = '<a href = "/GroupProject/public/ManageStudents/browse/'.$user['uid'].'">
                           <img class = "tableIcon" src = "/GroupProject/public/resources/images/view.svg">
                         </a>';
 
-        $archiveIcon = '<a href = "/GroupProject/public/ManageModuleLeaders/archive/'.$user['uid'].'">
+        $archiveIcon = '<a href = "/GroupProject/public/ManageStudents/archive/'.$user['uid'].'">
                           <img class = "tableIcon" src = "/GroupProject/public/resources/images/archive.svg">
                         </a>';
 
-        $statusText = $user['ustatus']=="Y" ? '<font color = "green">Visible</font>':
-                                                           '<font color = "red">Archived</font>';
+        $statusText = $student['rstatus']=="Live" ? '<font color = "green">Live</font>':
+                                                           '<font color = "red">Dormant</font>';
 
 
         $count++;
@@ -65,11 +71,11 @@
                 <td>'.$user['fname'].' '.$user['mname'].' '.$user['lname'].'</td>
                 <td>'.$user['gender'].'</td>
                 <td>'.$user['birthdate'].'</td>
-                <td>'.$user['uaddress'].'</td>
+                <td>'.$enLevel['lvtitle'].'</td>
+                <td>'.$enCourse['ctitle'].'</td>
                 <td><a href = "mailto:'.$user['uemail'].'">'.$user['uemail'].'</a></td>
                 <td>'.$viewIcon.' &nbsp;'.$archiveIcon.'</td>
-                <td>'.$statusText.'</td>
-        ';
+                <td>'.$statusText.'</td>';
 
       }
     ?>
