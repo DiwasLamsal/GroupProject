@@ -31,7 +31,6 @@
       <th>S.N.</th>
       <th>Title</th>
       <th>Course Leader</th>
-      <th style = "width: 400px;">Description</th>
       <th>Manage</th>
       <th>Status</th>
     </tr>
@@ -64,7 +63,6 @@
                 <td>'.$count.'</td>
                 <td>'.$course['ctitle'].'</td>
                 <td>'.$link.'</td>
-                <td>'.$course['cdescription'].'</td>
                 <td>'.$viewIcon.' &nbsp;'.$archiveIcon.'</td>
                 <td>'.$statusText.'</td>
               </tr>';

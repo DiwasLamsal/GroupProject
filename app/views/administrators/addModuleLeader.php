@@ -65,7 +65,30 @@ if(isset($moduleLeader))
     <b>Experience: </b><?php echo $moduleLeader['lexperience'];?><br>
     <b>Biography: </b><?php echo $moduleLeader['lbiography'];?><br>
 
-    <b>Modules Assigned: </b><br>
+    <b>Modules Assigned: </b>
+
+    <?php
+
+
+      $count = 0;
+      while($module = $modules->fetch()){
+        $count++;
+  ?>
+
+  <?php
+        $link = '<a class = "courseModuleLink" target = "_blank" href = "/GroupProject/public/ManageModules/browse/'.$module['mid'].'">';
+        echo $link;
+        echo '<div class = "courseModuleBox" style = "background: '.generateRandomColor().';">';
+        echo $module['mname'];
+        echo '</div>';
+        echo '</a>';
+
+      }
+
+      if($count==0) echo "<i>No Module Available</i>";
+
+    ?>
+
   </div>
 
 </div>

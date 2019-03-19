@@ -62,6 +62,10 @@
       $moduleLeaderClass = new DatabaseTable('lecturers');
       $moduleLeader = $moduleLeaderClass->find('luid', $val);
 
+      $moduleClass = new DatabaseTable('modules');
+      $modules = $moduleClass->find('mluid', $val);
+
+
       if($user->rowCount()>0){
         if(isset($_POST['submit'])){
           $_POST['user']['uid']=$val;
@@ -75,7 +79,7 @@
         }
 
         $template = '../app/views/administrators/addModuleLeader.php';
-        $content = loadTemplate($template, ['user'=>$user, 'moduleLeader'=>$moduleLeader]);
+        $content = loadTemplate($template, ['user'=>$user, 'moduleLeader'=>$moduleLeader, 'modules'=>$modules]);
 
         $title = "Admin - Browse Module Leader";
         require_once "../app/controllers/adminLoadView.php";

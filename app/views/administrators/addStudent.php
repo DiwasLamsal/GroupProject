@@ -88,6 +88,20 @@ if(isset($student))
 
 </div>
 
+
+
+<div class = "adminManageTable">
+
+  <div class = "tableTitle" style="background: green;">
+    <h1 class = "tableHeading">Student Modules</h1>
+  </div>
+
+  <div class = "content" style="text-align: left; margin: 15px; line-height: 1.6;">
+
+  </div>
+</div>
+
+
 <form method = "POST" class = "userForm">
 
   <div class = "formTitle" style="background: orangered;">

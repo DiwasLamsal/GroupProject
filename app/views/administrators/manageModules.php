@@ -30,10 +30,10 @@
     <tr>
       <th>S.N.</th>
       <th>Title</th>
-      <th style = "width: 100px;">Code</th>
-      <th style = "width: 120px;">Module Leader</th>
+      <th>Code</th>
+      <th>Module Leader</th>
       <th>Course</th>
-      <th style = "width: 300px;">Description</th>
+      <th>Level</th>
       <th>Manage</th>
       <th>Status</th>
     </tr>
@@ -64,6 +64,10 @@
        $courseLink = '<u><a target="_blank" style="color:tomato;" href = "/GroupProject/public/ManageCourses/browse/'.$course['cid'].'">'.
                  $course['ctitle'].'</a></u>';
 
+      $level = getLevelById($module['mlvid'])->fetch();
+      $levelLink = '<u><a target="_blank" style="color:tomato;" href = "/GroupProject/public/ManageLevels/browse/'.$level['lvid'].'">'.
+                $level['lvtitle'].'</a></u>';
+
         $count++;
         echo '<tr>
                 <td>'.$count.'</td>
@@ -71,7 +75,7 @@
                 <td>'.$module['mname'].'</td>
                 <td>'.$link.'</td>
                 <td>'.$courseLink.'</td>
-                <td>'.$module['mdescription'].'</td>
+                <td>'.$levelLink.'</td>
                 <td>'.$viewIcon.' &nbsp;'.$archiveIcon.'</td>
                 <td>'.$statusText.'</td>
               </tr>';
