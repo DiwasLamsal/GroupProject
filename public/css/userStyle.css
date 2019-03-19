@@ -55,7 +55,7 @@ body{
 
 .loader .bar{
 		float: left;
-		background: red;
+		background: green;
 		height: 25px;
 		width: 5px;
 		margin: 2px;
@@ -340,7 +340,8 @@ footer{
   margin: 7px;
   opacity: 0.6;
   border-radius: 5px;
-  padding: 10px;
+  padding: 0px;
+  padding-bottom: 35px;
   color: white;
   font-size: 20px;
   font-weight: bold;
@@ -355,6 +356,11 @@ footer{
   cursor: pointer;
 }
 
+.adminDashboardBox a{
+  padding: 5%;
+  padding-bottom: 30px;
+  padding-top: 10px;
+}
 
 .adminDashboardBox img{
   width: 70px;

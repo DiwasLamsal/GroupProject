@@ -1,27 +1,36 @@
 
 <div class = "boxesContainer">
 
+
   <div class = "adminDashboardBox adbstudents">
-    <img src = "resources/images/student.png" alt = "Students">
-    200 Students
+    <a href = "/GroupProject/public/ManageStudents">
+      <img src = "resources/images/student.png" alt = "Students">
+      200 Students
+    </a>
   </div>
 
 
   <div class = "adminDashboardBox adbmoduleleaders">
-    <img src = "resources/images/teacher.png" alt = "Module Leaders">
-    150 Module Leaders
+    <a href = "/GroupProject/public/ManageModuleLeaders">
+      <img src = "resources/images/teacher.png" alt = "Module Leaders">
+      150 Module Leaders
+    </a>
   </div>
 
 
   <div class = "adminDashboardBox adbcourses">
-    <img src = "resources/images/course.png" alt = "Courses">
-    12 Courses
+    <a href = "/GroupProject/public/ManageCourses">
+      <img src = "resources/images/course.png" alt = "Courses">
+      12 Courses
+    </a>
   </div>
 
 
   <div class = "adminDashboardBox adbmodules">
-    <img src = "resources/images/module.png" alt = "Modules">
-    64 Modules
+    <a href = "/GroupProject/public/ManageModules">
+      <img src = "resources/images/module.png" alt = "Modules">
+      64 Modules
+    </a>
   </div>
 
 </div>
