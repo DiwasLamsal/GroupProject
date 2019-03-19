@@ -148,7 +148,7 @@ if(isset($student))
   <h1 class = "formHeading">
     <?php if(isset($user))echo 'Edit '.$user['fname'].' '.$user['mname'].' '.$user['lname'].'\'s details';
     else {?>
-    Add new Student
+    Admit new Student
   <?php } ?>
   </h1>
 </div>
@@ -229,6 +229,10 @@ if(isset($student))
     <?php if(isset($user))echo 'value='.$user['uemail'];?>>
 
 
+<?php
+
+
+?>
 
     <label for = "pat">PAT: </label>
     <select name = "student[puid]">
@@ -236,10 +240,12 @@ if(isset($student))
         while($user = $users->fetch()){
           if($user['status']=="N")
             continue;
+          $totalStudentsUnderPAT = getTotalPAT($user['uid'])->fetch()['COUNT(puid)'];
+
       ?>
         <option value = "<?php echo $user['uid'];?>"
-          <?php if(isset($pat)&& $student['puid']==$pat['uid'])echo 'selected';?>>
-          <?php echo $user['fname'].' '.$user['mname'].' '.$user['lname'];?>
+          <?php if(isset($pat)&& $student['puid']==$user['uid'])echo 'selected';?>>
+          <?php echo $user['fname'].' '.$user['mname'].' '.$user['lname'].' - Total Students: '.$totalStudentsUnderPAT;?>
         </option>
       <?php }?>
     </select>

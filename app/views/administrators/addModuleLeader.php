@@ -54,13 +54,20 @@ if(isset($moduleLeader))
   </div>
 
   <div class = "content" style="text-align: left; margin: 15px; line-height: 1.6;">
-    <b>Module Leader Other Role(s): </b>
-    <?php if($moduleLeader['lrole']==""){
-      echo "Not Available";
-      }
-      else
-        echo $moduleLeader['lrole'];
-      ?><br>
+    <b>Courses Assigned: </b>
+    <?php
+
+    $course = checkCourseLeader($moduleLeader['luid']);
+    if($course->rowCount()>0){
+      $course = $course->fetch();
+      $link = '<a href = "/GroupProject/public/ManageCourses/browse/'.$course['cid'].'">'.$course['ctitle'].'</a>';
+      echo 'Course Leader for '.$link;
+    }
+    else{
+      echo "<i>No Course Available</i>";
+    }
+
+    ?><br>
 
     <b>Experience: </b><?php echo $moduleLeader['lexperience'];?><br>
     <b>Biography: </b><?php echo $moduleLeader['lbiography'];?><br>

@@ -54,7 +54,7 @@
       $template = '../app/views/administrators/addStudent.php';
       $content = loadTemplate($template, ['users'=>$users, 'courses'=>$courses, 'levels'=>$levels]);
 
-      $title = "Admin - Add new Student";
+      $title = "Admin - Admit new Student";
 
       require_once "../app/controllers/adminLoadView.php";
 

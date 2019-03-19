@@ -34,6 +34,19 @@ function getStudentById($id){
   return $student;
 }
 
+function getTotalPAT($id){
+  $studentClass = new DatabaseTable('students');
+  $totalStudentsByPAT = $studentClass->getCountByValue('puid', $id);
+  return $totalStudentsByPAT;
+}
+
+function checkCourseLeader($id){
+  $courseClass = new DatabaseTable('courses');
+  $course = $courseClass->find('cuid', $id);
+  return $course;
+}
+
+
 
 function getGeneratedPassword($firstname, $lastname, $date){
   // Ram Krishna Shrestha 1990-05-15   FL-YYYY-MM-DD  RS-1990-05-15
