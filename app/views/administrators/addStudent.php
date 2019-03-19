@@ -3,8 +3,8 @@
 if(isset($user)){
   $user=$user->fetch();
 
-if(isset($moduleLeader))
-  $moduleLeader=$moduleLeader->fetch();
+if(isset($student))
+  $student=$student->fetch();
 
 ?>
 
@@ -27,14 +27,14 @@ if(isset($moduleLeader))
       <b>Contact No: </b><?php echo $user['ucontact'];?><br>
       <b>Email Address: </b><?php echo $user['uemail'];?><br>
       <b>Role: </b><?php echo $user['urole'];?><br>
-      <b>Status: </b><?php echo $user['ustatus']=="Y" ? '<font color = "green">Visible</font>':
-                                                         '<font color = "red">Archived</font>';?><br>
+      <b>Status: </b><?php echo $user['ustatus']=="Live" ? '<font color = "green">Live</font>':
+                                                         '<font color = "red">Dormant</font>';?><br>
 
     </div>
   </div>
 
   <div class = "contentBoxLarge contentBoxLargeEdit deleteBox">
-    <a href = "/GroupProject/public/ManageModuleLeaders/delete/<?php echo $user['uid'];?>">
+    <a href = "/GroupProject/public/ManageStudents/delete/<?php echo $user['uid'];?>">
       <div class = "deleteBoxTextHolder">
         <br>
         <img src = "/GroupProject/public/resources/images/deleteuser.png" width="150"><br><br>
@@ -50,40 +50,45 @@ if(isset($moduleLeader))
 <div class = "adminManageTable">
 
   <div class = "tableTitle" style="background: #6495ED;">
-    <h1 class = "tableHeading">Other Module Leader Details</h1>
+    <h1 class = "tableHeading">Other Student Details</h1>
   </div>
 
   <div class = "content" style="text-align: left; margin: 15px; line-height: 1.6;">
-    <b>Module Leader Other Role(s): </b>
-    <?php if($moduleLeader['lrole']==""){
-      echo "Not Available";
-      }
-      else
-        echo $moduleLeader['lrole'];
-      ?><br>
+    <b>Other Student Details: </b>
 
-    <b>Experience: </b><?php echo $moduleLeader['lexperience'];?><br>
-    <b>Biography: </b><?php echo $moduleLeader['lbiography'];?><br>
+    <b>PAT: </b><?php echo "";?><br>
+    <b>Course: </b><?php echo "";?><br>
+    <b>Level: </b><?php echo "";?><br>
 
-    <b>Modules Assigned: </b><br>
   </div>
 
 </div>
 
-<div class = "adminManageTable">
+<form method = "POST" class = "userForm">
 
-  <div class = "tableTitle" style="background: #D2B48C;">
-    <h1 class = "tableHeading">Assign Module</h1>
+  <div class = "formTitle">
+    <h1 class = "formHeading">
+      <?php if(isset($user))echo 'Edit '.$user['fname'].' '.$user['mname'].' '.$user['lname'].'\'s details';
+      else {?>
+      Add new Student
+    <?php } ?>
+    </h1>
   </div>
 
 
+  <div class = "formHolder">
 
+    <div class = "formColumn1">
+          <label for = "password">Password: </label>
+          <input type = "password" name = "user[password]" required>
 
+          <label for = "confirmpassword">Confirm Password: </label>
+          <input type = "password" name = "confirmpassword" required>
+    </div>
 
+    <div class = "formColumnSeparator"></div>
 
-
-
-
+    <div class = "formColumn2"></div>
 
 </div>
 
@@ -100,7 +105,7 @@ if(isset($moduleLeader))
   <h1 class = "formHeading">
     <?php if(isset($user))echo 'Edit '.$user['fname'].' '.$user['mname'].' '.$user['lname'].'\'s details';
     else {?>
-    Add new Module Leader
+    Add new Student
   <?php } ?>
   </h1>
 </div>
@@ -120,14 +125,6 @@ if(isset($moduleLeader))
     <input type = "text" name = "user[lname]" required
     <?php if(isset($user))echo 'value="'.$user['lname'].'"';?>>
 
-<?php if(!isset($user)){?>
-    <label for = "password">Password: </label>
-    <input type = "password" name = "user[password]" required>
-
-    <label for = "confirmpassword">Confirm Password: </label>
-    <input type = "password" name = "confirmpassword" required>
-<?php }?>
-
 
     <label for = "gender">Gender: </label>
     <select name = "user[gender]">
@@ -137,9 +134,33 @@ if(isset($moduleLeader))
     </select>
 
 
-    <label for = "experience">Biography: </label>
-    <textarea name = "lecturer[lbiography]" style="height: 150px;"><?php
-     if(isset($moduleLeader))echo $moduleLeader['lbiography'];?></textarea>
+    <label for = "course">Course: </label>
+    <select name = "student[cid]">
+      <?php
+        while($course = $courses->fetch()){
+          if($course['status']=="N")
+            continue;
+      ?>
+        <option value = "<?php echo $course['cid'];?>">
+          <?php echo $course['ctitle'];?>
+        </option>
+      <?php }?>
+    </select>
+
+
+    <label for = "level">Level: </label>
+    <select name = "student[slvid]">
+      <?php
+        while($level = $levels->fetch()){
+          if($level['status']=="N")
+            continue;
+      ?>
+        <option value = "<?php echo $level['lvid'];?>">
+          <?php echo $level['lvtitle'].' - '.$level['lvaltname'];?>
+        </option>
+      <?php }?>
+    </select>
+
 
   </div>
 
@@ -163,9 +184,19 @@ if(isset($moduleLeader))
     <?php if(isset($user))echo 'value='.$user['uemail'];?>>
 
 
-    <label for = "experience">Experience(Example: 3 Years): </label>
-    <input type = "text" name = "lecturer[lexperience]"
-    <?php if(isset($moduleLeader))echo 'value="'.$moduleLeader['lexperience'].'"';?>>
+
+    <label for = "pat">PAT: </label>
+    <select name = "student[puid]">
+      <?php
+        while($user = $users->fetch()){
+          if($user['status']=="N")
+            continue;
+      ?>
+        <option value = "<?php echo $user['uid'];?>">
+          <?php echo $user['fname'].' '.$user['mname'].' '.$user['lname'];?>
+        </option>
+      <?php }?>
+    </select>
 
 
   </div>
