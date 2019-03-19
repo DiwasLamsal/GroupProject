@@ -56,7 +56,6 @@ if(isset($course)){
 
   <?php
 
-// https://stackoverflow.com/questions/9612061/random-background-color-from-array-php
 
     $count = 0;
     while($module = $modules->fetch()){

@@ -41,11 +41,14 @@ function getGeneratedPassword($firstname, $lastname, $date){
   return $pass;
 }
 
+// https://stackoverflow.com/questions/9612061/random-background-color-from-array-php
 
 function generateRandomColor(){
-  $background_colors = array('red', 'blue', 'purple', 'orange', 'black', 'brown', 'green', 'grey');
+  $colors = array('red', 'blue', 'purple', 'orange', 'black', 'brown', 'green', 'grey', 'CadetBlue', 'Chocolate',
+                              'CornflowerBlue', 'Crimson', 'darkblue', 'darkgoldenrod', 'DarkOliveGreen', 'DarkRed', 'DarkSlateBlue',
+                               'DarkSlateGray', 'Navy', 'Olive',  'SeaGreen',  'Sienna',  'Teal', 'YellowGreen', 'OliveDrab', 'LimeGreen');
 
-  return $background_colors[array_rand($background_colors)];
+  return $colors[array_rand($colors)];
 }
 
 ?>

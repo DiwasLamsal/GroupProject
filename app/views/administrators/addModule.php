@@ -6,6 +6,7 @@ if(isset($module)){
 
   $leader = getUserById($module['mluid'])->fetch();
   $mCourse = getCourseById($module['mcid'])->fetch();
+  $mLevel = getLevelById($module['mlvid'])->fetch();
 
 ?>
 
@@ -65,6 +66,13 @@ if(isset($module)){
     ?>
     <br>
 
+    <b>Level: </b>
+    <?php
+      $link = '<a target="_blank" style="color:blue;" href = "/GroupProject/public/ManageLevels/browse/'.$mLevel['lvid'].'">'.
+                $mLevel['lvtitle'].' - '.$mLevel['lvaltname'].'</a>';
+      echo $link;
+    ?>
+    <br>
 
   </div>
 
@@ -128,6 +136,19 @@ if(isset($module)){
     </select>
 
 
+    <label for = "level">Level: </label>
+    <select name = "module[mlvid]">
+      <?php
+        while($level = $levels->fetch()){
+          if($level['status']=="N")
+            continue;
+      ?>
+        <option value = "<?php echo $level['lvid'];?>"
+          <?php if(isset($mLevel)&& $module['mlvid']==$level['lvid'])echo 'selected';?>>
+          <?php echo $level['lvtitle'].' - '.$level['lvaltname'];?>
+        </option>
+      <?php }?>
+    </select>
 
 
   </div>

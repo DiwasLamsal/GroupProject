@@ -25,6 +25,8 @@
       $moduleClass = new DatabaseTable('modules');
       $courseClass = new DatabaseTable('courses');
       $termClass = new DatabaseTable('terms');
+      $levelClass = new DatabaseTable('levels');
+      $levels = $levelClass->findAll();
 
       $users = $userClass->find('urole','Module Leader');
       $courses = $courseClass->findAll();
@@ -39,7 +41,7 @@
       }
 
       $template = '../app/views/administrators/addModule.php';
-      $content = loadTemplate($template, ['users'=>$users, 'courses'=>$courses]);
+      $content = loadTemplate($template, ['users'=>$users, 'courses'=>$courses, 'levels'=>$levels]);
 
       $title = "Admin - Add new Module";
 
@@ -54,6 +56,9 @@
       $courseClass = new DatabaseTable('courses');
       $termClass = new DatabaseTable('terms');
 
+      $levelClass = new DatabaseTable('levels');
+      $levels = $levelClass->findAll();
+
       $users = $userClass->find('urole','Module Leader');
       $courses = $courseClass->findAll();
 
@@ -67,7 +72,7 @@
       }
 
       $template = '../app/views/administrators/addModule.php';
-      $content = loadTemplate($template, ['module'=>$module, 'users'=>$users, 'courses'=>$courses]);
+      $content = loadTemplate($template, ['module'=>$module, 'users'=>$users, 'courses'=>$courses, 'levels'=>$levels]);
 
       $title = "Admin - Browse Module";
 
