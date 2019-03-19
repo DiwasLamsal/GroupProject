@@ -105,7 +105,7 @@ if(isset($module)){
             continue;
       ?>
         <option value = "<?php echo $user['uid'];?>"
-          <?php if(isset($leader)&& $module['mluid']==$leader['uid'])echo 'selected';?>>
+          <?php if(isset($module)&& $module['mluid']==$user['uid'])echo 'selected';?>>
           <?php echo $user['fname'].' '.$user['mname'].' '.$user['lname'];?>
         </option>
       <?php }?>

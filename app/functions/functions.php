@@ -42,4 +42,10 @@ function getGeneratedPassword($firstname, $lastname, $date){
 }
 
 
+function generateRandomColor(){
+  $background_colors = array('red', 'blue', 'purple', 'orange', 'black', 'brown', 'green', 'grey');
+
+  return $background_colors[array_rand($background_colors)];
+}
+
 ?>

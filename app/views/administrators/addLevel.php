@@ -17,7 +17,8 @@ if(isset($level)){
       <b>Level Title: </b><?php echo $level['lvtitle'];?><br>
       <b>Alternate Name: </b><?php echo $level['lvaltname'];?><br>
       <b>Capacity: </b><?php echo $level['lvcapacity'];?> students<br>
-
+      <br>
+      <b>Total Students in this Level: </b><?php echo getTotalStudentsInLevel($level['lvid']); ?>
     </div>
   </div>
 

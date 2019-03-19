@@ -49,6 +49,9 @@
       $userClass = new DatabaseTable('users');
       $users = $userClass->find('urole','Module Leader');
 
+      $moduleClass = new DatabaseTable('modules');
+      $modules = $moduleClass->find('mcid', $val);
+
 
       if($course->rowCount()>0){
         if(isset($_POST['submit'])){
@@ -59,7 +62,7 @@
           header("Location:../index/editsuccess");
         }
         $template = '../app/views/administrators/addCourse.php';
-        $content = loadTemplate($template, ['users'=>$users, 'course'=>$course]);
+        $content = loadTemplate($template, ['users'=>$users, 'course'=>$course, 'modules'=>$modules]);
 
         $title = "Admin - Browse Course";
         require_once "../app/controllers/adminLoadView.php";

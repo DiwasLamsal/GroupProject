@@ -26,6 +26,7 @@ if(isset($course)){
       ?>
       </b>
       <br>
+      <b>Total Students Enrolled in this Course: </b><?php echo getTotalStudentsInCourse($course['cid']); ?><br>
       <b>Status: </b><?php echo $course['cstatus']=="Y" ? '<font color = "green">Visible</font>':
                                                          '<font color = "red">Archived</font>';?><br>
 
@@ -46,19 +47,35 @@ if(isset($course)){
 </div>
 
 
-<div class = "adminManageTable">
+<div class = "adminManageTable" style="padding-bottom: 20px;">
 
   <div class = "tableTitle" style="background: #6495ED;">
     <h1 class = "tableHeading">Modules Under this Course</h1>
   </div>
 
 
+  <?php
 
+// https://stackoverflow.com/questions/9612061/random-background-color-from-array-php
 
+    $count = 0;
+    while($module = $modules->fetch()){
+      $count++;
+?>
 
+<?php
+      $link = '<a class = "courseModuleLink" target = "_blank" href = "/GroupProject/public/ManageModules/browse/'.$module['mid'].'">';
+      echo $link;
+      echo '<div class = "courseModuleBox" style = "background: '.generateRandomColor().';">';
+      echo $module['mname'];
+      echo '</div>';
+      echo '</a>';
 
+    }
 
+    if($count==0) echo "<b>No Module Available</b>";
 
+  ?>
 
 
 </div>
@@ -94,6 +111,7 @@ if(isset($course)){
     <select name = "leader">
     <?php
       while($user = $users->fetch()){
+
     ?>
       <option value = "<?php echo $user['uid'];?>" <?php if(isset($course) && $course['cuid']==$user['uid'])echo 'selected';?>>
         <?php echo $user['fname'].' '.$user['mname'].' '.$user['lname'];?>
