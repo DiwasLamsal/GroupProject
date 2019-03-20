@@ -247,7 +247,7 @@ header input[type=submit]{
 .dropdown-content {
   display: none;
   position: absolute;
-  margin-top: 20px;
+  margin-top: 17px;
   margin-left: -10px;
   background-color: #f1f1f1;
   min-width: 185px;

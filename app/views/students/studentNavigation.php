@@ -29,8 +29,18 @@
 <li>
   <a href = "/GroupProject/public/StudentGrades">
     <div style="width: 100%; height: 100%;">
-      <img src = "/GroupProject/public/resources/images/levelicon.png">
+      <img src = "/GroupProject/public/resources/images/gradeicon.png">
       <span class = "navText">&nbsp; Grades</span>
+    </div>
+  </a>
+</li>
+
+
+<li>
+  <a href = "/GroupProject/public/StudentForums">
+    <div style="width: 100%; height: 100%;">
+      <img src = "/GroupProject/public/resources/images/forumicon.png">
+      <span class = "navText">&nbsp; Forums</span>
     </div>
   </a>
 </li>
