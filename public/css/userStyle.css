@@ -605,13 +605,13 @@ footer{
   transition: background .3s;
   font-family: 'Bitter', serif;
   font-size: 16px;
-
 }
 
 .userForm input[type=submit]:hover{
   cursor: pointer;
   background: #8785B6;
 }
+
 
 .formHolder{
   display: flex;
@@ -635,8 +635,6 @@ footer{
 
 
 /* Course Model box */
-
-
 .courseModuleBox{
   margin: 3px;
   opacity: 0.6;
@@ -656,6 +654,16 @@ footer{
   opacity: 0.75;
   cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
+
 
 
 /**********************************************************************************************/
@@ -688,12 +696,14 @@ footer{
     height: 50px;
   }
 
+  .dropdown-content {
+    margin-top: 17px;
+  }
 
 
   nav{
     text-align: center;
   }
-
 
 
   nav ul li div{
@@ -734,6 +744,12 @@ footer{
   .formColumnSeparator{
     display: none;
   }
+
+
+  .deleteBox{
+    padding-bottom: 13%;
+  }
+
 
 }
 

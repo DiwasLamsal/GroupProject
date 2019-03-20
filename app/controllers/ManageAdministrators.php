@@ -46,8 +46,14 @@ class ManageAdministrators extends Controller{
       if(isset($_POST['submit'])){
         $_POST['user']['uid']=$val;
         $userClass->save($_POST['user'], 'uid');
-
         header("Location:../index/editsuccess");
+      }
+
+      if(isset($_POST['passubmit'])){
+        $_POST['user']['password']=password_hash($_POST['user']['password'], PASSWORD_DEFAULT);
+        $_POST['user']['uid']=$val;
+        $userClass->save($_POST['user'], 'uid');
+        header("Location:../index/editpasssuccess");
       }
 
       $template = '../app/views/administrators/addAdministrator.php';

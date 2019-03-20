@@ -78,7 +78,7 @@
 
 
 								<div id="myDropdown" class="dropdown-content">
-							    <a href="#">Logout</a>
+							    <a href="/GroupProject/public/Logout">Logout</a>
 									<a href="#">View Profile</a>
 							  </div>
 							</h5>

@@ -44,6 +44,40 @@ if(isset($user)){
 </div>
 
 
+<form method = "POST" class = "userForm">
+
+  <div class = "formTitle" style="background: orangered;">
+    <h1 class = "formHeading">
+      <?php if(isset($user))echo 'Change '.$user['fname'].' '.$user['mname'].' '.$user['lname'].'\'s Password';?>
+    </h1>
+  </div>
+
+
+  <div class = "formHolder">
+
+    <div class = "formColumn1">
+      <label for = "password">Password: </label>
+      <input type = "password" onkeyup="checkPassword()" name = "user[password]" id = "password" required>
+      <p id = "passtest" style="font-size: 15px; color: red; margin-bottom: 20px;">Passwords must contain more than 8 characters</p>
+
+      <label for = "confirmpassword">Confirm Password: </label>
+      <input type = "password" onkeyup="checkPassword()" name = "confirmpassword" id = "confirmpassword" required>
+      <p id = "confirmpasstest" style="font-size: 14px; color: red; margin-bottom: 10px;"><br></p>
+    </div>
+
+    <div class = "formColumnSeparator"></div>
+
+    <div class = "formColumn2">
+    </div>
+
+</div>
+
+<input type = "submit" value = "Submit" name = "passubmit" id = "submission">
+
+
+
+</form>
+
 <?php
 
 }
@@ -78,10 +112,12 @@ if(isset($user)){
 
 <?php if(!isset($user)){?>
     <label for = "password">Password: </label>
-    <input type = "password" name = "user[password]" required>
+    <input type = "password" onkeyup="checkPassword()" name = "user[password]" id = "password" required>
+    <p id = "passtest" style="font-size: 15px; color: red; margin-bottom: 20px;">Passwords must contain more than 8 characters</p>
 
     <label for = "confirmpassword">Confirm Password: </label>
-    <input type = "password" name = "confirmpassword" required>
+    <input type = "password" onkeyup="checkPassword()" name = "confirmpassword" id = "confirmpassword" required>
+    <p id = "confirmpasstest" style="font-size: 14px; color: red; margin-bottom: 10px;"><br></p>
 <?php }?>
 
 
@@ -117,7 +153,7 @@ if(isset($user)){
 </div>
 
 
-  <input type = "submit" value = "Submit" name = "submit">
+  <input type = "submit" value = "Submit" name = "submit" <?php if(!isset($user)){?> id = "submission" <?php }?>>
 
 
 </form>

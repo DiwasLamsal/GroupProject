@@ -89,12 +89,11 @@
         header("Location:../index/editsuccess");
       }
 
-      if(isset($_POST['passsubmit'])){
-        $_POST['user']['uid']=$val;
+      if(isset($_POST['passubmit'])){
         $_POST['user']['password']=password_hash($_POST['user']['password'], PASSWORD_DEFAULT);
+        $_POST['user']['uid']=$val;
         $userClass->save($_POST['user'], 'uid');
-
-        header("Location:../index/editsuccess");
+        header("Location:../index/editpasssuccess");
       }
 
 

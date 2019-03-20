@@ -78,6 +78,13 @@
           header("Location:../index/editsuccess");
         }
 
+        if(isset($_POST['passubmit'])){
+          $_POST['user']['password']=password_hash($_POST['user']['password'], PASSWORD_DEFAULT);
+          $_POST['user']['uid']=$val;
+          $userClass->save($_POST['user'], 'uid');
+          header("Location:../index/editpasssuccess");
+        }
+
         $template = '../app/views/administrators/addModuleLeader.php';
         $content = loadTemplate($template, ['user'=>$user, 'moduleLeader'=>$moduleLeader, 'modules'=>$modules]);
 

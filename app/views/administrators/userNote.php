@@ -1,16 +1,20 @@
 <div class = "contentBoxLarge contentBoxLargeManage userNotesBox">
-  <div class = "title" style="background: #EF767A;">User Notes</div>
+  <div class = "title" style="background: #EF767A;"><?php echo $manage; ?> Note</div>
   <div class = "content">
 
     <?php
       if($val==""){
     ?>
 
-    Manage or add <?php echo $manage; ?> from this section.
-    <br>
 
-    <br>
-    Even though the system is suitable for mobile usage, for the best experience, use a desktop browser.
+    View, edit or delete the record by clicking the eye icon.
+    <?php if($manage!="levels")
+      echo 'The record can be archived by clicking the folder icon. <br><br>Note that
+      you cannot archive or delete records that are in use.';
+      else {
+          echo '<br><br> Note that you cannot delete records that are in use';
+      }?>
+
 
     <?php
       }
@@ -32,6 +36,9 @@
         }
         else if($val=="nosuchrecord"){
           echo 'Error! No Such Record was Found';
+        }
+        else if($val == "editpasssuccess"){
+          echo 'Successfully Edited Password';
         }
         else{
           header("Location:..");
