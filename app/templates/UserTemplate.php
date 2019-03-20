@@ -74,7 +74,7 @@
 								<img src = "/GroupProject/public/resources/images/avatar.svg" alt = "">
 								Bishownath Dhakal &nbsp;
 								<!-- https://www.w3schools.com/howto/howto_css_arrows.asp -->
-								<i class="downArrow"></i>
+								<i id = "arrow" class="downArrow rightArrow"></i>
 
 
 								<div id="myDropdown" class="dropdown-content">

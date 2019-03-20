@@ -58,6 +58,24 @@ class DatabaseTable{
 	    return $stmt;
 	}
 
+
+	function findSorted($field, $value, $sorter){
+		global $pdo;
+		$stmt = $pdo->prepare('SELECT * FROM '.$this->table.' WHERE '.$field.'=:value ORDER BY '.$sorter . ' ASC');
+		$criteria = [
+						'value' => $value
+		];
+		$stmt->execute($criteria);
+		return $stmt;
+	}
+
+	function findAllSorted($sorter){
+		global $pdo;
+		$stmt = $pdo->prepare('SELECT * FROM ' . $this->table . ' ORDER BY '.$sorter . ' ASC');
+		$stmt->execute();
+		return $stmt;
+	}
+
 	function findAllReverse($field) {
 	    global $pdo;
 	    $stmt = $pdo->prepare('SELECT * FROM ' . $this->table . ' ORDER BY '.$field . ' DESC');

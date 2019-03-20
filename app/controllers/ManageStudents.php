@@ -5,7 +5,7 @@
     public function index($val=""){
 
       $userClass = new DatabaseTable('users');
-      $users = $userClass->find('urole','Student');
+      $users = $userClass->findSorted('urole','Student', 'fname');
 
       $studentClass = new DatabaseTable('students');
       $students = $studentClass->findall();
@@ -30,8 +30,8 @@
       $courseClass = new DatabaseTable('courses');
       $levelClass = new DatabaseTable('levels');
 
-      $users = $userClass->find('urole','Module Leader');
-      $courses = $courseClass->findAll();
+      $users = $userClass->findSorted('urole','Module Leader', 'fname');
+      $courses = $courseClass->findAllSorted('ctitle');
       $levels = $levelClass->findAll();
 
       if(isset($_POST['submit'])){
@@ -71,8 +71,8 @@
       $user = $userClass->find('uid', $val);
       $student = $studentClass->find('suid',$val);
 
-      $users = $userClass->find('urole','Module Leader');
-      $courses = $courseClass->findAll();
+      $users = $userClass->findSorted('urole','Module Leader', 'fname');
+      $courses = $courseClass->findAllSorted('ctitle');
       $levels = $levelClass->findAll();
 
       if(isset($_POST['submit'])){

@@ -5,8 +5,8 @@
     public function index($val=""){
 
       $userClass = new DatabaseTable('users');
-      $users = $userClass->find('urole','Module Leader');
-
+      $users = $userClass->findSorted('urole','Module Leader', 'fname');
+            
       $moduleLeaderClass = new DatabaseTable('lecturers');
       $moduleLeaders = $moduleLeaderClass->findall();
 

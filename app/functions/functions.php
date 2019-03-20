@@ -26,4 +26,20 @@ function generateRandomColor(){
   return $colors[array_rand($colors)];
 }
 
+
+
+function checkDateStatus($sdate, $edate){
+  $today = date("Y-m-d");
+  if($edate<$today){
+    return "Ended";
+  }
+  else if($sdate<$today && $edate>$today){
+    return "Ongoing";
+  }
+  else{
+    return "Not Started";
+  }
+}
+
+
 ?>

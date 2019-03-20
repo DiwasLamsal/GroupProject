@@ -4,7 +4,7 @@
 
     public function index($val=""){
       $courseClass = new DatabaseTable('courses');
-      $courses = $courseClass->findAll();
+      $courses = $courseClass->findAllSorted('ctitle');
 
       $manage = "courses";
       $template = '../app/views/administrators/userNote.php';
@@ -22,8 +22,7 @@
       $courseClass = new DatabaseTable('courses');
 
       $userClass = new DatabaseTable('users');
-      $users = $userClass->find('urole','Module Leader');
-
+      $users = $userClass->findSorted('urole','Module Leader', 'fname');
 
       if(isset($_POST['submit'])){
         $_POST['course']['cstatus']="Y";
@@ -47,8 +46,8 @@
       $course = $courseClass->find('cid',$val);
 
       $userClass = new DatabaseTable('users');
-      $users = $userClass->find('urole','Module Leader');
-
+      $users = $userClass->findSorted('urole','Module Leader', 'fname');
+    
       $moduleClass = new DatabaseTable('modules');
       $modules = $moduleClass->find('mcid', $val);
 

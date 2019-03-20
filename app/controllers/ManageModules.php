@@ -4,7 +4,7 @@
 
     public function index($val=""){
       $moduleClass = new DatabaseTable('modules');
-      $modules = $moduleClass->findAll();
+      $modules = $moduleClass->findAllSorted('mcode');
 
       $manage = "modules";
       $template = '../app/views/administrators/userNote.php';
@@ -28,14 +28,32 @@
       $levelClass = new DatabaseTable('levels');
       $levels = $levelClass->findAll();
 
-      $users = $userClass->find('urole','Module Leader');
-      $courses = $courseClass->findAll();
+      $users = $userClass->findSorted('urole','Module Leader', 'fname');
+      $courses = $courseClass->findAllSorted('ctitle');
 
 
       if(isset($_POST['submit'])){
         $_POST['module']['mstatus']="Y";
 
         $moduleClass->save($_POST['module']);
+
+        $moduleId = $moduleClass->findLastRecordId('mid');
+        $moduleId = $moduleId->fetch()['mid'];
+
+        $_POST['term1']['tname']="Term I";
+        $_POST['term1']['tsdate']=$_POST['term1start'];
+        $_POST['term1']['tedate']=$_POST['term1end'];
+        $_POST['term1']['tstatus']= checkDateStatus($_POST['term1']['tsdate'], $_POST['term1']['tedate']);
+        $_POST['term1']['tmid']=$moduleId;
+
+        $_POST['term2']['tname']="Term II";
+        $_POST['term2']['tsdate']=$_POST['term2start'];
+        $_POST['term2']['tedate']=$_POST['term2end'];
+        $_POST['term2']['tstatus']= checkDateStatus($_POST['term2']['tsdate'], $_POST['term2']['tedate']);
+        $_POST['term2']['tmid']=$moduleId;
+
+        $termClass->save($_POST['term1']);
+        $termClass->save($_POST['term2']);
 
         header("Location:../ManageModules/index/addsuccess");
       }
@@ -63,16 +81,35 @@
       $courses = $courseClass->findAll();
 
       $module = $moduleClass->find('mid', $val);
+      $terms = $termClass->find('tmid', $val);
 
       if(isset($_POST['submit'])){
         $_POST['module']['mid']=$val;
         $moduleClass->save($_POST['module'], 'mid');
 
+        $terms = $termClass->find('tmid', $val);
+        $term1 = $terms->fetch();
+        $term2 = $terms->fetch();
+
+        $_POST['term1']['tid']=$term1['tid'];
+        $_POST['term1']['tsdate']=$_POST['term1start'];
+        $_POST['term1']['tedate']=$_POST['term1end'];
+        $_POST['term1']['tstatus']= checkDateStatus($_POST['term1']['tsdate'], $_POST['term1']['tedate']);
+
+        $_POST['term2']['tid']=$term2['tid'];
+        $_POST['term2']['tsdate']=$_POST['term2start'];
+        $_POST['term2']['tedate']=$_POST['term2end'];
+        $_POST['term2']['tstatus']= checkDateStatus($_POST['term2']['tsdate'], $_POST['term2']['tedate']);
+
+        $termClass->save($_POST['term1'], 'tid');
+        $termClass->save($_POST['term2'], 'tid');
+
         header("Location:../ManageModules/index/addsuccess");
       }
 
       $template = '../app/views/administrators/addModule.php';
-      $content = loadTemplate($template, ['module'=>$module, 'users'=>$users, 'courses'=>$courses, 'levels'=>$levels]);
+      $content = loadTemplate($template, ['module'=>$module,
+      'users'=>$users, 'courses'=>$courses, 'levels'=>$levels, 'terms'=>$terms]);
 
       $title = "Admin - Browse Module";
 

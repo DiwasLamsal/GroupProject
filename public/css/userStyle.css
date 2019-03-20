@@ -207,10 +207,15 @@ header input[type=submit]{
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 3px;
-  transform: rotate(45deg) translateY(-5px);
-  -webkit-transform: rotate(45deg) translateY(-5px);
+  transition: transform .2s;
+  transform: rotate(45deg) translateY(-3px);
+  -webkit-transform: rotate(45deg) translateY(-3px);
 }
 
+.rightArrow{
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
 
 
 /* Header Dropdown */

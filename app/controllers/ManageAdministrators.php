@@ -4,7 +4,7 @@ class ManageAdministrators extends Controller{
 
   public function index($val=""){
     $userClass = new DatabaseTable('users');
-    $users = $userClass->find('urole', 'Administrator');
+    $users = $userClass->findSorted('urole','Administrator', 'fname');
 
     $manage = "administrator";
     $template = '../app/views/administrators/userNote.php';

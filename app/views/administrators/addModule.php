@@ -8,6 +8,10 @@ if(isset($module)){
   $mCourse = getCourseById($module['mcid'])->fetch();
   $mLevel = getLevelById($module['mlvid'])->fetch();
 
+  $term1 = $terms->fetch();
+  $term2 = $terms->fetch();
+
+
 ?>
 
 
@@ -73,11 +77,23 @@ if(isset($module)){
       echo $link;
     ?>
     <br>
+    <br><hr>
+    <br>
+
+    <b>Term I Status: </b><?php echo $term1['tstatus'];?><br>
+    <b>Term I Start Date: </b><?php echo date("l\, jS-F-Y", strtotime($term1['tsdate']));?><br>
+    <b>Term I End Date: </b><?php echo date("l\, jS-F-Y", strtotime($term1['tedate']));?><br>
+
+    <br><hr><br>
+
+    <b>Term II Status: </b><?php echo $term2['tstatus'];?><br>
+    <b>Term II Start Date: </b><?php echo date("l\, jS-F-Y", strtotime($term2['tsdate']));?><br>
+    <b>Term II End Date: </b><?php echo date("l\, jS-F-Y", strtotime($term2['tedate']));?><br>
+
 
   </div>
 
 </div>
-
 
 
 <?php
@@ -129,7 +145,7 @@ if(isset($module)){
             continue;
       ?>
         <option value = "<?php echo $course['cid'];?>"
-          <?php if(isset($enCourse)&& $student['cid']==$course['cid'])echo 'selected';?>>
+          <?php if(isset($mCourse)&& $module['mcid']==$course['cid'])echo 'selected';?>>
           <?php echo $course['ctitle'];?>
         </option>
       <?php }?>
@@ -150,14 +166,6 @@ if(isset($module)){
       <?php }?>
     </select>
 
-
-  </div>
-
-
-    <div class = "formColumnSeparator"></div>
-
-  <div class = "formColumn2">
-
     <label>Module Code: </label>
     <input type = "text" name = "module[mcode]" required
     <?php if(isset($module))echo 'value="'.$module['mcode'].'"';?>>
@@ -167,6 +175,33 @@ if(isset($module)){
     <textarea style="height: 108px;" name = "module[mdescription]"><?php if(isset($module))echo $module['mdescription'];?></textarea>
 
 
+  </div>
+
+
+    <div class = "formColumnSeparator"></div>
+
+  <div class = "formColumn2">
+
+    <h3 style="text-align: center;">Terms</h3>
+    <br>
+
+
+    <label>Term I Start Date: </label>
+    <input type = "date" name = "term1start" id = "datePickerToday"
+    value = "<?php if(isset($module)) echo $term1['tsdate']; ?>">
+    <label>Term I End Date: </label>
+    <input type = "date" name = "term1end" id = "datePickerFiveMonths"
+    value = "<?php if(isset($module)) echo $term1['tedate']; ?>">
+
+    <br>
+    <br>
+
+    <label>Term II Start Date: </label>
+    <input type = "date" id = "datePickerFiveMonthsII" name = "term2start"
+    value = "<?php if(isset($module)) echo $term2['tsdate']; ?>">
+    <label>Term II End Date: </label>
+    <input type = "date" id = "datePickerTenMonths" name = "term2end"
+    value = "<?php if(isset($module)) echo $term2['tedate']; ?>">
 
 
   </div>
@@ -177,3 +212,5 @@ if(isset($module)){
 
 
 </form>
+
+<?php if(!isset($module)) echo '<script>setDate();</script>'?>

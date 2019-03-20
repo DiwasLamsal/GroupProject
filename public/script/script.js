@@ -1,5 +1,6 @@
 window.onload = function(){
 
+
   // Timeout just to test the function
   setTimeout(function(){
     document.getElementsByClassName('load')[0].style.display = "none";
@@ -9,10 +10,29 @@ window.onload = function(){
   var dropdown = document.getElementById('dropdown');
   dropdown.addEventListener('click', function(){
     document.getElementById("myDropdown").classList.toggle("show");
+    document.getElementById("arrow").classList.toggle("rightArrow");
   });
 
 }
 
+
+
+function setDate(){
+  //Set date value
+  var date = new Date();
+  document.getElementById('datePickerToday').valueAsDate = date;
+
+  // Assumed 30 days per month
+  var date2 = new Date();
+  date2.setDate(date.getDate()+6*30);
+  document.getElementById('datePickerFiveMonths').valueAsDate = date2;
+  document.getElementById('datePickerFiveMonthsII').valueAsDate = date2;
+
+  var date3 = new Date();
+  date3.setDate(date.getDate()+365);
+  document.getElementById('datePickerTenMonths').valueAsDate = date3;
+
+}
 
 //-------------------------------------------------------------------------------------//
 
