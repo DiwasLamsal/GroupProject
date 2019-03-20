@@ -44,9 +44,7 @@ else{
 	<main>
 
 	  <nav>
-			<a href = "/GroupProject/public/Home">
 				<img src = "/GroupProject/public/resources/images/logorectangle.bmp" alt = "" width="99.8%">
-			</a>
 
 			<ul>
 
