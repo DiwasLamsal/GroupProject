@@ -1,5 +1,3 @@
-<?php?>
-
 
 <div class = "boxesContainer boxesContainerManage">
 
