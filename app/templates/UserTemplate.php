@@ -76,16 +76,24 @@
 
 
 				<div id = "headerRight">
+						<div id = "dropdown">
+							<h5>
+								<img src = "/GroupProject/public/resources/images/avatar.svg" alt = "">
+								Bishownath Dhakal &nbsp;
+								<!-- https://www.w3schools.com/howto/howto_css_arrows.asp -->
+								<i class="downArrow"></i>
 
-					<span id = "userActions">
-						<h5>
-							<img src = "/GroupProject/public/resources/images/avatar.svg" alt = "">
-							Bishownath Dhakal &nbsp;
-							<!-- https://www.w3schools.com/howto/howto_css_arrows.asp -->
-							<i class="downArrow"></i>
-						</h5>
-					</span>
 
+								<div id="myDropdown" class="dropdown-content">
+							    <a href="#">Logout</a>
+									<a href="#">View Profile</a>
+							  </div>
+							</h5>
+
+							<!-- https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown -->
+
+
+						</span>
 				</div>
 
 			</header>

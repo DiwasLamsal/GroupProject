@@ -227,7 +227,6 @@ header input[type=submit]{
 
 
 #headerRight{
-  padding: 1%;
   width: 31.4%;
   background: white;
   color: black;
@@ -244,17 +243,56 @@ header input[type=submit]{
 }
 
 
+
+/* Header Dropdown */
+
+#dropdown{
+  display: inline-block;
+  position: relative;
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 15px;
+  transition: .1s;
+}
+
+
+#dropdown:hover{
+  cursor: pointer;
+  background: lightblue;
+}
+
+
 #headerRight img{
   width: 30px;
+  margin-top: 10px;
   margin-bottom: -10px;
   margin-right: 5px;
 }
 
-
-#userActions:hover{
-
-  cursor: pointer;
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  margin-top: 20px;
+  margin-left: -10px;
+  background-color: #f1f1f1;
+  min-width: 185px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
 }
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+.show {display:block;}
 
 
 .contentArea{
