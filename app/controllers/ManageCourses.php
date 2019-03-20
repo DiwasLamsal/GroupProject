@@ -11,7 +11,7 @@
       $note = loadTemplate($template, ['val'=>$val, 'manage'=>$manage]);
 
       $template = '../app/views/administrators/manageCourses.php';
-      $content = loadTemplate($template, ['courses'=>$courses, 'val'=>$val, 'note'=>$note]);
+      $content = loadTemplate($template, ['courses'=>$courses, 'val'=>$val, 'note'=>$note, $role=>'Administrator']);
 
       $title = "Admin - Courses";
       require_once "../app/controllers/adminLoadView.php";
@@ -33,7 +33,7 @@
       }
 
       $template = '../app/views/administrators/addCourse.php';
-      $content = loadTemplate($template, ['users'=>$users]);
+      $content = loadTemplate($template, ['users'=>$users, $role=>'Administrator']);
 
       $title = "Admin - Add new Course";
 
@@ -47,7 +47,7 @@
 
       $userClass = new DatabaseTable('users');
       $users = $userClass->findSorted('urole','Module Leader', 'fname');
-    
+
       $moduleClass = new DatabaseTable('modules');
       $modules = $moduleClass->find('mcid', $val);
 
@@ -61,7 +61,7 @@
           header("Location:../index/editsuccess");
         }
         $template = '../app/views/administrators/addCourse.php';
-        $content = loadTemplate($template, ['users'=>$users, 'course'=>$course, 'modules'=>$modules]);
+        $content = loadTemplate($template, ['users'=>$users, 'course'=>$course, $role=>'Administrator', 'modules'=>$modules]);
 
         $title = "Admin - Browse Course";
         require_once "../app/controllers/adminLoadView.php";

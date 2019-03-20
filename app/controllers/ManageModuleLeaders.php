@@ -6,7 +6,7 @@
 
       $userClass = new DatabaseTable('users');
       $users = $userClass->findSorted('urole','Module Leader', 'fname');
-            
+
       $moduleLeaderClass = new DatabaseTable('lecturers');
       $moduleLeaders = $moduleLeaderClass->findall();
 
@@ -15,7 +15,7 @@
       $note = loadTemplate($template, ['val'=>$val, 'manage'=>$manage]);
 
       $template = '../app/views/administrators/manageModuleLeaders.php';
-      $content = loadTemplate($template, ['val'=>$val, 'users'=>$users,'note'=>$note, 'moduleLeaders'=>$moduleLeaders]);
+      $content = loadTemplate($template, ['val'=>$val, 'users'=>$users,'note'=>$note, 'moduleLeaders'=>$moduleLeaders, $role=>'Administrator']);
 
       $title = "Admin - Module Leaders";
 
@@ -46,7 +46,7 @@
       }
 
       $template = '../app/views/administrators/addModuleLeader.php';
-      $content = loadTemplate($template, []);
+      $content = loadTemplate($template, [ $role=>'Administrator']);
 
       $title = "Admin - Add new Module Leader";
 
@@ -86,7 +86,7 @@
         }
 
         $template = '../app/views/administrators/addModuleLeader.php';
-        $content = loadTemplate($template, ['user'=>$user, 'moduleLeader'=>$moduleLeader, 'modules'=>$modules]);
+        $content = loadTemplate($template, ['user'=>$user, 'moduleLeader'=>$moduleLeader, 'modules'=>$modules,  $role=>'Administrator']);
 
         $title = "Admin - Browse Module Leader";
         require_once "../app/controllers/adminLoadView.php";

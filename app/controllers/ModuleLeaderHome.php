@@ -1,6 +1,6 @@
 <?php
 
-  class AdminHome extends Controller{
+  class ModuleLeaderHome extends Controller{
 
     public function index(){
       $announcementClass = new DatabaseTable('announcements');
@@ -30,7 +30,7 @@
       ];
 
       $template = '../app/views/administrators/adminHome.php';
-      $content = loadTemplate($template, ['announcements'=>$announcements, 'count'=>$countArray, $role=>'Administrator']);
+      $content = loadTemplate($template, ['announcements'=>$announcements, 'count'=>$countArray, $role=>'Module Leader']);
 
       $title = "Admin - Dashboard";
 

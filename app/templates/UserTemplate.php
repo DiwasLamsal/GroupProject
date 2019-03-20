@@ -1,11 +1,17 @@
 <?php
 
-// if (session_status() == PHP_SESSION_NONE) {
-// 	session_start();
-// }
-// if(!isset($_SESSION['loggedin'])){
-// 	header("Location: /CollegeAssignment/public/NotLoggedIn");
-// }
+if (session_status() == PHP_SESSION_NONE) {
+	session_start();
+}
+if(!isset($_SESSION['loggedin'])){
+	header("Location: /GroupProject/public/Home");
+}
+else{
+	if($role!=$_SESSION['loggedin']['urole']){
+		header("Location: /GroupProject/public/Logout");
+	}
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -72,7 +78,7 @@
 						<div id = "dropdown">
 							<h5>
 								<img src = "/GroupProject/public/resources/images/avatar.svg" alt = "">
-								Bishownath Dhakal &nbsp;
+								<?php if(isset($_SESSION['loggedin'])) echo $_SESSION['loggedin']['fname'].' '.$_SESSION['loggedin']['lname']; ?> &nbsp;
 								<!-- https://www.w3schools.com/howto/howto_css_arrows.asp -->
 								<i id = "arrow" class="downArrow rightArrow"></i>
 

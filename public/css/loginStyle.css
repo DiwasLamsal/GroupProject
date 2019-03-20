@@ -15,7 +15,7 @@ body{
   text-align: center;
   background: white;
   margin: auto;
-  margin-top: 15vh;
+  margin-top: 10vh;
   padding-top: 4vh;
   padding-bottom: 6vh;
   padding-right: 4vw;
@@ -28,24 +28,44 @@ body{
   margin-top: 40px;
 }
 
-.loginFormContainer form input{
-  width: 290px;
-  height: 40px;
-  display: block;
-  margin: auto;
-  margin-top: 10px;
-  padding: 5px;
-}
+
 
 .loginFormContainer form input[type=text], .loginFormContainer form input[type=password]{
+  width: 95%;
+  margin: 5px;
+  display: block;
+  height: 50px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
   border: none;
-  border: 1px solid lightgrey;
+  border-bottom: 1px solid lightgray;
+  outline: none;
+  -webkit-transition: border-bottom 0.5s;
+  transition: border-bottom 0.5s;
+  font-size: calc(0.5rem + 10px);
 }
 
 .loginFormContainer form input[type=submit]{
-  margin-top: 30px;
-  width: 305px;
+  margin: 1%;
+  margin-top: 25px;
+  width: 98%;
   height: 50px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  background: #8075B6;
+  transition: background .3s;
+  font-family: 'Bitter', serif;
+  font-size: 18px;
+}
+
+.loginFormContainer input:not([type="submit"]):focus{
+  border-bottom: 1px solid black;
+}
+
+.loginFormContainer input[type=submit]:hover{
+  cursor: pointer;
+  background: #8785B6;
 }
 
 

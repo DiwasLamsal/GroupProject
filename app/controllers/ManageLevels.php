@@ -12,7 +12,7 @@
 
 
       $template = '../app/views/administrators/manageLevels.php';
-      $content = loadTemplate($template, ['levels'=>$levels, 'val'=>$val, 'note'=>$note]);
+      $content = loadTemplate($template, ['levels'=>$levels, 'val'=>$val, 'note'=>$note, $role=>'Administrator']);
 
       $title = "Admin - Levels";
 

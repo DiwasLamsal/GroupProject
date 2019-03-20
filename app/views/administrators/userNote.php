@@ -1,5 +1,5 @@
 <div class = "contentBoxLarge contentBoxLargeManage userNotesBox">
-  <div class = "title" style="background: #EF767A;"><?php echo $manage; ?> Note</div>
+  <div class = "title" style="background: #EF767A;">Note</div>
   <div class = "content">
 
     <?php
@@ -7,7 +7,7 @@
     ?>
 
 
-    View, edit or delete the record by clicking the eye icon.
+    View, edit or delete the <?php echo $manage; ?> by clicking the eye icon.
     <?php if($manage!="levels")
       echo 'The record can be archived by clicking the folder icon. <br><br>Note that
       you cannot archive or delete records that are in use.';
