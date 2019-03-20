@@ -48,7 +48,7 @@
           header("Location:../index/editsuccess");
         }
         $template = '../app/views/administrators/addAnnouncement.php';
-        $content = loadTemplate($template, ['announcement'=>$announcement, 'role'=>'Administrator']);
+        $content = loadTemplate($template, ['announcement'=>$announcement]);
 
         $title = "Admin - Browse Announcement";
         require_once "../app/controllers/adminLoadView.php";

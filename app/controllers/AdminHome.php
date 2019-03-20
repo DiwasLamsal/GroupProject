@@ -30,7 +30,7 @@
       ];
 
       $template = '../app/views/administrators/adminHome.php';
-      $content = loadTemplate($template, ['announcements'=>$announcements, 'count'=>$countArray, 'role'=>'Administrator']);
+      $content = loadTemplate($template, ['announcements'=>$announcements, 'count'=>$countArray]);
 
       $title = "Admin - Dashboard";
 

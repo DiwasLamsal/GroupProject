@@ -11,7 +11,7 @@ class ManageAdministrators extends Controller{
     $note = loadTemplate($template, ['val'=>$val, 'manage'=>$manage]);
 
     $template = '../app/views/administrators/manageAdministrators.php';
-    $content = loadTemplate($template, ['val'=>$val, 'users'=>$users, 'note'=>$note, 'role'=>'Administrator']);
+    $content = loadTemplate($template, ['val'=>$val, 'users'=>$users, 'note'=>$note]);
 
     $title = "Admin - Staff";
     require_once "../app/controllers/adminLoadView.php";
@@ -57,7 +57,7 @@ class ManageAdministrators extends Controller{
       }
 
       $template = '../app/views/administrators/addAdministrator.php';
-      $content = loadTemplate($template, ['user'=>$user, 'role'=>'Administrator']);
+      $content = loadTemplate($template, ['user'=>$user]);
 
       $title = "Admin - Browse Administrator";
       require_once "../app/controllers/adminLoadView.php";

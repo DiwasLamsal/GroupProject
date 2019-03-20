@@ -6,7 +6,8 @@ $template = '../app/templates/UserTemplate.php';
 $contents = [
   'title'=>$title,
   'navigation'=>$navigation,
-  'content'=>$content
+  'content'=>$content,
+  'role'=>'Administrator'
 ];
 $content = loadTemplate($template, $contents);
 
