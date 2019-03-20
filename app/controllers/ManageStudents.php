@@ -15,7 +15,7 @@
       $note = loadTemplate($template, ['val'=>$val, 'manage'=>$manage]);
 
       $template = '../app/views/administrators/manageStudents.php';
-      $content = loadTemplate($template, ['val'=>$val, 'users'=>$users,'note'=>$note, 'students'=>$students, $role=>'Administrator']);
+      $content = loadTemplate($template, ['val'=>$val, 'users'=>$users,'note'=>$note, 'students'=>$students, 'role'=>'Administrator']);
 
       $title = "Admin - Students";
 
@@ -52,7 +52,7 @@
       }
 
       $template = '../app/views/administrators/addStudent.php';
-      $content = loadTemplate($template, ['users'=>$users, 'courses'=>$courses, 'levels'=>$levels, $role=>'Administrator']);
+      $content = loadTemplate($template, ['users'=>$users, 'courses'=>$courses, 'levels'=>$levels, 'role'=>'Administrator']);
 
       $title = "Admin - Admit new Student";
 
@@ -99,7 +99,7 @@
 
       $template = '../app/views/administrators/addStudent.php';
       $content = loadTemplate($template, ['users'=>$users, 'courses'=>$courses, 'levels'=>$levels,
-        'user'=>$user, 'student'=>$student, $role=>'Administrator']);
+        'user'=>$user, 'student'=>$student, 'role'=>'Administrator']);
 
       $title = "Admin - Browse Student";
 

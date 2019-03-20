@@ -11,7 +11,7 @@
       $note = loadTemplate($template, ['val'=>$val, 'manage'=>$manage]);
 
       $template = '../app/views/administrators/manageAnnouncements.php';
-      $content = loadTemplate($template, ['announcements'=>$announcements, 'val'=>$val, 'note'=>$note,  $role=>'Administrator']);
+      $content = loadTemplate($template, ['announcements'=>$announcements, 'val'=>$val, 'note'=>$note,  'role'=>'Administrator']);
 
       $title = "Admin - Announcements";
 
@@ -29,7 +29,7 @@
       }
 
       $template = '../app/views/administrators/addAnnouncement.php';
-      $content = loadTemplate($template, [$role=>'Administrator']);
+      $content = loadTemplate($template, ['role'=>'Administrator']);
 
       $title = "Admin - Add new Announcement";
 
@@ -48,7 +48,7 @@
           header("Location:../index/editsuccess");
         }
         $template = '../app/views/administrators/addAnnouncement.php';
-        $content = loadTemplate($template, ['announcement'=>$announcement, $role=>'Administrator']);
+        $content = loadTemplate($template, ['announcement'=>$announcement, 'role'=>'Administrator']);
 
         $title = "Admin - Browse Announcement";
         require_once "../app/controllers/adminLoadView.php";
