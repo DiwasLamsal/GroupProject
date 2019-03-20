@@ -65,10 +65,10 @@ else{
 				</div>
 
 				<div id = "headerMiddle">
-					<form method = "get">
-						<input type = "text" name = "search" placeholder="Search Student">
-						<input type = "submit" value = "Go">
-					</form>
+
+
+					<h3 style="text-align: center;"><?php echo date("l, F j, Y"); ?></h3>
+
 				</div>
 
 

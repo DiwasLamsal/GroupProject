@@ -8,7 +8,7 @@
       $template = '../app/views/students/studentHome.php';
       $content = loadTemplate($template, []);
 
-      $title = "Admin - Dashboard";
+      $title = "Student - Dashboard";
 
       require_once "../app/controllers/StudentLoadView.php";
 

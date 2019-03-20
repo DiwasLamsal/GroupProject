@@ -7,44 +7,9 @@
   </a>
 </li>
 
-<li>
-  <a href = "/GroupProject/public/ManageAdministrators">
-    <div style="width: 100%; height: 100%;">
-      <img src = "/GroupProject/public/resources/images/administratoricon.png">
-      <span class = "navText">&nbsp; Administrators</span>
-    </div>
-  </a>
-</li>
 
 <li>
-  <a href = "/GroupProject/public/ManageModuleLeaders">
-    <div style="width: 100%; height: 100%;">
-      <img src = "/GroupProject/public/resources/images/lecturericon.png">
-      <span class = "navText">&nbsp; Module Leaders</span>
-    </div>
-  </a>
-</li>
-
-<li>
-  <a href = "/GroupProject/public/ManageStudents">
-    <div style="width: 100%; height: 100%;">
-      <img src = "/GroupProject/public/resources/images/studenticon.png">
-      <span class = "navText">&nbsp; Students</span>
-    </div>
-  </a>
-</li>
-
-<li>
-  <a href = "/GroupProject/public/ManageCourses">
-    <div style="width: 100%; height: 100%;">
-      <img src = "/GroupProject/public/resources/images/course.png">
-      <span class = "navText">&nbsp; Courses</span>
-    </div>
-  </a>
-</li>
-
-<li>
-  <a href = "/GroupProject/public/ManageModules">
+  <a href = "/GroupProject/public/StudentModules">
     <div style="width: 100%; height: 100%;">
       <img src = "/GroupProject/public/resources/images/module.png">
       <span class = "navText">&nbsp; Modules</span>
@@ -53,7 +18,7 @@
 </li>
 
 <li>
-  <a href = "/GroupProject/public/ManageAnnouncements">
+  <a href = "/GroupProject/public/StudentAnnouncements">
     <div style="width: 100%; height: 100%;">
       <img src = "/GroupProject/public/resources/images/addannouncement.png">
       <span class = "navText">&nbsp; Announcements</span>
@@ -62,10 +27,10 @@
 </li>
 
 <li>
-  <a href = "/GroupProject/public/ManageLevels">
+  <a href = "/GroupProject/public/StudentGrades">
     <div style="width: 100%; height: 100%;">
       <img src = "/GroupProject/public/resources/images/levelicon.png">
-      <span class = "navText">&nbsp; Levels</span>
+      <span class = "navText">&nbsp; Grades</span>
     </div>
   </a>
 </li>
