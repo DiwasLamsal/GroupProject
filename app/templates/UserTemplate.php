@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="/GroupProject/public/css/userStyle.css"/>
 	<title><?php echo $title;?></title>
 	<script src = "/GroupProject/public/script/script.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -54,17 +55,9 @@
 			<header>
 
 				<div id = "headerLeft">
-
-					<div style = "float:left;" id = "hamburger">
-						<div class = "bar bone"></div>
-						<div class = "bar btwo"></div>
-						<div class = "bar bthree"></div>
-					</div>
-
-					<h4 style="background: blueviolet; color: white; width: 60%; float: right;">
-						Academic Year <?php echo date("Y");?>
+					<h4 style="background: blueviolet; color: white; width: 70%; margin: auto;">
+						Academic Year <?php echo date("Y").' - '.(date("Y")+1);?>
 					</h4>
-
 				</div>
 
 				<div id = "headerMiddle">

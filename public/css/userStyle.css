@@ -96,7 +96,6 @@ main{
 }
 
 
-
 nav{
   width: 18%;
   background: #3A6C79;
@@ -106,8 +105,9 @@ nav{
 nav ul{
   list-style: none;
   margin-top: 3px;
-  font-size: 20px;
+  font-size: calc(0.5vw + 10px);
 }
+
 
 nav ul li{
   background: #0F4C5C;
@@ -167,38 +167,6 @@ header{
   text-align: center;
 }
 
-/* hamburger */
-
-#hamburger{
-  background: white;
-  padding: 3px;
-  transition: transform 0.2s;
-}
-
-#hamburger:hover{
-  transform: scale(1.05);
-  background: rgb(250, 250, 250);
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-#hamburger:hover .bar{
-  background: brown;
-}
-
-.bar{
-  width: 30px;
-  height: 4px;
-  margin-bottom: 4px;
-  background: black;
-  border-radius: 5px;
-  transition: background 0.2s;
-}
-
-.bthird{
-  margin-bottom: 0px;
-}
-
 
 
 #headerMiddle{
@@ -212,7 +180,8 @@ header{
 
 header input[type=text]{
   margin-top: -3px;
-  width: 200px;
+  width: calc(40% + 50px);
+  max-width: 200px;
   height: 30px;
   display: inline-block;
   padding-left: 10px;
@@ -252,13 +221,13 @@ header input[type=submit]{
   height: 100%;
   padding-left: 10px;
   padding-right: 15px;
-  transition: .1s;
+  transition: background .1s;
 }
 
 
 #dropdown:hover{
   cursor: pointer;
-  background: lightblue;
+  background: #E0FFFF;
 }
 
 
@@ -277,7 +246,7 @@ header input[type=submit]{
   margin-left: -10px;
   background-color: #f1f1f1;
   min-width: 185px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.8);
   z-index: 1;
 }
 
@@ -287,10 +256,11 @@ header input[type=submit]{
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  transition: background-color .1s, color .1s;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd}
+.dropdown-content a:hover {background-color: #3498DB; color: white; opacity: 0.6;}
 
 .show {display:block;}
 
@@ -688,9 +658,93 @@ footer{
 }
 
 
+/**********************************************************************************************/
+/**********************************************************************************************/
+/**********************************************************************************************/
+/**********************************************************************************************/
+/**********************************************************************************************/
+/**********************************************************************************************/
+/**********************************************************************************************/
+/**********************************************************************************************/
+
+
+/* Media Queries */
+@media only screen and (max-width: 800px) {
+  body {
+    background-color: lightblue;
+  }
+
+
+  #headerLeft{
+    display: none;
+  }
+
+  #headerMiddle{
+    display: none;
+  }
+
+  #headerRight{
+    width: 100%;
+    height: 50px;
+  }
 
 
 
+  nav{
+    text-align: center;
+  }
+
+
+
+  nav ul li div{
+    padding: 15px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  nav ul li div img{
+    transform: translateY(3px);
+    width: 30px;
+  }
+
+
+  .navText{
+    display: none;
+  }
+
+  .boxesContainer{
+    flex-direction: column;
+  }
+  .adminDashboardBox, .contentBoxLarge{
+    width: 98%;
+  }
+
+  .adminManageTable{
+    overflow-x: scroll;
+  }
+
+  .formHolder{
+    flex-direction: column;
+  }
+
+  .formColumn1, .formColumn2{
+    width: 100%;
+  }
+
+  .formColumnSeparator{
+    display: none;
+  }
+
+}
+
+/**********************************************************************************************/
+/**********************************************************************************************/
+/**********************************************************************************************/
+/**********************************************************************************************/
+/**********************************************************************************************/
+/**********************************************************************************************/
+/**********************************************************************************************/
+/**********************************************************************************************/
 
 
 
