@@ -12,7 +12,7 @@
 
   <?php
     echo $note;
-  ?>
+  ?> 
 
 </div>
 
