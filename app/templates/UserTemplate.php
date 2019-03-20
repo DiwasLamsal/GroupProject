@@ -3,14 +3,16 @@
 if (session_status() == PHP_SESSION_NONE) {
 	session_start();
 }
-if(!isset($_SESSION['loggedin'])){
-	header("Location: /GroupProject/public/Home");
-}
-else{
-	if($role!=$_SESSION['loggedin']['urole']){
-		header("Location: /GroupProject/public/Logout");
-	}
-}
+
+// if(!isset($_SESSION['loggedin'])){
+// 	header("Location: /GroupProject/public/Home");
+// }
+// else{
+// 	if($role!=$_SESSION['loggedin']['urole']){
+// 		header("Location: /GroupProject/public/Logout");
+// 	}
+// }
+
 
 ?>
 

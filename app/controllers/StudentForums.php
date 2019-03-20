@@ -5,7 +5,7 @@
     public function index(){
 
 
-      $template = '../app/views/students/studentHome.php';
+      $template = '../app/views/students/studentForums.php';
       $content = loadTemplate($template, []);
 
       $title = "Student - Forums";

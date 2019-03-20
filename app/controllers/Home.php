@@ -5,7 +5,13 @@
     public function index(){
       session_start();
       if(isset($_SESSION['loggedin'])){
-        header("Location:AdminHome");
+        if($_SESSION['loggedin']['urole']=="Administrator")
+          header("Location:AdminHome");
+        else if($_SESSION['loggedin']['urole']=="Student")
+          header("Location:StudentHome");
+        else if($_SESSION['loggedin']['urole']=="Module Leader")
+          header("Location:ModuleLeaderHome");
+
       }
       else{
         header("Location:login");

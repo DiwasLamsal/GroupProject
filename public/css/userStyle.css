@@ -200,6 +200,7 @@ header input[type=submit]{
   background: white;
   color: black;
   text-align: center;
+  user-select: none;
 }
 
 .downArrow {

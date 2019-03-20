@@ -5,7 +5,7 @@
     public function index(){
 
 
-      $template = '../app/views/students/studentHome.php';
+      $template = '../app/views/students/studentModules.php';
       $content = loadTemplate($template, []);
 
       $title = "Student - Modules";
