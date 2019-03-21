@@ -136,8 +136,13 @@ nav ul li:hover{
 }
 
 nav .selected{
-  background: rgba(250, 128, 114, 0.9);
+  background: rgba(250, 128, 114, 0.5);
+
 }
+nav .dashboard{
+  background: rgba(100, 220, 100, 0.5);
+}
+
 
 nav ul li:hover .navText{
   margin-left: 10px;
@@ -543,6 +548,7 @@ footer{
 .deleteBox{
   width: 25%;
   background: rgb(250, 80, 80);
+  max-height: 250px;
 }
 
 .addNewBox:hover, .deleteBox:hover{

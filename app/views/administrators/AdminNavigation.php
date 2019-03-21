@@ -1,6 +1,6 @@
 <li>
   <a href = "/GroupProject/public/AdminHome">
-    <div style="width: 100%; height: 100%;" <?php if($selected=="Dashboard") echo 'class = "selected"';?>>
+    <div style="width: 100%; height: 100%;" <?php if($selected=="Dashboard") echo 'class = "dashboard"';?>>
       <img src = "/GroupProject/public/resources/images/dashboardicon.png">
       <span class = "navText">&nbsp; Dashboard</span>
     </div>
