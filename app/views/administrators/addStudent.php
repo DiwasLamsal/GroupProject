@@ -92,8 +92,8 @@ if(isset($student))
 
 <div class = "adminManageTable">
 
-  <div class = "tableTitle" style="background: green;">
-    <h1 class = "tableHeading">Student Modules</h1>
+  <div class = "tableTitle" style="background: slateblue;">
+    <h1 class = "tableHeading">Student Case Paper</h1>
   </div>
 
   <div class = "content" style="text-align: left; margin: 15px; line-height: 1.6;">
@@ -103,7 +103,7 @@ if(isset($student))
 
 <form method = "POST" class = "userForm">
 
-  <div class = "formTitle" style="background: orangered;">
+  <div class = "formTitle formEditPassword">
     <h1 class = "formHeading">
       <?php if(isset($user))echo 'Change '.$user['fname'].' '.$user['mname'].' '.$user['lname'].'\'s Password';?>
     </h1>

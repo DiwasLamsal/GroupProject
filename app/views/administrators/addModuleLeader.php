@@ -102,7 +102,7 @@ if(isset($moduleLeader))
 
 <form method = "POST" class = "userForm">
 
-  <div class = "formTitle" style="background: orangered;">
+  <div class = "formTitle formEditPassword">
     <h1 class = "formHeading">
       <?php if(isset($user))echo 'Change '.$user['fname'].' '.$user['mname'].' '.$user['lname'].'\'s Password';?>
     </h1>

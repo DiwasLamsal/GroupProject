@@ -453,6 +453,10 @@ footer{
   border-top-right-radius: 5px;
 }
 
+.formEditPassword{
+  background: darkcyan;
+}
+
 .tableHeading, .formHeading{
   text-align: center;
 }
