@@ -13,7 +13,7 @@
 
       $template = '../app/views/administrators/manageLevels.php';
       $content = loadTemplate($template, ['levels'=>$levels, 'val'=>$val, 'note'=>$note]);
-
+      $selected = "Levels";
       $title = "Admin - Levels";
 
       require_once "../app/controllers/adminLoadView.php";
@@ -30,7 +30,7 @@
 
       $template = '../app/views/administrators/addLevel.php';
       $content = loadTemplate($template, []);
-
+      $selected = "Levels";
       $title = "Admin - Add new Level";
 
       require_once "../app/controllers/adminLoadView.php";
@@ -48,7 +48,7 @@
         }
         $template = '../app/views/administrators/addLevel.php';
         $content = loadTemplate($template, ['level'=>$level]);
-
+        $selected = "Levels";
         $title = "Admin - Browse Level";
         require_once "../app/controllers/adminLoadView.php";
       }

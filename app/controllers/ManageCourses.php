@@ -12,7 +12,7 @@
 
       $template = '../app/views/administrators/manageCourses.php';
       $content = loadTemplate($template, ['courses'=>$courses, 'val'=>$val, 'note'=>$note]);
-
+      $selected = "Courses";
       $title = "Admin - Courses";
       require_once "../app/controllers/adminLoadView.php";
 
@@ -34,7 +34,7 @@
 
       $template = '../app/views/administrators/addCourse.php';
       $content = loadTemplate($template, ['users'=>$users]);
-
+      $selected = "Courses";
       $title = "Admin - Add new Course";
 
       require_once "../app/controllers/adminLoadView.php";
@@ -62,7 +62,7 @@
         }
         $template = '../app/views/administrators/addCourse.php';
         $content = loadTemplate($template, ['users'=>$users, 'course'=>$course, 'modules'=>$modules]);
-
+        $selected = "Courses";
         $title = "Admin - Browse Course";
         require_once "../app/controllers/adminLoadView.php";
       }

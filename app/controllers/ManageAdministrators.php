@@ -12,7 +12,7 @@ class ManageAdministrators extends Controller{
 
     $template = '../app/views/administrators/manageAdministrators.php';
     $content = loadTemplate($template, ['val'=>$val, 'users'=>$users, 'note'=>$note]);
-
+    $selected = "Administrators";
     $title = "Admin - Staff";
     require_once "../app/controllers/adminLoadView.php";
 
@@ -31,7 +31,7 @@ class ManageAdministrators extends Controller{
 
     $template = '../app/views/administrators/addAdministrator.php';
     $content = loadTemplate($template, ['role'=>'Administrator']);
-
+    $selected = "Administrators";
     $title = "Admin - Add new Staff";
 
     require_once "../app/controllers/adminLoadView.php";
@@ -58,7 +58,7 @@ class ManageAdministrators extends Controller{
 
       $template = '../app/views/administrators/addAdministrator.php';
       $content = loadTemplate($template, ['user'=>$user]);
-
+      $selected = "Administrators";
       $title = "Admin - Browse Administrator";
       require_once "../app/controllers/adminLoadView.php";
     }

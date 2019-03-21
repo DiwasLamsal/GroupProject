@@ -16,7 +16,7 @@
 
       $template = '../app/views/administrators/manageModuleLeaders.php';
       $content = loadTemplate($template, ['val'=>$val, 'users'=>$users,'note'=>$note, 'moduleLeaders'=>$moduleLeaders]);
-
+      $selected = "ModuleLeaders";
       $title = "Admin - Module Leaders";
 
       require_once "../app/controllers/adminLoadView.php";
@@ -47,7 +47,7 @@
 
       $template = '../app/views/administrators/addModuleLeader.php';
       $content = loadTemplate($template, [ 'role'=>'Administrator']);
-
+      $selected = "ModuleLeaders";
       $title = "Admin - Add new Module Leader";
 
       require_once "../app/controllers/adminLoadView.php";
@@ -87,7 +87,7 @@
 
         $template = '../app/views/administrators/addModuleLeader.php';
         $content = loadTemplate($template, ['user'=>$user, 'moduleLeader'=>$moduleLeader, 'modules'=>$modules,  'role'=>'Administrator']);
-
+        $selected = "ModuleLeaders";
         $title = "Admin - Browse Module Leader";
         require_once "../app/controllers/adminLoadView.php";
       }

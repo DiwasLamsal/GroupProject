@@ -33,6 +33,7 @@
       $content = loadTemplate($template, ['announcements'=>$announcements, 'count'=>$countArray]);
 
       $title = "Admin - Dashboard";
+      $selected = "Dashboard";
 
       require_once "../app/controllers/adminLoadView.php";
 

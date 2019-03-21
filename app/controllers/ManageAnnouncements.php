@@ -12,7 +12,7 @@
 
       $template = '../app/views/administrators/manageAnnouncements.php';
       $content = loadTemplate($template, ['announcements'=>$announcements, 'val'=>$val, 'note'=>$note,  'role'=>'Administrator']);
-
+      $selected = "Announcements";
       $title = "Admin - Announcements";
 
       require_once "../app/controllers/adminLoadView.php";
@@ -30,7 +30,7 @@
 
       $template = '../app/views/administrators/addAnnouncement.php';
       $content = loadTemplate($template, ['role'=>'Administrator']);
-
+      $selected = "Announcements";
       $title = "Admin - Add new Announcement";
 
       require_once "../app/controllers/adminLoadView.php";
@@ -49,7 +49,7 @@
         }
         $template = '../app/views/administrators/addAnnouncement.php';
         $content = loadTemplate($template, ['announcement'=>$announcement]);
-
+        $selected = "Announcements";
         $title = "Admin - Browse Announcement";
         require_once "../app/controllers/adminLoadView.php";
       }

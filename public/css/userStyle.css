@@ -135,9 +135,14 @@ nav ul li:hover{
   transition: .3s;
 }
 
+nav .selected{
+  background: rgba(250, 128, 114, 0.9);
+}
+
 nav ul li:hover .navText{
   margin-left: 10px;
 }
+
 
 
 
@@ -715,7 +720,6 @@ footer{
     text-align: center;
   }
 
-
   nav ul li div{
     padding: 15px;
     padding-left: 0;
@@ -726,6 +730,7 @@ footer{
     transform: translateY(3px);
     width: 30px;
   }
+
 
 
   .navText{

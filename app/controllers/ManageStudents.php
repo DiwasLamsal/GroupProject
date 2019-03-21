@@ -16,7 +16,7 @@
 
       $template = '../app/views/administrators/manageStudents.php';
       $content = loadTemplate($template, ['val'=>$val, 'users'=>$users,'note'=>$note, 'students'=>$students]);
-
+      $selected = "Students";
       $title = "Admin - Students";
 
       require_once "../app/controllers/adminLoadView.php";
@@ -53,7 +53,7 @@
 
       $template = '../app/views/administrators/addStudent.php';
       $content = loadTemplate($template, ['users'=>$users, 'courses'=>$courses, 'levels'=>$levels]);
-
+      $selected = "Students";
       $title = "Admin - Admit new Student";
 
       require_once "../app/controllers/adminLoadView.php";
@@ -100,7 +100,7 @@
       $template = '../app/views/administrators/addStudent.php';
       $content = loadTemplate($template, ['users'=>$users, 'courses'=>$courses, 'levels'=>$levels,
         'user'=>$user, 'student'=>$student]);
-
+      $selected = "Students";
       $title = "Admin - Browse Student";
 
       require_once "../app/controllers/adminLoadView.php";

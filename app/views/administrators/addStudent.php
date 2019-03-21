@@ -92,7 +92,7 @@ if(isset($student))
 
 <div class = "adminManageTable">
 
-  <div class = "tableTitle" style="background: slateblue;">
+  <div class = "tableTitle" style="background: darkcyan;">
     <h1 class = "tableHeading">Student Case Paper</h1>
   </div>
 

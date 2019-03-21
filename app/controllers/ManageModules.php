@@ -12,7 +12,7 @@
 
       $template = '../app/views/administrators/manageModules.php';
       $content = loadTemplate($template, ['modules'=>$modules, 'val'=>$val, 'note'=>$note]);
-
+      $selected = "Modules";
       $title = "Admin - Modules";
       require_once "../app/controllers/adminLoadView.php";
 
@@ -60,7 +60,7 @@
 
       $template = '../app/views/administrators/addModule.php';
       $content = loadTemplate($template, ['users'=>$users, 'courses'=>$courses, 'levels'=>$levels]);
-
+      $selected = "Modules";
       $title = "Admin - Add new Module";
 
       require_once "../app/controllers/adminLoadView.php";
@@ -110,7 +110,7 @@
       $template = '../app/views/administrators/addModule.php';
       $content = loadTemplate($template, ['module'=>$module,
       'users'=>$users, 'courses'=>$courses, 'levels'=>$levels, 'terms'=>$terms]);
-
+      $selected = "Modules";
       $title = "Admin - Browse Module";
 
       require_once "../app/controllers/adminLoadView.php";
