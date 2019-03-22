@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2019 at 08:23 AM
+-- Generation Time: Mar 22, 2019 at 03:05 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -109,9 +109,8 @@ CREATE TABLE `courses` (
 --
 
 INSERT INTO `courses` (`cid`, `cuid`, `ctitle`, `cdescription`, `cstatus`) VALUES
-(2, 22, 'BSc. Hons Software Engineering', 'A bachelor\'s degree, usually in computer science, computer systems engineering, software engineering or mathematics or completion of a college program in computer science is usually required.', 'Y'),
-(3, 16, 'BSc. Hons Environment Science', 'Environmental science is an interdisciplinary academic field that integrates physical, biological and information sciences (including ecology, biology, physics, chemistry, plant science, zoology, mineralogy, oceanography, limnology, soil science, geology and physical geography (geodesy), and atmospheric science) to the ...', 'Y'),
-(5, 15, 'BSc. Computing', '', 'Y');
+(2, 22, 'BSc. Computing', 'A bachelor\'s degree, usually in computer science, computer systems engineering, software engineering or mathematics or completion of a college program in computer science is usually required.', 'Y'),
+(3, 16, 'BSc. Hons Environment Science', 'Environmental science is an interdisciplinary academic field that integrates physical, biological and information sciences (including ecology, biology, physics, chemistry, plant science, zoology, mineralogy, oceanography, limnology, soil science, geology and physical geography (geodesy), and atmospheric science) to the ...', 'Y');
 
 -- --------------------------------------------------------
 
@@ -249,19 +248,10 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`suid`, `cid`, `gpa`, `prevschool`, `rstatus`, `rdormant`, `puid`, `slvid`) VALUES
-(18, 2, '0.00', '', 'Live', NULL, 25, 3),
-(19, 3, '0.00', '', 'Live', NULL, 16, 3),
-(20, 2, '3.00', 'Cambridge University', 'Live', NULL, 16, 1),
-(23, 2, '0.00', 'Oxford University', 'Live', NULL, 32, 2),
-(43, 5, '4.00', 'University of Pennsylvania', 'Dormant', 'Pending Verification', 15, 1),
-(44, 5, '3.75', 'Harvard University', 'Dormant', 'Pending Verification', 22, 1),
-(45, 5, '2.20', 'Colorado School of Mines', 'Dormant', 'Pending Verification', 24, 1),
-(46, 5, '3.40', 'Drexel Unviersity', 'Dormant', 'Pending Verification', 26, 1),
-(47, 5, '3.20', 'Villanova University', 'Dormant', 'Pending Verification', 27, 1),
-(48, 5, '4.00', 'Lafayette College', 'Dormant', 'Pending Verification', 28, 1),
-(49, 5, '3.95', 'Lehigh Universtiy', 'Dormant', 'Pending Verification', 29, 1),
-(50, 5, '3.00', 'University of Illinois', 'Dormant', 'Pending Verification', 30, 1),
-(51, 5, '2.80', 'Rice University', 'Dormant', 'Pending Verification', 15, 1);
+(18, 2, '3.30', 'Naya', 'Dormant', 'Withdrawn', 25, 3),
+(19, 3, '0.00', '', 'Dormant', 'Pending Verification', 16, 3),
+(20, 2, '3.00', 'Cambridge University', 'Live', '', 16, 1),
+(23, 2, '0.00', 'Oxford', 'Dormant', 'Pending Verification', 22, 2);
 
 -- --------------------------------------------------------
 
@@ -330,14 +320,14 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`uid`, `fname`, `mname`, `lname`, `password`, `gender`, `birthdate`, `uaddress`, `ucontact`, `uemail`, `urole`, `ustatus`) VALUES
 (2, 'Diwas', '', 'Lamsal', '$2y$10$H63pohGdQ2HCm8Xs0gHYI.lOBvhRsblyY0e90bteaAUHSNB.Jpzhu', 'Male', '1972-05-15', 'Kathmandu', '9824524242', 'lamsal.diwas@yahoo.com', 'Administrator', 'Y'),
 (3, 'Ramesh', '', 'Thapa', '$2y$10$2OsYDyHJclHsXaqCbWoaFeAeIY4tqC7QktAtMKm6LU0d7Y3xlUJv.', 'Other', '1983-11-27', 'Lokanthali, Bhaktapur', '+977-9842351245', 'rameshthapa@wuc.edu.uk', 'Administrator', 'N'),
-(5, 'Bish\'OW\'', 'Nath', 'Dhakal', '$2y$10$BVWkBB0gx8NVlTU66mbGK.oAEVJsz9.qrlPavaYJzaoECbKIPWzxq', 'Female', '2002-03-22', 'Boudha, Jorpati', '+9779841534534', 'bishownathdhakal@wcu.edu.uk', 'Administrator', 'Y'),
+(5, 'Bish\'OW\'', 'Nath', 'Dhakal', '$2y$10$VeoyTZmtIYkieznioIZqGu.Eam7LhQyhhhNjT6YkFfaFPkLV0NBmi', 'Female', '2002-03-22', 'Boudha, Jorpati', '+9779841534534', 'bishownathdhakal@wcu.edu.uk', 'Administrator', 'Y'),
 (6, 'Aruna', 'Kumari', 'Upreti', '$2y$10$uu805HArVh6CFwme3UdlFOIf8Y3wFLzpVkeLGY9SUcYlnzW02oj4S', 'Female', '2004-12-16', 'Kathmandu\r\nKathmandu', '+9779841234564', 'aruna@upreti.com', 'Administrator', 'N'),
 (7, 'Deepak', 'Kumar', 'Karna', '$2y$10$65ZIHFpL0MGeYf5M46LSl.cJNfTqyh49ksJ9kEuZ0wRa5Oo84KaIi', 'Male', '1986-07-25', 'Ekantakuna, Lalitpur', '+9779842156151', 'dkarna@gmail.com', 'Administrator', 'Y'),
 (15, 'Ramesh', 'Bahadur', 'Adhikari', '$2y$10$qGJHsfHtd7HAmvlmDh/mqeuGTItx1KNR/.n/PKrNbl9hx7R41i2ym', 'Other', '2000-03-30', 'Kavre', '153245648', 'rameshadhikari@gmail.com', 'Module Leader', 'Y'),
 (16, 'Deepak', 'Raj', 'Giri', '$2y$10$jnyj5ppQU16vnScrd6HTJe5989TFBESviCWDdySZ45xNCqRPHgAci', 'Male', '1988-02-09', 'Naxal', '9842135464', 'draj_giri@hotmail.com', 'Module Leader', 'Y'),
 (18, 'Binayak', '', 'Dhakal', 'BD1994-11-02', 'Male', '1994-11-02', 'Patan', '981651651351', 'binayak@gmail.com', 'Student', 'Y'),
 (19, 'Ayush', 'Raj', 'Moktan', '$2y$10$F0dEGcLW8dkYd8.pSHYqHOiK4FZModNilkTduziGfS4i.wb/o0OSe', 'Male', '1998-08-21', 'NAMI College, Jorpati', '9581651613', 'ayushmoktan@gmail.com', 'Student', 'Y'),
-(20, 'Rama', '', 'Upreti', '$2y$10$ms625CmxdLtNEENGAyeOmeg1CHDofKfQ4z8x9F9TjQp1hAFhvPGcS', 'Female', '2000-06-24', 'Gongabu, Kathmandu', '98165165121', 'ramaupreti@gmail.com', 'Student', 'Y'),
+(20, 'Rama', '', 'Upreti', '$2y$10$KRcFWaFSkUVRpZDpfjbfEuhzznP6S0HQw7zgQojnfsm1OelWfQiLi', 'Female', '2000-06-24', 'Gongabu, Kathmandu', '98165165121', 'ramaupreti@gmail.com', 'Student', 'Y'),
 (22, 'Anita', '', 'Gurung', '$2y$10$5wtG5nZCYWpZ.mhC6nejQumDUAcx3mhMaS5jYB0jbEj3B7hTO7QQC', 'Female', '1969-09-24', 'New Baneshwor', '98161513215', 'anitagurung@nami.edu.np', 'Module Leader', 'Y'),
 (23, 'Barun', '', 'Kuikel', '$2y$10$6wUqZ7vlaLMhRnLqaZ2TGOFAh2lfk0aZHrf8T.rrgi2X9QfZ.Ot8K', 'Male', '1997-11-19', 'Melamchi', '98461231564', 'barunkuikel@gmail.com', 'Student', 'Y'),
 (24, 'Ganesh', '', 'Khatri', '$2y$10$2cXNvVEVrqcKb1F.MPtPhuOrk0W7I0Z7kwuSfK2T8y2F0vsTIoPUi', 'Male', '1980-06-25', 'Kathmandu', '981651321', 'ganeshkhatri@nami.edu.np', 'Module Leader', 'Y'),
@@ -348,16 +338,7 @@ INSERT INTO `users` (`uid`, `fname`, `mname`, `lname`, `password`, `gender`, `bi
 (29, 'Nischal', '', 'Khadka', '$2y$10$6FsPV6Monb8K6sN88cu0VuaJzJLzxyiAjCnT6eqZHWKqupFJTRzUC', 'Male', '1979-10-27', 'New Baneshwor', '98156154', 'nischal.khadka@gmail.com', 'Module Leader', 'Y'),
 (30, 'Ram', 'Chandra', 'Dhungana', '$2y$10$GlmKZwd.lIgMyorw5CBHJekOPMmu.hZ0YDEKMXF3Zs9vq1KvBZWi6', 'Male', '1971-12-29', 'Chabahil', '9815615423', 'ramchandra@gmail.com', 'Module Leader', 'Y'),
 (31, 'Rajan', '', 'Thapa', '$2y$10$GaKSvCG9em6b0GcSJ/xWd.URKKMlYicR1ZSbtSMB/W035Mvg4D0Oa', 'Male', '1980-12-30', 'Kapan', '9813654324', 'rajanthapa@gmail.com', 'Administrator', 'Y'),
-(32, 'Niresh', '', 'Dhakal', '$2y$10$zJvdExs39rAZ20HrpewnouSxOghAHoA9E9IkiDWwslP4s94D4yYz.', 'Male', '1978-01-31', 'Jorpati', '984981351465', 'niresh@gmail.com', 'Module Leader', 'Y'),
-(43, 'Buckminster', 'Fayth', 'Manning', '$2y$10$mEf3xmEL1pwXFYVq2XPpi.HADTM5zq9JztzC4KD8XVZxaRG880icC', 'Other', '1990-04-28', 'Ap #253-5483 Ipsum St.', '541-3486', 'etiam.dictum@tellit.com', 'Student', 'Y'),
-(44, 'Dorothy', 'Saffiyah', 'Welch', '$2y$10$b6y5ly0yG5EF8aNUpHh3K.ckICWuWhBCVJzBjnLlFXybFyqAvQ3JK', 'Male', '2001-09-01', '768-436 Ac Rd.', '284-1074', 'mauris.ut.mi@molestie.co.uk', 'Student', 'Y'),
-(45, 'Alisa', 'Hafsah', 'Humphrey', '$2y$10$gkZurhIL.KPDtkXIrXMCv.pylDxM8QjKT3ZILHsMXHefve0zg1Q26', 'Female', '1985-08-23', 'P.O. Box 518, 8571 Pellentesque St.', '1-197-120-3396', 'tortor@molestieSedid.edu', 'Student', 'Y'),
-(46, 'Merritt', 'Fawn', 'Kramer', '$2y$10$P19exhZosfOf1Wt7zwLffO26xUhTovGLNZAtjGMV1hFvefz/Uwkny', 'Male', '1989-10-01', 'P.O. Box 570, 139 Duis St.', '1-480-624-4498', 'sed.sem@commodo.net', 'Student', 'Y'),
-(47, 'Hedda', 'Fleur', 'Skinner', '$2y$10$CNjeqowq6wnFj/bcE8/qouRBkH7p1bxy6wgjWGpsgxseIDrB/3d8i', 'Female', '1990-06-13', 'P.O. Box 322, 473 Purus. St.', '484-7266', 'pede.Nunc@montur.org', 'Student', 'Y'),
-(48, 'Baker', 'Gwenyth', 'Pearson', '$2y$10$5df2kTDLNKSiTz59Jz827O7oQw5xpnd/hMZxAo8xzganb4lggy7Fy', 'Male', '1983-07-14', 'P.O. Box 572, 6124 Venenatis Rd.', '366-0998', 'magna.nec@interdum.edu', 'Student', 'Y'),
-(49, 'Jada', 'Narayan', 'Patel', '$2y$10$w79fD0LVI2mU56hWxw2jReQlkSyqGgqcqy6s1rvgvFesDcriKmTOi', 'Other', '1988-09-28', '178-3114 Pharetra. Rd.', '546-7735', 'neque.tellus@tint.com', 'Student', 'Y'),
-(50, 'Brandon', 'Griffith', 'Fowler', '$2y$10$6Lk3MMK4amnkWDp1bplKg.dwY.hNBiKWHigXcRBxjR2QgqHlutz/m', 'Other', '1981-10-03', 'Ap #510-773 Aliquet Ave', '1-398-502-1721', 'ornare.elit@quama.ca', 'Student', 'Y'),
-(51, 'Kevyn', 'Tudfwlch', 'Nixon', '$2y$10$UcbapAf5ik5ep4QFuoDRkuzmGzer.rcI60beYbQA1bC5gb/jGnd06', 'Male', '1980-10-01', 'P.O. Box 878, 8469 Eget Avenue', '510-6955', 'nunc.est@facilisis.net', 'Student', 'Y');
+(32, 'Niresh', '', 'Dhakal', '$2y$10$zJvdExs39rAZ20HrpewnouSxOghAHoA9E9IkiDWwslP4s94D4yYz.', 'Male', '1978-01-31', 'Jorpati', '984981351465', 'niresh@gmail.com', 'Module Leader', 'Y');
 
 --
 -- Indexes for dumped tables
@@ -482,7 +463,7 @@ ALTER TABLE `attendances`
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `grades`
@@ -518,7 +499,7 @@ ALTER TABLE `terms`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `uid` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `uid` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 
 --
 -- Constraints for dumped tables
