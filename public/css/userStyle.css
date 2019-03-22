@@ -679,10 +679,35 @@ footer{
 
 
 
+.letterbox{
+  width: 91%;
+  padding: 2%;
+  margin: auto;
+  border: 1px dashed gray;
+  min-height: 350px;
+  text-align: left;
+  margin-top: 15px;
+}
 
+.content button{
+  padding: 10px;
+  margin-top: 20px;
+  width: 95%;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  transition: opacity 0.1s;
+}
 
-
-
+.content button:hover{
+  opacity: 0.8;
+}
 
 
 

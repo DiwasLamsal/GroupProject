@@ -29,8 +29,6 @@ if(isset($student))
       <b>Address: </b><?php echo $user['uaddress'];?><br>
       <b>Contact No: </b><?php echo $user['ucontact'];?><br>
       <b>Email Address: </b><?php echo $user['uemail'];?><br>
-      <b>Status: </b><?php echo $student['rstatus']=="Live" ? '<font color = "green">Live</font>':
-                                                         '<font color = "red">Dormant</font>';?><br>
 
     </div>
   </div>
@@ -44,7 +42,6 @@ if(isset($student))
       </div>
     </a>
   </div>
-
 
 </div>
 
@@ -81,31 +78,90 @@ if(isset($student))
     ?>
     <br>
 
-  </div>
+    <br><hr><br>
 
-</div>
+    <b>Case Paper Status: </b><?php echo $student['rstatus']=="Live" ? '<font color = "green">Live</font>':
+                                                       '<font color = "red">Dormant</font>';?><br>
 
-
-
-<div class = "adminManageTable">
-
-  <div class = "tableTitle" style="background: darkcyan;">
-    <h1 class = "tableHeading">Student Case Paper</h1>
-  </div>
-
-  <div class = "content" style="text-align: left; margin: 15px; line-height: 1.6;">
-
+    <b>Reason for Dormancy: </b>
+      <?php echo $student['rstatus']=="Dormant"? $student['rdormant']: '<i>Student is Live</i>';?>
+    <br>
   </div>
 </div>
+
+<?php if($student['rstatus']=="Dormant"){ ?>
+
+  <div class = "adminManageTable">
+
+    <div class = "tableTitle" style="background: darkslateblue;">
+      <h1 class = "tableHeading">Offer Letter</h1>
+    </div>
+
+    <div class = "content" style="text-align: center; line-height: 1.6;">
+      <div class = "formHolder">
+        <div class = "formColumn1">
+          <h2 style="text-align: center;">Conditional Offer Letter</h2>
+          <div class = "letterbox">
+            <?php include_once '../app/letters/conditional.php'; ?>
+
+          </div>
+          <a href = "/GroupProject/public/PrintOfferLetter/conditional/<?php echo $user['uid']?>" target="_blank">
+            <button>
+              <img src = "/GroupProject/public/resources/images/mail.png" width="20" style="margin-bottom: -5px; float: left;">
+              &nbsp; Mail Conditional Letter
+            </button>
+          </a>
+
+          <a href = "/GroupProject/public/PrintOfferLetter/conditional/<?php echo $user['uid']?>" target="_blank">
+            <button style="background: DodgerBlue;">
+              <img src = "/GroupProject/public/resources/images/print.png" width="20" style="margin-bottom: -5px; float: left;">
+              &nbsp;Print Conditional Letter
+            </button>
+          </a>
+
+
+        </div>
+        <div class = "formColumnSeparator"></div>
+        <div class = "formColumn2">
+          <h2  style="text-align: center;">Unconditional Offer Letter</h2>
+          <div class = "letterbox">
+            <?php include_once '../app/letters/unconditional.php'; ?>
+          </div>
+          <a href = "/GroupProject/public/PrintOfferLetter/unconditional/<?php echo $user['uid']?>"  target="_blank">
+            <button>
+              <img src = "/GroupProject/public/resources/images/mail.png" width="20" style="margin-bottom: -5px; float: left;">
+              &nbsp;Mail Unonditional Letter
+            </button>
+          </a>
+
+          <a href = "/GroupProject/public/PrintOfferLetter/conditional/<?php echo $user['uid']?>" target="_blank">
+            <button style="background: DodgerBlue;">
+              <img src = "/GroupProject/public/resources/images/print.png" width="20" style="margin-bottom: -5px; float: left;">
+              &nbsp;Print Unonditional Letter
+            </button>
+          </a>
+
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+<?php } ?>
+
+
 
 <form method = "POST" class = "userForm">
 
   <div class = "formTitle formEditPassword">
     <h1 class = "formHeading">
-      <?php if(isset($user))echo 'Change '.$user['fname'].' '.$user['mname'].' '.$user['lname'].'\'s Password';?>
+      Change Password
     </h1>
   </div>
-
 
   <div class = "formHolder">
 
@@ -131,6 +187,7 @@ if(isset($student))
 
 
 </form>
+
 
 
 <?php
@@ -237,8 +294,6 @@ if(isset($student))
 </div>
 
 
-
-
 <?php
 
 
@@ -248,6 +303,7 @@ if(isset($student))
 }
 ?>
 
+<?php if(!isset($_POST['submitucas'])){ ?>
 
 <form method = "POST" class = "userForm">
 
@@ -377,3 +433,4 @@ if(isset($student))
 
 
 </form>
+<?php } ?>
