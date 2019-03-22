@@ -139,13 +139,133 @@ if(isset($student))
 
 ?>
 
+<?php if(!isset($user)){?>
+
+<form method = "POST" class = "userForm" enctype="multipart/form-data">
+
+<div class = "formTitle">
+  <h1 class = "formHeading">
+    Admissions From UCAS
+  </h1>
+</div>
+
+  <div class = "formHolder">
+    <div class = "formColumn1">
+      <label>Select Student UCAS File:</label>
+    </div>
+
+    <div class = "formColumn2">
+      <input type = "file" name = "csvpicker" style="border: none;" required>
+    </div>
+
+  </div>
+  <input type = "submit" value = "Submit" name = "submitucas">
+</form>
+
+
+<!-- When the UCAS file is submitted, display the list of student records -->
+
+<?php
+  if(isset($_POST['submitucas'])){
+
+          session_start();
+?>
+
+    <div class = "adminManageTable">
+
+      <div class = "tableTitle">
+        <h1 class = "tableHeading">UCAS Students</h1>
+      </div>
+
+      <form method = "POST" class="userForm">
+
+
+      <table id = "customers">
+      	<tr>
+          <th>S.N.</th>
+      		<th>Full Name</th>
+      		<th>Email</th>
+      		<th>Birthdate</th>
+      		<th>Address</th>
+      		<th>Contact</th>
+      		<th>Gender</th>
+      		<th>GPA</th>
+      		<th>Previous College</th>
+      	</tr>
+      <?php
+      	$file = fopen($_FILES['csvpicker']['tmp_name'], "r");
+        $count = 0;
+      	while(!feof($file)){
+      		$currentData = fgetcsv($file, 1000, ',');
+      		if($currentData==false)break;
+          $count++;
+
+          echo '<input type = "hidden" name = "'.$count.'[user][fname]" value = "'.$currentData[0].'">';
+          echo '<input type = "hidden" name = "'.$count.'[user][mname]" value = "'.$currentData[1].'">';
+          echo '<input type = "hidden" name = "'.$count.'[user][lname]" value = "'.$currentData[2].'">';
+          echo '<input type = "hidden" name = "'.$count.'[user][uemail]" value = "'.$currentData[3].'">';
+          echo '<input type = "hidden" name = "'.$count.'[user][birthdate]" value = "'.$currentData[4].'">';
+          echo '<input type = "hidden" name = "'.$count.'[user][uaddress]" value = "'.$currentData[5].'">';
+          echo '<input type = "hidden" name = "'.$count.'[user][ucontact]" value = "'.$currentData[6].'">';
+          echo '<input type = "hidden" name = "'.$count.'[user][gender]" value = "'.$currentData[7].'">';
+          echo '<input type = "hidden" name = "'.$count.'[user][role]" value = "Student">';
+          echo '<input type = "hidden" name = "'.$count.'[user][ustatus]" value = "Y">';
+
+          echo '<input type = "hidden" name = "'.$count.'[student][gpa]" value = "'.$currentData[8].'">';
+          echo '<input type = "hidden" name = "'.$count.'[student][prevschool]" value = "'.$currentData[9].'">';
+
+          echo '<input type = "hidden" name = "'.$count.'[student][rstatus]" value = "Dormant">';
+          echo '<input type = "hidden" name = "'.$count.'[student][rdormant]" value = "Pending Verification">';
+          echo '<input type = "hidden" name = "'.$count.'[student][puid]" value = "16">';
+          echo '<input type = "hidden" name = "'.$count.'[student][slvid]" value = "1">';
+          echo '<input type = "hidden" name = "'.$count.'[student][cid]" value = "2">';
+
+
+      		echo '<tr>';
+          echo '<td>'.$count.'</td>';
+      		echo '<td>'.$currentData[0].' '.$currentData[1].' '.$currentData[2].'</td>
+      			 <td>'.$currentData[3].'</td>
+      			 <td>'.$currentData[4].'</td>
+      			 <td>'.$currentData[5].'</td>
+      			 <td>'.$currentData[6].'</td>
+      			 <td>'.$currentData[7].'</td>
+      			 <td>'.$currentData[8].'</td>
+      			 <td>'.$currentData[9].'</td>';
+      		echo '</tr>';
+
+      	}
+      	fclose($file);
+      ?>
+
+    </table>
+
+      <input type = "hidden" value = <?php echo $count;?> name = "totalStudents">
+      <input type = "submit" value = "Add These <?php echo $count;?> Students" name = "submitStudents">
+
+  </form>
+
+</div>
+
+
+
+
+<?php
+
+
+
+  unset($user);
+  }
+}
+?>
+
+
 <form method = "POST" class = "userForm">
 
 <div class = "formTitle">
   <h1 class = "formHeading">
     <?php if(isset($user))echo 'Edit '.$user['fname'].' '.$user['mname'].' '.$user['lname'].'\'s details';
     else {?>
-    Admit new Student
+    Manually Admit new Student
   <?php } ?>
   </h1>
 </div>
@@ -172,6 +292,15 @@ if(isset($student))
       <option value = "Female" <?php if(isset($user) && $user['gender']=="Female")echo 'selected';?>>Female</option>
       <option value = "Other" <?php if(isset($user) && $user['gender']=="Other")echo 'selected';?>>Other</option>
     </select>
+
+    <label for = "gpa">Previous GPA: </label>
+    <input type = "number" name = "student[gpa]"  required step="0.1" min="0" max="4.0"
+    <?php if(isset($user))echo 'value='.$student['gpa'];?>>
+
+    <label for = "prevschool">Previous School: </label>
+    <input type = "text" name = "student[prevschool]"  required
+    <?php if(isset($user))echo 'value='.$student['prevschool'];?>>
+
 
 
     <label for = "course">Course: </label>
@@ -202,6 +331,8 @@ if(isset($student))
         </option>
       <?php }?>
     </select>
+
+
 
 
   </div>

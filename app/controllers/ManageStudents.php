@@ -34,6 +34,20 @@
       $courses = $courseClass->findAllSorted('ctitle');
       $levels = $levelClass->findAll();
 
+      if(isset($_POST['submitStudents'])){
+        for($i = 1; $i<$_POST['totalStudents']; $i++){
+          echo $_POST[$i]['user']['fname'].'<br>';
+
+
+          
+
+
+
+        }
+
+      }
+
+
       if(isset($_POST['submit'])){
         $_POST['user']['urole']="Student";
 
@@ -142,7 +156,7 @@
 
 
   public function search($val = ""){
-    
+
   }
 
 }
