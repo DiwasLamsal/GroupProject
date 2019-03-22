@@ -156,21 +156,36 @@
 
 
   public function archive($val = ""){
-    $studentClass = new DatabaseTable('students');
-    $student = $studentClass->find('suid',$val);
-    if($student->rowCount()>0){
 
-      $cpstatus = $student->fetch()['rstatus']=="Live"? "Dormant" : "Live";
-      $criteria = [
-        'suid'=>$val,
-        'rstatus'=>$cpstatus
-      ];
-      $studentClass->update($criteria, 'suid');
-      header("Location:../index/archivesuccess");
+    $userClass = new DatabaseTable('users');
+    $studentClass = new DatabaseTable('students');
+    $user = $userClass->find('uid', $val);
+    $student = $studentClass->find('suid',$val);
+
+    if(isset($_POST['submitDormant'])){
+      $_POST['student']['suid']=$val;
+      $_POST['student']['rstatus']="Dormant";
+      $_POST['student']['rdormant']=$_POST['rdormant'];
+      $studentClass->update($_POST['student'], 'suid');
+      header("Location:../index/editsuccess");
     }
-    else{
-      header("Location:../index/nosuchuser");
+    if(isset($_POST['submitLive'])){
+      $_POST['student']['suid']=$val;
+      $_POST['student']['rdormant']="";
+      $_POST['student']['rstatus']="Live";
+      $studentClass->update($_POST['student'], 'suid');
+      header("Location:../index/editsuccess");
     }
+
+
+    $template = '../app/views/administrators/studentCasePaper.php';
+    $content = loadTemplate($template, ['user'=>$user, 'student'=>$student]);
+    $selected = "Students";
+    $title = "Admin - Student Case Paper";
+
+    require_once "../app/controllers/adminLoadView.php";
+
+
   }
 
 

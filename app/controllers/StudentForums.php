@@ -9,7 +9,7 @@
       $content = loadTemplate($template, []);
 
       $title = "Student - Forums";
-
+      $selected = "Forums";
       require_once "../app/controllers/StudentLoadView.php";
 
     }

@@ -10,7 +10,6 @@ if(isset($student))
   $enCourse = getCourseById($student['cid'])->fetch();
   $enLevel = getLevelById($student['slvid'])->fetch();
 
-
 ?>
 
 
@@ -20,7 +19,7 @@ if(isset($student))
 
     <div class = "title">
       <?php echo $user['fname'].' '.$user['mname'].' '.$user['lname']; ?>
-      </div>
+    </div>
     <div class = "content" style="text-align: left; margin: 15px; line-height: 1.6;">
       <b>Login ID: </b><?php echo $user['uid'];?><br>
       <b>Full Name: </b><?php echo $user['fname'].' '.$user['mname'].' '.$user['lname'];?><br>
@@ -29,7 +28,8 @@ if(isset($student))
       <b>Address: </b><?php echo $user['uaddress'];?><br>
       <b>Contact No: </b><?php echo $user['ucontact'];?><br>
       <b>Email Address: </b><?php echo $user['uemail'];?><br>
-
+      <b>Previous GPA: </b><?php echo $student['gpa'];?><br>
+      <b>Previous School: </b><?php echo $student['prevschool'];?><br>
     </div>
   </div>
 
@@ -54,42 +54,35 @@ if(isset($student))
 
   <div class = "content" style="text-align: left; margin: 15px; line-height: 1.6;">
 
-    <b>PAT: </b>
-    <?php
-      $link = '<a target="_blank" style="color:blue;" href = "/GroupProject/public/ManageModuleLeaders/browse/'.$pat['uid'].'">'.
-                $pat['fname'].' '.$pat['mname'].' '.$pat['lname'].'</a>';
-      echo $link;
-    ?>
-    <br>
+  <b>PAT: </b>
+  <?php
+    $link = '<a target="_blank" style="color:blue;" href = "/GroupProject/public/ManageModuleLeaders/browse/'.$pat['uid'].'">'.
+              $pat['fname'].' '.$pat['mname'].' '.$pat['lname'].'</a>';
+    echo $link;
+  ?>
+  <br>
 
-    <b>Course: </b>
-    <?php
-      $link = '<a target="_blank" style="color:blue;" href = "/GroupProject/public/ManageCourses/browse/'.$enCourse['cid'].'">'.
-                $enCourse['ctitle'].'</a>';
-      echo $link;
-    ?>
-    <br>
+  <b>Course: </b>
+  <?php
+    $link = '<a target="_blank" style="color:blue;" href = "/GroupProject/public/ManageCourses/browse/'.$enCourse['cid'].'">'.
+              $enCourse['ctitle'].'</a>';
+    echo $link;
+  ?>
+  <br>
 
-    <b>Level: </b>
-    <?php
-      $link = '<a target="_blank" style="color:blue;" href = "/GroupProject/public/ManageLevels/browse/'.$enLevel['lvid'].'">'.
-                $enLevel['lvtitle'].' - '.$enLevel['lvaltname'].'</a>';
-      echo $link;
-    ?>
-    <br>
+  <b>Level: </b>
+  <?php
+    $link = '<a target="_blank" style="color:blue;" href = "/GroupProject/public/ManageLevels/browse/'.$enLevel['lvid'].'">'.
+              $enLevel['lvtitle'].' - '.$enLevel['lvaltname'].'</a>';
+    echo $link;
+  ?>
+  <br>
 
-    <br><hr><br>
-
-    <b>Case Paper Status: </b><?php echo $student['rstatus']=="Live" ? '<font color = "green">Live</font>':
-                                                       '<font color = "red">Dormant</font>';?><br>
-
-    <b>Reason for Dormancy: </b>
-      <?php echo $student['rstatus']=="Dormant"? $student['rdormant']: '<i>Student is Live</i>';?>
-    <br>
   </div>
+
 </div>
 
-<?php if($student['rstatus']=="Dormant"){ ?>
+<?php if($student['rstatus']=="Dormant" && $student['rdormant']=="Pending Verification"){ ?>
 
   <div class = "adminManageTable">
 

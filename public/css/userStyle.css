@@ -626,6 +626,7 @@ footer{
   transition: background .3s;
   font-family: 'Bitter', serif;
   font-size: 16px;
+  margin-bottom: 25px;
 }
 
 .userForm input[type=submit]:hover{
@@ -710,7 +711,9 @@ footer{
 }
 
 
-
+.userForm fieldset{
+  padding: 20px 5px 20px 5px; border: 1px dashed darkgray; width: calc(100% - 20px);
+}
 
 /**********************************************************************************************/
 /**********************************************************************************************/
@@ -795,6 +798,7 @@ footer{
   .deleteBox{
     padding-bottom: 13%;
   }
+
 
 
 }

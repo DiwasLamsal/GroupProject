@@ -1,6 +1,6 @@
 <?php
 $template = '../app/views/students/StudentNavigation.php';
-$navigation = loadTemplate($template, []);
+$navigation = loadTemplate($template, ['selected'=>$selected]);
 
 $template = '../app/templates/UserTemplate.php';
 $contents = [
