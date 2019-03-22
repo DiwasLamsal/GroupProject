@@ -5,7 +5,7 @@
     public function index($val=""){
 
       $userClass = new DatabaseTable('users');
-      $users = $userClass->findSorted('urole','Student', 'fname');
+      $users = $userClass->findReverse('uid', 'urole', 'Student');
 
       $studentClass = new DatabaseTable('students');
       $students = $studentClass->findall();
@@ -36,12 +36,31 @@
 
       if(isset($_POST['submitStudents'])){
         for($i = 1; $i<$_POST['totalStudents']; $i++){
-          echo $_POST[$i]['user']['fname'].'<br>';
+
+          $_POST[$i]['user']['urole']="Student";
+          $_POST[$i]['user']['ustatus']="Y";
+
+          $pass = getGeneratedPassword($_POST[$i]['user']['fname'], $_POST[$i]['user']['lname'], $_POST[$i]['user']['birthdate']);
+          $_POST[$i]['user']['password']=password_hash($pass, PASSWORD_DEFAULT);
+
+          echo '<pre>' . var_export($_POST[$i]['user'], true) . '</pre>';
+          $userClass->save($_POST[$i]['user']);
 
 
-          
+          $studentId = $userClass->findLastRecordId('uid');
+          $studentId = $studentId->fetch()['uid'];
+          $_POST[$i]['student']['suid']=$studentId;
+
+          $_POST[$i]['student']['rstatus']="Dormant";
+          $_POST[$i]['student']['rdormant']="Pending Verification";
+          $_POST[$i]['student']['puid']=getPATWithLowest();
+          $_POST[$i]['student']['slvid']=getFirstYearLevel()['lvid'];
+          $_POST[$i]['student']['cid']=getComputingCourse()['cid'];
 
 
+          $studentClass->save($_POST[$i]['student']);
+
+          header("Location:../ManageStudents/index/addsuccess");
 
         }
 

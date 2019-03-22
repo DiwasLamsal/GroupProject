@@ -168,7 +168,6 @@ if(isset($student))
 <?php
   if(isset($_POST['submitucas'])){
 
-          session_start();
 ?>
 
     <div class = "adminManageTable">
@@ -208,18 +207,9 @@ if(isset($student))
           echo '<input type = "hidden" name = "'.$count.'[user][uaddress]" value = "'.$currentData[5].'">';
           echo '<input type = "hidden" name = "'.$count.'[user][ucontact]" value = "'.$currentData[6].'">';
           echo '<input type = "hidden" name = "'.$count.'[user][gender]" value = "'.$currentData[7].'">';
-          echo '<input type = "hidden" name = "'.$count.'[user][role]" value = "Student">';
-          echo '<input type = "hidden" name = "'.$count.'[user][ustatus]" value = "Y">';
 
           echo '<input type = "hidden" name = "'.$count.'[student][gpa]" value = "'.$currentData[8].'">';
           echo '<input type = "hidden" name = "'.$count.'[student][prevschool]" value = "'.$currentData[9].'">';
-
-          echo '<input type = "hidden" name = "'.$count.'[student][rstatus]" value = "Dormant">';
-          echo '<input type = "hidden" name = "'.$count.'[student][rdormant]" value = "Pending Verification">';
-          echo '<input type = "hidden" name = "'.$count.'[student][puid]" value = "16">';
-          echo '<input type = "hidden" name = "'.$count.'[student][slvid]" value = "1">';
-          echo '<input type = "hidden" name = "'.$count.'[student][cid]" value = "2">';
-
 
       		echo '<tr>';
           echo '<td>'.$count.'</td>';

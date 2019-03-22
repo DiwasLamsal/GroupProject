@@ -60,8 +60,65 @@
   }
 
 
-  function insertStudentCSV($filename){
-    
+  /**
+  * This function returns a module leader's id
+  * @return Module Leader with least students assigned as PAT
+  */
+  function getPATWithLowest(){
+    $moduleLeaderClass = new DatabaseTable('lecturers');
+    $studentClass = new DatabaseTable('students');
+    $moduleLeaders = $moduleLeaderClass->findAll();
+
+    $ml = $moduleLeaders->fetch();
+
+    $lowestPATvalue = PHP_INT_MAX;
+    $currentPATvalue = 0;
+    $lowestPATId = $ml['luid'];
+
+    $students = $studentClass->findAll();
+    while($student = $students->fetch()){
+      if($student['puid']==$ml['luid']){
+        $currentPATvalue++;
+      }
+    }
+    if($lowestPATvalue>$currentPATvalue){
+      $lowestPATvalue = $currentPATvalue;
+      $lowestPATId = $ml['luid'];
+    }
+
+    while($ml = $moduleLeaders->fetch()){
+      $currentPATvalue = 0;
+      $students = $studentClass->findAll();
+
+      while($student = $students->fetch()){
+        if($student['puid']==$ml['luid']){
+          $currentPATvalue++;
+        }
+      }
+      if($lowestPATvalue>$currentPATvalue){
+        $lowestPATvalue = $currentPATvalue;
+        $lowestPATId = $ml['luid'];
+      }
+    }
+    return $lowestPATId;
   }
+
+
+  function getComputingCourse(){
+    $courseClass = new DatabaseTable('courses');
+    $course = $courseClass->find('ctitle', 'BSC. Computing');
+    $course = $course->fetch();
+    return $course;
+  }
+
+  function getFirstYearLevel(){
+    $levelClass = new DatabaseTable('levels');
+    $level = $levelClass->find('lvtitle', 'L4');
+    $level = $level->fetch();
+    return $level;
+  }
+
+
+
 
 ?>

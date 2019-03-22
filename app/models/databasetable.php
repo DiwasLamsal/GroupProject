@@ -83,6 +83,17 @@ class DatabaseTable{
 	    return $stmt;
 	}
 
+	function findReverse($reverser, $field, $value) {
+			global $pdo;
+			$stmt = $pdo->prepare('SELECT * FROM '.$this->table.' WHERE '.$field.'=:value  ORDER BY '.$reverser . ' DESC');
+			$criteria = [
+							'value' => $value
+			];
+			$stmt->execute($criteria);
+			return $stmt;
+	}
+
+
 	function findLimitReverse($field, $limit) {
 	    global $pdo;
 	    $stmt = $pdo->prepare('SELECT * FROM ' . $this->table . ' ORDER BY '.$field . ' DESC
