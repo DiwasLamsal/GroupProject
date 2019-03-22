@@ -18,9 +18,7 @@ if(isset($moduleLeader))
       </div>
     <div class = "content" style="text-align: left; margin: 15px; line-height: 1.6;">
       <b>Login ID: </b><?php echo $user['uid'];?><br>
-      <b>First Name: </b><?php echo $user['fname'];?><br>
-      <b>Middle Name: </b><?php echo $user['mname'];?><br>
-      <b>Last Name: </b><?php echo $user['lname'];?><br>
+      <b>Full Name: </b><?php echo $user['fname'].' '.$user['mname'].' '.$user['lname'];?><br>
       <b>Gender: </b><?php echo $user['gender'];?><br>
       <b>Birthdate: </b><?php echo $user['birthdate'];?><br>
       <b>Address: </b><?php echo $user['uaddress'];?><br>

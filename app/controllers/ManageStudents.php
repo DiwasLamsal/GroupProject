@@ -141,6 +141,10 @@
   }
 
 
+  public function search($val = ""){
+    
+  }
+
 }
 
 
