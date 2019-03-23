@@ -334,11 +334,11 @@ if(isset($student))
 
     <label for = "gpa">Previous GPA: </label>
     <input type = "number" name = "student[gpa]"  required step="0.1" min="0" max="4.0"
-    <?php if(isset($user))echo 'value='.$student['gpa'];?>>
+    <?php if(isset($user))echo 'value="'.$student['gpa'];?>">
 
     <label for = "prevschool">Previous School: </label>
     <input type = "text" name = "student[prevschool]"  required
-    <?php if(isset($user))echo 'value='.$student['prevschool'];?>>
+    <?php if(isset($user))echo 'value="'.$student['prevschool'];?>">
 
 
 
