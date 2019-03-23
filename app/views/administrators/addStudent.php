@@ -38,13 +38,15 @@ if(isset($student))
       <div class = "deleteBoxTextHolder">
         <br>
         <img src = "/GroupProject/public/resources/images/deleteuser.png" width="150"><br><br>
-        Delete User
+        Delete Student
       </div>
     </a>
   </div>
 
 </div>
 
+
+<?php if($student['rstatus']=="Live"){ ?>
 
 <div class = "adminManageTable">
 
@@ -81,6 +83,44 @@ if(isset($student))
   </div>
 
 </div>
+
+
+
+<form method = "POST" class = "userForm">
+
+  <div class = "formTitle formEditPassword">
+    <h1 class = "formHeading">
+      Change Password
+    </h1>
+  </div>
+
+  <div class = "formHolder">
+
+    <div class = "formColumn1">
+      <label for = "password">Password: </label>
+      <input type = "password" onkeyup="checkPassword()" name = "user[password]" id = "password" required>
+      <p id = "passtest" style="font-size: 15px; color: red; margin-bottom: 20px;">Passwords must contain more than 8 characters</p>
+
+      <label for = "confirmpassword">Confirm Password: </label>
+      <input type = "password" onkeyup="checkPassword()" name = "confirmpassword" id = "confirmpassword" required>
+      <p id = "confirmpasstest" style="font-size: 14px; color: red; margin-bottom: 10px;"><br></p>
+    </div>
+
+    <div class = "formColumnSeparator"></div>
+
+    <div class = "formColumn2">
+    </div>
+
+</div>
+
+<input type = "submit" value = "Submit" name = "passubmit" id = "submission">
+
+
+
+</form>
+
+<?php } ?>
+
 
 <?php if($student['rstatus']=="Dormant" && $student['rdormant']=="Pending Verification"){ ?>
 
@@ -145,42 +185,6 @@ if(isset($student))
 
 
 <?php } ?>
-
-
-
-<form method = "POST" class = "userForm">
-
-  <div class = "formTitle formEditPassword">
-    <h1 class = "formHeading">
-      Change Password
-    </h1>
-  </div>
-
-  <div class = "formHolder">
-
-    <div class = "formColumn1">
-      <label for = "password">Password: </label>
-      <input type = "password" onkeyup="checkPassword()" name = "user[password]" id = "password" required>
-      <p id = "passtest" style="font-size: 15px; color: red; margin-bottom: 20px;">Passwords must contain more than 8 characters</p>
-
-      <label for = "confirmpassword">Confirm Password: </label>
-      <input type = "password" onkeyup="checkPassword()" name = "confirmpassword" id = "confirmpassword" required>
-      <p id = "confirmpasstest" style="font-size: 14px; color: red; margin-bottom: 10px;"><br></p>
-    </div>
-
-    <div class = "formColumnSeparator"></div>
-
-    <div class = "formColumn2">
-    </div>
-
-</div>
-
-<input type = "submit" value = "Submit" name = "passubmit" id = "submission">
-
-
-
-</form>
-
 
 
 <?php

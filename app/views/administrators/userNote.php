@@ -7,13 +7,18 @@
     ?>
 
 
-    View, edit or delete the <?php echo $manage; ?> by clicking the eye icon.
-    <?php if($manage!="levels")
-      echo 'The record can be archived by clicking the folder icon. <br><br>Note that
-      you cannot archive or delete records that are in use.';
-      else {
+    View, edit or delete <?php echo $manage; ?> by clicking the eye icon.
+    <?php
+
+      if($manage=="levels")
           echo '<br><br> Note that you cannot delete records that are in use';
-      }?>
+      elseif($manage=="students")
+        echo 'The student status can be changed from the folder icon. <br><br>';
+      else {
+        echo 'The record can be archived by clicking the folder icon. <br><br>Note that
+        you cannot archive or delete records that are in use.';
+      }
+      ?>
 
 
     <?php
@@ -39,6 +44,9 @@
         }
         else if($val == "editpasssuccess"){
           echo 'Successfully Edited Password';
+        }
+        else if($val == "mailsuccess"){
+          echo 'Mail Sent Succesfully';
         }
         else{
           header("Location:..");
