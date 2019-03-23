@@ -28,8 +28,13 @@ if(isset($student))
       <b>Address: </b><?php echo $user['uaddress'];?><br>
       <b>Contact No: </b><?php echo $user['ucontact'];?><br>
       <b>Email Address: </b><?php echo $user['uemail'];?><br>
+      <?php if($student['rstatus']=="Dormant"){?>
+      <b>Reason For Dormancy: </b><font style = "color: red;"><?php echo $student['rdormant'];?></font><br>
+    <?php }
+    else {?>
       <b>Previous GPA: </b><?php echo $student['gpa'];?><br>
       <b>Previous School: </b><?php echo $student['prevschool'];?><br>
+    <?php }?>
     </div>
   </div>
 
@@ -49,10 +54,6 @@ if(isset($student))
 <?php if($student['rstatus']=="Live"){ ?>
 
 <div class = "adminManageTable">
-
-  <div class = "tableTitle" style="background: #6495ED;">
-    <h1 class = "tableHeading">Other Student Details</h1>
-  </div>
 
   <div class = "content" style="text-align: left; margin: 15px; line-height: 1.6;">
 
@@ -85,12 +86,25 @@ if(isset($student))
 </div>
 
 
+<div class = "adminManageTable">
+
+  <div class = "tableTitle">
+    <h1 class = "tableHeading">Student Attendance</h1>
+  </div>
+
+  <div class = "content" style="text-align: left; margin: 15px; line-height: 1.6;">
+
+
+  </div>
+
+</div>
+
 
 <form method = "POST" class = "userForm">
 
   <div class = "formTitle formEditPassword">
     <h1 class = "formHeading">
-      Change Password
+      <?php if(isset($user))echo 'Change '.$user['fname'].' '.$user['mname'].' '.$user['lname'].'\'s Password';?>
     </h1>
   </div>
 

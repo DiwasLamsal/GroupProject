@@ -28,7 +28,7 @@ if(isset($student))
               <option>Expelled</option>
             </select>
             <p style="text-align: center; margin: 5px;">
-              <input type = "submit" name = "submitDormant" value = "Make Student Dormant" style="background: rgb(100, 200,100);">
+              <input type = "submit" name = "submitDormant" value = "Make Student Dormant" style="background: rgb(230, 100, 100);">
             </p>
       </form>
     <?php }
