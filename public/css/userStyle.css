@@ -791,7 +791,7 @@ ul.breadcrumb li a:hover {
   opacity: 0.6;
   border-radius: 5px;
   transition: 0.1s ease-out;
-  background: maroon;
+  background: darkslategray;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */

@@ -25,18 +25,17 @@ $count = 0;
         <h2 style="text-align: center; margin-top: 20px;">Resources for <?php echo $module['mname'].' - '.$term['tname'];?></h2>
         <br>
 <!-- Resource Contents go here -->
-        <p>
-
-              No Resource Available. You can add resources
-              <a style="color: blue;" href = "/GroupProject/public/ModuleLeaderModules/moduleTerm/<?php echo $term['tid']?>">
-                <u>from here</u>
-              </a>.
+        <p style="text-align: center;">
 
 
 
 
 
 
+              <br>
+              <a style = "color: blue;" href = "/GroupProject/public/ModuleLeaderResources/addResource/<?php echo $term['tid']?>">
+                <u>You can add resources from here</u>
+              </a>
 
         </p>
     </div>

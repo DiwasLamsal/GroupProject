@@ -18,19 +18,46 @@
       require_once "../app/controllers/moduleLeaderLoadView.php";
     }
 
-    public function addResource($term){
+    public function addResource($term=""){
+
+      if($term==""){
+        header("Location: /GroupProject/public/ModuleLeaderResources/");
+      }
+
       $resourceClass = new DatabaseTable('resources');
       $termClass = new DatabaseTable('terms');
+      $moduleClass = new DatabaseTable('modules');
+
       $term = $termClass->find('tid', $term);
       $term = $term->fetch();
 
+      $module = $moduleClass->find('mid', $term['tmid'])->fetch();
+
+      if(isset($_POST['submit'])){
+        $_POST['resource']['rtid']==$term;
+        $_POST['resource']['rstatus']=="Y";
+
+        
+
+      }
+
       $template = '../app/views/moduleLeaders/addResources.php';
-      $content = loadTemplate($template, ['term'=>$term]);
+      $content = loadTemplate($template, ['term'=>$term, 'module'=>$module]);
       $selected='Resources';
       $title = "Module Leader - Add Resources";
 
       require_once "../app/controllers/moduleLeaderLoadView.php";
     }
+
+
+
+    public function browseResource(){
+
+
+
+
+    }
+
 
 
   }

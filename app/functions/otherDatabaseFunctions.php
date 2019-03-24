@@ -126,6 +126,7 @@
     return $terms;
   }
 
+  
 
 
 // Sets term's current status by checking the date and returns the term
