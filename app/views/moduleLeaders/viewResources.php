@@ -78,8 +78,8 @@ $count = 0;
                   <?php
                       $link = '<a class = "courseModuleLink" href = "/GroupProject/public/ModuleLeaderResources/browse/'.$resource['rid'].'">';
                       echo $link;?>
-                    <div class = "courseModuleBox termBox" style = "background: blue;">
-                      <img src = "/GroupProject/public/resources/images/edit.png">
+                    <div class = "resourceBox" style = "background: blue;">
+                      <img src = "/GroupProject/public/resources/images/edit.png" width="20">
                         Edit
                     </div>
                     </a>
@@ -88,8 +88,8 @@ $count = 0;
                 <?php
                     $link = '<a class = "courseModuleLink" href = "/GroupProject/public/ModuleLeaderResources/delete/'.$resource['rid'].'">';
                     echo $link;?>
-                  <div class = "courseModuleBox termBox" style = "background: tomato;">
-                    <img src = "/GroupProject/public/resources/images/deleteuser.png">
+                  <div class = "resourceBox" style = "background: red;">
+                    <img src = "/GroupProject/public/resources/images/deleteuser.png" width="20">
                       Delete
                   </div>
                   </a>
