@@ -18,6 +18,24 @@
 
 </div>
 
+<!-- Search box To be edited later -->
+
+<!--
+<div class = "boxesContainer boxesContainerManage">
+  <div class = "adminManageTable" style="text-align: center; width:calc(50% - 15px); padding:5px;">
+    <select style="width: 98%; height: 35px;">
+      <option>L4</option>
+    </select>
+  </div>
+  <div class = "adminManageTable" style="text-align: right; width: calc(50% - 15px); padding:5px;">
+        <input type = "search" placeholder="Search" style="width: 240px; height: 35px; padding-left: 10px;">
+        <input type = "submit" value = "Go" name = "submitSearch" style="width: 40px; height: 35px;">
+  </div>
+
+</div> -->
+
+
+
 
 <div class = "adminManageTable">
 

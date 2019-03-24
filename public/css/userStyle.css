@@ -585,7 +585,7 @@ footer{
   color: rgb(50, 50, 50);
 }
 
-.userForm input:not([type="submit"]), select, textarea{
+.userForm input:not([type="submit"]), .userForm select, .userForm textarea{
   width: 95%;
   margin: 5px;
   display: block;
@@ -600,7 +600,7 @@ footer{
   font-size: calc(0.5rem + 10px);
 }
 
-.userForm input:not([type="submit"]):focus, select:focus, textarea:focus{
+.userForm input:not([type="submit"]):focus, .userForm select:focus, .userForm textarea:focus{
   border-bottom: 1px solid black;
 }
 
@@ -677,7 +677,13 @@ footer{
   cursor: pointer;
 }
 
-
+.courseModuleBox img{
+  width: 70px;
+  display: block;
+  margin: auto;
+  margin-bottom: 13px;
+  margin-top: 50px;
+}
 
 
 .letterbox{
@@ -714,6 +720,55 @@ footer{
 .userForm fieldset{
   padding: 20px 5px 20px 5px; border: 1px dashed darkgray; width: calc(100% - 20px);
 }
+
+
+
+
+.termBox{
+  width: 41%;
+  height: 200px;
+  margin-left: 3%;
+}
+
+
+
+
+
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #fff;
+  margin: 15px;
+  border-radius: 5px;
+  margin-left: 0px;
+  margin-top: 0px;
+  width: calc(100% - 32px);
+}
+
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+
+ul.breadcrumb li img{
+   width: 20px;
+   margin-bottom: -4px;
+}
+
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "\203A";
+}
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
 
 /**********************************************************************************************/
 /**********************************************************************************************/
@@ -797,6 +852,15 @@ footer{
 
   .deleteBox{
     padding-bottom: 13%;
+  }
+
+
+
+  .termBox{
+    width: 98%;
+    height: 200px;
+    margin-left: -5%;
+    margin-top: 10px;
   }
 
 

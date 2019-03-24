@@ -120,5 +120,30 @@
 
 
 
+  function getTermsByModuleId($id){
+    $termClass = new DatabaseTable('terms');
+    $terms = $termClass->find('tmid', $id);
+    return $terms;
+  }
+
+
+
+// Sets term's current status by checking the date and returns the term
+  function setTermStatus($term){
+    $termClass = new DatabaseTable('terms');
+    $termNew = [
+      'tid'=>$term['tid'],
+      'tmid'=>$term['tmid'],
+      'tname'=>$term['tname'],
+      'tsdate'=>$term['tsdate'],
+      'tedate'=>$term['tedate'],
+      'tstatus'=>checkDateStatus($term['tsdate'], $term['tedate'])
+    ];
+    $termClass->update($termNew, 'tid');
+    $term = $termClass->find('tid', $term['tid']);
+    $term = $term->fetch();
+    return $term;
+  }
+
 
 ?>
