@@ -60,41 +60,44 @@ $count = 0;
                     <b>Resource Title: </b><?php echo $resource['rtitle'];?><br>
                     <b>Resource Description: </b><?php echo $resource['rdescription'];?><br>
                     <b>Resource File: </b><?php echo $resource['rfilenames'];?><br><br>
-                    <div style=" text-align: center;">
-                      <a target = "_blank" href = "<?php echo $resource['rfilenames'];?>">
-                        <div class = "courseModuleBox" style = "background: LimeGreen; width: 90%; margin: 0; margin-left: -20px; border: 2px solid darkslategray;">
-                            <img src = "/GroupProject/public/resources/images/downloadbutton.png" style="margin-top: 10px; width: 30px;">Download File
-                        </div>
-                      </a>
-                    </div>
-                    <br>
-                  </p>
+              </p>
+
+
+<!-- Edit Resource Button -->
+              <?php
+                  $link = '<a class = "courseModuleLink" href = "/GroupProject/public/ModuleLeaderResources/browse/'.$resource['rid'].'">';
+                  echo $link;?>
+                <div class = "resourceBox" style = "background: blue;">
+                  <img src = "/GroupProject/public/resources/images/edit.png" width="20">
+                    Edit
+                </div>
+                </a>
+<!-- Delete Resource Button -->
+            <?php
+                $link = '<a class = "courseModuleLink" href = "/GroupProject/public/ModuleLeaderResources/delete/'.$resource['rid'].'">';
+                echo $link;?>
+              <div class = "resourceBox" style = "background: red;">
+                <img src = "/GroupProject/public/resources/images/deleteuser.png" width="20">
+                  Delete
+              </div>
+              </a>
+
+
+
+              <br>
+
 
                 </div>
                 <div class = "formColumnSeparator" style="background: white; border-right: 2px dashed grey;"></div>
                 <div class = "formColumn2">
-
-<!-- Edit Resource Button -->
-                  <?php
-                      $link = '<a class = "courseModuleLink" href = "/GroupProject/public/ModuleLeaderResources/browse/'.$resource['rid'].'">';
-                      echo $link;?>
-                    <div class = "resourceBox" style = "background: blue;">
-                      <img src = "/GroupProject/public/resources/images/edit.png" width="20">
-                        Edit
-                    </div>
+                  <div style=" text-align: center;">
+                    <a target = "_blank" href = "<?php echo $resource['rfilenames'];?>">
+                      <div class = "courseModuleBox" style = "background: LimeGreen; width: 90%; margin: auto; border: 2px solid darkslategray;">
+                          <img src = "/GroupProject/public/resources/images/downloadbutton.png" style="margin-top: 10px; width: 30px;">Download File
+                      </div>
                     </a>
-
-<!-- Delete Resource Button -->
-                <?php
-                    $link = '<a class = "courseModuleLink" href = "/GroupProject/public/ModuleLeaderResources/delete/'.$resource['rid'].'">';
-                    echo $link;?>
-                  <div class = "resourceBox" style = "background: red;">
-                    <img src = "/GroupProject/public/resources/images/deleteuser.png" width="20">
-                      Delete
                   </div>
-                  </a>
-
-
+                <br>
                 </div>
               </div>
 
