@@ -3,11 +3,9 @@
   class ModuleLeaderPAT extends Controller{
 
     public function index(){
-      $announcementClass = new DatabaseTable('announcements');
-      $announcements = $announcementClass->findAllReverse('anid');
 
-      $template = '../app/views/moduleLeaders/moduleLeaderHome.php';
-      $content = loadTemplate($template, ['announcements'=>$announcements]);
+      $template = '../app/views/moduleLeaders/viewPAT.php';
+      $content = loadTemplate($template, []);
       $selected='PAT';
       $title = "Module Leader - PAT";
 

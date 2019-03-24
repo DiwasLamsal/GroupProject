@@ -18,6 +18,17 @@
     <b>Term Start Date: </b><?php echo date("l\, jS-F-Y", strtotime($term['tsdate']));?><br>
     <b>Term End Date: </b><?php echo date("l\, jS-F-Y", strtotime($term['tedate']));?><br>
 
-    <br><hr><br>
+    <br><br>
+      <div style = "text-align: center;">
+        <a class = "courseModuleLink" href = "/GroupProject/public/ModuleLeaderResources/addResource/<?php echo $term['tid']?>">
+          <div class = "courseModuleBox" style = "background: <?php echo generateRandomColor()?>;">
+              Add Resources
+            </div>
+          </a>
+
+      </div>
+
+
+
   </div>
 </div>
