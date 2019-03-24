@@ -4,9 +4,9 @@
 
     public function index(){
       $announcementClass = new DatabaseTable('announcements');
-      $announcements = $announcementClass->findAllReverse('anid');
+      $announcements = $announcementClass->findLimitReverse('anid', 10);
 
-      $template = '../app/views/moduleLeaders/moduleLeaderHome.php';
+      $template = '../app/views/moduleLeaders/viewAnnouncements.php';
       $content = loadTemplate($template, ['announcements'=>$announcements]);
       $selected='Announcements';
       $title = "Module Leader - Announcements";

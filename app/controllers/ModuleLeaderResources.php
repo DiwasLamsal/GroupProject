@@ -6,8 +6,8 @@
       $announcementClass = new DatabaseTable('announcements');
       $announcements = $announcementClass->findAllReverse('anid');
 
-      $template = '../app/views/moduleLeaders/moduleLeaderHome.php';
-      $content = loadTemplate($template, ['announcements'=>$announcements]);
+      $template = '../app/views/moduleLeaders/viewResources.php';
+      $content = loadTemplate($template, []);
       $selected='Resources';
       $title = "Module Leader - Resources";
 

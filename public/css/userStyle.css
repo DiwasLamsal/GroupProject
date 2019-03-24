@@ -734,6 +734,8 @@ footer{
 
 
 
+/* Code taken from https://www.w3schools.com/howto/howto_css_breadcrumbs.asp */
+
 ul.breadcrumb {
   padding: 10px 16px;
   list-style: none;
@@ -767,6 +769,48 @@ ul.breadcrumb li a {
 ul.breadcrumb li a:hover {
   color: #01447e;
   text-decoration: underline;
+}
+
+
+
+
+/* Code taken from https://www.w3schools.com/howto/howto_js_collapsible.asp */
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: white;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  opacity: 0.6;
+  border-radius: 5px;
+  transition: 0.1s ease-out;
+}
+
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #ccc;
+  opacity: 0.8;
+  border-radius: 0px;
+  border-top-left-radius: : 5px;
+  border-top-right-radius: : 5px;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.collapsedcontent {
+  padding: 0 18px;
+  max-height: 0;
+  margin-bottom: 5px;
+  overflow: hidden;
+  background-color: white;
+  transition: max-height 0.1s ease-out;
 }
 
 

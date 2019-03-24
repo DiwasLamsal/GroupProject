@@ -21,7 +21,7 @@
 <div class = "adminManageTable">
 
   <?php
-    $color = generateRandomColor();
+    $color = 'DarkSlateGray';
   ?>
   <div class = "tableTitle" style="background: <?php echo $color; ?>;">
     <h1 class = "tableHeading"><?php echo $module['mcode'].' - '.$module['mname'];?></h1>

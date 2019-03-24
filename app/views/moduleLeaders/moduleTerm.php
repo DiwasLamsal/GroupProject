@@ -10,7 +10,7 @@
 
 <div class = "adminManageTable">
   <div class = "tableTitle" style="background: darkcyan;">
-    <h1 class = "tableHeading"><?php echo $term['tname'].' - '.$module['mname'];?></h1>
+    <h1 class = "tableHeading"><?php echo $module['mname'].' - '.$term['tname'];?></h1>
   </div>
 
   <div class = "content" style="text-align: left; margin: 15px; line-height: 1.6;">
@@ -19,9 +19,5 @@
     <b>Term End Date: </b><?php echo date("l\, jS-F-Y", strtotime($term['tedate']));?><br>
 
     <br><hr><br>
-
-
   </div>
-
-
 </div>
