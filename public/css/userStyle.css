@@ -903,10 +903,12 @@ ul.breadcrumb li a:hover {
     width: 98%;
     height: 200px;
     margin-left: -5%;
-    margin-top: 10px;
+    margin-top: 5px;
   }
 
+  .termBox img{
 
+  }
 
   .announcementDate{
     display: none;

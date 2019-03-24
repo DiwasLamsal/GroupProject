@@ -2,7 +2,7 @@
 
   class ModuleLeaderResources extends Controller{
 
-    public function index(){
+    public function index($var=""){
       $moduleClass = new DatabaseTable('modules');
 
       if (session_status() == PHP_SESSION_NONE) {
@@ -11,12 +11,15 @@
       $modules = $moduleClass->find('mluid', $_SESSION['loggedin']['uid']);
 
       $template = '../app/views/moduleLeaders/viewResources.php';
-      $content = loadTemplate($template, ['modules'=>$modules]);
+      $content = loadTemplate($template, ['modules'=>$modules, 'var'=>$var]);
       $selected='Resources';
       $title = "Module Leader - Resources";
 
       require_once "../app/controllers/moduleLeaderLoadView.php";
     }
+
+
+
 
     public function addResource($term=""){
 
@@ -34,10 +37,18 @@
       $module = $moduleClass->find('mid', $term['tmid'])->fetch();
 
       if(isset($_POST['submit'])){
-        $_POST['resource']['rtid']==$term;
-        $_POST['resource']['rstatus']=="Y";
+        $_POST['resource']['rtid']=$term['tid'];
+        $_POST['resource']['rstatus']="Y";
 
-        
+        $target_dir = "resources/uploads/";
+        $target_file = $target_dir.microtime(true).'-'.basename($_FILES["resourceFile"]["name"]);
+        move_uploaded_file($_FILES["resourceFile"]["tmp_name"], $target_file);
+        $_POST['resource']['rfilenames']=$target_file;
+
+        print_r($_POST['resource']);
+
+        $resourceClass->save($_POST['resource']);
+        header("Location:../ModuleLeaderResources/index/addsuccess");
 
       }
 

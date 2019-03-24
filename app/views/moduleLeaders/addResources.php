@@ -8,7 +8,7 @@
 
 
 
-<form method = "POST" class = "userForm">
+<form method = "POST" class = "userForm" enctype="multipart/form-data">
 
 <div class = "formTitle">
   <h1 class = "formHeading">
@@ -40,7 +40,7 @@
 
   <div class = "formColumn2">
     <label>Resource File: </label>
-    <input type = "file" name = "resource[rfilenames]" required style="border: none; float: right;">
+    <input type = "file" name = "resourceFile" required style="border: none; float: right;">
 
   </div>
 </div>

@@ -126,7 +126,12 @@
     return $terms;
   }
 
-  
+  function getResourcesByTermId($id){
+    $resourceClass = new DatabaseTable('resources');
+    $resources = $resourceClass->find('rtid', $id);
+    return $resources;
+  }
+
 
 
 // Sets term's current status by checking the date and returns the term
