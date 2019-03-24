@@ -3,11 +3,16 @@
   class ModuleLeaderResources extends Controller{
 
     public function index(){
-      $announcementClass = new DatabaseTable('announcements');
-      $announcements = $announcementClass->findAllReverse('anid');
+      $moduleClass = new DatabaseTable('modules');
+
+      if (session_status() == PHP_SESSION_NONE) {
+      	session_start();
+      }
+      $modules = $moduleClass->find('mluid', $_SESSION['loggedin']['uid']);
+
 
       $template = '../app/views/moduleLeaders/viewResources.php';
-      $content = loadTemplate($template, []);
+      $content = loadTemplate($template, ['modules'=>$modules]);
       $selected='Resources';
       $title = "Module Leader - Resources";
 

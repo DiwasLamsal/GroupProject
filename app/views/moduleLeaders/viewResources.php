@@ -6,21 +6,36 @@
 </ul>
 
 
-<button class="collapsible" style="background: DarkSlateBlue;">
+<?php
+$count = 0;
+  while($module = $modules->fetch()){
+    $terms = getTermsByModuleId($module['mid']);
+
+    while($term = $terms->fetch()){
+    ++$count;
+?>
+
+<button class="collapsible  <?php if($count==1) echo 'active'?>" style="background: DarkCyan;">
   <b><?php echo $module['mname'].' - '.$term['tname'];?></b>
 </button>
 
 <!-- Buttons for displaying announcement description -->
-  <div class="collapsedcontent">
-    <p>
-        <?php
-          echo '<br>'.$announcement['andescription'].'<br><br>';
-        ?>
-    </p>
+  <div class="collapsedcontent" style="margin-bottom: 10px; <?php if($count==1) echo 'max-height: 1000px;'?>">
+    <!-- Content inside the collapsible -->
+    <div style="margin: 10px; min-height: 200px;">
+        <h2 style="text-align: center; margin-top: 20px;">Resources for <?php echo $module['mname'].' - '.$term['tname'];?></h2>
+    </div>
   </div>
 
 
+<?php
+    }
+  }
+?>
 
+
+
+<!-- Script for loading collapsible function -->
 <script>
   toggleCollapse();
 </script>

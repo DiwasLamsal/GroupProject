@@ -15,7 +15,7 @@
         while($announcement = $announcements->fetch()){
           if($announcement['anstatus']=='N')
             continue;
-          echo '<a href = "/GroupProject/public/ModuleLeaderAnnouncements/browse/'.$announcement['anid'].'" style="color: black;"><div class = "subContentList"><b>';
+          echo '<a href = "/GroupProject/public/ModuleLeaderAnnouncements/index/'.$announcement['anid'].'" style="color: black;"><div class = "subContentList"><b>';
             echo $announcement['antitle'];
           echo '</b></div></a>';
         }

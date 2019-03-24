@@ -6,19 +6,30 @@
   <li>Announcements</li>
 </ul>
 
-
-
 <?php
-    while($announcement = $announcements->fetch()){ ?>
+  $count = 0;
+    while($announcement = $announcements->fetch()){
+      $count++;
 
-      <!-- Buttons for displaying announcements -->
-    <button class="collapsible" style="background: <?php echo generateRandomColor();?>">
+      if($selected['anid']==$announcement['anid']){
+        $flag = true;
+      }
+      else if($selected == "" && $count == 1){
+        $flag = true;
+      }
+      else{
+        $flag = false;
+      }
+?>
+
+    <!-- Buttons for displaying announcements -->
+    <button class="collapsible <?php if($flag) echo 'active';?>">
       <?php echo '<b>'.$announcement['antitle'].'</b>';?>
-      <b style = "float: right;"><?php echo date("l\, jS-F-Y", strtotime($announcement['andate']));?></b>
+      <b class = "announcementDate" style = "float: right;"><?php echo date("l\, jS-F-Y", strtotime($announcement['andate']));?></b>
     </button>
 
     <!-- Buttons for displaying announcement description -->
-      <div class="collapsedcontent">
+      <div class="collapsedcontent" <?php if($flag) echo 'style = "max-height: 1000px;""';?>>
         <p>
             <?php
               echo '<br>'.$announcement['andescription'].'<br><br>';

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 22, 2019 at 03:05 PM
+-- Generation Time: Mar 24, 2019 at 10:32 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -248,10 +248,10 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`suid`, `cid`, `gpa`, `prevschool`, `rstatus`, `rdormant`, `puid`, `slvid`) VALUES
-(18, 2, '3.30', 'Naya', 'Dormant', 'Withdrawn', 25, 3),
-(19, 3, '0.00', '', 'Dormant', 'Pending Verification', 16, 3),
-(20, 2, '3.00', 'Cambridge University', 'Live', '', 16, 1),
-(23, 2, '0.00', 'Oxford', 'Dormant', 'Pending Verification', 22, 2);
+(18, 2, '3.30', 'Naya Aayam Multidisciplinary Institute', 'Dormant', 'Withdrawn', 25, 3),
+(19, 3, '0.00', 'Naya Aayam Multidisciplinary Institute', 'Dormant', 'Pending Verification', 24, 3),
+(20, 2, '3.00', 'Cambridge University', 'Dormant', 'Withdrawn', 16, 1),
+(23, 2, '2.80', 'Oxford University', 'Live', '', 22, 2);
 
 -- --------------------------------------------------------
 
@@ -273,17 +273,17 @@ CREATE TABLE `terms` (
 --
 
 INSERT INTO `terms` (`tid`, `tmid`, `tname`, `tsdate`, `tedate`, `tstatus`) VALUES
-(19, 30, 'Term I', '2019-03-20', '2019-09-16', 'Not Started'),
+(19, 30, 'Term I', '2019-03-20', '2019-09-16', 'Ongoing'),
 (20, 30, 'Term II', '2019-09-16', '2020-03-19', 'Not Started'),
 (21, 31, 'Term I', '2019-03-20', '2019-09-16', 'Not Started'),
 (22, 31, 'Term II', '2019-09-16', '2020-03-19', 'Not Started'),
 (23, 32, 'Term I', '2019-03-20', '2019-09-16', 'Not Started'),
 (24, 32, 'Term II', '2019-09-16', '2020-03-19', 'Not Started'),
-(25, 33, 'Term I', '2019-03-20', '2019-09-16', 'Not Started'),
+(25, 33, 'Term I', '2019-03-20', '2019-09-16', 'Ongoing'),
 (26, 33, 'Term II', '2019-09-16', '2020-03-19', 'Not Started'),
-(27, 34, 'Term I', '2019-03-20', '2019-09-16', 'Not Started'),
+(27, 34, 'Term I', '2019-03-20', '2019-09-16', 'Ongoing'),
 (28, 34, 'Term II', '2019-09-16', '2020-03-19', 'Not Started'),
-(29, 35, 'Term I', '2019-03-20', '2019-09-16', 'Not Started'),
+(29, 35, 'Term I', '2019-03-20', '2019-09-16', 'Ongoing'),
 (30, 35, 'Term II', '2019-09-16', '2020-03-19', 'Not Started'),
 (31, 36, 'Term I', '2019-03-20', '2019-09-16', 'Not Started'),
 (32, 36, 'Term II', '2019-09-16', '2020-03-19', 'Not Started'),
@@ -499,7 +499,7 @@ ALTER TABLE `terms`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `uid` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+  MODIFY `uid` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- Constraints for dumped tables
