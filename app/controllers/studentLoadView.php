@@ -1,5 +1,5 @@
 <?php
-$template = '../app/views/students/StudentNavigation.php';
+$template = '../app/views/students/studentNavigation.php';
 $navigation = loadTemplate($template, ['selected'=>$selected]);
 
 $template = '../app/templates/UserTemplate.php';
