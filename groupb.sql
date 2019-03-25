@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 24, 2019 at 10:32 AM
+-- Generation Time: Mar 24, 2019 at 04:12 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -209,7 +209,8 @@ INSERT INTO `modules` (`mid`, `mluid`, `mcid`, `mlvid`, `mname`, `mdescription`,
 (35, 24, 2, 2, 'Web Programming', 'Web programming refers to the writing, markup and coding involved in Web development, which includes Web content, Web client and server scripting and network security. The most common languages used for Web programming are XML, HTML, JavaScript, Perl 5 and PHP.', 'CSY 2028', 'Y'),
 (36, 28, 2, 3, 'Artificial Intelligence', 'Artificial intelligence (AI) is an area of computer science that emphasizes the creation of intelligent machines that work and react like humans. Some of the activities computers with artificial intelligence are designed for include: Speech recognition.', 'CSY 3032', 'Y'),
 (37, 30, 2, 2, 'Formal Specification of Software Systems', 'A formal software specification is a specification expressed in a language whose vocabulary, syntax and semantics are formally defined. This need for a formal definition means that the specification languages must be based on mathematical concepts whose properties are well understood.', 'CSY 2031', 'Y'),
-(38, 15, 2, 3, 'Computing Dissertation', 'A thesis or dissertation is a document submitted in support of candidature for an academic degree or professional qualification presenting the author\'s research and findings.', 'CSY 4050', 'Y');
+(38, 15, 2, 3, 'Computing Dissertation', 'A thesis or dissertation is a document submitted in support of candidature for an academic degree or professional qualification presenting the author\'s research and findings.', 'CSY 4050', 'Y'),
+(39, 25, 2, 2, 'Group Project', 'Group Project Description. Over the course of the semester, your group will work as a team of communication consultants who will help a local non-profit organization in identifying, assessing, and improving some aspect of their organizations communication.', 'CSY 2027', 'Y');
 
 -- --------------------------------------------------------
 
@@ -225,6 +226,15 @@ CREATE TABLE `resources` (
   `rfilenames` text NOT NULL,
   `rstatus` enum('Y','N') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `resources`
+--
+
+INSERT INTO `resources` (`rid`, `rtid`, `rtitle`, `rdescription`, `rfilenames`, `rstatus`) VALUES
+(1, 25, 'asd', 'asd', 'resources/uploads/1553432165.3766-eoc_data_resource_2017-dr3_027_03.csv', 'Y'),
+(2, 25, 'CSY 2028 Topic 1 With Solutions', 'CSY 2028 Topic 1 With Solutions. CSY 2028 Topic 1 With Solutions. CSY 2028 Topic 1 With Solutions. CSY 2028 Topic 1 With Solutions. CSY 2028 Topic 1 With Solutions.', 'resources/uploads/1553433915.5662-csy2028-topic1-with-solutions.pdf', 'Y'),
+(3, 26, 'Student Data Test', 'Student Data Test Software Engineering III', 'resources/uploads/1553435928.5398-studentdata.csv', 'Y');
 
 -- --------------------------------------------------------
 
@@ -290,7 +300,9 @@ INSERT INTO `terms` (`tid`, `tmid`, `tname`, `tsdate`, `tedate`, `tstatus`) VALU
 (33, 37, 'Term I', '2019-03-20', '2019-09-16', 'Not Started'),
 (34, 37, 'Term II', '2019-09-16', '2020-03-19', 'Not Started'),
 (35, 38, 'Term I', '2019-03-20', '2019-09-16', 'Not Started'),
-(36, 38, 'Term II', '2019-09-16', '2020-03-19', 'Not Started');
+(36, 38, 'Term II', '2019-09-16', '2020-03-19', 'Not Started'),
+(37, 39, 'Term I', '2019-03-20', '2019-09-20', 'Ongoing'),
+(38, 39, 'Term II', '2019-09-20', '2020-03-23', 'Not Started');
 
 -- --------------------------------------------------------
 
@@ -481,19 +493,19 @@ ALTER TABLE `levels`
 -- AUTO_INCREMENT for table `modules`
 --
 ALTER TABLE `modules`
-  MODIFY `mid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `mid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `resources`
 --
 ALTER TABLE `resources`
-  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `terms`
 --
 ALTER TABLE `terms`
-  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `users`

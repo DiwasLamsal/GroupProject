@@ -48,7 +48,7 @@
         print_r($_POST['resource']);
 
         $resourceClass->save($_POST['resource']);
-        header("Location:../ModuleLeaderResources/index/addsuccess");
+        header("Location:/GroupProject/public/ModuleLeaderResources/index/addsuccess");
 
       }
 
