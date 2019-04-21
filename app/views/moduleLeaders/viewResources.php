@@ -62,6 +62,7 @@ $count = 0;
                   <p>
                     <b>Resource Title: </b><?php echo $resource['rtitle'];?><br>
                     <b>Resource Description: </b><?php echo $resource['rdescription'];?><br>
+                    <br>
                     <b>Resource File: </b><?php echo $resource['rfilenames'];?><br><br>
               </p>
 
