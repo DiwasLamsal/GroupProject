@@ -17,10 +17,19 @@
 </li>
 
 <li>
-  <a href = "/GroupProject/public/ModuleLeaderPAT">
-    <div style="width: 100%; height: 100%;" <?php if($selected=="PAT") echo 'class = "selected"';?>>
-      <img src = "/GroupProject/public/resources/images/lecturericon.png">
-      <span class = "navText">&nbsp; PAT</span>
+  <a href = "/GroupProject/public/ModuleLeaderAssignments">
+    <div style="width: 100%; height: 100%;" <?php if($selected=="Assignments") echo 'class = "selected"';?>>
+      <img src = "/GroupProject/public/resources/images/assignment.png">
+      <span class = "navText">&nbsp; Assignments</span>
+    </div>
+  </a>
+</li>
+
+<li>
+  <a href = "/GroupProject/public/ModuleLeaderSubmissions">
+    <div style="width: 100%; height: 100%;" <?php if($selected=="Submissions") echo 'class = "selected"';?>>
+      <img src = "/GroupProject/public/resources/images/submission.png">
+      <span class = "navText">&nbsp; Submissions</span>
     </div>
   </a>
 </li>
@@ -30,6 +39,15 @@
     <div style="width: 100%; height: 100%;" <?php if($selected=="Resources") echo 'class = "selected"';?>>
       <img src = "/GroupProject/public/resources/images/resource.png">
       <span class = "navText">&nbsp; Resources</span>
+    </div>
+  </a>
+</li>
+
+<li>
+  <a href = "/GroupProject/public/ModuleLeaderPAT">
+    <div style="width: 100%; height: 100%;" <?php if($selected=="PAT") echo 'class = "selected"';?>>
+      <img src = "/GroupProject/public/resources/images/lecturericon.png">
+      <span class = "navText">&nbsp; PAT</span>
     </div>
   </a>
 </li>

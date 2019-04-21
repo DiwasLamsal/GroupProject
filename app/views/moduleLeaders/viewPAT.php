@@ -7,6 +7,7 @@
 </ul>
 
 <?php
+if($students->rowCount() > 0){
   while($student = $students->fetch()){
     $user = getUserById($student['suid'])->fetch();
 
@@ -43,4 +44,16 @@
     </div>
   </div>
 
-<?php } ?>
+<?php }
+}
+else{
+  ?>
+
+  <div class = "adminManageTable">
+      <h2 style="color: red; text-align: center;">No Student Has Been Assigned To You Yet</h2>
+  </div>
+
+
+<?php
+}
+?>
