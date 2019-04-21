@@ -42,6 +42,8 @@
 
         $target_dir = "resources/uploads/";
         $target_file = $target_dir.microtime(true).'-'.basename($_FILES["resourceFile"]["name"]);
+        $target_file = str_replace(' ', '_', $target_file);
+
         move_uploaded_file($_FILES["resourceFile"]["tmp_name"], $target_file);
         $_POST['resource']['rfilenames']=$target_file;
 
@@ -62,8 +64,32 @@
 
 
 
-    public function browseResource(){
+    public function browseResource($resource = ""){
 
+
+
+
+    }
+
+    public function deleteResource($resource = ""){
+      $resourceClass = new DatabaseTable('resources');
+      $resourceD = $resourceClass->find('rid',$resource);
+      if($resourceD->rowCount()>0){
+
+        $resourceD = $resourceD->fetch();
+
+        $path = '../public/'.$resourceD['rfilenames'];
+
+        if(is_file($path))unlink($path);
+
+        $resourceClass->delete('rid', $resource);
+
+        header("Location:../index/deletesuccess");
+
+      }
+      else{
+        header("Location:../index/nosuchrecord");
+      }
 
 
 

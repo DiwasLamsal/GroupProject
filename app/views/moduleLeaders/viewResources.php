@@ -11,6 +11,9 @@
       if($var=="addsuccess"){
         echo '<b>Successfully Added Resource</b>';
       }
+      else if($var == 'deletesuccess'){
+          echo '<b>Successfully Deleted Resource</b>';
+      }
       else{
         echo '<b>Error</b>';
       }
@@ -65,7 +68,7 @@ $count = 0;
 
 <!-- Edit Resource Button -->
                 <a style="color: white;"
-                href = "/GroupProject/public/ModuleLeaderResources/browse/<?php echo $resource['rid'];?>">';
+                href = "/GroupProject/public/ModuleLeaderResources/browseResource/<?php echo $resource['rid'];?>">';
                 <div class = "resourceBox" style = "background: blue;">
                   <img src = "/GroupProject/public/resources/images/edit.png" width="20">
                     Edit
@@ -73,7 +76,7 @@ $count = 0;
                 </a>
 <!-- Delete Resource Button -->
                 <a style="color: white;"
-                  href = "/GroupProject/public/ModuleLeaderResources/delete/<?php echo $resource['rid'];?>">';
+                  href = "/GroupProject/public/ModuleLeaderResources/deleteResource/<?php echo $resource['rid'];?>">';
               <div class = "resourceBox" style = "background: red;">
                 <img src = "/GroupProject/public/resources/images/deleteuser.png" width="20">
                   Delete

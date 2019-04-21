@@ -23,7 +23,7 @@
   <?php
     $color = 'DarkCyan';
   ?>
-  <div class = "tableTitle" style="background: <?php echo $color; ?>;">
+  <div class = "tableTitle">
     <h1 class = "tableHeading"><?php echo $module['mcode'].' - '.$module['mname'];?></h1>
   </div>
 

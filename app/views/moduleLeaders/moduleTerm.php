@@ -9,7 +9,7 @@
 
 
 <div class = "adminManageTable">
-  <div class = "tableTitle" style="background: darkcyan;">
+  <div class = "tableTitle">
     <h1 class = "tableHeading"><?php echo $module['mname'].' - '.$term['tname'];?></h1>
   </div>
 
