@@ -8,11 +8,11 @@
       if (session_status() == PHP_SESSION_NONE) {
         session_start();
       }
-      $modules = $moduleClass->find('mluid', $_SESSION['loggedin']['uid']);
 
+      $students = $studentClass->find('puid', $_SESSION['loggedin']['uid']);
 
       $template = '../app/views/moduleLeaders/viewPAT.php';
-      $content = loadTemplate($template, []);
+      $content = loadTemplate($template, ['students'=>$students]);
       $selected='PAT';
       $title = "Module Leader - PAT";
 

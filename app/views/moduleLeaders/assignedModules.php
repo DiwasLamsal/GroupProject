@@ -8,11 +8,11 @@
 
 
 <?php
-  while($module = $modules->fetch()){
+if($modules->rowCount() > 0){
 
+  while($module = $modules->fetch()){
     $mCourse = getCourseById($module['mcid'])->fetch();
     $mLevel = getLevelById($module['mlvid'])->fetch();
-
     $terms = getTermsByModuleId($module['mid']);
 
 ?>
@@ -74,4 +74,15 @@
 </div>
 <?php
   }
+}
+else{
+  ?>
+
+  <div class = "adminManageTable">
+      <h2 style="color: red; text-align: center;">No Module Has Been Assigned To You Yet</h2>
+  </div>
+
+
+<?php
+}
 ?>

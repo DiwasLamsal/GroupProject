@@ -26,6 +26,8 @@
 
 <?php
 $count = 0;
+
+if($modules->rowCount() > 0){
   while($module = $modules->fetch()){
     $terms = getTermsByModuleId($module['mid']);
 
@@ -120,8 +122,18 @@ $count = 0;
 <?php
     }
   }
-?>
+}
+else{
+  ?>
 
+  <div class = "adminManageTable" style="">
+      <h2 style="color: red; text-align: center;">No Module Has Been Assigned To You Yet</h2>
+  </div>
+
+
+<?php
+}
+?>
 
 
 <!-- Script for loading collapsible function -->
