@@ -21,8 +21,8 @@
 
     <div class = "formColumn1">
       <label>Assignment Title: </label>
-      <input type = "text" name = "assignment[rtitle]" required
-      <?php if(isset($assignment))echo 'value="'.$assignment['rtitle'].'"';?>>
+      <input type = "text" name = "assignment[atitle]" required
+      <?php if(isset($assignment))echo 'value="'.$assignment['atitle'].'"';?>>
 
       <label>Assignment Description: </label>
       <textarea style="height: 108px;" name = "assignment[adescription]"><?php if(isset($assignment))echo $assignment['adescription'];?></textarea>
@@ -33,7 +33,7 @@
     <div class = "formColumn2">
       <input type = "hidden" name = "assignment[adeadline]" value = "<?php echo $term['tedate'];?>">
       <label>Assignment File: </label>
-      <input type = "file" name = "assignmentFile" required style="border: none; float: right;">
+      <input type = "file" name = "assignmentFile" style="border: none; float: right;">
 
       <label></label>
       <label>Note*: Deadline for assignment is automatically set to term's ending date. </label>

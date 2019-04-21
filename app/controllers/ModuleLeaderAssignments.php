@@ -62,25 +62,65 @@
 
 
 
-    public function browseResource($resource = ""){
+    public function browseAssignment($assignment = ""){
+      if($assignment==""){
+        header("Location: /GroupProject/public/ModuleLeaderAssignments/");
+      }
 
+      $assignmentClass = new DatabaseTable('assignments');
+      $termClass = new DatabaseTable('terms');
+      $moduleClass = new DatabaseTable('modules');
 
+      $assignment = $assignmentClass->find('aid', $assignment);
+      $assignment = $assignment->fetch();
 
+      $term = $termClass->find('tid', $assignment['atid'])->fetch();
+      $module = $moduleClass->find('mid', $term['tmid'])->fetch();
 
+      if(isset($_POST['submit'])){
+        $_POST['assignment']['atid']=$term['tid'];
+        $_POST['assignment']['status']="Y";
+        $_POST['assignment']['aid']=$assignment['aid'];
+
+        if(!empty($_FILES['assignmentFile']['name'])){
+
+          // Remove old resource file first
+          $assignmentD = $assignmentClass->find('aid',$assignment['aid']);
+          $assignmentD = $assignmentD->fetch();
+          $path = '../public/'.$assignmentD['afiles'];
+          if(is_file($path))unlink($path);
+
+          //Upload and set new file
+          $target_dir = "resources/assignments/";
+          $target_file = $target_dir.microtime(true).'-'.basename($_FILES["assignmentFile"]["name"]);
+          $target_file = str_replace(' ', '_', $target_file);
+
+          move_uploaded_file($_FILES["assignmentFile"]["tmp_name"], $target_file);
+          $_POST['assignment']['afiles']=$target_file;
+        }
+
+        $assignmentClass->save($_POST['assignment'], 'aid');
+        header("Location:/GroupProject/public/ModuleLeaderAssignments/index/editsuccess");
+      }
+
+      $template = '../app/views/moduleLeaders/addAssignment.php';
+      $content = loadTemplate($template, ['assignment'=>$assignment, 'term'=>$term, 'module'=>$module]);
+      $selected='Assignments';
+      $title = "Module Leader - Edit Assignment";
+
+      require_once "../app/controllers/moduleLeaderLoadView.php";
     }
 
-    public function deleteResource($resource = ""){
-      $resourceClass = new DatabaseTable('resources');
-      $resourceD = $resourceClass->find('rid',$resource);
-      if($resourceD->rowCount()>0){
+    public function deleteAssignment($assignment = ""){
+      $assignmentClass = new DatabaseTable('assignments');
+      $assignmentD = $assignmentClass->find('aid',$assignment);
+      if($assignmentD->rowCount()>0){
 
-        $resourceD = $resourceD->fetch();
+        $assignmentD = $assignmentD->fetch();
 
-        $path = '../public/'.$resourceD['rfilenames'];
-
+        $path = '../public/'.$assignmentD['afiles'];
         if(is_file($path))unlink($path);
-
-        $resourceClass->delete('rid', $resource);
+        $assignmentClass->delete('aid', $assignment);
 
         header("Location:../index/deletesuccess");
 

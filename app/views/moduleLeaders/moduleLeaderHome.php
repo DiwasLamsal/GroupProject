@@ -19,16 +19,9 @@
             echo $announcement['antitle'];
           echo '</b></div></a>';
         }
-
       ?>
     </div>
-
   </div>
 
 
 </div>
-
-<h1>
-
-
-</h1>

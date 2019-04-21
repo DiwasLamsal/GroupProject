@@ -14,6 +14,9 @@
       else if($var == 'deletesuccess'){
           echo '<b>Successfully Deleted Resource</b>';
       }
+      else if($var == 'editsuccess'){
+        echo '<b>Successfully Edited Assignment</b>';
+      }
       else{
         echo '<b>Error</b>';
       }

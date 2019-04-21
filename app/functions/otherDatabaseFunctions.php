@@ -132,6 +132,11 @@
     return $resources;
   }
 
+  function getAssignmentsByTermId($id){
+    $assignmentClass = new DatabaseTable('assignments');
+    $assignments = $assignmentClass->find('atid', $id);
+    return $assignments;
+  }
 
 
 // Sets term's current status by checking the date and returns the term

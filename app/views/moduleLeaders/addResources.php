@@ -6,8 +6,6 @@
   <li>Add Resource</li>
 </ul>
 
-
-
 <form method = "POST" class = "userForm" enctype="multipart/form-data">
 
 <div class = "formTitle">
@@ -26,12 +24,8 @@
     <input type = "text" name = "resource[rtitle]" required
     <?php if(isset($resource))echo 'value="'.$resource['rtitle'].'"';?>>
 
-
-
     <label>Resource Description: </label>
     <textarea style="height: 108px;" name = "resource[rdescription]"><?php if(isset($resource))echo $resource['rdescription'];?></textarea>
-
-
 
   </div>
 
@@ -40,7 +34,9 @@
 
   <div class = "formColumn2">
     <label>Resource File: </label>
-    <input type = "file" name = "resourceFile" required style="border: none; float: right;">
+    <input type = "file" name = "resourceFile" style="border: none; float: right;">
+
+    <?php if(isset($resource))echo '<br><p>Note: Leave the upload empty and submit if you do not wish to change the file.</p>';?>
 
   </div>
 </div>
