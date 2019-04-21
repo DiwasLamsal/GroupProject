@@ -22,11 +22,16 @@
       $countModule = $moduleClass->getCount('mid');
       $countModule = $countModule->fetch()['COUNT(mid)'];
 
+      $userClass = new DatabaseTable('users');
+      $countUser = $userClass->getCount('uid');
+      $countUser = $countUser->fetch()['COUNT(uid)'];
+
       $countArray = [
         'students'=>$countStudents,
         'moduleLeaders'=>$countModuleLeaders,
         'courses'=>$countCourse,
-        'modules'=>$countModule
+        'modules'=>$countModule,
+        'users'=>$countUser,
       ];
 
       $template = '../app/views/administrators/adminHome.php';

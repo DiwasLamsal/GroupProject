@@ -15,83 +15,132 @@ if(isset($module)){
 ?>
 
 
-<div class = "boxesContainer boxesContainerManage">
+<div class="boxesContainer boxesContainerManage">
 
-  <div class = "contentBoxLarge contentBoxLargeEdit">
+    <div class="contentBoxLarge contentBoxLargeEdit">
 
-    <div class = "title">
-      <?php echo $module['mname'];?>
-      </div>
-    <div class = "content" style="text-align: left; margin: 15px; line-height: 1.6;">
-      <b>Name: </b><?php echo $module['mname'];?><br>
-      <b>Code: </b><?php echo $module['mcode'];?><br>
-      <b>Description: </b><?php echo $module['mdescription'];?><br>
-      <br>
-      <b>Status: </b><?php echo $module['mstatus']=="Y" ? '<font color = "green">Visible</font>':
-                                                         '<font color = "red">Archived</font>';?><br>
+        <div class="title">
+            <?php echo $module['mname'];?>
+        </div>
+        <div class="content" style="text-align: left; margin: 15px; line-height: 1.6;">
+            <table class="tableborder">
+                <tbody>
+                    <tr>
+                        <th>Name:</th>
+                        <td><?php echo $module['mname'];?></td>
+                    </tr>
+                    <tr>
+                        <th>Code:</th>
+                        <td><?php echo $module['mcode'];?></td>
+                    </tr>
+                    <tr>
+                        <th>Description:</th>
+                        <td><?php echo $module['mdescription'];?></td>
+                    </tr>
+                    <tr>
+                        <th>Status: </th>
+                        <td><?php echo $module['mstatus']=="Y" ? '<font color = "green">Visible</font>':
+                                                         '<font color = "red">Archived</font>';?></td>
+                    </tr>
+                    <tr>
+                        <th>Action</th>
+                        <td>
+                            <a href="/GroupProject/public/ManageModules/delete/<?php echo $module['mid'];?>">
+
+                                <img src="/GroupProject/public/resources/images/deleteuser.png" width="150">
+
+
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
     </div>
-  </div>
 
-  <div class = "contentBoxLarge contentBoxLargeEdit deleteBox">
-    <a href = "/GroupProject/public/ManageModules/delete/<?php echo $module['mid'];?>">
-      <div class = "deleteBoxTextHolder">
-        <br>
-        <img src = "/GroupProject/public/resources/images/deleteuser.png" width="150"><br><br>
-        Delete Module
-      </div>
-    </a>
-  </div>
 
 
 </div>
 
 
-<div class = "adminManageTable">
+<div class="adminManageTable">
 
-  <div class = "tableTitle" style="background: #6495ED;">
-    <h1 class = "tableHeading">Other Module Details</h1>
-  </div>
+    <div class="tableTitle">
+        <h1 class="tableHeading">Other Module Details</h1>
+    </div>
 
-  <div class = "content" style="text-align: left; margin: 15px; line-height: 1.6;">
-
-    <b>Leader: </b>
-    <?php
+    <div class="content" style="text-align: left; margin: 15px; line-height: 1.6;">
+        <table class="tableborder">
+            <tbody>
+                <tr>
+                    <th>Leader: </th>
+                    <td><?php
       $link = '<a target="_blank" style="color:blue;" href = "/GroupProject/public/ManageModuleLeaders/browse/'.$leader['uid'].'">'.
                 $leader['fname'].' '.$leader['mname'].' '.$leader['lname'].'</a>';
       echo $link;
-    ?>
-    <br>
-
-    <b>Course: </b>
-    <?php
+    ?></td>
+                </tr>
+                <tr>
+                    <th>
+                        Course:
+                    </th>
+                    <td> <?php
       $link = '<a target="_blank" style="color:blue;" href = "/GroupProject/public/ManageCourses/browse/'.$mCourse['cid'].'">'.
                 $mCourse['ctitle'].'</a>';
       echo $link;
-    ?>
-    <br>
-
-    <b>Level: </b>
-    <?php
+    ?></td>
+                </tr>
+                <tr>
+                    <th>Level:</th>
+                    <td><?php
       $link = '<a target="_blank" style="color:blue;" href = "/GroupProject/public/ManageLevels/browse/'.$mLevel['lvid'].'">'.
                 $mLevel['lvtitle'].' - '.$mLevel['lvaltname'].'</a>';
       echo $link;
-    ?>
-    <br>
-    <br><hr>
-    <br>
+    ?></td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <br>
 
-    <b>Term I Status: </b><?php echo $term1['tstatus'];?><br>
-    <b>Term I Start Date: </b><?php echo date("l\, jS-F-Y", strtotime($term1['tsdate']));?><br>
-    <b>Term I End Date: </b><?php echo date("l\, jS-F-Y", strtotime($term1['tedate']));?><br>
+        <table class="tableborder">
+            <tbody>
+                <tr>
+                  <th>Term I Status:</th>
+                  <td><?php echo $term1['tstatus'];?></td>
+                </tr>
+                <tr>
+                  <th>Term I Start Date:</th>
+                  <td><?php echo date("l\, jS-F-Y", strtotime($term1['tsdate']));?></td>
+                </tr>
+                <tr>
+                  <th>Term I End Date: </th>
+                  <td><?php echo date("l\, jS-F-Y", strtotime($term1['tedate']));?></td>
+                </tr>
+            </tbody>
+        </table>
+       
+        <hr><br>
+        <table class="tableborder">
+            <tbody>
+                <tr>
+                  <th>Term II Status:</th>
+                  <td><?php echo $term2['tstatus'];?></td>
+                </tr>
+                <tr>
+                  <th>Term II Start Date:</th>
+                  <td><?php echo date("l\, jS-F-Y", strtotime($term2['tsdate']));?></td>
+                </tr>
+                <tr>
+                  <th>Term II End Date: </th>
+                  <td><?php echo date("l\, jS-F-Y", strtotime($term2['tedate']));?></td>
+                </tr>
+            </tbody>
+        </table>
+       
 
-    <br><hr><br>
-
-    <b>Term II Status: </b><?php echo $term2['tstatus'];?><br>
-    <b>Term II Start Date: </b><?php echo date("l\, jS-F-Y", strtotime($term2['tsdate']));?><br>
-    <b>Term II End Date: </b><?php echo date("l\, jS-F-Y", strtotime($term2['tedate']));?><br>
-
-
-  </div>
+    </div>
 
 </div>
 
@@ -102,113 +151,114 @@ if(isset($module)){
 
 ?>
 
-<form method = "POST" class = "userForm">
+<form method="POST" class="userForm">
 
-<div class = "formTitle">
-  <h1 class = "formHeading">
-    <?php if(isset($module))echo 'Edit '.$module['mname'];
+    <div class="formTitle">
+        <h1 class="formHeading">
+            <?php if(isset($module))echo 'Edit '.$module['mname'];
     else {?>
-    Add new Module
-  <?php } ?>
-  </h1>
-</div>
+            Add new Module
+            <?php } ?>
+        </h1>
+    </div>
 
-<div class = "formHolder">
+    <div class="formHolder">
 
-  <div class = "formColumn1">
-    <label>Module Name: </label>
-    <input type = "text" name = "module[mname]" required
-    <?php if(isset($module))echo 'value="'.$module['mname'].'"';?>>
+        <div class="formColumn1">
+            <label>Module Name: </label>
+            <input type="text" name="module[mname]" required
+                <?php if(isset($module))echo 'value="'.$module['mname'].'"';?>>
 
 
-    <label for = "leader">Leader: </label>
-    <select name = "module[mluid]">
-      <?php
+            <label for="leader">Leader: </label>
+            <select name="module[mluid]">
+                <?php
         while($user = $users->fetch()){
           if($user['status']=="N")
             continue;
       ?>
-        <option value = "<?php echo $user['uid'];?>"
-          <?php if(isset($module)&& $module['mluid']==$user['uid'])echo 'selected';?>>
-          <?php echo $user['fname'].' '.$user['mname'].' '.$user['lname'];?>
-        </option>
-      <?php }?>
-    </select>
+                <option value="<?php echo $user['uid'];?>"
+                    <?php if(isset($module)&& $module['mluid']==$user['uid'])echo 'selected';?>>
+                    <?php echo $user['fname'].' '.$user['mname'].' '.$user['lname'];?>
+                </option>
+                <?php }?>
+            </select>
 
 
 
-    <label for = "course">Course: </label>
-    <select name = "module[mcid]">
-      <?php
+            <label for="course">Course: </label>
+            <select name="module[mcid]">
+                <?php
         while($course = $courses->fetch()){
           if($course['status']=="N")
             continue;
       ?>
-        <option value = "<?php echo $course['cid'];?>"
-          <?php if(isset($mCourse)&& $module['mcid']==$course['cid'])echo 'selected';?>>
-          <?php echo $course['ctitle'];?>
-        </option>
-      <?php }?>
-    </select>
+                <option value="<?php echo $course['cid'];?>"
+                    <?php if(isset($mCourse)&& $module['mcid']==$course['cid'])echo 'selected';?>>
+                    <?php echo $course['ctitle'];?>
+                </option>
+                <?php }?>
+            </select>
 
 
-    <label for = "level">Level: </label>
-    <select name = "module[mlvid]">
-      <?php
+            <label for="level">Level: </label>
+            <select name="module[mlvid]">
+                <?php
         while($level = $levels->fetch()){
           if($level['status']=="N")
             continue;
       ?>
-        <option value = "<?php echo $level['lvid'];?>"
-          <?php if(isset($mLevel)&& $module['mlvid']==$level['lvid'])echo 'selected';?>>
-          <?php echo $level['lvtitle'].' - '.$level['lvaltname'];?>
-        </option>
-      <?php }?>
-    </select>
+                <option value="<?php echo $level['lvid'];?>"
+                    <?php if(isset($mLevel)&& $module['mlvid']==$level['lvid'])echo 'selected';?>>
+                    <?php echo $level['lvtitle'].' - '.$level['lvaltname'];?>
+                </option>
+                <?php }?>
+            </select>
 
-    <label>Module Code: </label>
-    <input type = "text" name = "module[mcode]" required
-    <?php if(isset($module))echo 'value="'.$module['mcode'].'"';?>>
-
-
-    <label>Module Description: </label>
-    <textarea style="height: 108px;" name = "module[mdescription]"><?php if(isset($module))echo $module['mdescription'];?></textarea>
+            <label>Module Code: </label>
+            <input type="text" name="module[mcode]" required
+                <?php if(isset($module))echo 'value="'.$module['mcode'].'"';?>>
 
 
-  </div>
+            <label>Module Description: </label>
+            <textarea style="height: 108px;"
+                name="module[mdescription]"><?php if(isset($module))echo $module['mdescription'];?></textarea>
 
 
-    <div class = "formColumnSeparator"></div>
-
-  <div class = "formColumn2">
-
-    <h3 style="text-align: center;">Terms</h3>
-    <br>
+        </div>
 
 
-    <label>Term I Start Date: </label>
-    <input type = "date" name = "term1start" id = "datePickerToday"
-    value = "<?php if(isset($module)) echo $term1['tsdate']; ?>">
-    <label>Term I End Date: </label>
-    <input type = "date" name = "term1end" id = "datePickerFiveMonths"
-    value = "<?php if(isset($module)) echo $term1['tedate']; ?>">
+        <div class="formColumnSeparator"></div>
 
-    <br>
-    <br>
+        <div class="formColumn2">
 
-    <label>Term II Start Date: </label>
-    <input type = "date" id = "datePickerFiveMonthsII" name = "term2start"
-    value = "<?php if(isset($module)) echo $term2['tsdate']; ?>">
-    <label>Term II End Date: </label>
-    <input type = "date" id = "datePickerTenMonths" name = "term2end"
-    value = "<?php if(isset($module)) echo $term2['tedate']; ?>">
+            <h3 style="text-align: center;">Terms</h3>
+            <br>
 
 
-  </div>
-</div>
+            <label>Term I Start Date: </label>
+            <input type="date" name="term1start" id="datePickerToday"
+                value="<?php if(isset($module)) echo $term1['tsdate']; ?>">
+            <label>Term I End Date: </label>
+            <input type="date" name="term1end" id="datePickerFiveMonths"
+                value="<?php if(isset($module)) echo $term1['tedate']; ?>">
+
+            <br>
+            <br>
+
+            <label>Term II Start Date: </label>
+            <input type="date" id="datePickerFiveMonthsII" name="term2start"
+                value="<?php if(isset($module)) echo $term2['tsdate']; ?>">
+            <label>Term II End Date: </label>
+            <input type="date" id="datePickerTenMonths" name="term2end"
+                value="<?php if(isset($module)) echo $term2['tedate']; ?>">
+                <input type="submit" value="Submit" name="submit">
+
+        </div>
+    </div>
 
 
-  <input type = "submit" value = "Submit" name = "submit">
+   
 
 
 </form>

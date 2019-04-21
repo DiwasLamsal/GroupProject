@@ -52,7 +52,7 @@
        $leader = getUserById($course['cuid'])->fetch();
 
 
-       $link = '<u><a target="_blank" style="color:tomato;" href = "/GroupProject/public/ManageModuleLeaders/browse/'.$leader['uid'].'">'.
+       $link = '<u><a target="_blank" style="color:#717ede;" href = "/GroupProject/public/ManageModuleLeaders/browse/'.$leader['uid'].'">'.
                  $leader['fname'].' '.$leader['mname'].' '.$leader['lname'].'</a></u>';
 
 

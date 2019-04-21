@@ -23,6 +23,8 @@ if (session_status() == PHP_SESSION_NONE) {
 	<title><?php echo $title;?></title>
 	<script src = "/GroupProject/public/script/script.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.angularjs.org/1.2.21/angular.js"></script>
+    <script src="https://code.highcharts.com/highcharts.src.js"></script>
 </head>
 
 <body>
@@ -46,8 +48,11 @@ if (session_status() == PHP_SESSION_NONE) {
 	<main>
 
 	  <nav>
-				<img src = "/GroupProject/public/resources/images/logorectangle.bmp" alt = "" width="99.8%">
+			<div class="logosection">
+			<img src = "/GroupProject/public/resources/images/logorectangle.bmp" alt = """>
 
+			</div>
+			
 			<ul>
 
 	    <!-- Contents for the navigation go here -->
@@ -61,7 +66,7 @@ if (session_status() == PHP_SESSION_NONE) {
 			<header>
 
 				<div id = "headerLeft">
-					<h4 style="background: blueviolet; color: white; width: 70%; margin: auto;">
+					<h4 style=" color: white; width: 70%; margin: auto;">
 						Academic Year <?php echo date("Y").' - '.(date("Y")+1);?>
 					</h4>
 				</div>

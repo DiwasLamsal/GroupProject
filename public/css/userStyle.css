@@ -1,20 +1,41 @@
 /* Fonts */
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
+@font-face {
+  font-family: opensansbold;
+  src: url(../fonts/OpenSans-Bold.ttf);
+}
+@font-face {
+  font-family: opensansextrabold;
+  src: url(../fonts/OpenSans-ExtraBold.ttf);
+}
+@font-face {
+  font-family: opensanslight;
+  src: url(../fonts/OpenSans-Light.ttf);
+}
+@font-face {
+  font-family: opensansregular;
+  src: url(../fonts/OpenSans-Regular.ttf);
+}
+@font-face {
+  font-family: opensanssemibold;
+  src: url(../fonts/OpenSans-SemiBold.ttf);
+}
+
+/* @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR');
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 @import url('https://fonts.googleapis.com/css?family=Catamaran');
 @import url('https://fonts.googleapis.com/css?family=Francois+One');
 @import url('https://fonts.googleapis.com/css?family=Cinzel:400,700');
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
 @import url('https://fonts.googleapis.com/css?family=Bitter');
-@import url('https://fonts.googleapis.com/css?family=Bitter|ZCOOL+XiaoWei');
+@import url('https://fonts.googleapis.com/css?family=Bitter|ZCOOL+XiaoWei'); */
 
-p{font-family: 'Catamaran', sans-serif;}
-h1{font-family: 'Noto Sans KR', sans-serif;}
-h2{font-family: 'Josefin Sans', sans-serif;}
-h3{font-family: 'Noto Sans KR', sans-serif;}
-h4{font-family: 'Noto Sans KR', sans-serif;}
-h5{font-family: 'Francois One', sans-serif;}
-a{color: white; text-decoration: none;}
+p{font-family: opensansregular;}
+h1{font-family: opensansbold;}
+h2{font-family: opensansbold}
+h3{font-family: opensansbold}
+h4{font-family: opensansbold}
+h5{font-family: opensansbold}
+a{color: white; text-decoration: none;font-family: opensanssemibold;}
 
 
 /* CSS Start */
@@ -92,14 +113,15 @@ main{
   display: flex;
   flex-direction: row;
   width: 100%;
-  min-height: 80vh;
+  min-height: 97vh;
 }
 
 
 nav{
-  width: 18%;
-  background: #3A6C79;
-  color: white;
+  width: 16%;
+  background: #fff;
+  color: #000;
+  box-shadow: 0 4px 21px -5px rgba(0,0,0,0.16);
 }
 
 nav ul{
@@ -110,8 +132,9 @@ nav ul{
 
 
 nav ul li{
-  background: #0F4C5C;
+  background: #fff;
   transition: background .2s, padding-left .3s;
+  border-bottom: 1px solid #1DC5A3;
 }
 
 nav ul li div{
@@ -121,14 +144,15 @@ nav ul li div{
 nav ul li div img{
   transform: translateY(3px);
   width: 20px;
+  filter:brightness(0) grayscale(200%);
 }
 
 nav ul li:nth-child(odd){
-  background: #0D3F4C;
+  background: #fff;
 }
 
 nav ul li:hover{
-  background: #061C22;
+  background: #a6eaa5;
 }
 
 .navText{
@@ -136,7 +160,7 @@ nav ul li:hover{
 }
 
 nav .selected{
-  background: rgba(250, 128, 114, 0.8);
+  background: #a6eaa5;
 
 }
 nav .dashboard{
@@ -152,29 +176,40 @@ nav ul li:hover .navText{
 
 
 nav ul li a{
-  color: white;
+  color: rgb(85, 84, 84);
   text-decoration: none;
+  font-size: 14px;
 }
 
 section{
   border-bottom: 1px solid lightgray;
-  width: 82%;
+  width: 86%;
 }
 
-
+.logosection{
+  width: 100%;
+  margin:20px 45px;
+}
+.logosection img {
+  width: 60%;
+}
 header{
   display: flex;
   flex-direction: row;
   width: 100%;
   border-bottom: 1px solid lightgray;
+  background: #717ede;
 }
 
 #headerLeft{
   padding: 1%;
   width: 31.3%;
-  background: white;
+  background: #717ede;
   color: black;
   text-align: center;
+}
+#headerLeft h4{
+  font-size: 14px;
 }
 
 
@@ -182,11 +217,14 @@ header{
 #headerMiddle{
   padding: 1%;
   width: 31.3%;
-  background: white;
+  background: #717ede;
   color: black;
   text-align: right;
 }
-
+#headerMiddle h3{
+  font-size: 14px;
+  color:#fff;
+}
 
 header input[type=text]{
   margin-top: -3px;
@@ -207,15 +245,15 @@ header input[type=submit]{
 
 #headerRight{
   width: 31.4%;
-  background: white;
+  background: #717ede;
   color: black;
   text-align: center;
   user-select: none;
 }
 
 .downArrow {
-  border: solid black;
-  border-width: 0 3px 3px 0;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
   display: inline-block;
   padding: 3px;
   transition: transform .2s;
@@ -239,11 +277,22 @@ header input[type=submit]{
   padding-right: 15px;
   transition: background .1s;
 }
+#dropdown h5{
+ font-size: 14px;
+ color:#fff;
+}
 
 
 #dropdown:hover{
   cursor: pointer;
-  background: #E0FFFF;
+  background: #fff;
+
+}
+#dropdown:hover h5{
+  color:#000;
+}
+#dropdown:hover .downArrow{
+ border-color: #000;
 }
 
 
@@ -284,17 +333,19 @@ header input[type=submit]{
 .contentArea{
   background: rgb(235, 235, 235);
   padding: 15px;
-  min-height: 85vh;
+  min-height: 88.5vh;
 }
 
 
 footer{
   text-align: center;
-  height: 40px;
-  padding-top: 20px;
-  background: #7C9DA6;
-  color: white;
+  height: 25px;
+  padding-top:5px;
+  background: #92ffdc;
+  color: #000;
   width: 100%;
+  font-family: opensansregular;
+  font-size: 12px;
 }
 
 
@@ -314,8 +365,14 @@ footer{
 }
 .boxesContainer .content, .adminManageTable .content, .userForm .content{
   margin: 10px;
-  font-family: "Trebuchet MS", Arial, sans-serif;
+  font-family: opensansregular;
   color: black;
+  /* display: flex; */
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  line-height: 14px;
+  /* height: 80px;; */
 }
 
 .subContentList{
@@ -323,8 +380,16 @@ footer{
   padding: 15px;
   height: 25px;
   border-bottom: 1px solid lightgray;
+  font-family: opensansregular;
+  font-size: 14px;
 }
 
+.userNotesBox .content{
+display: flex;
+align-items: center;
+width: 100%;
+justify-content: center;
+}
 
 #customScroll::-webkit-scrollbar-track
 {
@@ -359,7 +424,7 @@ footer{
 
 .adminDashboardBox{
   width: 24%;
-  height: 150px;
+  height: 130px;
   background: red;
   margin: 7px;
   opacity: 0.6;
@@ -369,7 +434,7 @@ footer{
   color: white;
   font-size: 20px;
   font-weight: bold;
-  font-family: 'Cinzel', serif;
+  font-family:opensansregular;
   text-align: center;
   transition: opacity .1s;
   user-select: none;
@@ -384,31 +449,37 @@ footer{
   padding: 5%;
   padding-bottom: 30px;
   padding-top: 10px;
+  color:#000;
 }
 
 .adminDashboardBox img{
-  width: 70px;
+  width: 50px;
   display: block;
   margin: auto;
   margin-bottom: 13px;
-  margin-top: 13px;
+  margin-top: 10px;
+  filter:brightness(0);
 }
 
 
 .adbstudents{
-  background: rgb(0, 191, 255);
+  background: #fff;
+  box-shadow: 0 4px 21px -5px rgba(0,0,0,0.16);
 }
 
 .adbmoduleleaders{
-  background: rgb(255, 64, 0);
+  background:#fff;
+  box-shadow: 0 4px 21px -5px rgba(0,0,0,0.16);
 }
 
 .adbcourses{
-  background: rgb(128, 0, 255);
+  background: #fff;
+  box-shadow: 0 4px 21px -5px rgba(0,0,0,0.16);
 }
 
 .adbmodules{
-  background: rgb(0, 155, 0);
+  background: #fff;
+  box-shadow: 0 4px 21px -5px rgba(0,0,0,0.16);
 }
 
 
@@ -417,7 +488,7 @@ footer{
 /* Large content box */
 .contentBoxLarge{
   width: 50%;
-  min-height: 300px;
+  /* min-height: 435px; */
   background: white;
   text-align: center;
   margin: 7px;
@@ -427,14 +498,20 @@ footer{
 }
 
 .contentBoxLarge .title{
-  background: #DAA520;
+  background: #7fb5a2;
   width: 100%;
   padding-top: 10px;
-  height: 30px;
-  font-family: 'Cinzel', serif;
+  height: 40px;
+  font-family: opensansregular;
   font-weight: bolder;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: left;
+  padding-left: 20px;
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
 
@@ -453,22 +530,27 @@ footer{
 .tableTitle, .formTitle{
   margin-left: -10px;
   margin-top: -10px;
-  background: #1DC5A3;
+  background: #fff;
   padding-top: 5px;
   padding-bottom: 5px;
   width: calc(100% + 20px);
-  margin-bottom: calc(1.5% + 10px);
+  margin-bottom: 10px;
   color: white;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
 
 .formEditPassword{
-  background: darkcyan;
+  background: #fff;
 }
 
 .tableHeading, .formHeading{
-  text-align: center;
+  text-align: left;
+  padding: 15px 20px;
+  font-size: 18px;
+  box-shadow: 0 4px 21px -5px rgba(0,0,0,0.16);
+  color:#000;
+  text-transform: uppercase; 
 }
 
 .adminManageTable table{
@@ -476,15 +558,27 @@ footer{
   width: 100%;
   margin-top: -10px;
   margin-bottom: 1.5%;
-  font-family: "Trebuchet MS", Arial, sans-serif;
+
 
 }
 
 .adminManageTable td, th {
   border: 1px solid white;
-  padding: 5px;
+  padding: 10px;
+  font-family: opensansbold;
 
 }
+
+.adminManageTable td {
+font-family: opensansregular;
+font-size: 14px;
+}
+.adminManageTable td a{
+font-family: opensansregular;
+font-size: 14px;
+}
+
+
 
 .adminManageTable tr{
   transition: background-color 0.1s;
@@ -495,11 +589,16 @@ footer{
 }
 
 .adminManageTable th {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   text-align: center;
-  background-color: slategray;
-  color: white;
+  background-color: #fff;
+  color: #000;
+  border:1px solid #000;
+  border-left: 0;
+  border-right: 0;
+  text-align: left;
+
 }
 
 .tableIcon{
@@ -521,6 +620,7 @@ footer{
   width: calc(100% + 10px);
   margin-left: -10px;
   padding: 5px;
+  margin-bottom: 15px;
 }
 
 .contentBoxLargeManage{
@@ -530,19 +630,76 @@ footer{
 
 
 .addNewBox, .deleteBox{
-  background: #9ACD32;
+  background: #fff;
   opacity: 0.8;
   text-align: center;
-  color: white;
-  font-family: 'Cinzel', serif;
+  color: #000;
+  font-family: opensansregular;
   font-weight: bolder;
   font-size: 19px;
   border-radius: 5px;
   transition: opacity 0.3s;
 }
+.addNewBox{
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+}
+.userNotesBox{
+  width: 80%;
+}
+.tableborder {
+  width: 97%;
+  border-collapse: collapse;
+}
+.tableborder tr{
+    
+    border-left: 0;
+    border-right: 0;
+   
+}
+.tableborder tr th{
+    width: 30%;
+    background: #efefef;
+    border-left: 1px solid #c4c2c2;
+}
+.tableborder tr td{
+   padding-left: 20px;
+   border-bottom: 1px solid #c4c2c2;
+   border-right: 1px solid #c4c2c2;
+   
+}
+.tableborder tr td img{
+ width: 20px;
+ filter:brightness(0);
+}
 
+.tableborder tr:last-of-type td{
+   padding-left: 20px;
+   
+}
+.tableborder tr:first-of-type td{
+  border-top: 1px solid #c4c2c2;
+}
+.tableborder tr:first-of-type th{
+  border-top: 1px solid #c4c2c2;
+}
+.tableborder tr:last-of-type th{
+  border-bottom: 1px solid #c4c2c2;
+  
+}
+.addNewBox a{
+color:#000;
+}
+.addNewBox img{
+filter: brightness(0);
+margin-bottom: 10px;
+opacity: 0.8;
+}
 .contentBoxLargeEdit{
-  width: 75%;
+  width: 100%;
 }
 
 .deleteBox{
@@ -563,6 +720,7 @@ footer{
 
 .deleteBox img{
   transition: transform 0.3s;
+  width: 30px;
 }
 
 .deleteBox:hover img{
@@ -572,7 +730,8 @@ footer{
 /* Add Form */
 
 .userForm{
-
+  padding: 0 20px;
+  margin-top: 20px;
 }
 
 .userForm label{
@@ -580,8 +739,8 @@ footer{
   margin: 5px;
   margin-bottom: 10px;
   display: block;
-  font-family: 'ZCOOL XiaoWei', serif;
-  font-size: 18px;
+  font-family: opensansregular;
+  font-size: 14px;
   color: rgb(50, 50, 50);
 }
 
@@ -597,7 +756,8 @@ footer{
   outline: none;
   -webkit-transition: border-bottom 0.5s;
   transition: border-bottom 0.5s;
-  font-size: calc(0.5rem + 10px);
+  font-family: opensansregular;
+  font-size: 14px;
 }
 
 .userForm input:not([type="submit"]):focus, .userForm select:focus, .userForm textarea:focus{
@@ -614,18 +774,19 @@ footer{
   max-height: 200px;
 }
 
+
 .userForm input[type=submit]{
   margin: 1%;
   margin-top: 25px;
   width: 98%;
-  height: 50px;
+  height: 40px;
   border-radius: 5px;
   border: none;
   color: white;
   background: #8075B6;
   transition: background .3s;
-  font-family: 'Bitter', serif;
-  font-size: 16px;
+  font-family: opensansregular;
+  font-size: 14px;
   margin-bottom: 25px;
 }
 
@@ -651,7 +812,7 @@ footer{
 
 .formColumn2{
   width: 49%;
-  padding: 5px;
+  padding: 0 20px;
 }
 
 
@@ -662,14 +823,14 @@ footer{
   opacity: 0.6;
   border-radius: 5px;
   color: white;
-  font-size: calc(0.5rem + 10px);
   font-weight: bold;
-  font-family: 'Cinzel', serif;
+  font-family: opensansregular;
   text-align: center;
   transition: opacity .1s;
   user-select: none;
   display: inline-block;
   padding: 10px;
+  font-size: 14px;
 }
 
 .courseModuleBox:hover{
@@ -738,7 +899,7 @@ footer{
   border-radius: 5px;
   font-size: calc(0.5rem + 5px);
   font-weight: bold;
-  font-family: 'Cinzel', serif;
+  font-family: opensansregular;
   padding-bottom: 15px;
   opacity: 0.55;
   transition: opacity 0.15s;
@@ -952,78 +1113,9 @@ ul.breadcrumb li a:hover {
 
 
 }
+.userNotesBox .content{
+  height: 80px;
+}
 
-/**********************************************************************************************/
-/**********************************************************************************************/
-/**********************************************************************************************/
-/**********************************************************************************************/
-/**********************************************************************************************/
-/**********************************************************************************************/
-/**********************************************************************************************/
-/**********************************************************************************************/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{}

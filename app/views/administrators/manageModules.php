@@ -55,15 +55,15 @@
        $leader = getUserById($module['mluid'])->fetch();
 
 
-       $link = '<u><a target="_blank" style="color:tomato;" href = "/GroupProject/public/ManageModuleLeaders/browse/'.$leader['uid'].'">'.
+       $link = '<u><a target="_blank" style="color:#717ede;" href = "/GroupProject/public/ManageModuleLeaders/browse/'.$leader['uid'].'">'.
                  $leader['fname'].' '.$leader['mname'].' '.$leader['lname'].'</a></u>';
 
        $course = getCourseById($module['mcid'])->fetch();
-       $courseLink = '<u><a target="_blank" style="color:tomato;" href = "/GroupProject/public/ManageCourses/browse/'.$course['cid'].'">'.
+       $courseLink = '<u><a target="_blank" style="color:#717ede;" href = "/GroupProject/public/ManageCourses/browse/'.$course['cid'].'">'.
                  $course['ctitle'].'</a></u>';
 
       $level = getLevelById($module['mlvid'])->fetch();
-      $levelLink = '<u><a target="_blank" style="color:tomato;" href = "/GroupProject/public/ManageLevels/browse/'.$level['lvid'].'">'.
+      $levelLink = '<u><a target="_blank" style="color:#717ede;" href = "/GroupProject/public/ManageLevels/browse/'.$level['lvid'].'">'.
                 $level['lvtitle'].'</a></u>';
 
         $count++;

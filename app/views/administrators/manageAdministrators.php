@@ -9,10 +9,10 @@
       </div>
     </a>
   </div>
-
   <?php
     echo $note;
   ?> 
+ 
 
 </div>
 

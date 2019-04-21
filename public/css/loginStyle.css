@@ -1,19 +1,39 @@
 /* Css file for login form */
-
+@font-face {
+  font-family: opensansbold;
+  src: url(../fonts/OpenSans-Bold.ttf);
+}
+@font-face {
+  font-family: opensansextrabold;
+  src: url(../fonts/OpenSans-ExtraBold.ttf);
+}
+@font-face {
+  font-family: opensanslight;
+  src: url(../fonts/OpenSans-Light.ttf);
+}
+@font-face {
+  font-family: opensansregular;
+  src: url(../fonts/OpenSans-Regular.ttf);
+}
+@font-face {
+  font-family: opensanssemibold;
+  src: url(../fonts/OpenSans-SemiBold.ttf);
+}
 *{
   margin: 0;
   padding: 0;
 }
 
 body{
-  background-image: linear-gradient(to right,rgba(0,0,0,0.9),rgba(0,0,0,0.1), rgba(0,0,0,0.9)), url('../resources/images/loginBackground.jpg') ;
+  background-image:url('../resources/images/backlogin.jpg') ;
   background-size: cover;
-  overflow: hidden;
+  background-attachment: fixed;
+  
 }
 
 .loginFormContainer{
   text-align: center;
-  background: white;
+  background: linear-gradient(to top,rgba(255,255,255,0.5),rgba(255,255,255,0.9));
   margin: auto;
   margin-top: 10vh;
   padding-top: 4vh;
@@ -22,19 +42,27 @@ body{
   padding-left: 4vw;
   width: 330px;
   border: 10px solid rgba(100, 0, 250, 0.2);
+  border-radius: 15px;
 }
 
 .loginFormContainer form{
   margin-top: 40px;
 }
 
+a{
+  font-family: opensansregular;
+  font-size: 13px;
+  color:rgb(52, 44, 97);
+  text-decoration: none;
 
+}
 
 .loginFormContainer form input[type=text], .loginFormContainer form input[type=password]{
   width: 95%;
   margin: 5px;
   display: block;
-  height: 50px;
+  padding: 0 10px;
+  height: 40px;
   margin-bottom: 20px;
   box-sizing: border-box;
   border: none;
@@ -42,21 +70,22 @@ body{
   outline: none;
   -webkit-transition: border-bottom 0.5s;
   transition: border-bottom 0.5s;
-  font-size: calc(0.5rem + 10px);
+  font-size: 14px;
 }
 
 .loginFormContainer form input[type=submit]{
   margin: 1%;
   margin-top: 25px;
   width: 98%;
-  height: 50px;
+  height: 40px;
   border-radius: 5px;
   border: none;
   color: white;
   background: #8075B6;
   transition: background .3s;
-  font-family: 'Bitter', serif;
-  font-size: 18px;
+  font-family: opensansregular;
+  font-size: 14px;
+  text-transform: uppercase;
 }
 
 .loginFormContainer input:not([type="submit"]):focus{

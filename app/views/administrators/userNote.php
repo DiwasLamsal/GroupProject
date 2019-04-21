@@ -1,5 +1,5 @@
 <div class = "contentBoxLarge contentBoxLargeManage userNotesBox">
-  <div class = "title" style="background: #EF767A;">Note</div>
+  <div class = "title">Note</div>
   <div class = "content">
 
     <?php
@@ -11,9 +11,9 @@
     <?php
 
       if($manage=="levels")
-          echo '<br><br> Note that you cannot delete records that are in use';
+          echo 'Note that you cannot delete records that are in use';
       elseif($manage=="students")
-        echo 'The student status can be changed from the folder icon. <br><br>';
+        echo 'The student status can be changed from the folder icon.';
       else {
         echo 'The record can be archived by clicking the folder icon. <br><br>Note that
         you cannot archive or delete records that are in use.';
