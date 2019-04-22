@@ -180,4 +180,18 @@
   }
 
 
+  // Check if student has already submitted the assignment
+  function checkStudentSubmission($sid, $asid){
+    global $pdo;
+    $stmt = $pdo->prepare('SELECT * FROM assignment_students WHERE asaid = :aid AND asuid = :sid');
+    $criteria = ['aid'=>$asid, 'sid'=>$sid];
+    $stmt->execute($criteria);
+
+    if($stmt->rowCount()>0) return true;
+    else return false;
+  }
+
+
+
+
 ?>

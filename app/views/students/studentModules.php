@@ -6,6 +6,18 @@
 	<li>Modules</li>
 </ul>
 
+<?php if($var!="") {?>
+  <div class = "adminManageTable">
+    <?php
+    if($var=="addsuccess"){
+      echo '<b>Successfully Submitted Assignment!</b>';
+    }
+    else{
+      echo '<b>Error</b>';
+    }
+    ?>
+  </div>
+<?php }?>
 
 <?php
 if($modules->rowCount() > 0){

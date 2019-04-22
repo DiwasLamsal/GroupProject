@@ -21,14 +21,35 @@
     }
 
     public function moduleTerm($val = ""){
+      if (session_status() == PHP_SESSION_NONE) {
+      	session_start();
+      }
+
       $termClass = new DatabaseTable("terms");
       $moduleClass = new DatabaseTable("modules");
+      $assignmentstudentsClass = new DatabaseTable("assignment_students");
+
       $term = $termClass->find('tid', $val);
       $term = $term->fetch();
 
       if($val==""){
         header("Location: ../StudentModules");
       }
+      if(isset($_POST['submitAssignment'])){
+        print_r($_POST);
+
+        $target_dir = "resources/submissions/";
+        $target_file = $target_dir.microtime(true).'-'.basename($_FILES["submissionFile"]["name"]);
+        $target_file = str_replace(' ', '_', $target_file);
+
+        move_uploaded_file($_FILES["submissionFile"]["tmp_name"], $target_file);
+        $_POST['submission']['asfiles']=$target_file;
+
+        $assignmentstudentsClass->save($_POST['submission']);
+        header("Location:/GroupProject/public/StudentModules/index/addsuccess");
+
+      }
+
 
       //Call the function to set term's status before displaying
       $term = setTermStatus($term);

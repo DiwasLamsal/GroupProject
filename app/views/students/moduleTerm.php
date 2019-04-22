@@ -75,8 +75,8 @@ else{ // -- If no assignment is uploaded, display Add Assignment Button
 <!-- If the assignment has been posted, also include the submission area -->
 <?php
 if(!empty($assignment)){
-	?>
 
+	?>
 	<form method="POST" class="userForm" enctype="multipart/form-data">
 		<div class="formTitle">
 			<h1 class="formHeading">
@@ -89,20 +89,51 @@ if(!empty($assignment)){
 				<p>
 					<b>Title: </b><?php echo $assignment['atitle'];?><br>
 					<b>Deadline: </b><?php echo $assignment['adeadline'];?><br>
-					<b>Description: </b><?php echo $assignment['adescription'];?><br>
 					<br>
-					Note*: You cannot resubmit your work or edit your submission, so, re-check and confirm everything is
+
+					<b>Instructions:</b><br>
+					Your submission should contain your zip file named in the format name-id-submission-zip.zip.<br>
+					For example: If your name is Kevin Brune and your ID is 12001212, the submission file should be
+					named as kevin-brune-12001212-submission-zip.zip.
+					<br><br>
+					Submissions can be zip or rar files only. Make sure you have the correct extension for your submission.
+					<br><br>
+					<b>Note*:</b> You cannot resubmit your work or edit your submission. Thus, re-check and confirm everything is
 					correct before submitting your work.
+
 					<br>
 				</p>
 			</div>
 
 			<div class="formColumn2">
-				
+
+				<h3 style="text-align: center;">Submission Area</h3>
+				<br>
+
+<?php
+	if(checkStudentSubmission($_SESSION['loggedin']['uid'], $assignment['aid'])){
+
+	}
+	else{
+?>
+
+				<label>Submission File: </label>
+	      <input type = "file" name = "submissionFile" style="border: none; float: right;" required>
+
+				<input type = "hidden" name = "submission[asuid]" value = "<?php echo $_SESSION['loggedin']['uid'];?>">
+				<input type = "hidden" name = "submission[asaid]" value = "<?php echo $assignment['aid'];?>">
+
+	      <label>Submission Comments: </label>
+	      <textarea style="height: 108px;" name = "submission[comments]" required></textarea>
+
 			</div>
 
 		</div>
 		<input type="submit" value="Submit" name="submitAssignment">
+
+<?php
+			}
+?>
 	</form>
 
 
