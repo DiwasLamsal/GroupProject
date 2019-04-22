@@ -79,43 +79,35 @@ else{ // -- If no assignment is uploaded, display Add Assignment Button
   if(!empty($assignment)){
 ?>
 
-<button class="collapsible" style="background: DarkCyan;">
-  <b>Submit Your Assignment</b>
-</button>
-<div class="collapsedcontent" style="margin-bottom: 10px;">
-  <!-- Content inside the collapsible -->
-  <div style="margin: 10px; min-height: 90px;">
-      <p style="text-align: center;">
-      <div class = "resourceHolder">
-        <!-- Assignment Left Column -->
-          <div class = "formHolder">
-            <div class = "formColumn1">
-              <p>
-                <b>Title: </b><?php echo $assignment['atitle'];?><br>
-                <b>Deadline: </b><?php echo $assignment['adeadline'];?><br>
-                <b>Description: </b><?php echo $assignment['adescription'];?><br>
-                <br>
-                  Download the assignment brief by clicking the download button. You can submit your
-                  assignment by clicking the submit button.
-                <br>
-              </p>
-            </div>
-            <div class = "formColumnSeparator" style="background: white; border-right: 0px dashed grey;"></div>
-
-          <!-- Assignment Right Column -->
-              <div class = "formColumn2">
-                <div style=" text-align: center;">
-                  <a target = "_blank" href = "/GroupProject/public/<?php echo $assignment['afiles'];?>" style="color: white;">
-                    <img class = "downloadImage" src = "/GroupProject/public/resources/images/download.png">
-                  </a>
-                </div>
-              <br>
-              </div>
-            </div>
-          <br><br>
-        </div>
-      </div>
+<form method="POST" class="userForm" enctype="multipart/form-data">
+    <div class="formTitle">
+        <h1 class="formHeading">
+            Submit your Work
+        </h1>
     </div>
+
+    <div class="formHolder">
+        <div class="formColumn1">
+          <p>
+            <b>Title: </b><?php echo $assignment['atitle'];?><br>
+            <b>Deadline: </b><?php echo $assignment['adeadline'];?><br>
+            <b>Description: </b><?php echo $assignment['adescription'];?><br>
+            <br>
+              Note*: You cannot resubmit your work or edit your submission, so, re-check and confirm everything is
+              correct before submitting your work.
+            <br>
+          </p>
+        </div>
+
+        <div class="formColumn2">
+
+        </div>
+
+    </div>
+    <input type="submit" value="Submit" name="submitAssignment">
+</form>
+
+
 <?php
   }
 

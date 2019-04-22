@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 24, 2019 at 04:12 PM
+-- Generation Time: Apr 22, 2019 at 12:49 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -64,6 +64,13 @@ CREATE TABLE `assignments` (
   `status` enum('Y','N') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `assignments`
+--
+
+INSERT INTO `assignments` (`aid`, `atid`, `atitle`, `adescription`, `adeadline`, `afiles`, `status`) VALUES
+(5, 25, 'Software Engineering III Term I Assignment', 'Software Engineering III Term I Assignment', '2019-09-16', 'resources/assignments/1555864419.0888-Software_Engineering.rar', 'Y');
+
 -- --------------------------------------------------------
 
 --
@@ -73,7 +80,8 @@ CREATE TABLE `assignments` (
 CREATE TABLE `assignment_students` (
   `asaid` int(11) NOT NULL,
   `asuid` int(9) NOT NULL,
-  `asfiles` varchar(255) NOT NULL
+  `asfiles` varchar(255) NOT NULL,
+  `comments` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -89,6 +97,24 @@ CREATE TABLE `attendances` (
   `adate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `atid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `attendances`
+--
+
+INSERT INTO `attendances` (`aid`, `auid`, `astatus`, `adate`, `atid`) VALUES
+(49, 33, '0', '2019-04-22 00:00:00', 37),
+(50, 34, 'X', '2019-04-22 00:00:00', 37),
+(51, 35, 'A', '2019-04-22 00:00:00', 37),
+(52, 36, '0', '2019-04-22 00:00:00', 37),
+(53, 37, '0', '2019-04-22 00:00:00', 37),
+(54, 38, '0', '2019-04-22 00:00:00', 37),
+(55, 39, 'A', '2019-04-22 00:00:00', 37),
+(56, 40, 'X', '2019-04-22 00:00:00', 37),
+(57, 41, 'A', '2019-04-22 00:00:00', 37),
+(58, 18, '0', '2019-04-22 00:00:00', 37),
+(59, 19, '0', '2019-04-22 00:00:00', 37),
+(60, 20, 'X', '2019-04-22 00:00:00', 37);
 
 -- --------------------------------------------------------
 
@@ -210,7 +236,8 @@ INSERT INTO `modules` (`mid`, `mluid`, `mcid`, `mlvid`, `mname`, `mdescription`,
 (36, 28, 2, 3, 'Artificial Intelligence', 'Artificial intelligence (AI) is an area of computer science that emphasizes the creation of intelligent machines that work and react like humans. Some of the activities computers with artificial intelligence are designed for include: Speech recognition.', 'CSY 3032', 'Y'),
 (37, 30, 2, 2, 'Formal Specification of Software Systems', 'A formal software specification is a specification expressed in a language whose vocabulary, syntax and semantics are formally defined. This need for a formal definition means that the specification languages must be based on mathematical concepts whose properties are well understood.', 'CSY 2031', 'Y'),
 (38, 15, 2, 3, 'Computing Dissertation', 'A thesis or dissertation is a document submitted in support of candidature for an academic degree or professional qualification presenting the author\'s research and findings.', 'CSY 4050', 'Y'),
-(39, 25, 2, 2, 'Group Project', 'Group Project Description. Over the course of the semester, your group will work as a team of communication consultants who will help a local non-profit organization in identifying, assessing, and improving some aspect of their organizations communication.', 'CSY 2027', 'Y');
+(39, 25, 2, 2, 'Group Project', 'Group Project Description. Over the course of the semester, your group will work as a team of communication consultants who will help a local non-profit organization in identifying, assessing, and improving some aspect of their organizations communication.', 'CSY 2027', 'Y'),
+(40, 22, 2, 2, 'Systems Design and Development', 'Welcome to 18/19 Systems Design and Development (NAMI) (CSY2030-NAM09)', 'CSY 2030', 'Y');
 
 -- --------------------------------------------------------
 
@@ -232,9 +259,14 @@ CREATE TABLE `resources` (
 --
 
 INSERT INTO `resources` (`rid`, `rtid`, `rtitle`, `rdescription`, `rfilenames`, `rstatus`) VALUES
-(1, 25, 'asd', 'asd', 'resources/uploads/1553432165.3766-eoc_data_resource_2017-dr3_027_03.csv', 'Y'),
-(2, 25, 'CSY 2028 Topic 1 With Solutions', 'CSY 2028 Topic 1 With Solutions. CSY 2028 Topic 1 With Solutions. CSY 2028 Topic 1 With Solutions. CSY 2028 Topic 1 With Solutions. CSY 2028 Topic 1 With Solutions.', 'resources/uploads/1553433915.5662-csy2028-topic1-with-solutions.pdf', 'Y'),
-(3, 26, 'Student Data Test', 'Student Data Test Software Engineering III', 'resources/uploads/1553435928.5398-studentdata.csv', 'Y');
+(10, 37, 'Project Management Part I', 'A project is a set of related tasks that are coordinated to achieve a specific objective, usually in a given time limit. This teaches Project Management. \r\n', 'resources/uploads/1555839255.3909-01GP_SE_Project_Management_Part_I(1).doc', 'Y'),
+(11, 25, 'Support Notes', 'Software Engineering Required notes for the Group Project. Go through this file. It will help you to work on your Group Project. ', 'resources/uploads/1555839369.4974-Software_Engineering_Required_Documentation_Support_Notes_for_the_Group_Project.doc', 'Y'),
+(13, 37, 'SE 1 First 10 Topics', 'SE 1 First 10 Topics Assumed Knowledge. These are the first 10 topics from your Year I Software Engineering coursework. It is expected that you have this knowledge prior to starting your Group Project. ', 'resources/uploads/1555840426.6235-SE1_first_10_topics_-_Assumed_Knowledge.rar', 'Y'),
+(14, 37, 'Problem Domain Identification', 'The file contains the Problem Domain Identification Template. Download it from the link. ', 'resources/uploads/1555840517.3933-CSY2027_-_Problem_Domain_Identification_-_Template.doc', 'Y'),
+(15, 37, 'Project Management Part II', 'Project Management Part II For CSY2027 Group Project. ', 'resources/uploads/1555840563.8554-01GP_SE_Project_Management_Part_II(2).doc', 'Y'),
+(17, 25, 'Java for students', 'Java for students 6th edition. Study this for java reference. ', 'resources/uploads/1555842039.7028-Java_For_Students_(6th_Edition).pdf', 'Y'),
+(21, 25, 'Finding Classes Object', 'Finding Classes - Object Analysis Techniques.', 'resources/uploads/1555863472.7304-03GP_Review_of_Classes_and_Objects(1).doc', 'Y'),
+(22, 25, 'Classes and Objects', 'Review and revision of Classes and Objects which you have already studied. ', 'resources/uploads/1555863583.1801-03GP_Review_of_Classes_and_Objects(1).doc', 'Y');
 
 -- --------------------------------------------------------
 
@@ -258,10 +290,19 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`suid`, `cid`, `gpa`, `prevschool`, `rstatus`, `rdormant`, `puid`, `slvid`) VALUES
-(18, 2, '3.30', 'Naya Aayam Multidisciplinary Institute', 'Dormant', 'Withdrawn', 25, 3),
-(19, 3, '0.00', 'Naya Aayam Multidisciplinary Institute', 'Dormant', 'Pending Verification', 24, 3),
-(20, 2, '3.00', 'Cambridge University', 'Dormant', 'Withdrawn', 16, 1),
-(23, 2, '2.80', 'Oxford University', 'Live', '', 22, 2);
+(18, 2, '3.30', 'Naya Aayam Multidisciplinary Institute', 'Live', '', 25, 3),
+(19, 2, '0.00', 'Naya Aayam Multidisciplinary Institute', 'Live', '', 24, 3),
+(20, 2, '3.00', 'Cambridge University', 'Live', '', 16, 1),
+(23, 2, '2.80', 'Oxford University', 'Live', '', 22, 2),
+(33, 2, '4.00', 'University of Pennsylvania', 'Live', '', 15, 1),
+(34, 2, '3.75', 'Harvard University', 'Live', '', 26, 1),
+(35, 2, '2.20', 'Colorado School of Mines', 'Dormant', 'Pending Verification', 27, 1),
+(36, 2, '3.40', 'Drexel Unviersity', 'Dormant', 'Graduated', 28, 1),
+(37, 2, '3.20', 'Villanova University', 'Dormant', 'Pending Verification', 29, 1),
+(38, 2, '4.00', 'Lafayette College', 'Live', '', 30, 1),
+(39, 2, '3.95', 'Lehigh Universtiy', 'Live', '', 32, 1),
+(40, 2, '3.00', 'University of Illinois', 'Dormant', 'Pending Verification', 15, 1),
+(41, 2, '2.80', 'Rice University', 'Live', '', 16, 1);
 
 -- --------------------------------------------------------
 
@@ -302,7 +343,9 @@ INSERT INTO `terms` (`tid`, `tmid`, `tname`, `tsdate`, `tedate`, `tstatus`) VALU
 (35, 38, 'Term I', '2019-03-20', '2019-09-16', 'Not Started'),
 (36, 38, 'Term II', '2019-09-16', '2020-03-19', 'Not Started'),
 (37, 39, 'Term I', '2019-03-20', '2019-09-20', 'Ongoing'),
-(38, 39, 'Term II', '2019-09-20', '2020-03-23', 'Not Started');
+(38, 39, 'Term II', '2019-09-20', '2020-03-23', 'Not Started'),
+(39, 40, 'Term I', '2019-04-19', '2019-10-16', 'Not Started'),
+(40, 40, 'Term II', '2019-10-16', '2020-04-18', 'Not Started');
 
 -- --------------------------------------------------------
 
@@ -341,7 +384,7 @@ INSERT INTO `users` (`uid`, `fname`, `mname`, `lname`, `password`, `gender`, `bi
 (19, 'Ayush', 'Raj', 'Moktan', '$2y$10$F0dEGcLW8dkYd8.pSHYqHOiK4FZModNilkTduziGfS4i.wb/o0OSe', 'Male', '1998-08-21', 'NAMI College, Jorpati', '9581651613', 'ayushmoktan@gmail.com', 'Student', 'Y'),
 (20, 'Rama', '', 'Upreti', '$2y$10$KRcFWaFSkUVRpZDpfjbfEuhzznP6S0HQw7zgQojnfsm1OelWfQiLi', 'Female', '2000-06-24', 'Gongabu, Kathmandu', '98165165121', 'ramaupreti@gmail.com', 'Student', 'Y'),
 (22, 'Anita', '', 'Gurung', '$2y$10$5wtG5nZCYWpZ.mhC6nejQumDUAcx3mhMaS5jYB0jbEj3B7hTO7QQC', 'Female', '1969-09-24', 'New Baneshwor', '98161513215', 'anitagurung@nami.edu.np', 'Module Leader', 'Y'),
-(23, 'Barun', '', 'Kuikel', '$2y$10$6wUqZ7vlaLMhRnLqaZ2TGOFAh2lfk0aZHrf8T.rrgi2X9QfZ.Ot8K', 'Male', '1997-11-19', 'Melamchi', '98461231564', 'barunkuikel@gmail.com', 'Student', 'Y'),
+(23, 'Barun', '', 'Kuikel', '$2y$10$QySSwO9SunseUyiJIb1oxuVOCMvdGYmwv/pZ1XO8pYJfnc64mo1JO', 'Male', '1997-11-19', 'Melamchi', '98461231564', 'barunkuikel@gmail.com', 'Student', 'Y'),
 (24, 'Ganesh', '', 'Khatri', '$2y$10$2cXNvVEVrqcKb1F.MPtPhuOrk0W7I0Z7kwuSfK2T8y2F0vsTIoPUi', 'Male', '1980-06-25', 'Kathmandu', '981651321', 'ganeshkhatri@nami.edu.np', 'Module Leader', 'Y'),
 (25, 'Himalaya', '', 'Kakshapati', '$2y$10$JEne0aGm6FPjQMlqyqQykOvWehTprNKUa0MjxGhzsINbEuNtutEPm', 'Male', '1982-10-27', 'Kalanki', '9814651561', 'himalaya@gmail.com', 'Module Leader', 'Y'),
 (26, 'Nishant', '', 'Neupane', '$2y$10$50tXjOXzpVGbMF7TKZGZM.B2iXHh0g0s98Ksfa/87ty9KUb2MrZXe', 'Male', '1987-08-20', 'Gaushala', '9845612118', 'nishant@gmail.com', 'Module Leader', 'Y'),
@@ -349,8 +392,16 @@ INSERT INTO `users` (`uid`, `fname`, `mname`, `lname`, `password`, `gender`, `bi
 (28, 'Mamta', '', 'Bhattarai', '$2y$10$315M39gxzQNcrhq8w7mlh.NETh15y1jyXwHcZr4AW5hi12yKxhQry', 'Female', '1957-10-28', 'Koteshwor', '9815612342', 'mamta@gmail.com', 'Module Leader', 'Y'),
 (29, 'Nischal', '', 'Khadka', '$2y$10$6FsPV6Monb8K6sN88cu0VuaJzJLzxyiAjCnT6eqZHWKqupFJTRzUC', 'Male', '1979-10-27', 'New Baneshwor', '98156154', 'nischal.khadka@gmail.com', 'Module Leader', 'Y'),
 (30, 'Ram', 'Chandra', 'Dhungana', '$2y$10$GlmKZwd.lIgMyorw5CBHJekOPMmu.hZ0YDEKMXF3Zs9vq1KvBZWi6', 'Male', '1971-12-29', 'Chabahil', '9815615423', 'ramchandra@gmail.com', 'Module Leader', 'Y'),
-(31, 'Rajan', '', 'Thapa', '$2y$10$GaKSvCG9em6b0GcSJ/xWd.URKKMlYicR1ZSbtSMB/W035Mvg4D0Oa', 'Male', '1980-12-30', 'Kapan', '9813654324', 'rajanthapa@gmail.com', 'Administrator', 'Y'),
-(32, 'Niresh', '', 'Dhakal', '$2y$10$zJvdExs39rAZ20HrpewnouSxOghAHoA9E9IkiDWwslP4s94D4yYz.', 'Male', '1978-01-31', 'Jorpati', '984981351465', 'niresh@gmail.com', 'Module Leader', 'Y');
+(32, 'Niresh', '', 'Dhakal', '$2y$10$zJvdExs39rAZ20HrpewnouSxOghAHoA9E9IkiDWwslP4s94D4yYz.', 'Male', '1978-01-31', 'Jorpati', '984981351465', 'niresh@gmail.com', 'Module Leader', 'Y'),
+(33, 'Buckminster', 'Fayth', 'Manning', '$2y$10$WPVjdlNCZBc.F..uc3VSg.NVgp0xEO6P0dTG8TY7KWHib3g68YaRu', 'Other', '1990-04-28', 'Ap #253-5483 Ipsum St.', '541-3486', 'etiam.dictum@tellit.com', 'Student', 'Y'),
+(34, 'Dorothy', 'Saffiyah', 'Welch', '$2y$10$PId7cFkZjorauInT5N7NOu52yDiwm0jVMvUm9w4SQWWOmdruEz54W', 'Male', '2001-09-01', '768-436 Ac Rd.', '284-1074', 'mauris.ut.mi@molestie.co.uk', 'Student', 'Y'),
+(35, 'Alisa', 'Hafsah', 'Humphrey', '$2y$10$NQsMl4d4vHM43bWCnT7OAO9idXPnQirOgmsVbTGKhrU6pJKbNBmU2', 'Female', '1985-08-23', 'P.O. Box 518, 8571 Pellentesque St.', '1-197-120-3396', 'tortor@molestieSedid.edu', 'Student', 'Y'),
+(36, 'Merritt', 'Fawn', 'Kramer', '$2y$10$6Jand7mvz8WowSpoLCK5Xe6dasXDeOZgWaezDupDXlAgmf6Y/EpYS', 'Male', '1989-10-01', 'P.O. Box 570, 139 Duis St.', '1-480-624-4498', 'sed.sem@commodo.net', 'Student', 'Y'),
+(37, 'Hedda', 'Fleur', 'Skinner', '$2y$10$rWloLu2us4H9z.AhdbZdZuTJPIDOCzNH/rxsFMN1lWa.VsE9IsmX6', 'Female', '1990-06-13', 'P.O. Box 322, 473 Purus. St.', '484-7266', 'pede.Nunc@montur.org', 'Student', 'Y'),
+(38, 'Baker', 'Gwenyth', 'Pearson', '$2y$10$8Sr3NbYUz9UYbwFJbpmgeufkM29qOxxHiJmfROiMPo84N3m41Iisi', 'Male', '1983-07-14', 'P.O. Box 572, 6124 Venenatis Rd.', '366-0998', 'magna.nec@interdum.edu', 'Student', 'Y'),
+(39, 'Jada', 'Narayan', 'Patel', '$2y$10$2O7KWhtcn5Zs8pqEILdeDe2f82Pv6YgB4GTHnRHDldq4/1sHxnhE.', 'Other', '1988-09-28', '178-3114 Pharetra. Rd.', '546-7735', 'neque.tellus@tint.com', 'Student', 'Y'),
+(40, 'Brandon', 'Griffith', 'Fowler', '$2y$10$MPU7hQ51pGOZZP2paVC4feAArwIa10KDOI8miwgagqnpprTesTVZu', 'Other', '1981-10-03', 'Ap #510-773 Aliquet Ave', '1-398-502-1721', 'ornare.elit@quama.ca', 'Student', 'Y'),
+(41, 'Kevyn', 'Tudfwlch', 'Nixon', '$2y$10$eSFB2v7uvEgpBMrVwRwtsO.dZvkNFAxXZvEbqnFmJI.DllXW29bHK', 'Male', '1980-10-01', 'P.O. Box 878, 8469 Eget Avenue', '510-6955', 'nunc.est@facilisis.net', 'Student', 'Y');
 
 --
 -- Indexes for dumped tables
@@ -463,13 +514,13 @@ ALTER TABLE `announcements`
 -- AUTO_INCREMENT for table `assignments`
 --
 ALTER TABLE `assignments`
-  MODIFY `aid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `aid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `attendances`
 --
 ALTER TABLE `attendances`
-  MODIFY `aid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `aid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `courses`
@@ -493,25 +544,25 @@ ALTER TABLE `levels`
 -- AUTO_INCREMENT for table `modules`
 --
 ALTER TABLE `modules`
-  MODIFY `mid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `mid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `resources`
 --
 ALTER TABLE `resources`
-  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `terms`
 --
 ALTER TABLE `terms`
-  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `uid` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `uid` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- Constraints for dumped tables
