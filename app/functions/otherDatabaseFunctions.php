@@ -119,6 +119,19 @@
   }
 
 
+  function getTermById($id){
+    $termClass = new DatabaseTable('terms');
+    $term = $termClass->find('tid', $id);
+    return $term;
+  }
+
+  function getModuleByTermId($id){
+    $termClass = new DatabaseTable('terms');
+    $term = $termClass->find('tid', $id)->fetch();
+    $moduleClass = new DatabaseTable('modules');
+    $module = $moduleClass->find('mid', $term['tmid']);
+    return $module;
+  }
 
   function getTermsByModuleId($id){
     $termClass = new DatabaseTable('terms');
