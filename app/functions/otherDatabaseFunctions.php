@@ -224,4 +224,15 @@
     return $assignment;
   }
 
+
+  function getTermByAssignment($asaid){
+    global $pdo;
+    $stmt = $pdo->prepare('SELECT * FROM terms t
+                           INNER JOIN assignments a ON
+                           a.atid = t.tid
+                           WHERE a.aid = '.$asaid);
+    $stmt->execute();
+    return $stmt;
+  }
+
 ?>
