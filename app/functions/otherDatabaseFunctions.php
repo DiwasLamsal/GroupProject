@@ -169,5 +169,14 @@
     return $term;
   }
 
+  function findStudentModules($id, $lvid){
+    $courseClass = new DatabaseTable('courses');
+    $moduleClass = new DatabaseTable('modules');
+    $levelClass = new DatabaseTable('levels');
+
+    
+
+  }
+
 
 ?>
