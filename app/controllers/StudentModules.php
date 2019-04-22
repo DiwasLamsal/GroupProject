@@ -3,13 +3,14 @@
   class StudentModules extends Controller{
 
     public function index(){
+      $studentClass = new DatabaseTable('students');
       $moduleClass = new DatabaseTable('modules');
 
       if (session_status() == PHP_SESSION_NONE) {
       	session_start();
       }
-      $modules = $moduleClass->find('mluid', $_SESSION['loggedin']['uid']);
-
+      $student = $studentClass->find('suid', $_SESSION['loggedin']['uid'])->fetch();
+      $modules = findStudentModules($student['cid'], $student['slvid']);
 
       $template = '../app/views/students/studentModules.php';
       $content = loadTemplate($template, ['modules'=>$modules]);

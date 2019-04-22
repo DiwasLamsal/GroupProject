@@ -169,13 +169,14 @@
     return $term;
   }
 
-  function findStudentModules($id, $lvid){
-    $courseClass = new DatabaseTable('courses');
-    $moduleClass = new DatabaseTable('modules');
-    $levelClass = new DatabaseTable('levels');
 
-    
-
+  // Database Code
+  function findStudentModules($cid, $lvid){
+    global $pdo;
+    $stmt = $pdo->prepare('SELECT * FROM modules WHERE mcid = :cid AND mlvid = :lvid');
+    $criteria = ['cid'=>$cid, 'lvid'=>$lvid];
+    $stmt->execute($criteria);
+    return $stmt;
   }
 
 

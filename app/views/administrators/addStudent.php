@@ -74,10 +74,10 @@ if(isset($student))
   <th>Action</th>
   <td>
   <a href="/GroupProject/public/ManageStudents/delete/<?php echo $user['uid'];?>">
-          
+
                 <img src="/GroupProject/public/resources/images/deleteuser.png" width="150">
-               
-       
+
+
         </a>
   </td>
 </tr>
@@ -126,7 +126,7 @@ if(isset($student))
                 </tr>
             </tbody>
         </table>
-    
+
 
     </div>
 
@@ -160,8 +160,8 @@ if(isset($student))
         <div class="formColumn1">
             <label for="password">Password: </label>
             <input type="password" onkeyup="checkPassword()" name="user[password]" id="password" required>
-            <!-- <p id="passtest" style="font-size: 15px; color: red; margin-bottom: 20px;">Passwords must contain more than
-                8 characters</p> -->
+            <p id="passtest" style="font-size: 15px; color: red; margin-bottom: 20px;">Passwords must contain more than
+                8 characters</p>
 
             <label for="confirmpassword">Confirm Password: </label>
             <input type="password" onkeyup="checkPassword()" name="confirmpassword" id="confirmpassword" required>
@@ -172,7 +172,7 @@ if(isset($student))
 
     </div>
 
-   
+
 
 
 
@@ -487,7 +487,7 @@ if(isset($student))
     </div>
 
 
-    
+
 
 
 </form>
