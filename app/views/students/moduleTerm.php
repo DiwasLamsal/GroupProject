@@ -22,8 +22,6 @@
 </div>
 
 
-
-
 <button class="collapsible  active" style="background: DarkCyan;">
   <b>Assignment</b>
 </button>
@@ -100,7 +98,7 @@ else{ // -- If no assignment is uploaded, display Add Assignment Button
         </div>
 
         <div class="formColumn2">
-
+          
         </div>
 
     </div>
