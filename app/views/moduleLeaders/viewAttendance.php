@@ -2,7 +2,6 @@
   <li><a href="/GroupProject/public/ModuleLeaderHome">
     <img src = "/GroupProject/public/resources/images/house.png">&nbsp; Dashboard</a>
   </li>
-
   <li>Attendance</li>
 </ul>
 
