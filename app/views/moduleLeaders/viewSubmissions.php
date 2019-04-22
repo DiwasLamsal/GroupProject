@@ -66,31 +66,53 @@ if($modules->rowCount() > 0){
                     <p>
                       <b>Student ID: </b><?php echo $submission['asaid'];?><br>
                       <b>Student Name: </b><?php echo $student['fname'].' '.$student['mname'].' '.$student['lname'];?><br>
-                      <b>Submission Comments: </b><?php echo $submission['comments'];?><br>
                       <b>Submission Date: </b><?php echo $submission['submission_date'];?><br>
+                      <b>Submission Comments: </b><?php echo $submission['comments'];?><br>
+                    </p>
+                    <br><br>
+                    <p>
+                      <?php if($grade=checkSubmissionGrade($submission['submission_id'])){?>
+                        <b>Grade: </b><?php echo $grade['grade'];?><br>
+                        <b>Feedback: </b><?php echo $grade['grade'];?><br>
+
+                        <?php $visibleText = '<font style = "color: green">Published</font>';?>
+                        <?php $invisibleText = '<font style = "color: red">Not Published</font>';?>
+                        <b>Status:</b><?php echo $grade['status']=="Y"? $visibleText:$invisibleText;?><br>
+                      <?php }
+                      else { ?>
+                        <b>Assign Grade</b>
+
+                      <?php } ?>
                     </p>
 
                     <br><br>
                   </div>
                   <div class = "formColumnSeparator" style="background: white; border-right: 0px dashed grey;"></div>
                   <div class = "formColumn2">
-
+                    <div style=" text-align: center;">
+                      <a target = "_blank" href = "/GroupProject/public/<?php echo $submission['asfiles'];?>" style="color: white;">
+                        <img class = "downloadImage" src = "/GroupProject/public/resources/images/download.png">
+                      </a>
+                    </div>
                   </div>
                 </div>
-
             <br><hr>
           </div>
-        </div>
-        </div>
-        <?php
+
+
+<?php
       }
     }
-  }
-        ?>
-        <br>
-      </p>
+?>
+      </p>    
     </div>
   </div>
+
+<?php
+
+  }
+?>
+
   <?php
     }
   }

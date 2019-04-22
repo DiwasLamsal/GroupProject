@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 22, 2019 at 12:49 PM
+-- Generation Time: Apr 22, 2019 at 03:20 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -78,11 +78,20 @@ INSERT INTO `assignments` (`aid`, `atid`, `atitle`, `adescription`, `adeadline`,
 --
 
 CREATE TABLE `assignment_students` (
+  `submission_id` int(11) NOT NULL,
   `asaid` int(11) NOT NULL,
   `asuid` int(9) NOT NULL,
   `asfiles` varchar(255) NOT NULL,
-  `comments` text NOT NULL
+  `comments` text NOT NULL,
+  `submission_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `assignment_students`
+--
+
+INSERT INTO `assignment_students` (`submission_id`, `asaid`, `asuid`, `asfiles`, `comments`, `submission_date`) VALUES
+(1, 5, 19, 'resources/submissions/1555936340.0269-100-Records.zip', 'My Submission', '2019-04-22 18:56:49');
 
 -- --------------------------------------------------------
 
@@ -150,7 +159,8 @@ CREATE TABLE `grades` (
   `guid` int(9) NOT NULL,
   `grade` varchar(4) NOT NULL,
   `publish_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `feedback` text NOT NULL
+  `feedback` text NOT NULL,
+  `status` enum('Y','N') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -336,7 +346,7 @@ INSERT INTO `terms` (`tid`, `tmid`, `tname`, `tsdate`, `tedate`, `tstatus`) VALU
 (28, 34, 'Term II', '2019-09-16', '2020-03-19', 'Not Started'),
 (29, 35, 'Term I', '2019-03-20', '2019-09-16', 'Ongoing'),
 (30, 35, 'Term II', '2019-09-16', '2020-03-19', 'Not Started'),
-(31, 36, 'Term I', '2019-03-20', '2019-09-16', 'Not Started'),
+(31, 36, 'Term I', '2019-03-20', '2019-09-16', 'Ongoing'),
 (32, 36, 'Term II', '2019-09-16', '2020-03-19', 'Not Started'),
 (33, 37, 'Term I', '2019-03-20', '2019-09-16', 'Not Started'),
 (34, 37, 'Term II', '2019-09-16', '2020-03-19', 'Not Started'),
@@ -424,6 +434,7 @@ ALTER TABLE `assignments`
 -- Indexes for table `assignment_students`
 --
 ALTER TABLE `assignment_students`
+  ADD PRIMARY KEY (`submission_id`),
   ADD KEY `asaid` (`asaid`),
   ADD KEY `asuid` (`asuid`);
 
@@ -517,6 +528,12 @@ ALTER TABLE `assignments`
   MODIFY `aid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `assignment_students`
+--
+ALTER TABLE `assignment_students`
+  MODIFY `submission_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `attendances`
 --
 ALTER TABLE `attendances`
@@ -598,8 +615,8 @@ ALTER TABLE `courses`
 -- Constraints for table `grades`
 --
 ALTER TABLE `grades`
-  ADD CONSTRAINT `fk_g_assignments` FOREIGN KEY (`gaid`) REFERENCES `assignments` (`aid`),
-  ADD CONSTRAINT `fk_g_students` FOREIGN KEY (`guid`) REFERENCES `students` (`suid`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `fk_g_assignment_students` FOREIGN KEY (`guid`) REFERENCES `assignment_students` (`submission_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_g_assignments` FOREIGN KEY (`gaid`) REFERENCES `assignments` (`aid`);
 
 --
 -- Constraints for table `lecturers`

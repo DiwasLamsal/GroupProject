@@ -206,4 +206,16 @@
     return $submissions;
   }
 
+
+  function checkSubmissionGrade($sid){
+    $gradeClass = new DatabaseTable('grades');
+    $grade = $gradeClass->find('guid', $sid);
+    if($grade->rowCount()>0){
+      return $grade;
+    }
+    else{
+      return false;
+    }
+  }
+
 ?>
