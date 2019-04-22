@@ -51,7 +51,7 @@ if($modules->rowCount() > 0){
             if($assignments->rowCount()>0){
               $assignment = $assignments->fetch();
               echo '<hr><br>';
-              ?>
+            ?>
               <div class = "resourceHolder">
 
                 <!-- Assignment Left Column -->

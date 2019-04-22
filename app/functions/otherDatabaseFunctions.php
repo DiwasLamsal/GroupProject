@@ -179,7 +179,6 @@
     return $stmt;
   }
 
-
   // Check if student has already submitted the assignment
   function checkStudentSubmission($sid, $asid){
     global $pdo;
@@ -198,6 +197,13 @@
     $criteria = ['aid'=>$asid, 'sid'=>$sid];
     $stmt->execute($criteria);
     return $stmt->fetch();
+  }
+
+// Return All the submissions for an assignment
+  function getSubmissionsByAssignmentId($aid){
+    $assignmentstudentsClass = new DatabaseTable('assignment_students');
+    $submissions = $assignmentstudentsClass->find('asaid', $aid);
+    return $submissions;
   }
 
 ?>
