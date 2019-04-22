@@ -69,7 +69,7 @@ if($modules->rowCount() > 0){
                 <div class = "formHolder">
                   <div class = "formColumn1">
                     <p>
-                      <b>Student ID: </b><?php echo $submission['asaid'];?><br>
+                      <b>Student ID: </b><?php echo $student['uid'];?><br>
                       <b>Student Name: </b><?php echo $student['fname'].' '.$student['mname'].' '.$student['lname'];?><br>
                       <b>Submission Date: </b><?php echo $submission['submission_date'];?><br>
                       <b>Submission Comments: </b><?php echo $submission['comments'];?><br>
