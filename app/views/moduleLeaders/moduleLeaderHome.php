@@ -12,13 +12,13 @@
     <div class = "title">Recent Announcements</div>
     <div class = "content" style="margin:0; overflow-Y: auto; max-height: 295px; text-align: left;" id="customScroll">
       <?php
-        while($announcement = $announcements->fetch()){
-          if($announcement['anstatus']=='N')
-            continue;
-          echo '<a href = "/GroupProject/public/ModuleLeaderAnnouncements/index/'.$announcement['anid'].'" style="color: black;"><div class = "subContentList"><b>';
-            echo $announcement['antitle'];
-          echo '</b></div></a>';
-        }
+      while($announcement = $announcements->fetch()){
+        if($announcement['anstatus']=='N')
+          continue;
+        echo '<a href = "/GroupProject/public/ModuleLeaderAnnouncements/index/'.$announcement['anid'].'" style="color: black;"><div class = "subContentList"><b>';
+        echo $announcement['antitle'];
+        echo '</b></div></a>';
+      }
       ?>
     </div>
   </div>
