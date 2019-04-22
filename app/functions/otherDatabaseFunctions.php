@@ -218,4 +218,10 @@
     }
   }
 
+  function getAssignmentById($id){
+    $assignmentClass = new DatabaseTable('assignments');
+    $assignment = $assignmentClass->find('aid', $id);
+    return $assignment;
+  }
+
 ?>

@@ -11,8 +11,14 @@
     if($var=="addsuccess"){
       echo '<b>Successfully Marked Student Submission</b>';
     }
+    else if($var == 'gradesuccess'){
+      echo '<b>Successfully Graded Student Submission</b>';
+    }
     else if($var == 'editsuccess'){
-      echo '<b>Successfully Edited Student Submission</b>';
+      echo '<b>Successfully Edited Student Grade</b>';
+    }
+    else if($var == 'statussuccess'){
+      echo '<b>Successfully Edited Student Grade Status</b>';
     }
     else{
       echo '<b>Error</b>';
@@ -60,7 +66,6 @@ if($modules->rowCount() > 0){
 
               <br>
               <div class = "resourceHolder">
-
                 <div class = "formHolder">
                   <div class = "formColumn1">
                     <p>
@@ -72,15 +77,40 @@ if($modules->rowCount() > 0){
                     <br><br>
                     <p>
                       <?php if($grade=checkSubmissionGrade($submission['submission_id'])){?>
+                        <?php $grade = $grade->fetch();?>
                         <b>Grade: </b><?php echo $grade['grade'];?><br>
-                        <b>Feedback: </b><?php echo $grade['grade'];?><br>
+                        <b>Feedback: </b><?php echo $grade['feedback'];?><br><br>
 
                         <?php $visibleText = '<font style = "color: green">Published</font>';?>
                         <?php $invisibleText = '<font style = "color: red">Not Published</font>';?>
-                        <b>Status:</b><?php echo $grade['status']=="Y"? $visibleText:$invisibleText;?><br>
+                        <b>Status:</b> <?php echo $grade['status']=="Y"? $visibleText:$invisibleText;?><br><br>
+
+                        <a href = "/GroupProject/public/ModuleLeaderSubmissions/markSubmission/<?php echo $submission['submission_id'];?>"
+                          style="color: white;">
+                          <img class = "downloadImage" src = "/GroupProject/public/resources/images/markButton.png">
+                        </a>
+
+                        <?php if($grade['status']=="Y"){ ?>
+                          <a href = "/GroupProject/public/ModuleLeaderSubmissions/gradeStatus/<?php echo $grade['gid'];?>"
+                            style="color: white;">
+                            <img class = "downloadImage" src = "/GroupProject/public/resources/images/hideButton.png">
+                          </a>
+
+                        <?php } else { ?>
+                          <a href = "/GroupProject/public/ModuleLeaderSubmissions/gradeStatus/<?php echo $grade['gid'];?>"
+                            style="color: white;">
+                            <img class = "downloadImage" src = "/GroupProject/public/resources/images/publishButton.png">
+                          </a>
+
+                        <?php }?>
+
                       <?php }
                       else { ?>
-                        <b>Assign Grade</b>
+                        <a href = "/GroupProject/public/ModuleLeaderSubmissions/markSubmission/<?php echo $submission['submission_id'];?>"
+                          style="color: white;">
+                          <img class = "downloadImage" src = "/GroupProject/public/resources/images/markButton.png">
+                        </a>
+
 
                       <?php } ?>
                     </p>
@@ -104,7 +134,7 @@ if($modules->rowCount() > 0){
       }
     }
 ?>
-      </p>    
+      </p>
     </div>
   </div>
 
