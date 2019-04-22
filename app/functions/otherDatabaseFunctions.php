@@ -191,7 +191,13 @@
     else return false;
   }
 
-
-
+// Get the student's assignment submission
+  function getStudentSubmission($sid, $asid){
+    global $pdo;
+    $stmt = $pdo->prepare('SELECT * FROM assignment_students WHERE asaid = :aid AND asuid = :sid');
+    $criteria = ['aid'=>$asid, 'sid'=>$sid];
+    $stmt->execute($criteria);
+    return $stmt->fetch();
+  }
 
 ?>

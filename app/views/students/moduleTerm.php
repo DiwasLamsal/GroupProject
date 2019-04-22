@@ -112,7 +112,32 @@ if(!empty($assignment)){
 
 <?php
 	if(checkStudentSubmission($_SESSION['loggedin']['uid'], $assignment['aid'])){
+		$submission = getStudentSubmission($_SESSION['loggedin']['uid'], $assignment['aid']);
+?>
+	<br>
 
+	<p style="text-align: left;">
+		You have already submitted the assignment. Click on the download button
+		to view your submission.
+
+		<br><br>
+		<b>Submission Comments: </b>
+		<?php echo $submission['comments'];?>
+		<br><br>
+
+	</p>
+
+
+	<br><br>
+	<div style=" text-align: center;">
+		<a target = "_blank" href = "/GroupProject/public/<?php echo $submission['asfiles'];?>" style="color: white;">
+			<img class = "downloadImage" src = "/GroupProject/public/resources/images/download.png">
+		</a>
+	</div>
+
+			</div>
+		</div>
+<?php
 	}
 	else{
 ?>

@@ -2,7 +2,7 @@
 
   class StudentModules extends Controller{
 
-    public function index(){
+    public function index($var = ""){
       $studentClass = new DatabaseTable('students');
       $moduleClass = new DatabaseTable('modules');
 
@@ -13,7 +13,7 @@
       $modules = findStudentModules($student['cid'], $student['slvid']);
 
       $template = '../app/views/students/studentModules.php';
-      $content = loadTemplate($template, ['modules'=>$modules]);
+      $content = loadTemplate($template, ['modules'=>$modules, 'var'=>$var]);
 
       $title = "Student - Modules";
       $selected = "Modules";
