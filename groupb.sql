@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 22, 2019 at 03:20 PM
+-- Generation Time: Apr 22, 2019 at 06:40 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -69,7 +69,9 @@ CREATE TABLE `assignments` (
 --
 
 INSERT INTO `assignments` (`aid`, `atid`, `atitle`, `adescription`, `adeadline`, `afiles`, `status`) VALUES
-(5, 25, 'Software Engineering III Term I Assignment', 'Software Engineering III Term I Assignment', '2019-09-16', 'resources/assignments/1555864419.0888-Software_Engineering.rar', 'Y');
+(5, 25, 'Software Engineering III Term I Assignment', 'Software Engineering III Term I Assignment', '2019-09-16', 'resources/assignments/1555864419.0888-Software_Engineering.rar', 'Y'),
+(6, 31, 'Artificial Intelligence Term I Assignment', 'AI Assignment Term - I', '2019-09-16', 'resources/assignments/1555950741.7769-100-Records.zip', 'Y'),
+(7, 35, 'Dissertation', 'Dissertation Assignment Brief. Read it and submit your work in time.', '2019-09-16', 'resources/assignments/1555951014.4065-100-Records.zip', 'Y');
 
 -- --------------------------------------------------------
 
@@ -91,7 +93,10 @@ CREATE TABLE `assignment_students` (
 --
 
 INSERT INTO `assignment_students` (`submission_id`, `asaid`, `asuid`, `asfiles`, `comments`, `submission_date`) VALUES
-(1, 5, 19, 'resources/submissions/1555936340.0269-100-Records.zip', 'My Submission', '2019-04-22 18:56:49');
+(1, 5, 19, 'resources/submissions/1555936340.0269-100-Records.zip', 'My Submission', '2019-04-22 18:56:49'),
+(2, 5, 18, 'resources/submissions/1555940615.8368-100-Records.zip', 'This is my submission. I have completed all my work and everything is inside the zip folder. ', '2019-04-22 19:28:35'),
+(3, 6, 19, 'resources/submissions/1555950780.7027-100-Records.zip', 'Artificial Intelligence. Everything is completed and is inside the AI Tools Folder.', '2019-04-22 22:18:00'),
+(4, 7, 19, 'resources/submissions/1555951037.473-100-Records.zip', 'My Dissertation Work', '2019-04-22 22:22:17');
 
 -- --------------------------------------------------------
 
@@ -155,13 +160,22 @@ INSERT INTO `courses` (`cid`, `cuid`, `ctitle`, `cdescription`, `cstatus`) VALUE
 
 CREATE TABLE `grades` (
   `gid` int(11) NOT NULL,
-  `gaid` int(11) NOT NULL,
   `guid` int(9) NOT NULL,
   `grade` varchar(4) NOT NULL,
   `publish_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `feedback` text NOT NULL,
   `status` enum('Y','N') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `grades`
+--
+
+INSERT INTO `grades` (`gid`, `guid`, `grade`, `publish_date`, `feedback`, `status`) VALUES
+(1, 1, 'A+', '2019-04-22 20:40:58', 'Very Nicely Done Ayush!', 'Y'),
+(2, 2, 'B+', '2019-04-22 21:16:55', 'Decent Work', 'N'),
+(3, 3, 'A', '2019-04-22 22:18:37', 'Nice Work.', 'Y'),
+(4, 4, 'B+', '2019-04-22 22:22:51', 'Nice overall. But need improvements in language and description. ', 'Y');
 
 -- --------------------------------------------------------
 
@@ -350,7 +364,7 @@ INSERT INTO `terms` (`tid`, `tmid`, `tname`, `tsdate`, `tedate`, `tstatus`) VALU
 (32, 36, 'Term II', '2019-09-16', '2020-03-19', 'Not Started'),
 (33, 37, 'Term I', '2019-03-20', '2019-09-16', 'Not Started'),
 (34, 37, 'Term II', '2019-09-16', '2020-03-19', 'Not Started'),
-(35, 38, 'Term I', '2019-03-20', '2019-09-16', 'Not Started'),
+(35, 38, 'Term I', '2019-03-20', '2019-09-16', 'Ongoing'),
 (36, 38, 'Term II', '2019-09-16', '2020-03-19', 'Not Started'),
 (37, 39, 'Term I', '2019-03-20', '2019-09-20', 'Ongoing'),
 (38, 39, 'Term II', '2019-09-20', '2020-03-23', 'Not Started'),
@@ -388,9 +402,9 @@ INSERT INTO `users` (`uid`, `fname`, `mname`, `lname`, `password`, `gender`, `bi
 (5, 'Bish\'OW\'', 'Nath', 'Dhakal', '$2y$10$VeoyTZmtIYkieznioIZqGu.Eam7LhQyhhhNjT6YkFfaFPkLV0NBmi', 'Female', '2002-03-22', 'Boudha, Jorpati', '+9779841534534', 'bishownathdhakal@wcu.edu.uk', 'Administrator', 'Y'),
 (6, 'Aruna', 'Kumari', 'Upreti', '$2y$10$uu805HArVh6CFwme3UdlFOIf8Y3wFLzpVkeLGY9SUcYlnzW02oj4S', 'Female', '2004-12-16', 'Kathmandu\r\nKathmandu', '+9779841234564', 'aruna@upreti.com', 'Administrator', 'N'),
 (7, 'Deepak', 'Kumar', 'Karna', '$2y$10$65ZIHFpL0MGeYf5M46LSl.cJNfTqyh49ksJ9kEuZ0wRa5Oo84KaIi', 'Male', '1986-07-25', 'Ekantakuna, Lalitpur', '+9779842156151', 'dkarna@gmail.com', 'Administrator', 'Y'),
-(15, 'Ramesh', 'Bahadur', 'Adhikari', '$2y$10$qGJHsfHtd7HAmvlmDh/mqeuGTItx1KNR/.n/PKrNbl9hx7R41i2ym', 'Other', '2000-03-30', 'Kavre', '153245648', 'rameshadhikari@gmail.com', 'Module Leader', 'Y'),
+(15, 'Ramesh', 'Bahadur', 'Adhikari', '$2y$10$Rn0s30YFT3/ijFGYQRFYius5ylD69v9Z/.JbQJCERRCPQRR6otyNq', 'Other', '2000-03-30', 'Kavre', '153245648', 'rameshadhikari@gmail.com', 'Module Leader', 'Y'),
 (16, 'Deepak', 'Raj', 'Giri', '$2y$10$jnyj5ppQU16vnScrd6HTJe5989TFBESviCWDdySZ45xNCqRPHgAci', 'Male', '1988-02-09', 'Naxal', '9842135464', 'draj_giri@hotmail.com', 'Module Leader', 'Y'),
-(18, 'Binayak', '', 'Dhakal', 'BD1994-11-02', 'Male', '1994-11-02', 'Patan', '981651651351', 'binayak@gmail.com', 'Student', 'Y'),
+(18, 'Binayak', '', 'Dhakal', '$2y$10$8YDKxHidtn0hpZDv3MfAqelGr5d7RPPv1Dt20D6z/XbrPHXw6TQZi', 'Male', '1994-11-02', 'Patan', '981651651351', 'binayak@gmail.com', 'Student', 'Y'),
 (19, 'Ayush', 'Raj', 'Moktan', '$2y$10$F0dEGcLW8dkYd8.pSHYqHOiK4FZModNilkTduziGfS4i.wb/o0OSe', 'Male', '1998-08-21', 'NAMI College, Jorpati', '9581651613', 'ayushmoktan@gmail.com', 'Student', 'Y'),
 (20, 'Rama', '', 'Upreti', '$2y$10$KRcFWaFSkUVRpZDpfjbfEuhzznP6S0HQw7zgQojnfsm1OelWfQiLi', 'Female', '2000-06-24', 'Gongabu, Kathmandu', '98165165121', 'ramaupreti@gmail.com', 'Student', 'Y'),
 (22, 'Anita', '', 'Gurung', '$2y$10$5wtG5nZCYWpZ.mhC6nejQumDUAcx3mhMaS5jYB0jbEj3B7hTO7QQC', 'Female', '1969-09-24', 'New Baneshwor', '98161513215', 'anitagurung@nami.edu.np', 'Module Leader', 'Y'),
@@ -399,7 +413,7 @@ INSERT INTO `users` (`uid`, `fname`, `mname`, `lname`, `password`, `gender`, `bi
 (25, 'Himalaya', '', 'Kakshapati', '$2y$10$JEne0aGm6FPjQMlqyqQykOvWehTprNKUa0MjxGhzsINbEuNtutEPm', 'Male', '1982-10-27', 'Kalanki', '9814651561', 'himalaya@gmail.com', 'Module Leader', 'Y'),
 (26, 'Nishant', '', 'Neupane', '$2y$10$50tXjOXzpVGbMF7TKZGZM.B2iXHh0g0s98Ksfa/87ty9KUb2MrZXe', 'Male', '1987-08-20', 'Gaushala', '9845612118', 'nishant@gmail.com', 'Module Leader', 'Y'),
 (27, 'Sangita', '', 'Satyal', '$2y$10$TkUGkimeLUdcQ9hJFjQWHezwCiZpMIYyAvI7FN/gECOpqUjv4NCom', 'Female', '1978-04-24', 'Sankhamul', '9845132165', 'sangitasatyal@nami.edu.np', 'Module Leader', 'Y'),
-(28, 'Mamta', '', 'Bhattarai', '$2y$10$315M39gxzQNcrhq8w7mlh.NETh15y1jyXwHcZr4AW5hi12yKxhQry', 'Female', '1957-10-28', 'Koteshwor', '9815612342', 'mamta@gmail.com', 'Module Leader', 'Y'),
+(28, 'Mamta', '', 'Bhattarai', '$2y$10$eGIo3JtnTFMhPTH2J6zSD.mOMfP3W6P6Mcl0Fv5jbRFjKcoI54xme', 'Female', '1957-10-28', 'Koteshwor', '9815612342', 'mamta@gmail.com', 'Module Leader', 'Y'),
 (29, 'Nischal', '', 'Khadka', '$2y$10$6FsPV6Monb8K6sN88cu0VuaJzJLzxyiAjCnT6eqZHWKqupFJTRzUC', 'Male', '1979-10-27', 'New Baneshwor', '98156154', 'nischal.khadka@gmail.com', 'Module Leader', 'Y'),
 (30, 'Ram', 'Chandra', 'Dhungana', '$2y$10$GlmKZwd.lIgMyorw5CBHJekOPMmu.hZ0YDEKMXF3Zs9vq1KvBZWi6', 'Male', '1971-12-29', 'Chabahil', '9815615423', 'ramchandra@gmail.com', 'Module Leader', 'Y'),
 (32, 'Niresh', '', 'Dhakal', '$2y$10$zJvdExs39rAZ20HrpewnouSxOghAHoA9E9IkiDWwslP4s94D4yYz.', 'Male', '1978-01-31', 'Jorpati', '984981351465', 'niresh@gmail.com', 'Module Leader', 'Y'),
@@ -458,7 +472,6 @@ ALTER TABLE `courses`
 --
 ALTER TABLE `grades`
   ADD PRIMARY KEY (`gid`),
-  ADD KEY `gaid` (`gaid`),
   ADD KEY `guid` (`guid`);
 
 --
@@ -525,13 +538,13 @@ ALTER TABLE `announcements`
 -- AUTO_INCREMENT for table `assignments`
 --
 ALTER TABLE `assignments`
-  MODIFY `aid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `aid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `assignment_students`
 --
 ALTER TABLE `assignment_students`
-  MODIFY `submission_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `submission_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `attendances`
@@ -549,7 +562,7 @@ ALTER TABLE `courses`
 -- AUTO_INCREMENT for table `grades`
 --
 ALTER TABLE `grades`
-  MODIFY `gid` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `gid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `levels`
@@ -615,8 +628,7 @@ ALTER TABLE `courses`
 -- Constraints for table `grades`
 --
 ALTER TABLE `grades`
-  ADD CONSTRAINT `fk_g_assignment_students` FOREIGN KEY (`guid`) REFERENCES `assignment_students` (`submission_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_g_assignments` FOREIGN KEY (`gaid`) REFERENCES `assignments` (`aid`);
+  ADD CONSTRAINT `fk_g_assignment_students` FOREIGN KEY (`guid`) REFERENCES `assignment_students` (`submission_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `lecturers`
