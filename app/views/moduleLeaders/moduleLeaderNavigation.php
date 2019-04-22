@@ -43,21 +43,30 @@
   </a>
 </li>
 
+
 <li>
-  <a href = "/GroupProject/public/ModuleLeaderPAT">
-    <div style="width: 100%; height: 100%;" <?php if($selected=="PAT") echo 'class = "selected"';?>>
-      <img src = "/GroupProject/public/resources/images/lecturericon.png">
-      <span class = "navText">&nbsp; PAT</span>
+  <a href = "/GroupProject/public/ModuleLeaderAttendance">
+    <div style="width: 100%; height: 100%;" <?php if($selected=="Attendance") echo 'class = "selected"';?>>
+      <img src = "/GroupProject/public/resources/images/attendance.png">
+      <span class = "navText">&nbsp; Attendance</span>
     </div>
   </a>
 </li>
-
 
 <li>
   <a href = "/GroupProject/public/ModuleLeaderAnnouncements">
     <div style="width: 100%; height: 100%;" <?php if($selected=="Announcements") echo 'class = "selected"';?>>
       <img src = "/GroupProject/public/resources/images/addannouncement.png">
       <span class = "navText">&nbsp; Announcements</span>
+    </div>
+  </a>
+</li>
+
+<li>
+  <a href = "/GroupProject/public/ModuleLeaderPAT">
+    <div style="width: 100%; height: 100%;" <?php if($selected=="PAT") echo 'class = "selected"';?>>
+      <img src = "/GroupProject/public/resources/images/lecturericon.png">
+      <span class = "navText">&nbsp; PAT</span>
     </div>
   </a>
 </li>
