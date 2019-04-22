@@ -1,5 +1,5 @@
 <ul class="breadcrumb">
-  <li><a href="/GroupProject/public/ModuleLeaderHome">
+  <li><a href="/GroupProject/public/StudentHome">
     <img src = "/GroupProject/public/resources/images/house.png">&nbsp; Dashboard</a>
   </li>
 
@@ -49,7 +49,7 @@ if($modules->rowCount() > 0){
   <div class = "formColumn2">
     <?php while($term = $terms->fetch()){ ?>
     <?php
-          $link = '<a class = "courseModuleLink" href = "/GroupProject/public/ModuleLeaderModules/moduleTerm/'.$term['tid'].'">';
+          $link = '<a class = "courseModuleLink" href = "/GroupProject/public/StudentModules/moduleTerm/'.$term['tid'].'">';
           echo $link;
           echo '<div class = "courseModuleBox termBox" style = "background: '.$color.';">';
     ?>
