@@ -235,4 +235,16 @@
     return $stmt;
   }
 
+
+  function getAttendanceByStudent($uid){
+    $attendanceClass = new DatabaseTable('attendances');
+    $attendances = $attendanceClass->find('auid', $uid);
+    return $attendances;
+  }
+
+
+
+
+
+
 ?>

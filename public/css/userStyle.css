@@ -818,7 +818,7 @@ opacity: 0.8;
   padding: 5px;
 
 
-  
+
 }
 
 .formColumn1 p{
@@ -1046,6 +1046,28 @@ ul.breadcrumb li a:hover {
 }
 
 
+/* Attendance bar for viewing student attendances */
+.attendanceBar{
+  width: 95%;
+  background-color: #ddd;
+  opacity: 0.6;
+  transition: opacity 0.1s;
+}
+
+.attendanceBar:hover{
+  opacity: 0.8;
+}
+
+.percentage{
+  text-align: right;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: white;
+
+}
+
+
+
 /**********************************************************************************************/
 /**********************************************************************************************/
 /**********************************************************************************************/
@@ -1130,7 +1152,7 @@ ul.breadcrumb li a:hover {
     padding-bottom: 13%;
   }
 
-  
+
 
 
   .termBox{

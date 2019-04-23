@@ -9,7 +9,7 @@
       $template = '../app/views/moduleLeaders/moduleLeaderHome.php';
       $content = loadTemplate($template, ['announcements'=>$announcements]);
       $selected='Dashboard';
-      $title = "Admin - Dashboard";
+      $title = "ModuleLeader - Dashboard";
 
       require_once "../app/controllers/moduleLeaderLoadView.php";
 

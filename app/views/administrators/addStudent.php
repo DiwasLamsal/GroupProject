@@ -133,19 +133,47 @@ if(isset($student))
 </div>
 
 
-<div class="adminManageTable">
+<!-- ################################### ATTENDANCES ################################### -->
 
+<div class="adminManageTable">
     <div class="tableTitle">
-        <h1 class="tableHeading">Student Attendance</h1>
+        <h1 class="tableHeading">
+          <?php echo $user['fname'].' '.$user['mname'].' '.$user['lname'];?>'s Attendance
+        </h1>
     </div>
 
     <div class="content" style="text-align: left; margin: 15px; line-height: 1.6;">
+        <div class = "attendance">
+<?php
+  $attendances = getAttendanceByStudent($user['uid']);
 
-
+  $modules = findStudentModules($student['cid'], $student['slvid']);
+  if($modules->rowCount()>0){
+    while($module = $modules->fetch()){
+?>
+        <div class = "subAttendance">
+          <b><?php echo $module['mname'];?></b>:
+            <div class = "attendanceBar">
+              <div class="percentage"
+                style="width: <?php echo $a = rand(50, 100);?>%; background: <?php echo generateRandomColor();?>">
+                <?php echo $a;?>%
+              </div>
+            </div>
+        </div>
+        <br>
+<?php
+  }
+}
+else{
+?>
+  <h2 style="text-align: center;">No modules available for this student</h2>
+<?php } ?>
+        </div>
     </div>
-
 </div>
 
+
+<!-- ################################### CHANGE PASSWORD ################################### -->
 
 <form method="POST" class="userForm">
 
