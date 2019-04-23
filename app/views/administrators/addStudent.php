@@ -150,8 +150,10 @@ if(isset($student))
   $modules = findStudentModules($student['cid'], $student['slvid']);
   if($modules->rowCount()>0){
     while($module = $modules->fetch()){
-      $att = getAttendancePercentage($student['suid'], $module['mid']);
-      $actionText = '<a href = # style=color:red;>Take Action</a>'
+      $att = round(getAttendancePercentage($student['suid'], $module['mid']));
+      $actionText = '<a href="/GroupProject/public/PrintOfferLetter/concern/'.$student['suid'].'" target="_blank">
+                      Take Action
+                    </a>'
 ?>
         <div class = "subAttendance">
           <b><?php echo $module['mname'];?></b>: <?php echo $att>0 && $att<75 ? $actionText:'';?>

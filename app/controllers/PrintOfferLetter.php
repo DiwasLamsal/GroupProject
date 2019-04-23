@@ -22,6 +22,14 @@ class PrintOfferLetter extends Controller{
     $this->view($content);
   }
 
+  public function concern($val=""){
+    $userClass = new DatabaseTable('users');
+    $user = $userClass->find('uid', $val)->fetch();
+    $template = '../app/letters/concern.php';
+    $content = loadTemplate($template, ['user'=>$user, 'print'=>'print']);
+    $this->view($content);
+  }
+
 }
 
 ?>
