@@ -87,19 +87,21 @@ if($modules->rowCount() > 0){
 
                         <a href = "/GroupProject/public/ModuleLeaderSubmissions/markSubmission/<?php echo $submission['submission_id'];?>"
                           style="color: white;">
-                          <img class = "downloadImage" src = "/GroupProject/public/resources/images/markButton.png">
+                          <button class="btn btn-submit">Mark Submission</button>
+                          <!-- <img class = "downloadImage" src = "/GroupProject/public/resources/images/markButton.png"> -->
                         </a>
 
                         <?php if($grade['status']=="Y"){ ?>
                           <a href = "/GroupProject/public/ModuleLeaderSubmissions/gradeStatus/<?php echo $grade['gid'];?>"
                             style="color: white;">
-                            <img class = "downloadImage" src = "/GroupProject/public/resources/images/hideButton.png">
+                            <button class="btn btn-hide">Hide Grade</button>
+                            <!-- <img class = "downloadImage" src = "/GroupProject/public/resources/images/hideButton.png"> -->
                           </a>
 
                         <?php } else { ?>
                           <a href = "/GroupProject/public/ModuleLeaderSubmissions/gradeStatus/<?php echo $grade['gid'];?>"
                             style="color: white;">
-                            <img class = "downloadImage" src = "/GroupProject/public/resources/images/publishButton.png">
+                            <button class="btn btn-publish">Publish Grade</button>
                           </a>
 
                         <?php }?>

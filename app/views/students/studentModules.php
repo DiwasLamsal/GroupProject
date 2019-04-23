@@ -39,25 +39,21 @@ if($modules->rowCount() > 0){
 			<div class = "content" style="text-align: left; margin: 15px; line-height: 1.6;">
 				<div class = "formHolder">
 
-					<div class = "formColumn1">
+					<div class = "formColumn1 widthform">
 						<b>Code: </b><?php echo $module['mcode'];?><br>
 						<b>Course: </b><?php echo $mCourse['ctitle'];?><br>
 						<b>Level: </b><?php echo $mLevel['lvtitle'].' - '.$mLevel['lvaltname'];?><br>
+						<div>
 						<?php echo $module['mdescription'];?>
-					</div>
-
-					<div class = "formColumnSeparator"></div>
-
-					<div class = "formColumn2">
+						</div>
+					
+					
 						<?php while($term = $terms->fetch()){ ?>
 							<?php
 							$link = '<a class = "courseModuleLink" href = "/GroupProject/public/StudentModules/moduleTerm/'.$term['tid'].'">';
 							echo $link;
 							echo '<div class = "courseModuleBox termBox" style = "background: '.$color.';">';
 							?>
-
-							<img src = "/GroupProject/public/resources/images/term.png">
-
 
 							<?php
 							echo $term['tname'];

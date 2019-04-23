@@ -1236,3 +1236,21 @@ ul.breadcrumb li a:hover {
   .widthform{
     width: 100%;
   }
+
+  .btn{
+    border:#8075B6;
+    padding: 15px 25px;
+    background: #4CAF50;
+    color:#fff;
+    font-size: 14px;
+    border-radius: 3px;
+  }
+  .btn:hover{
+    cursor: pointer;
+  }
+  .btn-hide{
+    background: #777;
+  }
+  .btn-publish{
+    background: #a09b9b;
+  }
