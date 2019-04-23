@@ -959,7 +959,7 @@ font-family: opensanssemibold;
   opacity: 0.8;
   border-radius: 10px;
   transition: opacity 0.15s;
-  width: 150px;
+  width: auto;
 }
 
 .downloadImage:hover{
