@@ -137,4 +137,10 @@ class DatabaseTable{
 		return $stmt;
 	}
 
+	function getCountByValuePar($countValue, $field, $value){
+		global $pdo;
+		$stmt = $pdo->prepare('SELECT COUNT('.$countValue.') FROM '.$this->table.' WHERE '.$field.' = '.$value);
+		$stmt->execute();
+		return $stmt;
+	}
 }

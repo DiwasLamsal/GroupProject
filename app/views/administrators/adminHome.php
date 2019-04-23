@@ -9,7 +9,7 @@
     </a>
   </div>
 
- 
+
   <div class = "adminDashboardBox adbmoduleleaders">
     <a href = "/GroupProject/public/ManageModuleLeaders">
       <img src = "resources/images/teacher.png" alt = "Module Leaders">
@@ -36,40 +36,18 @@
 </div>
 
 <div class = "boxesContainer">
-  <div class = "contentBoxLarge tutorialVideo">
-    <div class = "title">Attendance</div>
-    <div id="container" style="height: 400px; width: 500px"></div>
-    <script>
-    
-    var chart = new Highcharts.Chart({
-  chart: {
-    renderTo: 'container',
-    marginBottom: 80
-  },
-  xAxis: {
-    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-    labels: {
-      rotation: 90
-    }
-  },
 
-  series: [{
-    data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]        
-  }]
-});
-    </script>
-  </div>
   <div class = "contentBoxLarge tutorialVideo">
     <div class = "title">Tutorial</div>
-    <div class = "content" style="margin:0; max-height: 395px;">
-      <video src = "resources/videos/tutorial.mp4#t=07,20" width="100%" height="395px" controls>Video Not Found</video>
+    <div class = "content" style="margin:0;">
+      <video src = "resources/videos/tutorial.mp4#t=07,20" width="100%" style="max-height:303px;" controls>Video Not Found</video>
     </div>
   </div>
 
 
   <div class = "contentBoxLarge recentAnnouncements">
     <div class = "title">Recent Announcements</div>
-    <div class = "content" style="margin:0; overflow-Y: auto; height: 395px; text-align: left;" id="customScroll">
+    <div class = "content" style="margin:0; overflow-Y: auto; height: 303px; text-align: left;" id="customScroll">
       <?php
         while($announcement = $announcements->fetch()){
           if($announcement['anstatus']=='N')
