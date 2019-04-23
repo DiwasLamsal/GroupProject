@@ -48,7 +48,7 @@
 						<br>
 					</p>
 				</div>
-				<div class = "formColumnSeparator" style="background: white; border-right: 0px dashed grey;"></div>
+				
 
 				<!-- Assignment Right Column -->
 				<div class = "formColumn2">
@@ -195,7 +195,7 @@ if(!empty($assignment)){
 								</p>
 							</div>
 
-							<div class = "formColumnSeparator" style="background: white; border-right: 0px dashed grey;"></div>
+							
 
 							<div class = "formColumn2">
 								<div style=" text-align: center;">

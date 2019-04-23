@@ -97,7 +97,7 @@ if($modules->rowCount() > 0){
                 </div>
               </div>
 
-            <br><br><hr>
+            <br><br>
           </div>
           <?php
         }

@@ -1,6 +1,6 @@
 <ul class="breadcrumb">
   <li><a href="/GroupProject/public/ModuleLeaderHome">
-    <img src = "/GroupProject/public/resources/images/house.png">&nbsp; Dashboard</a>
+   <i class="fa fa-home"></i>&nbsp; Dashboard</a>
   </li>
   <li>Attendance</li>
 </ul>
@@ -97,19 +97,19 @@ else {
               Upload Attendance Sheet For <?php echo $module['mname'].' - '.$term['tname'];?>
             </h1>
           </div>
-
-          <div class="formHolder">
-            <div class="formColumn1">
-              <label>Select Student Attendance CSV File:</label>
-            </div>
-
-            <div class="formColumn2">
-              <input type="file" name="csvpicker" style="border: none;" required>
+        <div class="singlerow">
+        <div class="formHolder">
+            <div class="formColumn1 formCol">
+              <label for="file<?php echo $term['tid'].$module['mid'];?>">Select Student Attendance CSV File: <i class="fa fa-upload fa-2x"></i></label>
+           
+              <input id="file<?php echo $term['tid'].$module['mid']?>" type="file" name="csvpicker" style="border: none;" required>
             </div>
           </div>
 
           <input type = "text" value = "<?php echo $term['tid'];?>" name = "term" style="display: none;">
           <input type = "submit" value="Submit" name="submitAttendance">
+        </div>
+         
         </form>
 
         <?php

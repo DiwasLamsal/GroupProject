@@ -56,7 +56,7 @@ if($modules->rowCount() > 0){
             $resourceCount = 0;
             while($resource = $resources->fetch()){
               ++$resourceCount;
-              if($resourceCount==1) echo '<hr>';
+              if($resourceCount==1);
               ?>
               <br>
               <div class = "resourceHolder">
@@ -101,7 +101,7 @@ if($modules->rowCount() > 0){
               </div>
             </div>
 
-            <br><hr>
+            <br>
           </div>
         <?php } ?>
         <br>

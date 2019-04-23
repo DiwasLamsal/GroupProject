@@ -92,7 +92,7 @@ else{ // -- If no assignment is uploaded, display Add Assignment Button
           <div class = "resourceHolder">
 
             <div class = "formHolder">
-              <div class = "formColumn1">
+              <div class = "formColumn1 formCol">
                 <p>
                   <b>Resource Title: </b><?php echo $resource['rtitle'];?><br>
                   <b>Resource Description: </b><?php echo $resource['rdescription'];?><br>

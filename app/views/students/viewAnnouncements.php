@@ -23,7 +23,7 @@ while($announcement = $announcements->fetch()){
 	?>
 
 	<!-- Buttons for displaying announcements -->
-	<button class="collapsible <?php if($flag) echo 'active';?>" <?php if($count%2==0) echo 'style = "background: OliveDrab;"'?>>
+	<button class="collapsible <?php if($flag) echo 'active';?>" <?php if($count%2==0) echo 'style = "background: #67aba7;"'?>>
 		<?php echo '<b>'.$announcement['antitle'].'</b>';?>
 		<b class = "announcementDate" style = "float: right;"><?php echo date("l\, jS-F-Y", strtotime($announcement['andate']));?></b>
 	</button>

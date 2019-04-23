@@ -101,7 +101,7 @@ if(isset($module)){
                 </tr>
             </tbody>
         </table>
-        <hr>
+        
         <br>
 
         <table class="tableborder">
@@ -121,7 +121,7 @@ if(isset($module)){
             </tbody>
         </table>
        
-        <hr><br>
+<br>
         <table class="tableborder">
             <tbody>
                 <tr>

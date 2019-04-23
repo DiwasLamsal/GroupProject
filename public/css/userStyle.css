@@ -47,6 +47,7 @@ a{color: white; text-decoration: none;font-family: opensanssemibold;}
 
 body{
   overflow-x: hidden;
+  font-family: opensansregular;
 }
 
 
@@ -797,12 +798,36 @@ opacity: 0.8;
 
 .formHolder{
   display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.resourceHolder{
+  display: flex;
+  border-bottom: 1px solid #1DC5A3;
+  padding: 20px 0;
+}
+
+
+.resourceHolder:last-of-type{
+  border-bottom: 0;
 }
 
 .formColumn1{
   width: 49%;
   padding: 5px;
+
+
+  
 }
+
+.formColumn1 p{
+font-size: 15px;
+margin-bottom: 15px;
+line-height:30px;
+
+}
+
 
 .formColumnSeparator{
   width: 1px;
@@ -828,8 +853,12 @@ opacity: 0.8;
   transition: opacity .1s;
   user-select: none;
   display: inline-block;
-  padding: 10px;
+  padding: 10px 20px;
   font-size: 14px;
+  margin-top: 20px;
+}
+.courseModuleBox .fa{
+  margin-right: 10px;
 }
 
 .courseModuleBox:hover{
@@ -872,6 +901,14 @@ opacity: 0.8;
   transition: opacity 0.1s;
 }
 
+.content b{
+  font-size: 15px;
+margin-bottom: 15px;
+line-height:30px;
+width: 150px;
+display: inline-block;
+font-family: opensanssemibold;
+}
 .content button:hover{
   opacity: 0.8;
 }
@@ -881,11 +918,13 @@ opacity: 0.8;
   padding: 20px 5px 20px 5px; border: 1px dashed darkgray; width: calc(100% - 20px);
 }
 
-
+.subContentList b{
+  width: 100%;
+}
 .termBox{
-  width: 41%;
+  /* width: 41%;
   height: 200px;
-  margin-left: 3%;
+  margin-left: 3%; */
 }
 
 .resourceBox{
@@ -920,7 +959,7 @@ opacity: 0.8;
   opacity: 0.8;
   border-radius: 10px;
   transition: opacity 0.15s;
-  width: 180px;
+  width: 150px;
 }
 
 .downloadImage:hover{
@@ -943,7 +982,7 @@ ul.breadcrumb {
 
 ul.breadcrumb li {
   display: inline;
-  font-size: 18px;
+  font-size: 13px;
 }
 
 ul.breadcrumb li img{
@@ -1091,11 +1130,12 @@ ul.breadcrumb li a:hover {
     padding-bottom: 13%;
   }
 
+  
 
 
   .termBox{
-    width: 98%;
-    height: 200px;
+    width: 50%;
+    /* height: 200px; */
     margin-left: -5%;
     margin-top: 5px;
   }
@@ -1121,3 +1161,55 @@ ul.breadcrumb li a:hover {
 .userNotesBox .content{
   height: 80px;
 }
+
+.singlerow{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-flow: column;
+}
+.singlerow input[type="submit"]{
+ width: 100px;
+ font-size: 13px;
+}
+
+.singlerow input[type="file"]{
+  display: none;
+  margin: 0;
+  width: 0;
+  }
+  .singlerow label{
+    width:1000px;
+    border:1px solid #3498DB;
+    display: flex;
+    padding: 40px 30px;
+    text-align: center;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-flow: column;
+    text-transform: uppercase;
+    font-size: 16px;
+  }
+  .singlerow label .fa{
+    margin-top: 20px;
+  }
+  .singlerow label:hover{
+   cursor: pointer;
+  }
+
+
+  .formColumn1 b{
+    font-family: opensanssemibold;
+    width: 150px;
+    display: inline-block;
+  }
+  .formCol{
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+  }
+  .widthform{
+    width: 100%;
+  }
