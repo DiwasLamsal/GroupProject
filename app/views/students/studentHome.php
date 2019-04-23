@@ -1,4 +1,88 @@
 
+<?php $user = getUserById($student['suid'])->fetch();?>
+
+<div class="boxesContainer boxesContainerManage">
+  <div class="contentBoxLarge contentBoxLargeEdit">
+      <div class="title">
+          Your Details
+      </div>
+      <div class="content" style="text-align: left; margin: 15px; line-height: 1.6;">
+          <table class="tableborder">
+              <tbody>
+                  <tr>
+                      <th>Login ID: </th>
+                      <td><?php echo $user['uid'];?></td>
+                  </tr>
+                  <tr>
+                      <th>Full Name: </th>
+                      <td><?php echo $user['fname'].' '.$user['mname'].' '.$user['lname'];?></td>
+                  </tr>
+                  <tr>
+                      <th>Gender:</th>
+                      <td><?php echo $user['gender'];?></td>
+                  </tr>
+                  <tr>
+                      <th>Birthdate:</th>
+                      <td><?php echo $user['birthdate'];?></td>
+                  </tr>
+                  <tr>
+                      <th>Address: </th>
+                      <td><?php echo $user['uaddress'];?></td>
+                  </tr>
+                  <tr>
+                      <th>Contact No: </th>
+                      <td><?php echo $user['ucontact'];?></td>
+                  </tr>
+                  <tr>
+                      <th>Email Address:</th>
+                      <td><?php echo $user['uemail'];?></td>
+                  </tr>
+                  <tr>
+                      <th>Previous GPA: </th>
+                      <td><?php echo $student['gpa'];?></td>
+                  </tr>
+                  <tr>
+                      <th>Previous School: </th>
+                      <td><?php echo $student['prevschool'];?></td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+</div>
+
+
+<div class="boxesContainer boxesContainerManage">
+  <div class="contentBoxLarge contentBoxLargeEdit">
+      <div class="title">
+          Course Details
+      </div>
+      <div class="content" style="text-align: left; margin: 15px; line-height: 1.6;">
+          <b>Course Title: </b>
+                <?php echo $course['ctitle'];?>
+                <br>
+          <b>Course Description: </b>
+                <?php echo $course['cdescription'];?>
+      </div>
+  </div>
+
+  <div class = "contentBoxLarge recentAnnouncements">
+    <div class = "title">Modules</div>
+    <div class = "content" style="margin:0; overflow-Y: auto; min-height: 200px; max-height: 250px; text-align: left;" id="customScroll">
+      <?php
+        while($module = $modules->fetch()){
+          echo '<div class = "subContentList"><b>';
+            echo $module['mname'];
+          echo '</b></div>';
+        }
+      ?>
+    </div>
+  </div>
+</div>
+
+
+
+
 <div class = "boxesContainer">
   <div class = "contentBoxLarge tutorialVideo">
     <div class = "title">Tutorial</div>
