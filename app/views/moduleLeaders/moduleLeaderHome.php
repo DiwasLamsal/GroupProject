@@ -31,6 +31,52 @@
 
 </div>
 
+<div class="boxesContainer boxesContainerManage">
+
+    <div class="contentBoxLarge contentBoxLargeEdit">
+        <div class="title">
+            Your Details
+        </div>
+        <div class="content" style="text-align: left; margin: 15px; line-height: 1.6;">
+            <table class="tableborder">
+                <tbody>
+                    <tr>
+                        <th>Login ID: </th>
+                        <td><?php echo $user['uid'];?></td>
+                    </tr>
+                    <tr>
+                        <th>Full Name: </th>
+                        <td><?php echo $user['fname'].' '.$user['mname'].' '.$user['lname'];?></td>
+                    </tr>
+                    <tr>
+                        <th>Gender: </th>
+                        <td><?php echo $user['gender'];?></td>
+                    </tr>
+                    <tr>
+                        <th>Birthdate:</th>
+                        <td><?php echo $user['birthdate'];?></td>
+                    </tr>
+                    <tr>
+                        <th>Address: </th>
+                        <td><?php echo $user['uaddress'];?></td>
+                    </tr>
+                    <tr>
+                        <th>Contact No: </th>
+                        <td><?php echo $user['ucontact'];?></td>
+                    </tr>
+                    <tr>
+                        <th>Email Address:</th>
+                        <td><?php echo $user['uemail'];?></td>
+                    </tr>
+                    <tr>
+                        <th>Role:</th>
+                        <td><?php echo $user['urole'];?></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 
 
 <div class = "boxesContainer">

@@ -19,7 +19,7 @@
       $countStudents = $studentClass->getCountByValuePar('suid', 'puid', $_SESSION['loggedin']['uid']);
       $countStudents = $countStudents->fetch()['COUNT(suid)'];
 
-      
+      $user = $_SESSION['loggedin'];
 
       $countArray = [
         'students'=>$countStudents,
@@ -31,7 +31,7 @@
       $announcements = $announcementClass->findAllReverse('anid');
 
       $template = '../app/views/moduleLeaders/moduleLeaderHome.php';
-      $content = loadTemplate($template, ['announcements'=>$announcements, 'count'=>$countArray]);
+      $content = loadTemplate($template, ['announcements'=>$announcements, 'count'=>$countArray, 'user'=>$user]);
       $selected='Dashboard';
       $title = "ModuleLeader - Dashboard";
 
