@@ -152,7 +152,7 @@ if(isset($student))
     while($module = $modules->fetch()){
       $att = round(getAttendancePercentage($student['suid'], $module['mid']));
       $actionText = '<a href="/GroupProject/public/PrintOfferLetter/concern/'.$student['suid'].'" target="_blank">
-                      Take Action
+                      <font color = red>Take Action</font>
                     </a>'
 ?>
         <div class = "subAttendance">
@@ -203,7 +203,6 @@ else{
 
 
     </div>
-
 
 
 
