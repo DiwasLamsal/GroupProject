@@ -243,8 +243,30 @@
   }
 
 
+  function getAttendancePercentage($suid, $mid){
+    global $pdo;
+    $terms = getTermsByModuleId($mid);
+    $termI = $terms->fetch();
+    $termII = $terms->fetch();
 
+    // Total Records
+    $stmt = $pdo->prepare('SELECT COUNT(auid) AS total FROM attendances WHERE atid IN(:termI, :termII)
+                           AND auid = :suid');
+    $criteria = ['termI'=>$termI['tid'], 'termII'=>$termII['tid'], 'suid'=>$suid];
+    $stmt->execute($criteria);
+    $totalRecords = $stmt->fetch();
+    // Total present
+    $stmt = $pdo->prepare('SELECT COUNT(auid) AS total FROM attendances WHERE atid IN(:termI, :termII)
+                           AND auid = :suid AND astatus = \'0\'');
+    $criteria = ['termI'=>$termI['tid'], 'termII'=>$termII['tid'], 'suid'=>$suid];
+    $stmt->execute($criteria);
+    $totalPresent = $stmt->fetch();
 
-
+    $percentage = 0;
+    //Percentage
+    if($totalRecords['total']!=0)
+    $percentage = ($totalPresent['total']/$totalRecords['total']) * 100;
+    return $percentage;
+  }
 
 ?>

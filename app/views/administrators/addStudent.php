@@ -150,13 +150,15 @@ if(isset($student))
   $modules = findStudentModules($student['cid'], $student['slvid']);
   if($modules->rowCount()>0){
     while($module = $modules->fetch()){
+      $att = getAttendancePercentage($student['suid'], $module['mid']);
+      $actionText = '<a href = # style=color:red;>Take Action</a>'
 ?>
         <div class = "subAttendance">
-          <b><?php echo $module['mname'];?></b>:
+          <b><?php echo $module['mname'];?></b>: <?php echo $att>0 && $att<75 ? $actionText:'';?>
             <div class = "attendanceBar">
               <div class="percentage"
-                style="width: <?php echo $a = rand(50, 100);?>%; background: <?php echo generateRandomColor();?>">
-                <?php echo $a;?>%
+                style="width: <?php echo $att;?>%; background: <?php echo generateRandomColor();?>">
+                <?php echo $att==0?'<span style = "color: black;">&nbsp;No&nbsp;Records</span>':$att.'%';?>
               </div>
             </div>
         </div>
