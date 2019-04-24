@@ -52,11 +52,11 @@ if($submissions->rowCount()>0){
 else{
 ?>
 
-
-<h1>
-  No Grades Are Available For You
-</h1>
-
+<div class = "adminManageTable">
+	<h1>
+	  🚫 No Grades Are Available For You
+	</h1>
+</div>
 
 <?php } ?>
 <script>

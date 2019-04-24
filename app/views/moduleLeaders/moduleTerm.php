@@ -81,7 +81,7 @@ else{ // -- If no assignment is uploaded, display Add Assignment Button
 <div class="collapsedcontent" style="margin-bottom: 10px;">
   <!-- Content inside the collapsible -->
   <div style="margin: 10px; min-height: 90px;">
-    <p style="text-align: center;">
+    <p>
       <?php
 
       $resources = getResourcesByTermId($term['tid']);
@@ -92,7 +92,7 @@ else{ // -- If no assignment is uploaded, display Add Assignment Button
           <div class = "resourceHolder">
 
             <div class = "formHolder">
-              <div class = "formColumn1 formCol">
+              <div class = "formColumn1 formCol"  style="text-align: left;">
                 <p>
                   <b>Resource Title: </b><?php echo $resource['rtitle'];?><br>
                   <b>Resource Description: </b><?php echo $resource['rdescription'];?><br>

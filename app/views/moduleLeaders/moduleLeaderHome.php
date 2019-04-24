@@ -32,7 +32,6 @@
 </div>
 
 <div class="boxesContainer boxesContainerManage">
-
     <div class="contentBoxLarge contentBoxLargeEdit">
         <div class="title">
             Your Details

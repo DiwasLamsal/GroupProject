@@ -46,15 +46,15 @@ if($modules->rowCount() > 0){
 						<div>
 						<?php echo $module['mdescription'];?>
 						</div>
-					
-					
+
+
 						<?php while($term = $terms->fetch()){ ?>
 							<?php
 							$link = '<a class = "courseModuleLink" href = "/GroupProject/public/StudentModules/moduleTerm/'.$term['tid'].'">';
 							echo $link;
 							echo '<div class = "courseModuleBox termBox" style = "background: '.$color.';">';
 							?>
-
+							  <i class="fa fa-folder"></i>
 							<?php
 							echo $term['tname'];
 							echo '</div>';

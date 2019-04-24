@@ -34,7 +34,7 @@ if($modules->rowCount() > 0){
             <div>
             <?php echo $module['mdescription'];?>
             </div>
-          
+
 
             <?php while($term = $terms->fetch()){ ?>
               <?php
@@ -42,7 +42,7 @@ if($modules->rowCount() > 0){
               echo $link;
               echo '<div class = "courseModuleBox termBox" style = "background: '.$color.';">';?>
               <i class="fa fa-folder"></i>
-              
+
               <?php
               echo $term['tname'];
               echo '</div>';

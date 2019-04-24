@@ -525,7 +525,7 @@ justify-content: center;
   background: white;
   border-radius: 5px;
   padding: 10px;
-  margin-bottom: calc(1% + 10px);
+  margin-bottom: calc(1% + 5px);
 }
 
 .tableTitle, .formTitle{
@@ -618,10 +618,8 @@ font-size: 14px;
 /* Manage Area Boxes */
 
 .boxesContainerManage{
-  width: calc(100% + 10px);
-  margin-left: -10px;
-  padding: 5px;
-  margin-bottom: 15px;
+  width: calc(100% + 0px);
+  padding-bottom: 5px;
 }
 
 .contentBoxLargeManage{
@@ -731,7 +729,7 @@ opacity: 0.8;
 /* Add Form */
 
 .userForm{
-  margin-top: 20px;
+  margin-top: 5px;
 }
 
 .userForm label{
@@ -1083,6 +1081,7 @@ ul.breadcrumb li a:hover {
 @media only screen and (max-width: 800px) {
   body {
     background-color: lightblue;
+    overflow-x: hidden;
   }
 
 
@@ -1120,7 +1119,6 @@ ul.breadcrumb li a:hover {
   }
 
 
-
   .navText{
     display: none;
   }
@@ -1142,6 +1140,7 @@ ul.breadcrumb li a:hover {
 
   .formColumn1, .formColumn2{
     width: 100%;
+    overflow-x: scroll;
   }
 
   .formColumnSeparator{
@@ -1244,9 +1243,12 @@ ul.breadcrumb li a:hover {
     color:#fff;
     font-size: 14px;
     border-radius: 3px;
+    opacity: 0.8;
+    transition: opacity 0.1s;
   }
   .btn:hover{
     cursor: pointer;
+    opacity: 1.0;
   }
   .btn-hide{
     background: #777;

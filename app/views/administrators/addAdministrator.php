@@ -7,13 +7,11 @@ if(isset($user)){
 
 
 <div class="boxesContainer boxesContainerManage">
-
     <div class="contentBoxLarge contentBoxLargeEdit">
-
         <div class="title">
             <?php echo $user['fname'].' '.$user['mname'].' '.$user['lname']; ?>
         </div>
-        <div class="content" style="text-align: left; margin: 15px; line-height: 1.6;">
+        <div class="content" style="text-align: left; margin: 15px; line-height: 1.5;">
             <table class="tableborder">
                 <tbody>
                     <tr>
@@ -58,52 +56,36 @@ if(isset($user)){
                     </tr>
                 </tbody>
             </table>
-
-
         </div>
     </div>
-
-
-
 </div>
 
 
-<form method="POST" class="userForm">
 
+<form method="POST" class="userForm">
     <div class="formTitle formEditPassword">
         <h1 class="formHeading">
             <?php if(isset($user))echo 'Change '.$user['fname'].' '.$user['mname'].' '.$user['lname'].'\'s Password';?>
         </h1>
     </div>
-
-
     <div class="formHolder">
-
         <div class="formColumn1">
+
             <label for="password">Password: </label>
             <input type="password" onkeyup="checkPassword()" name="user[password]" id="password" required>
             <p id="passtest" style="font-size: 15px; color: red; margin-bottom: 20px;">Passwords must contain more than
                 8 characters</p>
-
             <label for="confirmpassword">Confirm Password: </label>
             <input type="password" onkeyup="checkPassword()" name="confirmpassword" id="confirmpassword" required>
             <p id="confirmpasstest" style="font-size: 14px; color: red; margin-bottom: 10px;"></p>
+
             <input type="submit" value="Submit" name="passubmit" id="submission">
         </div>
-
-
     </div>
-
-
-
-
-
 </form>
 
 <?php
-
 }
-
 ?>
 
 <form method="POST" class="userForm">
