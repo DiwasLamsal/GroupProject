@@ -834,7 +834,7 @@ line-height:30px;
 
 .formColumn2{
   width: 49%;
-  padding: 0 20px;
+  padding: 5px;
 }
 
 
@@ -1066,6 +1066,93 @@ ul.breadcrumb li a:hover {
 }
 
 
+.userNotesBox .content{
+  height: 80px;
+}
+
+.singlerow{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-flow: column;
+}
+.singlerow input[type="submit"]{
+ width: 100px;
+ font-size: 13px;
+}
+
+.singlerow input[type="file"]{
+  display: none;
+  margin: 0;
+  width: 0;
+}
+
+.singlerow label{
+  width:1000px;
+  border:1px solid #3498DB;
+  display: flex;
+  padding: 40px 30px;
+  text-align: center;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  flex-flow: column;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.singlerow label .fa{
+  margin-top: 20px;
+}
+
+.singlerow label:hover{
+ cursor: pointer;
+}
+
+.formColumn1 b{
+  font-family: opensanssemibold;
+  width: 150px;
+  display: inline-block;
+}
+
+.formCol{
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+}
+
+.widthform{
+  width: 100%;
+}
+
+.btn{
+  border:#8075B6;
+  padding: 15px 25px;
+  background: #4CAF50;
+  color:#fff;
+  font-size: 14px;
+  border-radius: 3px;
+  opacity: 0.8;
+  transition: opacity 0.1s;
+}
+.btn:hover{
+  cursor: pointer;
+  opacity: 1.0;
+}
+.btn-hide{
+  background: #777;
+}
+.btn-publish{
+  background: #a09b9b;
+}
+.btn-submit{
+  background: rgb(124, 101, 101);
+}
+.flex-top{
+  align-items: flex-start;
+}
+
 
 /**********************************************************************************************/
 /**********************************************************************************************/
@@ -1153,8 +1240,6 @@ ul.breadcrumb li a:hover {
   }
 
 
-
-
   .termBox{
     width: 50%;
     /* height: 200px; */
@@ -1177,89 +1262,4 @@ ul.breadcrumb li a:hover {
     width: 97%;
   }
 
-
-
 }
-.userNotesBox .content{
-  height: 80px;
-}
-
-.singlerow{
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-flow: column;
-}
-.singlerow input[type="submit"]{
- width: 100px;
- font-size: 13px;
-}
-
-.singlerow input[type="file"]{
-  display: none;
-  margin: 0;
-  width: 0;
-  }
-  .singlerow label{
-    width:1000px;
-    border:1px solid #3498DB;
-    display: flex;
-    padding: 40px 30px;
-    text-align: center;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    flex-flow: column;
-    text-transform: uppercase;
-    font-size: 16px;
-  }
-  .singlerow label .fa{
-    margin-top: 20px;
-  }
-  .singlerow label:hover{
-   cursor: pointer;
-  }
-
-
-  .formColumn1 b{
-    font-family: opensanssemibold;
-    width: 150px;
-    display: inline-block;
-  }
-  .formCol{
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-    display: flex;
-  }
-  .widthform{
-    width: 100%;
-  }
-
-  .btn{
-    border:#8075B6;
-    padding: 15px 25px;
-    background: #4CAF50;
-    color:#fff;
-    font-size: 14px;
-    border-radius: 3px;
-    opacity: 0.8;
-    transition: opacity 0.1s;
-  }
-  .btn:hover{
-    cursor: pointer;
-    opacity: 1.0;
-  }
-  .btn-hide{
-    background: #777;
-  }
-  .btn-publish{
-    background: #a09b9b;
-  }
-
-  .btn-submit{
-    background: rgb(124, 101, 101);
-  }
-  .flex-top{
-    align-items: flex-start;
-  }

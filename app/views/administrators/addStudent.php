@@ -407,7 +407,7 @@ else{
         </h1>
     </div>
 
-    <div class="formHolder">
+    <div class="formHolder flex-top">
 
         <div class="formColumn1">
             <label for="firstname">First Name: </label>

@@ -46,15 +46,15 @@ if(isset($course)){
                     <tr>
                       <th>Action</th>
                       <td>  <a href="/GroupProject/public/ManageCourses/delete/<?php echo $course['cid'];?>">
-     
+
                 <img src="/GroupProject/public/resources/images/deleteuser.png" width="150">
-           
-      
+
+
         </a></td>
                     </tr>
                 </tbody>
             </table>
-       
+
 
         </div>
     </div>
@@ -116,7 +116,7 @@ if(isset($course)){
         </h1>
     </div>
 
-    <div class="formHolder">
+    <div class="formHolder flex-top">
 
         <div class="formColumn1">
             <label>Course Title: </label>
@@ -142,7 +142,7 @@ if(isset($course)){
                 <input type="submit" value="Submit" name="submit">
         </div>
 
-      
+
     </div>
 
 

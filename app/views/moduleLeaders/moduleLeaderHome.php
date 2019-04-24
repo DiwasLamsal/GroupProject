@@ -36,8 +36,8 @@
         <div class="title">
             Your Details
         </div>
-        <div class="content" style="text-align: left; margin: 15px; line-height: 1.6;">
-            <table class="tableborder">
+        <div class="content" style="text-align: left; margin: 0; line-height: 1.5; width: 100%">
+            <table class="tableborder" style="word-wrap: break-word; width: 100%;">
                 <tbody>
                     <tr>
                         <th>Login ID: </th>

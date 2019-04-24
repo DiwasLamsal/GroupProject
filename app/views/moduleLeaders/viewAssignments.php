@@ -90,7 +90,7 @@ if($modules->rowCount() > 0){
                 <div class = "formColumn2">
                   <div style=" text-align: center;">
                     <a target = "_blank" href = "/GroupProject/public/<?php echo $assignment['afiles'];?>" style="color: white;">
-                      <img class = "downloadImage" src = "/GroupProject/public/resources/images/download.png">
+                      <button class="btn btn-download">Download <i class="fa fa-download"></i></button>
                     </a>
                   </div>
                   <br>

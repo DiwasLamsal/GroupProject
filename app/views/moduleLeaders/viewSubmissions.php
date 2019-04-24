@@ -61,10 +61,9 @@ if($modules->rowCount() > 0){
               $submissions = getSubmissionsByAssignmentId($assignment['aid']);
               while($submission = $submissions->fetch()){
                 $student = getUserById($submission['asuid'])->fetch();
-                echo '<hr><br>';
+                echo '<hr>';
               ?>
 
-              <br>
               <div class = "resourceHolder">
                 <div class = "formHolder">
                   <div class = "formColumn1">
@@ -74,7 +73,7 @@ if($modules->rowCount() > 0){
                       <b>Submission Date: </b><?php echo $submission['submission_date'];?><br>
                       <b>Submission Comments: </b><?php echo $submission['comments'];?><br>
                     </p>
-                    <br><br>
+                    <br>
                     <p>
                       <?php if($grade=checkSubmissionGrade($submission['submission_id'])){?>
                         <?php $grade = $grade->fetch();?>
@@ -117,13 +116,12 @@ if($modules->rowCount() > 0){
                       <?php } ?>
                     </p>
 
-                    <br><br>
                   </div>
                   <div class = "formColumnSeparator" style="background: white; border-right: 0px dashed grey;"></div>
                   <div class = "formColumn2">
                     <div style=" text-align: center;">
                       <a target = "_blank" href = "/GroupProject/public/<?php echo $submission['asfiles'];?>" style="color: white;">
-                        <img class = "downloadImage" src = "/GroupProject/public/resources/images/download.png">
+                        <button class="btn btn-download">Download <i class="fa fa-download"></i></button>
                       </a>
                     </div>
                   </div>

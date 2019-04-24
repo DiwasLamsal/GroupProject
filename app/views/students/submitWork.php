@@ -17,7 +17,7 @@
     </h1>
   </div>
 
-  <div class="formHolder">
+  <div class="formHolder flex-top">
     <div class="formColumn1">
       <p>
         <b>Title: </b><?php echo $assignment['atitle'];?><br>
@@ -40,7 +40,7 @@
 
     <div class="formColumn2">
 
-      <h3 style="text-align: center;">Submission Area</h3>
+      <h3 style="text-align: center; margin-top: 20px;">Submission Area</h3>
       <br>
 
 <?php
@@ -64,7 +64,7 @@ if(checkStudentSubmission($_SESSION['loggedin']['uid'], $assignment['aid'])){
 <br><br>
 <div style=" text-align: center;">
   <a target = "_blank" href = "/GroupProject/public/<?php echo $submission['asfiles'];?>" style="color: white;">
-    <img class = "downloadImage" src = "/GroupProject/public/resources/images/download.png">
+    <button class="btn btn-download">Download <i class="fa fa-download"></i></button>
   </a>
 </div>
 

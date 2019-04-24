@@ -36,13 +36,13 @@ if(isset($announcement)){
                     <tr>
                       <th>Action</th>
                       <td><a href="/GroupProject/public/ManageAnnouncements/delete/<?php echo $announcement['anid'];?>">
-      
+
                 <img src="/GroupProject/public/resources/images/deleteuser.png" width="150">
         </a></td>
                     </tr>
                 </tbody>
             </table>
-    
+
 
         </div>
     </div>
@@ -70,7 +70,7 @@ if(isset($announcement)){
         </h1>
     </div>
 
-    <div class="formHolder">
+    <div class="formHolder flex-top">
 
         <div class="formColumn1">
             <label>Announcement Title: </label>
@@ -84,12 +84,12 @@ if(isset($announcement)){
 
         </div>
 
-        
+
 
     </div>
 
 
-   
+
 
 
 </form>

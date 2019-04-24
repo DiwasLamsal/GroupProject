@@ -101,7 +101,7 @@ if(isset($module)){
                 </tr>
             </tbody>
         </table>
-        
+
         <br>
 
         <table class="tableborder">
@@ -120,7 +120,7 @@ if(isset($module)){
                 </tr>
             </tbody>
         </table>
-       
+
 <br>
         <table class="tableborder">
             <tbody>
@@ -138,7 +138,7 @@ if(isset($module)){
                 </tr>
             </tbody>
         </table>
-       
+
 
     </div>
 
@@ -162,7 +162,7 @@ if(isset($module)){
         </h1>
     </div>
 
-    <div class="formHolder">
+    <div class="formHolder flex-top">
 
         <div class="formColumn1">
             <label>Module Name: </label>
@@ -258,7 +258,7 @@ if(isset($module)){
     </div>
 
 
-   
+
 
 
 </form>

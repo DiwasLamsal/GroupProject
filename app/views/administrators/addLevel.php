@@ -37,7 +37,7 @@ if(isset($level)){
                         <td>
                             <a href="/GroupProject/public/ManageLevels/delete/<?php echo $level['lvid'];?>">
                                 <img src="/GroupProject/public/resources/images/deleteuser.png" width="10">
-                    
+
                             </a>
                         </td>
                     </tr>
@@ -47,7 +47,7 @@ if(isset($level)){
         </div>
     </div>
 
-  
+
 
 
 </div>
@@ -70,7 +70,7 @@ if(isset($level)){
         </h1>
     </div>
 
-    <div class="formHolder">
+    <div class="formHolder flex-top">
 
         <div class="formColumn1">
             <label>Level Title: </label>
@@ -90,7 +90,7 @@ if(isset($level)){
     </div>
 
 
-   
+
 
 
 </form>

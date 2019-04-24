@@ -44,7 +44,7 @@
 						<b>Description: </b><?php echo $assignment['adescription'];?><br>
 						<br>
 						Download the assignment brief by clicking the download button. You can submit your
-						assignment from the submission box below.
+						assignment by clicking the submit button.
 						<br>
 					</p>
 				</div>
@@ -110,7 +110,7 @@ else{ // -- If no assignment is uploaded, display Add Assignment Button
 							<div class = "formColumn2">
 								<div style=" text-align: center;">
 									<a target = "_blank" href = "/GroupProject/public/<?php echo $resource['rfilenames'];?>" style="color: white;">
-										<img class = "downloadImage" src = "/GroupProject/public/resources/images/download.png">
+										<button class="btn btn-download">Download <i class="fa fa-download"></i></button>
 									</a>
 								</div>
 								<br>
