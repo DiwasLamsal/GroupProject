@@ -91,7 +91,6 @@ else{
 
 								<div id="myDropdown" class="dropdown-content">
 							    <a href="/GroupProject/public/Logout">Logout</a>
-									<a href="#">View Profile</a>
 							  </div>
 							</h5>
 
