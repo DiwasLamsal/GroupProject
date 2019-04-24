@@ -85,8 +85,17 @@
           header("Location:../index/editpasssuccess");
         }
 
+        if(findModulesInLeader($val)>0 || findCoursesInLeader($val)>0 || findPATInLeader($val)>0)
+          $link = false;
+        else
+          $link = '/GroupProject/public/ManageModuleLeaders/delete/'.$val;
+
+        $template = '../app/views/administrators/modal.php';
+        $modal = loadTemplate($template, ['type'=>'Module Leader', 'link'=>$link]);
+
         $template = '../app/views/administrators/addModuleLeader.php';
-        $content = loadTemplate($template, ['user'=>$user, 'moduleLeader'=>$moduleLeader, 'modules'=>$modules,  'role'=>'Administrator']);
+        $content = loadTemplate($template, ['user'=>$user,
+        'moduleLeader'=>$moduleLeader, 'modules'=>$modules,  'role'=>'Administrator', 'modal'=>$modal]);
         $selected = "ModuleLeaders";
         $title = "Admin - Browse Module Leader";
         require_once "../app/controllers/adminLoadView.php";

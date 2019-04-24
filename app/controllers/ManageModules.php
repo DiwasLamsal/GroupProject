@@ -107,9 +107,18 @@
         header("Location:../ManageModules/index/addsuccess");
       }
 
+      // If module contains assignments, do not allow deleting the module
+      if(findAssignmentsByModule($val)>0)
+        $link = false;
+      else
+        $link = '/GroupProject/public/ManageModules/delete/'.$val;
+
+      $template = '../app/views/administrators/modal.php';
+      $modal = loadTemplate($template, ['type'=>'Module', 'link'=>$link]);
+
       $template = '../app/views/administrators/addModule.php';
       $content = loadTemplate($template, ['module'=>$module,
-      'users'=>$users, 'courses'=>$courses, 'levels'=>$levels, 'terms'=>$terms]);
+      'users'=>$users, 'courses'=>$courses, 'levels'=>$levels, 'terms'=>$terms, 'modal'=>$modal]);
       $selected = "Modules";
       $title = "Admin - Browse Module";
 

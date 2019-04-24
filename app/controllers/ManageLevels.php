@@ -46,8 +46,17 @@
           $levelClass->save($_POST['level'], 'lvid');
           header("Location:../index/editsuccess");
         }
+
+        if(findStudentInLevel($val)>0 || findModulesInLevel($val)>0)
+          $link = false;
+        else
+          $link = '/GroupProject/public/ManageLevels/delete/'.$val;
+
+        $template = '../app/views/administrators/modal.php';
+        $modal = loadTemplate($template, ['type'=>'Level', 'link'=>$link]);
+
         $template = '../app/views/administrators/addLevel.php';
-        $content = loadTemplate($template, ['level'=>$level]);
+        $content = loadTemplate($template, ['level'=>$level, 'modal'=>$modal]);
         $selected = "Levels";
         $title = "Admin - Browse Level";
         require_once "../app/controllers/adminLoadView.php";

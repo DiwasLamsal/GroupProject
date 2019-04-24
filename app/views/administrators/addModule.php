@@ -43,25 +43,18 @@ if(isset($module)){
                                                          '<font color = "red">Archived</font>';?></td>
                     </tr>
                     <tr>
-                        <th>Action</th>
-                        <td>
-                            <a href="/GroupProject/public/ManageModules/delete/<?php echo $module['mid'];?>">
-
-                                <img src="/GroupProject/public/resources/images/deleteuser.png" width="150">
-
-
-                            </a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-
-        </div>
-    </div>
-
-
-
+                      <th>Action</th>
+                      <td>
+                        <a id="myBtn"><img src="/GroupProject/public/resources/images/deleteuser.png" width="150"></a>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
 </div>
+
+<?php echo $modal;?>
 
 
 <div class="adminManageTable">

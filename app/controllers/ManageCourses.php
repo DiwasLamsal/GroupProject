@@ -51,7 +51,6 @@
       $moduleClass = new DatabaseTable('modules');
       $modules = $moduleClass->find('mcid', $val);
 
-
       if($course->rowCount()>0){
         if(isset($_POST['submit'])){
           $_POST['course']['cid']=$val;
@@ -60,8 +59,18 @@
           $courseClass->save($_POST['course'], 'cid');
           header("Location:../index/editsuccess");
         }
+
+        // If course contains students or modules, do not allow to delete
+        if(findModulesInCourse($val)>0 || findStudentsInCourse($val)>0)
+          $link = false;
+        else
+          $link = '/GroupProject/public/ManageCourses/delete/'.$val;
+
+        $template = '../app/views/administrators/modal.php';
+        $modal = loadTemplate($template, ['type'=>'Course', 'link'=>$link]);
+
         $template = '../app/views/administrators/addCourse.php';
-        $content = loadTemplate($template, ['users'=>$users, 'course'=>$course, 'modules'=>$modules]);
+        $content = loadTemplate($template, ['users'=>$users, 'course'=>$course, 'modules'=>$modules, 'modal'=>$modal]);
         $selected = "Courses";
         $title = "Admin - Browse Course";
         require_once "../app/controllers/adminLoadView.php";

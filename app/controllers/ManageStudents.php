@@ -132,9 +132,13 @@
         header("Location:../index/editpasssuccess");
       }
 
+      $link = '/GroupProject/public/ManageStudents/delete/'.$val;
+      $template = '../app/views/administrators/modal.php';
+      $modal = loadTemplate($template, ['type'=>'Student', 'link'=>$link]);
+
       $template = '../app/views/administrators/addStudent.php';
       $content = loadTemplate($template, ['users'=>$users, 'courses'=>$courses, 'levels'=>$levels,
-        'user'=>$user, 'student'=>$student]);
+        'user'=>$user, 'student'=>$student, 'modal'=>$modal]);
       $selected = "Students";
       $title = "Admin - Browse Student";
 

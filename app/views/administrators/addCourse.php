@@ -45,24 +45,17 @@ if(isset($course)){
                     </tr>
                     <tr>
                       <th>Action</th>
-                      <td>  <a href="/GroupProject/public/ManageCourses/delete/<?php echo $course['cid'];?>">
-
-                <img src="/GroupProject/public/resources/images/deleteuser.png" width="150">
-
-
-        </a></td>
-                    </tr>
-                </tbody>
-            </table>
-
-
-        </div>
-    </div>
-
-
-
-
+                      <td>
+                        <a id="myBtn"><img src="/GroupProject/public/resources/images/deleteuser.png" width="150"></a>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
 </div>
+
+<?php echo $modal;?>
 
 
 <div class="adminManageTable" style="padding-bottom: 20px;">

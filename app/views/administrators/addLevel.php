@@ -33,24 +33,19 @@ if(isset($level)){
                         <td><?php echo getTotalStudentsInLevel($level['lvid']); ?></td>
                     </tr>
                     <tr>
-                        <th>Action</th>
-                        <td>
-                            <a href="/GroupProject/public/ManageLevels/delete/<?php echo $level['lvid'];?>">
-                                <img src="/GroupProject/public/resources/images/deleteuser.png" width="10">
-
-                            </a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-
-        </div>
-    </div>
-
-
-
-
+                      <th>Action</th>
+                      <td>
+                        <a id="myBtn"><img src="/GroupProject/public/resources/images/deleteuser.png" width="150"></a>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
 </div>
+
+<?php echo $modal;?>
+
 
 
 <?php

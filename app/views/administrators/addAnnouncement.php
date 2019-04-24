@@ -35,28 +35,19 @@ if(isset($announcement)){
                     </tr>
                     <tr>
                       <th>Action</th>
-                      <td><a href="/GroupProject/public/ManageAnnouncements/delete/<?php echo $announcement['anid'];?>">
-
-                <img src="/GroupProject/public/resources/images/deleteuser.png" width="150">
-        </a></td>
+                        <td><a id="myBtn"><img src="/GroupProject/public/resources/images/deleteuser.png" width="150"></a>
+                      </td>
                     </tr>
                 </tbody>
             </table>
-
-
         </div>
     </div>
-
-
-
-
 </div>
 
+<?php echo $modal;?>
 
 <?php
-
 }
-
 ?>
 
 <form method="POST" class="userForm">

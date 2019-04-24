@@ -277,4 +277,52 @@
     return $percentage;
   }
 
+
+// Prevent deletion of data
+
+  function findModulesInCourse($cid){
+    $moduleClass = new DatabaseTable('modules');
+    $modules = $moduleClass->find('mcid', $cid);
+    return $modules->rowCount();
+  }
+  function findStudentsInCourse($cid){
+    $studentClass = new DatabaseTable('students');
+    $students = $studentClass->find('cid', $cid);
+    return $students->rowCount();
+  }
+  function findAssignmentsByModule($mid){
+    $terms = getTermsByModuleId($mid);
+    $term1 = $terms->fetch();
+    $term2 = $terms->fetch();
+    $assignmentClass = new DatabaseTable('assignments');
+    $ast1 = $assignmentClass->find('atid', $term1['tid']);
+    $ast2 = $assignmentClass->find('atid', $term2['tid']);
+    return $ast1->rowCount() + $ast2->rowCount();
+  }
+  function findModulesInLeader($luid){
+    $moduleClass = new DatabaseTable('modules');
+    $modules = $moduleClass->find('mluid', $luid);
+    return $modules->rowCount();
+  }
+  function findCoursesInLeader($luid){
+    $courseClass = new DatabaseTable('courses');
+    $courses = $courseClass->find('cuid', $luid);
+    return $courses->rowCount();
+  }
+  function findPATInLeader($luid){
+    $studentClass = new DatabaseTable('students');
+    $students = $studentClass->find('puid', $luid);
+    return $students->rowCount();
+  }
+  function findStudentInLevel($lvid){
+    $studentClass = new DatabaseTable('students');
+    $students = $studentClass->find('slvid', $lvid);
+    return $students->rowCount();
+  }
+  function findModulesInLevel($lvid){
+    $moduleClass = new DatabaseTable('modules');
+    $modules = $moduleClass->find('mlvid', $lvid);
+    return $modules->rowCount();
+  }
+
 ?>

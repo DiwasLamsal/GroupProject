@@ -49,10 +49,9 @@ if(isset($user)){
                     </tr>
                     <tr>
                         <th>Action</th>
-                        <td> <a href="/GroupProject/public/ManageAdministrators/delete/<?php echo $user['uid'];?>">
-                                <img src="/GroupProject/public/resources/images/deleteuser.png" width="150">
-                                Delete User
-                            </a></td>
+                        <td>
+                          <a id="myBtn"><img src="/GroupProject/public/resources/images/deleteuser.png" width="150"></a>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -60,6 +59,7 @@ if(isset($user)){
     </div>
 </div>
 
+<?php echo $modal;?>
 
 
 <form method="POST" class="userForm">

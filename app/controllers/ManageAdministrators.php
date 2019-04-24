@@ -56,8 +56,12 @@ class ManageAdministrators extends Controller{
         header("Location:../index/editpasssuccess");
       }
 
+      $link = '/GroupProject/public/ManageAdministrators/delete/'.$val;
+      $template = '../app/views/administrators/modal.php';
+      $modal = loadTemplate($template, ['type'=>'Administrator', 'link'=>$link]);
+
       $template = '../app/views/administrators/addAdministrator.php';
-      $content = loadTemplate($template, ['user'=>$user]);
+      $content = loadTemplate($template, ['user'=>$user, 'modal'=>$modal]);
       $selected = "Administrators";
       $title = "Admin - Browse Administrator";
       require_once "../app/controllers/adminLoadView.php";

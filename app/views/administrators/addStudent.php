@@ -70,28 +70,19 @@ if(isset($student))
                         <th>Previous School: </th>
                         <td><?php echo $student['prevschool'];?></td>
                     </tr> <?php }?>
-<tr>
-  <th>Action</th>
-  <td>
-  <a href="/GroupProject/public/ManageStudents/delete/<?php echo $user['uid'];?>">
-
-                <img src="/GroupProject/public/resources/images/deleteuser.png" width="150">
-
-
-        </a>
-  </td>
-</tr>
+                    <tr>
+                      <th>Action</th>
+                      <td>
+                        <a id="myBtn"><img src="/GroupProject/public/resources/images/deleteuser.png" width="150"></a>
+                      </td>
+                    </tr>
                 </tbody>
             </table>
-
-
         </div>
     </div>
-
-
-
 </div>
 
+<?php echo $modal;?>
 
 <?php if($student['rstatus']=="Live"){ ?>
 
@@ -198,13 +189,7 @@ else{
             <p id="confirmpasstest" style="font-size: 14px; color: red; margin-bottom: 10px;"></p>
             <input type="submit" value="Submit" name="passubmit" id="submission">
         </div>
-
-
     </div>
-
-
-
-
 </form>
 
 <?php } ?>
@@ -377,15 +362,10 @@ else{
 
         <input type="hidden" value=<?php echo $count;?> name="totalStudents">
         <input type="submit" value="Add These <?php echo $count;?> Students" name="submitStudents">
-
     </form>
-
 </div>
 
-
 <?php
-
-
 
   unset($user);
   }
@@ -429,12 +409,11 @@ else{
 
             <label for="gpa">Previous GPA: </label>
             <input type="number" name="student[gpa]" required step="0.1" min="0" max="4.0"
-                <?php if(isset($user))echo 'value="'.$student['gpa'];?>">
+                <?php if(isset($user))echo 'value="'.$student['gpa'].'"';?>>
 
             <label for="prevschool">Previous School: </label>
             <input type="text" name="student[prevschool]" required
-                <?php if(isset($user))echo 'value="'.$student['prevschool'];?>">
-
+                <?php if(isset($user))echo 'value="'.$student['prevschool'].'"';?>>
 
 
             <label for="course">Course: </label>
@@ -466,9 +445,6 @@ else{
                 <?php }?>
             </select>
 
-
-
-
         </div>
 
 
@@ -490,11 +466,6 @@ else{
             <input type="email" name="user[uemail]" required <?php if(isset($user))echo 'value='.$user['uemail'];?>>
 
 
-            <?php
-
-
-?>
-
             <label for="pat">PAT: </label>
             <select name="student[puid]">
                 <?php
@@ -514,10 +485,6 @@ else{
             <input type="submit" value="Submit" name="submit">
         </div>
     </div>
-
-
-
-
 
 </form>
 <?php } ?>

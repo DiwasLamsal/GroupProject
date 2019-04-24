@@ -47,8 +47,13 @@
           $announcementClass->save($_POST['announcement'], 'anid');
           header("Location:../index/editsuccess");
         }
+
+        $link = '/GroupProject/public/ManageAnnouncements/delete/'.$val;
+        $template = '../app/views/administrators/modal.php';
+        $modal = loadTemplate($template, ['type'=>'Announcement', 'link'=>$link]);
+
         $template = '../app/views/administrators/addAnnouncement.php';
-        $content = loadTemplate($template, ['announcement'=>$announcement]);
+        $content = loadTemplate($template, ['announcement'=>$announcement, 'modal'=>$modal]);
         $selected = "Announcements";
         $title = "Admin - Browse Announcement";
         require_once "../app/controllers/adminLoadView.php";
