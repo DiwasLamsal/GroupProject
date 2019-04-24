@@ -71,18 +71,17 @@ if($modules->rowCount() > 0){
                       <b>Student ID: </b><?php echo $student['uid'];?><br>
                       <b>Student Name: </b><?php echo $student['fname'].' '.$student['mname'].' '.$student['lname'];?><br>
                       <b>Submission Date: </b><?php echo $submission['submission_date'];?><br>
-                      <b>Submission Comments: </b><?php echo $submission['comments'];?><br>
+                      <b>Comments: </b><?php echo $submission['comments'];?><br>
                     </p>
-                    <br>
                     <p>
                       <?php if($grade=checkSubmissionGrade($submission['submission_id'])){?>
                         <?php $grade = $grade->fetch();?>
                         <b>Grade: </b><?php echo $grade['grade'];?><br>
-                        <b>Feedback: </b><?php echo $grade['feedback'];?><br><br>
+                        <b>Feedback: </b><?php echo $grade['feedback'];?><br>
 
                         <?php $visibleText = '<font style = "color: green">Published</font>';?>
                         <?php $invisibleText = '<font style = "color: red">Not Published</font>';?>
-                        <b>Status:</b> <?php echo $grade['status']=="Y"? $visibleText:$invisibleText;?><br><br>
+                        <b>Status:</b><?php echo $grade['status']=="Y"? $visibleText:$invisibleText;?><br><br>
 
                       <p style = "text-align: center;">
                         <a href = "/GroupProject/public/ModuleLeaderSubmissions/markSubmission/<?php echo $submission['submission_id'];?>"

@@ -42,8 +42,6 @@
             <b>Title: </b><?php echo $assignment['atitle'];?><br>
             <b>Deadline: </b><?php echo $assignment['adeadline'];?><br>
             <b>Description: </b><?php echo $assignment['adescription'];?><br>
-            <br>
-            <b>Assignment File: </b><?php echo $assignment['afiles'];?><br><br>
           </p>
         </div>
         <div class = "formColumnSeparator" style="background: white; border-right: 0px dashed grey;"></div>
@@ -52,7 +50,7 @@
         <div class = "formColumn2">
           <div style=" text-align: center;">
             <a target = "_blank" href = "/GroupProject/public/<?php echo $assignment['afiles'];?>" style="color: white;">
-              <img class = "downloadImage" src = "/GroupProject/public/resources/images/download.png">
+              <button class="btn btn-download">Download <i class="fa fa-download"></i></button>
             </a>
           </div>
           <br>
@@ -92,12 +90,10 @@ else{ // -- If no assignment is uploaded, display Add Assignment Button
           <div class = "resourceHolder">
 
             <div class = "formHolder">
-              <div class = "formColumn1 formCol"  style="text-align: left;">
+              <div class = "formColumn1"  style="text-align: left;">
                 <p>
                   <b>Resource Title: </b><?php echo $resource['rtitle'];?><br>
                   <b>Resource Description: </b><?php echo $resource['rdescription'];?><br>
-                  <br>
-                  <b>Resource File: </b><?php echo $resource['rfilenames'];?><br><br>
                 </p>
               </div>
 
@@ -106,7 +102,7 @@ else{ // -- If no assignment is uploaded, display Add Assignment Button
               <div class = "formColumn2">
                 <div style=" text-align: center;">
                   <a target = "_blank" href = "/GroupProject/public/<?php echo $resource['rfilenames'];?>" style="color: white;">
-                    <img class = "downloadImage" src = "/GroupProject/public/resources/images/download.png">
+                    <button class="btn btn-download">Download <i class="fa fa-download"></i></button>
                   </a>
                 </div>
                 <br>
@@ -122,7 +118,6 @@ else{ // -- If no assignment is uploaded, display Add Assignment Button
       }
       ?>
       <br>
-
     </p>
   </div>
 </div>
