@@ -97,7 +97,7 @@ if(isset($moduleLeader))
 $course = checkCourseLeader($moduleLeader['luid']);
 if($course->rowCount()>0){
   $course = $course->fetch();
-  $link = '<a href = "/GroupProject/public/ManageCourses/browse/'.$course['cid'].'">'.$course['ctitle'].'</a>';
+  $link = '<a style=color:blue; href = "/GroupProject/public/ManageCourses/browse/'.$course['cid'].'">'.$course['ctitle'].'</a>';
   echo 'Course Leader for '.$link;
 }
 else{
