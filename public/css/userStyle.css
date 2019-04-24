@@ -816,16 +816,13 @@ opacity: 0.8;
 .formColumn1{
   width: 49%;
   padding: 5px;
-
-
-
 }
+
 
 .formColumn1 p{
 font-size: 15px;
 margin-bottom: 15px;
 line-height:30px;
-
 }
 
 
@@ -1246,13 +1243,20 @@ ul.breadcrumb li a:hover {
     flex-direction: column;
   }
 
+  .formColumnSeparator{
+    opacity: 0;
+    width: 100%;
+    height: 30px;
+  }
+
+  .offerHolder .content{
+    margin-left: -5px;
+  }
+
+
   .formColumn1, .formColumn2{
     width: 100%;
     overflow-x: scroll;
-  }
-
-  .formColumnSeparator{
-    display: none;
   }
 
 

@@ -212,21 +212,21 @@ else{
 
 <?php if($student['rstatus']=="Dormant" && $student['rdormant']=="Pending Verification"){ ?>
 
-<div class="adminManageTable">
+<div class="adminManageTable offerHolder">
 
     <div class="tableTitle">
         <h1 class="tableHeading">Offer Letter</h1>
     </div>
 
     <div class="content" style="text-align: center; line-height: 1.6;">
-        <div class="formHolder">
+        <div class="formHolder flex-top">
             <div class="formColumn1">
                 <h2 style="text-align: center;">Conditional Offer Letter</h2>
                 <div class="letterbox">
                     <?php include_once '../app/letters/conditional.php'; ?>
 
                 </div>
-                <a href="/GroupProject/public/PrintOfferLetter/conditional/<?php echo $user['uid']?>" target="_blank">
+                <a href="mailto:<?php echo $user['uemail']?>">
                     <button>
                         <img src="/GroupProject/public/resources/images/mail.png" width="20"
                             style="margin-bottom: -5px; float: left;">
@@ -245,12 +245,12 @@ else{
 
             </div>
             <div class="formColumnSeparator"></div>
-            <div class="formColumn2">
+            <div class="formColumn1">
                 <h2 style="text-align: center;">Unconditional Offer Letter</h2>
                 <div class="letterbox">
                     <?php include_once '../app/letters/unconditional.php'; ?>
                 </div>
-                <a href="/GroupProject/public/PrintOfferLetter/unconditional/<?php echo $user['uid']?>" target="_blank">
+                <a href="mailto:<?php echo $user['uemail']?>">
                     <button>
                         <img src="/GroupProject/public/resources/images/mail.png" width="20"
                             style="margin-bottom: -5px; float: left;">
