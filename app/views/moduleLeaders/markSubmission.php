@@ -25,7 +25,7 @@
     </h1>
   </div>
 
-  <div class="formHolder">
+  <div class="formHolder flex-top">
     <div class="formColumn1">
       <p>
         <b>Student ID: </b><?php echo $submission['asaid'];?><br><br>
@@ -67,6 +67,6 @@
 
 <div style=" text-align: center;">
   <a target = "_blank" href = "/GroupProject/public/<?php echo $submission['asfiles'];?>" style="color: white;">
-    <img class = "downloadImage" src = "/GroupProject/public/resources/images/download.png">
+    <button class="btn btn-download">Download <i class="fa fa-download"></i></button>
   </a>
 </div>

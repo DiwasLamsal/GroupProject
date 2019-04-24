@@ -1135,16 +1135,17 @@ ul.breadcrumb li a:hover {
   border-radius: 3px;
   opacity: 0.8;
   transition: opacity 0.1s;
+  margin-bottom: 5px;
 }
 .btn:hover{
   cursor: pointer;
   opacity: 1.0;
 }
 .btn-hide{
-  background: #777;
+  background: #FF6347;
 }
 .btn-publish{
-  background: #a09b9b;
+  background: #CD853F;
 }
 .btn-submit{
   background: rgb(124, 101, 101);
@@ -1171,6 +1172,9 @@ ul.breadcrumb li a:hover {
     overflow-x: hidden;
   }
 
+  .logosection img {
+    opacity: 0;
+  }
 
   #headerLeft{
     display: none;
@@ -1242,7 +1246,6 @@ ul.breadcrumb li a:hover {
 
   .termBox{
     width: 50%;
-    /* height: 200px; */
     margin-left: -5%;
     margin-top: 5px;
   }
@@ -1250,16 +1253,12 @@ ul.breadcrumb li a:hover {
   .resourceBox{
     width: 92%;
     margin-left: 0%;
+    margin-bottom: 5px;
   }
 
   .announcementDate{
     display: none;
   }
 
-  .downloadImage{
-    margin-left: -30px;
-    margin-top: 20px;
-    width: 97%;
-  }
 
 }

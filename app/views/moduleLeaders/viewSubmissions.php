@@ -84,6 +84,7 @@ if($modules->rowCount() > 0){
                         <?php $invisibleText = '<font style = "color: red">Not Published</font>';?>
                         <b>Status:</b> <?php echo $grade['status']=="Y"? $visibleText:$invisibleText;?><br><br>
 
+                      <p style = "text-align: center;">
                         <a href = "/GroupProject/public/ModuleLeaderSubmissions/markSubmission/<?php echo $submission['submission_id'];?>"
                           style="color: white;">
                           <button class="btn btn-submit">Mark Submission</button>
@@ -104,7 +105,7 @@ if($modules->rowCount() > 0){
                           </a>
 
                         <?php }?>
-
+                      </p>
                       <?php }
                       else { ?>
                         <a href = "/GroupProject/public/ModuleLeaderSubmissions/markSubmission/<?php echo $submission['submission_id'];?>"
