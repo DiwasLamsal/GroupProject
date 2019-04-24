@@ -9,7 +9,7 @@ if(isset($student))
 ?>
 <div class = "adminManageTable">
 
-  <div class = "tableTitle" style="background: #6495ED;">
+  <div class = "tableTitle">
     <h1 class = "tableHeading"><?php echo $user['fname'].' '.$user['mname'].' '.$user['lname']; ?></h1>
   </div>
 
@@ -19,8 +19,7 @@ if(isset($student))
 
     <?php if($student['rstatus']=="Live"){ ?>
 
-      <form class = "userForm" method = "post">
-        <br>
+      <form class = "userForm" method = "post" style="width: 90%; margin: auto;">
             <select name = "rdormant" style="margin: auto;">
               <option value = "Graduated">Graduated</option>
               <option value = "Withdrawn">Withdrawn</option>
