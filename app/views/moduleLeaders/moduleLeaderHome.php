@@ -37,7 +37,7 @@
             Your Details
         </div>
         <div class="content" style="text-align: left; margin: 0; line-height: 1.5; width: 100%">
-            <table class="tableborder" style="word-wrap: break-word; width: 100%;">
+            <table class="tableborder">
                 <tbody>
                     <tr>
                         <th>Login ID: </th>

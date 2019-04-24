@@ -16,7 +16,7 @@ if(isset($moduleLeader))
         <div class="title">
             <?php echo $user['fname'].' '.$user['mname'].' '.$user['lname']; ?>
         </div>
-        <div class="content" style="text-align: left; margin: 15px; line-height: 1.6;">
+        <div class="content" style="text-align: left; margin: 0px; line-height: 1.6;">
             <table class="tableborder">
                 <tbody>
                     <tr>
@@ -84,7 +84,7 @@ if(isset($moduleLeader))
         <h1 class="tableHeading">Other Module Leader Details</h1>
     </div>
 
-    <div class="content" style="text-align: left; margin: 15px; line-height: 1.6;">
+    <div class="content" style="text-align: left; margin: 0px; line-height: 1.6;">
         <table class="tableborder">
             <tbody>
                 <tr>

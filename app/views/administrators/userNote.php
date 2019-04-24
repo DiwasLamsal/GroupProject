@@ -7,7 +7,7 @@
     ?>
 
 
-    View, edit or delete <?php echo $manage; ?> by clicking the eye icon.
+    View, edit or delete <?php echo $manage; ?> by clicking the eye icon.<br><br>
     <?php
 
       if($manage=="levels")
@@ -15,8 +15,7 @@
       elseif($manage=="students")
         echo 'The student status can be changed from the folder icon.';
       else {
-        echo 'The record can be archived by clicking the folder icon. <br><br>Note that
-        you cannot archive or delete records that are in use.';
+        echo 'The record can be archived by clicking the folder icon.';
       }
       ?>
 

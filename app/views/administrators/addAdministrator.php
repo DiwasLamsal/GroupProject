@@ -11,7 +11,7 @@ if(isset($user)){
         <div class="title">
             <?php echo $user['fname'].' '.$user['mname'].' '.$user['lname']; ?>
         </div>
-        <div class="content" style="text-align: left; margin: 15px; line-height: 1.5;">
+        <div class="content" style="text-align: left; margin: 0px; line-height: 1.5;">
             <table class="tableborder">
                 <tbody>
                     <tr>

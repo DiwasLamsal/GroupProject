@@ -13,7 +13,7 @@ if(isset($level)){
         <div class="title">
         <?php echo $level['lvaltname'];?>
         </div>
-        <div class="content" style="text-align: left; margin: 15px; line-height: 1.6;">
+        <div class="content" style="text-align: left; margin: 0px; line-height: 1.6;">
             <table class="tableborder">
                 <tbody>
                     <tr>

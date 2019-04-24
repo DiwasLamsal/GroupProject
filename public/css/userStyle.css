@@ -641,24 +641,26 @@ font-size: 14px;
   transition: opacity 0.3s;
 }
 .addNewBox{
-  width: 20%;
+  width: calc(20% - 10px);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-flow: column;
+  padding: 10px;
 }
+
 .userNotesBox{
   width: 80%;
 }
+
+/*  Table border  */
 .tableborder {
-  width: 97%;
+  width: 100%;
   border-collapse: collapse;
 }
 .tableborder tr{
-
     border-left: 0;
     border-right: 0;
-
 }
 .tableborder tr th{
     width: 30%;
@@ -669,16 +671,13 @@ font-size: 14px;
    padding-left: 20px;
    border-bottom: 1px solid #c4c2c2;
    border-right: 1px solid #c4c2c2;
-
 }
 .tableborder tr td img{
  width: 20px;
  filter:brightness(0);
 }
-
 .tableborder tr:last-of-type td{
    padding-left: 20px;
-
 }
 .tableborder tr:first-of-type td{
   border-top: 1px solid #c4c2c2;
@@ -1228,6 +1227,10 @@ ul.breadcrumb li a:hover {
 
   .adminManageTable{
     overflow-x: scroll;
+  }
+
+  .addNewBox{
+    width: calc(100% - 25px);
   }
 
   .formHolder{
