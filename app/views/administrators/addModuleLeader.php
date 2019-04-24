@@ -200,7 +200,7 @@ if($count==0) echo "<i>No Module Available</i>";
         </h1>
     </div>
 
-    <div class="formHolder">
+    <div class="formHolder flex-top">
 
         <div class="formColumn1">
             <label for="firstname">First Name: </label>
@@ -215,8 +215,6 @@ if($count==0) echo "<i>No Module Available</i>";
             <?php if(!isset($user)){?>
             <label for="password">Password: </label>
             <input type="password" onkeyup="checkPassword()" name="user[password]" id="password" required>
-            <p id="passtest" style="font-size: 15px; color: red; margin-bottom: 20px;">Passwords must contain more than
-                8 characters</p>
 
             <label for="confirmpassword">Confirm Password: </label>
             <input type="password" onkeyup="checkPassword()" name="confirmpassword" id="confirmpassword" required>
@@ -239,8 +237,6 @@ if($count==0) echo "<i>No Module Available</i>";
 
         </div>
 
-
-        <div class="formColumnSeparator"></div>
 
         <div class="formColumn2">
 

@@ -1256,3 +1256,10 @@ ul.breadcrumb li a:hover {
   .btn-publish{
     background: #a09b9b;
   }
+
+  .btn-submit{
+    background: rgb(124, 101, 101);
+  }
+  .flex-top{
+    align-items: flex-start;
+  }

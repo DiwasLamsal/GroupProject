@@ -54,10 +54,12 @@
 				<div class = "formColumn2">
 					<div style=" text-align: center;">
 						<a target = "_blank" href = "/GroupProject/public/<?php echo $assignment['afiles'];?>" style="color: white;">
-							<img class = "downloadImage" src = "/GroupProject/public/resources/images/download.png">
+							<!-- <img class = "downloadImage" src = "/GroupProject/public/resources/images/download.png"> -->
+							<button class="btn btn-download">Download <i class="fa fa-download"></i></button>
 						</a>
 						<a href = "/GroupProject/public/studentModules/submitWork/<?php echo $assignment['aid'];?>" style="color: white;">
-							<img class = "downloadImage" src = "/GroupProject/public/resources/images/submitButton.png">
+							<!-- <img class = "downloadImage" src = "/GroupProject/public/resources/images/submitButton.png"> -->
+							<button class="btn btn-submit">Submit</button>
 						</a>
 					</div>
 					<br>
