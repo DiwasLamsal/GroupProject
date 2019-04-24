@@ -1,6 +1,5 @@
 window.onload = function(){
 
-
   // Timeout just to test the function
   setTimeout(function(){
     document.getElementsByClassName('load')[0].style.display = "none";
@@ -12,6 +11,24 @@ window.onload = function(){
     document.getElementById("myDropdown").classList.toggle("show");
     document.getElementById("arrow").classList.toggle("rightArrow");
   });
+
+
+
+  //-------------------------------------------------------------------------------------//
+
+  function search(value){
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200)
+        console.log("Hello");
+   };
+
+
+    xhttp.send();
+  }
+  //-------------------------------------------------------------------------------------//
+
 
 }
 

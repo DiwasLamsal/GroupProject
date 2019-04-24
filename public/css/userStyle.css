@@ -647,6 +647,9 @@ font-size: 14px;
   justify-content: center;
   flex-flow: column;
   padding: 10px;
+  margin: auto;
+  margin-right: 10px;
+  margin-bottom: 5px;
 }
 
 .userNotesBox{
@@ -1065,7 +1068,9 @@ ul.breadcrumb li a:hover {
 }
 
 .userNotesBox{
-
+  margin: auto;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 .userNotesBox .content{
@@ -1160,6 +1165,25 @@ ul.breadcrumb li a:hover {
   align-items: flex-start;
 }
 
+#searchBar {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  background-image: url('/GroupProject/public/resources/images/search.png');
+  background-color: white;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+#searchBar:focus {
+  width: 50%;
+}
+
 
 /**********************************************************************************************/
 /**********************************************************************************************/
@@ -1237,6 +1261,9 @@ ul.breadcrumb li a:hover {
 
   .addNewBox{
     width: calc(100% - 25px);
+    margin: auto;
+    margin-bottom: 5px;
+    margin-top: 5px;
   }
 
   .formHolder{
@@ -1278,6 +1305,10 @@ ul.breadcrumb li a:hover {
   }
 
   .announcementDate{
+    display: none;
+  }
+
+  .searchStudent{
     display: none;
   }
 
