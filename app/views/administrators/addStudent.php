@@ -95,8 +95,8 @@ if(isset($student))
 
 <?php if($student['rstatus']=="Live"){ ?>
 
-<div class="adminManageTable">
-
+<div class="boxesContainer boxesContainerManage">
+  <div class="contentBoxLarge contentBoxLargeEdit">
     <div class="content" style="text-align: left; margin: 0px; line-height: 1.6;">
         <table class="tableborder">
             <tbody>
@@ -126,10 +126,8 @@ if(isset($student))
                 </tr>
             </tbody>
         </table>
-
-
     </div>
-
+  </div>
 </div>
 
 

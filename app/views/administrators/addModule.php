@@ -108,6 +108,7 @@ if(isset($module)){
             <tbody>
                 <tr>
                   <th>Term I Status:</th>
+                  <?php $term1 = setTermStatus($term1); $term2 = setTermStatus($term2);?>
                   <td><?php echo $term1['tstatus'];?></td>
                 </tr>
                 <tr>

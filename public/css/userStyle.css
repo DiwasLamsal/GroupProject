@@ -671,6 +671,8 @@ font-size: 14px;
    padding-left: 20px;
    border-bottom: 1px solid #c4c2c2;
    border-right: 1px solid #c4c2c2;
+   width:70%;
+   word-break:break-all;
 }
 .tableborder tr td img{
  width: 20px;
@@ -1065,9 +1067,16 @@ ul.breadcrumb li a:hover {
 
 }
 
+.userNotesBox{
+
+}
 
 .userNotesBox .content{
-  height: 80px;
+  height: 100px;
+  line-height: 1.2;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .singlerow{

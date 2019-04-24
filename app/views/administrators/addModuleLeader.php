@@ -78,10 +78,12 @@ if(isset($moduleLeader))
 </div>
 
 
-<div class="adminManageTable">
+<div class="boxesContainer boxesContainerManage">
 
-    <div class="tableTitle">
-        <h1 class="tableHeading">Other Module Leader Details</h1>
+    <div class="contentBoxLarge contentBoxLargeEdit">
+
+    <div class="title">
+        Other Module Leader Details
     </div>
 
     <div class="content" style="text-align: left; margin: 0px; line-height: 1.6;">
@@ -117,9 +119,8 @@ else{
                 </tr>
                 <tr>
                   <th>Modules Assigned: </th>
-                  <td>
+                  <td style="padding-bottom: 15px;">
                   <?php
-
 
 $count = 0;
 while($module = $modules->fetch()){
@@ -143,13 +144,10 @@ if($count==0) echo "<i>No Module Available</i>";
                 </tr>
             </tbody>
         </table>
-
-
-
-
     </div>
-
+  </div>
 </div>
+
 
 <form method="POST" class="userForm">
 
