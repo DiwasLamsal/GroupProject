@@ -13,23 +13,6 @@ window.onload = function(){
   });
 
 
-
-  //-------------------------------------------------------------------------------------//
-
-  function search(value){
-    var xhttp = new XMLHttpRequest();
-
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200)
-        console.log("Hello");
-   };
-
-
-    xhttp.send();
-  }
-  //-------------------------------------------------------------------------------------//
-
-
 }
 
 
@@ -111,5 +94,24 @@ function toggleCollapse(){
     }
   });
   }
+}
+
+
+//-------------------------------------------------------------------------------------//
+
+function search(value){
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200)
+      document.getElementById('studentsTable').innerHTML = this.responseText;
+  }
+  if(value.length==0){
+    xhttp.open("GET", "/GroupProject/public/ManageStudents/createNoSearchContent", true);
+  }
+  else{
+    xhttp.open("GET", "/GroupProject/public/ManageStudents/search/"+value, true);
+  }
+
+  xhttp.send();
 }
 //-------------------------------------------------------------------------------------//

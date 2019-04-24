@@ -568,7 +568,7 @@ justify-content: center;
   border: 1px solid white;
   padding: 10px;
   font-family: opensansbold;
-
+  word-break: break-all;
 }
 
 .adminManageTable td {
@@ -654,6 +654,7 @@ font-size: 14px;
 
 .userNotesBox{
   width: 80%;
+  padding-bottom: 10px;
 }
 
 /*  Table border  */

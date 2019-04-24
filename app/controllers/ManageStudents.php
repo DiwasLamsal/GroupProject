@@ -14,8 +14,11 @@
       $template = '../app/views/administrators/userNote.php';
       $note = loadTemplate($template, ['val'=>$val, 'manage'=>$manage]);
 
+      $template = '../app/views/administrators/studentsTable.php';
+      $table = loadTemplate($template, ['users'=>$users]);
+
       $template = '../app/views/administrators/manageStudents.php';
-      $content = loadTemplate($template, ['val'=>$val, 'users'=>$users,'note'=>$note, 'students'=>$students]);
+      $content = loadTemplate($template, ['val'=>$val, 'table'=>$table,'note'=>$note, 'students'=>$students]);
       $selected = "Students";
       $title = "Admin - Students";
 
@@ -129,7 +132,6 @@
         header("Location:../index/editpasssuccess");
       }
 
-
       $template = '../app/views/administrators/addStudent.php';
       $content = loadTemplate($template, ['users'=>$users, 'courses'=>$courses, 'levels'=>$levels,
         'user'=>$user, 'student'=>$student]);
@@ -190,8 +192,22 @@
 
 
   public function search($val = ""){
-
+    $usersClass = new DatabaseTable('users');
+    $users = searchUser($val);
+    $template = '../app/views/administrators/studentsTable.php';
+    $content = loadTemplate($template, ['val'=>$val, 'users'=>$users]);
+    echo $content;
   }
+
+  public function createNoSearchContent($val = ""){
+    $usersClass = new DatabaseTable('users');
+    $users = $usersClass->findReverse('uid', 'urole', 'Student');
+    $template = '../app/views/administrators/studentsTable.php';
+    $content = loadTemplate($template, ['val'=>$val, 'users'=>$users]);
+    echo $content;
+  }
+
+
 
 }
 

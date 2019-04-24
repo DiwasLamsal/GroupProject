@@ -16,7 +16,15 @@
     return $total;
   }
 
-
+  function searchUser($term){
+    global $pdo;
+    $stmt = $pdo->prepare('SELECT * FROM users WHERE
+                           CONCAT(CONCAT(CONCAT(CONCAT(fname, \' \'), mname), \' \'), lname) LIKE :term
+                           AND urole = \'Student\' ORDER BY uid DESC');
+    $criteria = ['term'=>'%'.$term.'%'];
+    $stmt->execute($criteria);
+    return $stmt;
+  }
 
   function getUserById($id){
     $userClass = new DatabaseTable('users');
