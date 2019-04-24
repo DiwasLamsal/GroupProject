@@ -1351,7 +1351,7 @@ ul.breadcrumb li a:hover {
 }
 
 .modal-content p{
-  height: 35px;
+  line-height: 35px;
 }
 
 .modal-header {
