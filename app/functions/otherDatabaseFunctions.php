@@ -133,6 +133,12 @@
     return $term;
   }
 
+  function getModuleById($id){
+    $moduleClass = new DatabaseTable('modules');
+    $module = $moduleClass->find('mid', $id);
+    return $module;
+  }
+
   function getModuleByTermId($id){
     $termClass = new DatabaseTable('terms');
     $term = $termClass->find('tid', $id)->fetch();
@@ -279,7 +285,6 @@
 
 
 // Prevent deletion of data
-
   function findModulesInCourse($cid){
     $moduleClass = new DatabaseTable('modules');
     $modules = $moduleClass->find('mcid', $cid);
@@ -324,5 +329,24 @@
     $modules = $moduleClass->find('mlvid', $lvid);
     return $modules->rowCount();
   }
+
+
+
+
+
+// Forums
+
+  function getForumsByModule($mid){
+    $forumClass = new DatabaseTable('forums');
+    $forums = $forumClass->find('fmid', $mid);
+    return $forums;
+  }
+  function getForumMessages($fid){
+    $forummessageClass = new DatabaseTable('forum_messages');
+    $forumMessages = $forummessageClass->find('fmfid', $fid);
+    return $forumMessages;
+  }
+  
+
 
 ?>

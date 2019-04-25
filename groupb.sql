@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 23, 2019 at 11:54 AM
+-- Generation Time: Apr 25, 2019 at 08:44 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -215,6 +215,54 @@ INSERT INTO `courses` (`cid`, `cuid`, `ctitle`, `cdescription`, `cstatus`) VALUE
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `forums`
+--
+
+CREATE TABLE `forums` (
+  `fid` int(11) NOT NULL,
+  `fmid` int(11) NOT NULL,
+  `fuid` int(9) NOT NULL,
+  `ftitle` varchar(255) NOT NULL,
+  `fdescription` text NOT NULL,
+  `fdate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `forums`
+--
+
+INSERT INTO `forums` (`fid`, `fmid`, `fuid`, `ftitle`, `fdescription`, `fdate`) VALUES
+(16, 33, 19, 'I wanted to ask about when our results will be published', 'Hey guys do you know when will our results be published and we could get the certificates?', '2019-04-25 11:24:49'),
+(17, 33, 19, 'Good Recording Software', 'Hey guys does anybody know about a good software to record videos for the AI Assignment? I am not being able to come across one with easy to use features.', '2019-04-25 11:29:27'),
+(18, 33, 18, 'Good Text Editor?', 'Does anybody know a good text editor to code PHP, HTML and CSS?', '2019-04-25 11:30:30');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `forum_messages`
+--
+
+CREATE TABLE `forum_messages` (
+  `fmid` int(11) NOT NULL,
+  `fmfid` int(11) NOT NULL,
+  `fmuid` int(9) NOT NULL,
+  `fmdescription` text NOT NULL,
+  `fmdate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `forum_messages`
+--
+
+INSERT INTO `forum_messages` (`fmid`, `fmfid`, `fmuid`, `fmdescription`, `fmdate`) VALUES
+(2, 16, 18, 'Yes ayush next week', '2019-04-25 12:23:49'),
+(3, 16, 18, 'And certificates after two weeks', '2019-04-25 12:23:59'),
+(4, 16, 19, 'Thank you binayak!', '2019-04-25 12:24:25'),
+(5, 18, 19, 'I think Atom is a wonderful text editor Binayak for all the mentioned languages. Sublime text could be another alternative.', '2019-04-25 12:28:36');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `grades`
 --
 
@@ -345,7 +393,6 @@ CREATE TABLE `resources` (
 INSERT INTO `resources` (`rid`, `rtid`, `rtitle`, `rdescription`, `rfilenames`, `rstatus`) VALUES
 (10, 37, 'Project Management Part I', 'A project is a set of related tasks that are coordinated to achieve a specific objective, usually in a given time limit. This teaches Project Management. \r\n', 'resources/uploads/1555839255.3909-01GP_SE_Project_Management_Part_I(1).doc', 'Y'),
 (11, 25, 'Support Notes', 'Software Engineering Required notes for the Group Project. Go through this file. It will help you to work on your Group Project. ', 'resources/uploads/1555839369.4974-Software_Engineering_Required_Documentation_Support_Notes_for_the_Group_Project.doc', 'Y'),
-(13, 37, 'SE 1 First 10 Topics', 'SE 1 First 10 Topics Assumed Knowledge. These are the first 10 topics from your Year I Software Engineering coursework. It is expected that you have this knowledge prior to starting your Group Project. ', 'resources/uploads/1555840426.6235-SE1_first_10_topics_-_Assumed_Knowledge.rar', 'Y'),
 (14, 37, 'Problem Domain Identification', 'The file contains the Problem Domain Identification Template. Download it from the link. ', 'resources/uploads/1555840517.3933-CSY2027_-_Problem_Domain_Identification_-_Template.doc', 'Y'),
 (15, 37, 'Project Management Part II', 'Project Management Part II For CSY2027 Group Project. ', 'resources/uploads/1555840563.8554-01GP_SE_Project_Management_Part_II(2).doc', 'Y'),
 (17, 25, 'Java for students', 'Java for students 6th edition. Study this for java reference. ', 'resources/uploads/1555842039.7028-Java_For_Students_(6th_Edition).pdf', 'Y'),
@@ -385,8 +432,7 @@ INSERT INTO `students` (`suid`, `cid`, `gpa`, `prevschool`, `rstatus`, `rdormant
 (37, 2, '3.20', 'Villanova University', 'Dormant', 'Pending Verification', 29, 1),
 (38, 2, '4.00', 'Lafayette College', 'Live', '', 30, 1),
 (39, 2, '3.95', 'Lehigh Universtiy', 'Live', '', 32, 1),
-(40, 2, '3.00', 'University of Illinois', 'Dormant', 'Pending Verification', 15, 1),
-(41, 2, '2.80', 'Rice University', 'Live', '', 16, 1);
+(40, 2, '3.00', 'University of Illinois', 'Live', '', 15, 1);
 
 -- --------------------------------------------------------
 
@@ -410,9 +456,9 @@ CREATE TABLE `terms` (
 INSERT INTO `terms` (`tid`, `tmid`, `tname`, `tsdate`, `tedate`, `tstatus`) VALUES
 (19, 30, 'Term I', '2019-03-20', '2019-09-16', 'Ongoing'),
 (20, 30, 'Term II', '2019-09-16', '2020-03-19', 'Not Started'),
-(21, 31, 'Term I', '2019-03-20', '2019-09-16', 'Not Started'),
+(21, 31, 'Term I', '2019-03-20', '2019-09-16', 'Ongoing'),
 (22, 31, 'Term II', '2019-09-16', '2020-03-19', 'Not Started'),
-(23, 32, 'Term I', '2019-03-20', '2019-09-16', 'Not Started'),
+(23, 32, 'Term I', '2019-03-20', '2019-09-16', 'Ongoing'),
 (24, 32, 'Term II', '2019-09-16', '2020-03-19', 'Not Started'),
 (25, 33, 'Term I', '2019-03-20', '2019-09-16', 'Ongoing'),
 (26, 33, 'Term II', '2019-09-16', '2020-03-19', 'Not Started'),
@@ -422,13 +468,13 @@ INSERT INTO `terms` (`tid`, `tmid`, `tname`, `tsdate`, `tedate`, `tstatus`) VALU
 (30, 35, 'Term II', '2019-09-16', '2020-03-19', 'Not Started'),
 (31, 36, 'Term I', '2019-03-20', '2019-09-16', 'Ongoing'),
 (32, 36, 'Term II', '2019-09-16', '2020-03-19', 'Not Started'),
-(33, 37, 'Term I', '2019-03-20', '2019-09-16', 'Not Started'),
+(33, 37, 'Term I', '2019-03-20', '2019-09-16', 'Ongoing'),
 (34, 37, 'Term II', '2019-09-16', '2020-03-19', 'Not Started'),
 (35, 38, 'Term I', '2019-03-20', '2019-09-16', 'Ongoing'),
 (36, 38, 'Term II', '2019-09-16', '2020-03-19', 'Not Started'),
 (37, 39, 'Term I', '2019-03-20', '2019-09-20', 'Ongoing'),
 (38, 39, 'Term II', '2019-09-20', '2020-03-23', 'Not Started'),
-(39, 40, 'Term I', '2019-04-19', '2019-10-16', 'Not Started'),
+(39, 40, 'Term I', '2019-04-19', '2019-10-16', 'Ongoing'),
 (40, 40, 'Term II', '2019-10-16', '2020-04-18', 'Not Started');
 
 -- --------------------------------------------------------
@@ -460,14 +506,13 @@ INSERT INTO `users` (`uid`, `fname`, `mname`, `lname`, `password`, `gender`, `bi
 (2, 'Diwas', '', 'Lamsal', '$2y$10$H63pohGdQ2HCm8Xs0gHYI.lOBvhRsblyY0e90bteaAUHSNB.Jpzhu', 'Male', '1972-05-15', 'Kathmandu', '9824524242', 'lamsal.diwas@yahoo.com', 'Administrator', 'Y'),
 (3, 'Ramesh', '', 'Thapa', '$2y$10$2OsYDyHJclHsXaqCbWoaFeAeIY4tqC7QktAtMKm6LU0d7Y3xlUJv.', 'Other', '1983-11-27', 'Lokanthali, Bhaktapur', '+977-9842351245', 'rameshthapa@wuc.edu.uk', 'Administrator', 'N'),
 (5, 'Bish\'OW\'', 'Nath', 'Dhakal', '$2y$10$VeoyTZmtIYkieznioIZqGu.Eam7LhQyhhhNjT6YkFfaFPkLV0NBmi', 'Female', '2002-03-22', 'Boudha, Jorpati', '+9779841534534', 'bishownathdhakal@wcu.edu.uk', 'Administrator', 'Y'),
-(6, 'Aruna', 'Kumari', 'Upreti', '$2y$10$uu805HArVh6CFwme3UdlFOIf8Y3wFLzpVkeLGY9SUcYlnzW02oj4S', 'Female', '2004-12-16', 'Kathmandu\r\nKathmandu', '+9779841234564', 'aruna@upreti.com', 'Administrator', 'N'),
 (7, 'Deepak', 'Kumar', 'Karna', '$2y$10$65ZIHFpL0MGeYf5M46LSl.cJNfTqyh49ksJ9kEuZ0wRa5Oo84KaIi', 'Male', '1986-07-25', 'Ekantakuna, Lalitpur', '+9779842156151', 'dkarna@gmail.com', 'Administrator', 'Y'),
 (15, 'Ramesh', 'Bahadur', 'Adhikari', '$2y$10$Rn0s30YFT3/ijFGYQRFYius5ylD69v9Z/.JbQJCERRCPQRR6otyNq', 'Other', '2000-03-30', 'Kavre', '153245648', 'rameshadhikari@gmail.com', 'Module Leader', 'Y'),
 (16, 'Deepak', 'Raj', 'Giri', '$2y$10$jnyj5ppQU16vnScrd6HTJe5989TFBESviCWDdySZ45xNCqRPHgAci', 'Male', '1988-02-09', 'Naxal', '9842135464', 'draj_giri@hotmail.com', 'Module Leader', 'Y'),
 (18, 'Binayak', '', 'Dhakal', '$2y$10$8YDKxHidtn0hpZDv3MfAqelGr5d7RPPv1Dt20D6z/XbrPHXw6TQZi', 'Male', '1994-11-02', 'Patan', '981651651351', 'binayak@gmail.com', 'Student', 'Y'),
 (19, 'Ayush', 'Raj', 'Moktan', '$2y$10$F0dEGcLW8dkYd8.pSHYqHOiK4FZModNilkTduziGfS4i.wb/o0OSe', 'Male', '1998-08-21', 'NAMI College, Jorpati', '9581651613', 'ayushmoktan@gmail.com', 'Student', 'Y'),
 (20, 'Rama', '', 'Upreti', '$2y$10$KRcFWaFSkUVRpZDpfjbfEuhzznP6S0HQw7zgQojnfsm1OelWfQiLi', 'Female', '2000-06-24', 'Gongabu, Kathmandu', '98165165121', 'ramaupreti@gmail.com', 'Student', 'Y'),
-(22, 'Anita', '', 'Gurung', '$2y$10$5wtG5nZCYWpZ.mhC6nejQumDUAcx3mhMaS5jYB0jbEj3B7hTO7QQC', 'Female', '1969-09-24', 'New Baneshwor', '98161513215', 'anitagurung@nami.edu.np', 'Module Leader', 'Y'),
+(22, 'Anita', '', 'Gurung', '$2y$10$0Cmjh1g.YbGT3vGOUn/hc.vv4WO73faewcd1uDYsgY/xNDtg/I4Uq', 'Female', '1969-09-24', 'New Baneshwor', '98161513215', 'anitagurung@nami.edu.np', 'Module Leader', 'Y'),
 (23, 'Barun', '', 'Kuikel', '$2y$10$QySSwO9SunseUyiJIb1oxuVOCMvdGYmwv/pZ1XO8pYJfnc64mo1JO', 'Male', '1997-11-19', 'Melamchi', '98461231564', 'barunkuikel@gmail.com', 'Student', 'Y'),
 (24, 'Ganesh', '', 'Khatri', '$2y$10$2cXNvVEVrqcKb1F.MPtPhuOrk0W7I0Z7kwuSfK2T8y2F0vsTIoPUi', 'Male', '1980-06-25', 'Kathmandu', '981651321', 'ganeshkhatri@nami.edu.np', 'Module Leader', 'Y'),
 (25, 'Himalaya', '', 'Kakshapati', '$2y$10$JEne0aGm6FPjQMlqyqQykOvWehTprNKUa0MjxGhzsINbEuNtutEPm', 'Male', '1982-10-27', 'Kalanki', '9814651561', 'himalaya@gmail.com', 'Module Leader', 'Y'),
@@ -484,8 +529,7 @@ INSERT INTO `users` (`uid`, `fname`, `mname`, `lname`, `password`, `gender`, `bi
 (37, 'Hedda', 'Fleur', 'Skinner', '$2y$10$rWloLu2us4H9z.AhdbZdZuTJPIDOCzNH/rxsFMN1lWa.VsE9IsmX6', 'Female', '1990-06-13', 'P.O. Box 322, 473 Purus. St.', '484-7266', 'pede.Nunc@montur.org', 'Student', 'Y'),
 (38, 'Baker', 'Gwenyth', 'Pearson', '$2y$10$8Sr3NbYUz9UYbwFJbpmgeufkM29qOxxHiJmfROiMPo84N3m41Iisi', 'Male', '1983-07-14', 'P.O. Box 572, 6124 Venenatis Rd.', '366-0998', 'magna.nec@interdum.edu', 'Student', 'Y'),
 (39, 'Jada', 'Narayan', 'Patel', '$2y$10$2O7KWhtcn5Zs8pqEILdeDe2f82Pv6YgB4GTHnRHDldq4/1sHxnhE.', 'Other', '1988-09-28', '178-3114 Pharetra. Rd.', '546-7735', 'neque.tellus@tint.com', 'Student', 'Y'),
-(40, 'Brandon', 'Griffith', 'Fowler', '$2y$10$MPU7hQ51pGOZZP2paVC4feAArwIa10KDOI8miwgagqnpprTesTVZu', 'Other', '1981-10-03', 'Ap #510-773 Aliquet Ave', '1-398-502-1721', 'ornare.elit@quama.ca', 'Student', 'Y'),
-(41, 'Kevyn', 'Tudfwlch', 'Nixon', '$2y$10$eSFB2v7uvEgpBMrVwRwtsO.dZvkNFAxXZvEbqnFmJI.DllXW29bHK', 'Male', '1980-10-01', 'P.O. Box 878, 8469 Eget Avenue', '510-6955', 'nunc.est@facilisis.net', 'Student', 'Y');
+(40, 'Brandon', 'Griffith', 'Fowler', '$2y$10$MPU7hQ51pGOZZP2paVC4feAArwIa10KDOI8miwgagqnpprTesTVZu', 'Other', '1981-10-03', 'Ap #510-773 Aliquet Ave', '1-398-502-1721', 'ornare.elit@quama.ca', 'Student', 'Y');
 
 --
 -- Indexes for dumped tables
@@ -526,6 +570,22 @@ ALTER TABLE `attendances`
 ALTER TABLE `courses`
   ADD PRIMARY KEY (`cid`),
   ADD KEY `cuid` (`cuid`);
+
+--
+-- Indexes for table `forums`
+--
+ALTER TABLE `forums`
+  ADD PRIMARY KEY (`fid`),
+  ADD KEY `fmid` (`fmid`),
+  ADD KEY `fuid` (`fuid`);
+
+--
+-- Indexes for table `forum_messages`
+--
+ALTER TABLE `forum_messages`
+  ADD PRIMARY KEY (`fmid`),
+  ADD KEY `fmfid` (`fmfid`),
+  ADD KEY `fmuid` (`fmuid`);
 
 --
 -- Indexes for table `grades`
@@ -592,7 +652,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `announcements`
 --
 ALTER TABLE `announcements`
-  MODIFY `anid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `anid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `assignments`
@@ -616,7 +676,19 @@ ALTER TABLE `attendances`
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `forums`
+--
+ALTER TABLE `forums`
+  MODIFY `fid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `forum_messages`
+--
+ALTER TABLE `forum_messages`
+  MODIFY `fmid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `grades`
@@ -628,13 +700,13 @@ ALTER TABLE `grades`
 -- AUTO_INCREMENT for table `levels`
 --
 ALTER TABLE `levels`
-  MODIFY `lvid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `lvid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `modules`
 --
 ALTER TABLE `modules`
-  MODIFY `mid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `mid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `resources`
@@ -646,13 +718,13 @@ ALTER TABLE `resources`
 -- AUTO_INCREMENT for table `terms`
 --
 ALTER TABLE `terms`
-  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `uid` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `uid` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- Constraints for dumped tables
@@ -683,6 +755,20 @@ ALTER TABLE `attendances`
 --
 ALTER TABLE `courses`
   ADD CONSTRAINT `fk_c_lecturers` FOREIGN KEY (`cuid`) REFERENCES `lecturers` (`luid`);
+
+--
+-- Constraints for table `forums`
+--
+ALTER TABLE `forums`
+  ADD CONSTRAINT `fk_f_modules` FOREIGN KEY (`fmid`) REFERENCES `modules` (`mid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_f_users` FOREIGN KEY (`fuid`) REFERENCES `users` (`uid`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `forum_messages`
+--
+ALTER TABLE `forum_messages`
+  ADD CONSTRAINT `fk_fm_forums` FOREIGN KEY (`fmfid`) REFERENCES `forums` (`fid`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_fm_users` FOREIGN KEY (`fmuid`) REFERENCES `users` (`uid`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `grades`

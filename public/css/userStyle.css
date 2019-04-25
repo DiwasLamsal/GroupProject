@@ -1188,6 +1188,27 @@ ul.breadcrumb li a:hover {
   width: 300px;
 }
 
+/* Student Forum */
+
+.forumDiv{
+  padding: 5px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.forumDiv:nth-child(odd){
+  background: #e8effc;
+}
+.forumDiv:nth-child(even){
+  background: white;
+}
+
+.forumDiv span{
+  float: right;
+}
+
+
+
 
 /**********************************************************************************************/
 /**********************************************************************************************/
