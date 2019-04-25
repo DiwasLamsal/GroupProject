@@ -87,7 +87,7 @@
   <div class = "contentBoxLarge tutorialVideo">
     <div class = "title">Tutorial</div>
     <div class = "content" style="margin:0;">
-      <video src = "resources/videos/tutorial.mp4#t=07,20" width="100%" style="max-height:303px;" controls>Video Not Found</video>
+      <video src = "resources/videos/tutorial.mp4" width="100%" style="max-height:303px;" controls>Video Not Found</video>
     </div>
   </div>
 

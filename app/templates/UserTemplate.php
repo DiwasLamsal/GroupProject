@@ -24,7 +24,6 @@ else{
 	<script src = "/GroupProject/public/script/script.js"></script>
 	<script src="/GroupProject/public/script/jquery.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="https://code.angularjs.org/1.2.21/angular.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
 </head>
 
