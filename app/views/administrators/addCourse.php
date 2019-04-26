@@ -76,7 +76,7 @@ if(isset($course)){
     <?php
       $link = '<a class = "courseModuleLink" target = "_blank" href = "/GroupProject/public/ManageModules/browse/'.$module['mid'].'">';
       echo $link;
-      echo '<div class = "courseModuleBox" style = "background: '.generateRandomColor().';">';
+      echo '<div class = "courseModuleBox opacityCourseModuleBox" style = "background: '.generateRandomColor().';">';
       echo $module['mname'];
       echo '</div>';
       echo '</a>';

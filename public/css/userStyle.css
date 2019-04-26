@@ -861,6 +861,10 @@ line-height:30px;
   margin-right: 10px;
 }
 
+.opacityCourseModuleBox{
+  opacity: 0.6;
+}
+
 .courseModuleBox:hover{
   opacity: 0.75;
   cursor: pointer;

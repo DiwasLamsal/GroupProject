@@ -430,6 +430,13 @@ else{
                 <?php }?>
             </select>
 
+        </div>
+
+
+        <div class="formColumnSeparator"></div>
+
+        <div class="formColumn2">
+
 
             <label for="level">Level: </label>
             <select name="student[slvid]">
@@ -444,13 +451,6 @@ else{
                 </option>
                 <?php }?>
             </select>
-
-        </div>
-
-
-        <div class="formColumnSeparator"></div>
-
-        <div class="formColumn2">
 
             <label for="birthdate">Birth Date: </label>
             <input type="date" name="user[birthdate]" <?php if(isset($user))echo 'value='.$user['birthdate'];?>>
