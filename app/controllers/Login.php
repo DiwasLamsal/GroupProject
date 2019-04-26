@@ -4,14 +4,14 @@
 
     public function index(){
       session_start();
-      if(isset($_SESSION['loggedin'])){
-        if($_SESSION['loggedin']['urole']=="Administrator" && $_SESSION['loggedin']['ustatus']=="Y"){
+      if(isset($_SESSION['loggedin'])&& $_SESSION['loggedin']['ustatus']=="Y"){
+        if($_SESSION['loggedin']['urole']=="Administrator"){
           header("Location: /GroupProject/public/AdminHome");
         }
-        else if($_SESSION['loggedin']['urole']=="Module Leader" && $_SESSION['loggedin']['ustatus']=="Y"){
+        else if($_SESSION['loggedin']['urole']=="Module Leader"){
           header("Location: /GroupProject/public/ModuleLeaderHome");
         }
-        else if($_SESSION['loggedin']['ustatus']=="Y") {
+        else {
           header("Location: /GroupProject/public/StudentHome");
         }
 
@@ -28,21 +28,22 @@
         while($user = $users->fetch()) {
           if($user['uid']==$_POST['id']){
             if(password_verify($_POST['password'], $user['password'])){
-              echo 'reached';
+              if($user['ustatus']=="Y"){
                 $_SESSION['loggedin']=$user;
                 $flag = true;
+              }
             }
           }
         }
 
         if($flag){
-          if($_SESSION['loggedin']['urole']=="Administrator" && $_SESSION['loggedin']['ustatus']=="Y"){
+          if($_SESSION['loggedin']['urole']=="Administrator"){
             header("Location: /GroupProject/public/AdminHome");
           }
-          else if($_SESSION['loggedin']['urole']=="Module Leader" && $_SESSION['loggedin']['ustatus']=="Y"){
+          else if($_SESSION['loggedin']['urole']=="Module Leader"){
             header("Location: /GroupProject/public/ModuleLeaderHome");
           }
-          else if($_SESSION['loggedin']['ustatus']=="Y"){
+          else {
             header("Location: /GroupProject/public/StudentHome");
           }
 
