@@ -75,13 +75,13 @@ if($modules->rowCount() > 0){
                     </a>
 
                   <!-- Delete Assignment Button -->
-                  <a style="color: white;"
+                  <!-- <a style="color: white;"
                   href = "/GroupProject/public/ModuleLeaderAssignments/deleteAssignment/<?php echo $assignment['aid'];?>">
                     <div class = "resourceBox" style = "background: red;">
                       <img src = "/GroupProject/public/resources/images/deleteuser.png" width="20">
                       Delete
                     </div>
-                  </a>
+                  </a> -->
                  </div>
 
                 <div class = "formColumnSeparator" style="background: white; border-right: 0px dashed grey;"></div>

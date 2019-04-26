@@ -9,11 +9,14 @@
 
 <?php
 if($submissions->rowCount()>0){
+	$count = 0;
   while($submission = $submissions->fetch()){
+		if(checkSubmissionGrade($submission['submission_id'])==false)
+			break;
+		++$count;
     $grade = checkSubmissionGrade($submission['submission_id'])->fetch();
     $term = getTermByAssignment($submission['asaid'])->fetch();
     $module = getModuleByTermId($term['tid'])->fetch();
-
     if($grade['status']=="N"){
 ?>
 
@@ -48,6 +51,17 @@ if($submissions->rowCount()>0){
 <?php
     }
   }
+	if($count==0){
+		?>
+
+		<div class = "adminManageTable">
+			<h1>
+			  🚫 No Grades Are Available For You
+			</h1>
+		</div>
+
+<?php
+	}
 }
 else{
 ?>
