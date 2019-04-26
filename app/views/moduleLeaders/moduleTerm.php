@@ -109,7 +109,7 @@ else{ // -- If no assignment is uploaded, display Add Assignment Button
               </div>
             </div>
 
-            <br><hr style="height: 2px;">
+            <br>
           </div>
         <?php }
       }
