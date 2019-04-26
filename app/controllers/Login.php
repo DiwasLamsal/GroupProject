@@ -5,13 +5,13 @@
     public function index(){
       session_start();
       if(isset($_SESSION['loggedin'])){
-        if($_SESSION['loggedin']['urole']=="Administrator"){
+        if($_SESSION['loggedin']['urole']=="Administrator" && $_SESSION['loggedin']['ustatus']=="Y"){
           header("Location: /GroupProject/public/AdminHome");
         }
-        else if($_SESSION['loggedin']['urole']=="Module Leader"){
+        else if($_SESSION['loggedin']['urole']=="Module Leader" && $_SESSION['loggedin']['ustatus']=="Y"){
           header("Location: /GroupProject/public/ModuleLeaderHome");
         }
-        else {
+        else if($_SESSION['loggedin']['ustatus']=="Y") {
           header("Location: /GroupProject/public/StudentHome");
         }
 
@@ -36,13 +36,13 @@
         }
 
         if($flag){
-          if($_SESSION['loggedin']['urole']=="Administrator"){
+          if($_SESSION['loggedin']['urole']=="Administrator" && $_SESSION['loggedin']['ustatus']=="Y"){
             header("Location: /GroupProject/public/AdminHome");
           }
-          else if($_SESSION['loggedin']['urole']=="Module Leader"){
+          else if($_SESSION['loggedin']['urole']=="Module Leader" && $_SESSION['loggedin']['ustatus']=="Y"){
             header("Location: /GroupProject/public/ModuleLeaderHome");
           }
-          else {
+          else if($_SESSION['loggedin']['ustatus']=="Y"){
             header("Location: /GroupProject/public/StudentHome");
           }
 
