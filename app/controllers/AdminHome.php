@@ -34,8 +34,13 @@
         'users'=>$countUser,
       ];
 
+      if (session_status() == PHP_SESSION_NONE) {
+      	session_start();
+      }
+      $user = $_SESSION['loggedin'];
+
       $template = '../app/views/administrators/adminHome.php';
-      $content = loadTemplate($template, ['announcements'=>$announcements, 'count'=>$countArray]);
+      $content = loadTemplate($template, ['announcements'=>$announcements, 'count'=>$countArray, 'user'=>$user]);
 
       $title = "Admin - Dashboard";
       $selected = "Dashboard";
