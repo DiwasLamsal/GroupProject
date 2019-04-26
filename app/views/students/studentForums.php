@@ -86,7 +86,7 @@ if($modules->rowCount() > 0){
           <!-- Add Assignment -->
           <div style = "text-align: center;">
             <a class = "courseModuleLink" href = "/GroupProject/public/StudentForums/addThread/<?php echo $module['mid']?>">
-              <div class = "courseModuleBox" style = "background: <?php echo generateRandomColor()?>;">
+              <div class = "courseModuleBox" style = "background: #e68c4d;">
                 Add Thread
               </div>
             </a>

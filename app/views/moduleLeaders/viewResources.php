@@ -107,7 +107,7 @@ if($modules->rowCount() > 0){
         <br>
         <div style = "text-align: center;">
           <a class = "courseModuleLink" href = "/GroupProject/public/ModuleLeaderResources/addResource/<?php echo $term['tid']?>">
-            <div class = "courseModuleBox" style = "background: <?php echo generateRandomColor()?>;">
+            <div class = "courseModuleBox" style = "background: #e68c4d;">
               Add Resource
             </div>
           </a>

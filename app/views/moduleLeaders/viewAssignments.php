@@ -108,7 +108,7 @@ else{ // -- If no assignment is uploaded, display Add Assignment Button
   <!-- Add Assignment -->
   <div style = "text-align: center;">
     <a class = "courseModuleLink" href = "/GroupProject/public/ModuleLeaderAssignments/addAssignment/<?php echo $term['tid']?>">
-      <div class = "courseModuleBox" style = "background: <?php echo generateRandomColor()?>;">
+      <div class = "courseModuleBox" style = "background: #e68c4d;">
         Add Assignment
       </div>
     </a>
