@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2019 at 08:44 AM
+-- Generation Time: Apr 27, 2019 at 05:08 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -374,6 +374,32 @@ INSERT INTO `modules` (`mid`, `mluid`, `mcid`, `mlvid`, `mname`, `mdescription`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `module_announcements`
+--
+
+CREATE TABLE `module_announcements` (
+  `maid` int(11) NOT NULL,
+  `matid` int(11) NOT NULL,
+  `matitle` varchar(255) NOT NULL,
+  `madescription` text NOT NULL,
+  `madate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `module_announcements`
+--
+
+INSERT INTO `module_announcements` (`maid`, `matid`, `matitle`, `madescription`, `madate`) VALUES
+(4, 25, 'testestesttest', 'testestesttest', '2019-04-27 20:27:08'),
+(8, 25, 'Grade Announcement', 'Students I am publishing your grades for the software engineering III term I. Please find it from your grades area.', '2019-04-27 20:40:02'),
+(9, 25, 'No Classes', 'There will not be any classes in the upcoming week.', '2019-04-27 20:48:50'),
+(11, 25, 'Deadline Extended', 'Because of the delayed assignment arrival, your assignment deadlines have been extended. You can now submit your assignment upto two weeks after term\'s end date. ', '2019-04-27 20:49:33'),
+(12, 25, 'Guest Lecturer', 'Your classes will be taken by a lecturer tomorrow Sunday 28th of march. Please be prepared and do remember manners. ', '2019-04-27 20:50:38'),
+(13, 25, 'Session Regarding Project', 'There will be a session regarding your assignment brief. If you have problems understanding the brief, you can join this session. ', '2019-04-27 20:51:53');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `resources`
 --
 
@@ -410,7 +436,7 @@ CREATE TABLE `students` (
   `cid` int(11) NOT NULL,
   `gpa` decimal(10,2) NOT NULL,
   `prevschool` varchar(255) NOT NULL,
-  `rstatus` enum('Live','Dormant') NOT NULL,
+  `rstatus` enum('Live','Dormant','Provisional') NOT NULL,
   `rdormant` varchar(255) DEFAULT NULL,
   `puid` int(9) NOT NULL,
   `slvid` int(11) NOT NULL
@@ -425,14 +451,16 @@ INSERT INTO `students` (`suid`, `cid`, `gpa`, `prevschool`, `rstatus`, `rdormant
 (19, 2, '0.00', 'Naya Aayam Multidisciplinary Institute', 'Live', '', 24, 3),
 (20, 2, '3.00', 'Cambridge University', 'Live', '', 16, 1),
 (23, 2, '2.80', 'Oxford University', 'Live', '', 22, 2),
-(33, 2, '4.00', 'University of Pennsylvania', 'Live', '', 15, 1),
-(34, 2, '3.75', 'Harvard University', 'Live', '', 26, 1),
-(35, 2, '2.20', 'Colorado School of Mines', 'Dormant', 'Pending Verification', 27, 1),
-(36, 2, '3.40', 'Drexel Unviersity', 'Dormant', 'Graduated', 28, 1),
-(37, 2, '3.20', 'Villanova University', 'Dormant', 'Pending Verification', 29, 1),
-(38, 2, '4.00', 'Lafayette College', 'Live', '', 30, 1),
-(39, 2, '3.95', 'Lehigh Universtiy', 'Live', '', 32, 1),
-(40, 2, '3.00', 'University of Illinois', 'Live', '', 15, 1);
+(45, 2, '4.00', 'University of Pennsylvania', 'Provisional', 'Pending Verification', 16, 1),
+(46, 2, '3.75', 'Harvard University', 'Provisional', 'Pending Verification', 22, 1),
+(47, 2, '2.20', 'Colorado School of Mines', 'Provisional', 'Pending Verification', 24, 1),
+(48, 2, '3.40', 'Drexel Unviersity', 'Provisional', 'Pending Verification', 25, 1),
+(49, 2, '3.20', 'Villanova University', 'Provisional', 'Pending Verification', 26, 1),
+(50, 2, '4.00', 'Lafayette College', 'Provisional', 'Pending Verification', 27, 1),
+(51, 2, '3.95', 'Lehigh Universtiy', 'Provisional', 'Pending Verification', 28, 1),
+(52, 2, '3.00', 'University of Illinois', 'Provisional', 'Pending Verification', 29, 1),
+(53, 2, '2.80', 'Rice University', 'Provisional', 'Pending Verification', 30, 1),
+(54, 2, '3.00', 'Cornell University', 'Live', '', 32, 1);
 
 -- --------------------------------------------------------
 
@@ -522,14 +550,16 @@ INSERT INTO `users` (`uid`, `fname`, `mname`, `lname`, `password`, `gender`, `bi
 (29, 'Nischal', '', 'Khadka', '$2y$10$6FsPV6Monb8K6sN88cu0VuaJzJLzxyiAjCnT6eqZHWKqupFJTRzUC', 'Male', '1979-10-27', 'New Baneshwor', '98156154', 'nischal.khadka@gmail.com', 'Module Leader', 'Y'),
 (30, 'Ram', 'Chandra', 'Dhungana', '$2y$10$GlmKZwd.lIgMyorw5CBHJekOPMmu.hZ0YDEKMXF3Zs9vq1KvBZWi6', 'Male', '1971-12-29', 'Chabahil', '9815615423', 'ramchandra@gmail.com', 'Module Leader', 'Y'),
 (32, 'Niresh', '', 'Dhakal', '$2y$10$zJvdExs39rAZ20HrpewnouSxOghAHoA9E9IkiDWwslP4s94D4yYz.', 'Male', '1978-01-31', 'Jorpati', '984981351465', 'niresh@gmail.com', 'Module Leader', 'Y'),
-(33, 'Buckminster', 'Fayth', 'Manning', '$2y$10$WPVjdlNCZBc.F..uc3VSg.NVgp0xEO6P0dTG8TY7KWHib3g68YaRu', 'Other', '1990-04-28', 'Ap #253-5483 Ipsum St.', '541-3486', 'etiam.dictum@tellit.com', 'Student', 'Y'),
-(34, 'Dorothy', 'Saffiyah', 'Welch', '$2y$10$PId7cFkZjorauInT5N7NOu52yDiwm0jVMvUm9w4SQWWOmdruEz54W', 'Male', '2001-09-01', '768-436 Ac Rd.', '284-1074', 'mauris.ut.mi@molestie.co.uk', 'Student', 'Y'),
-(35, 'Alisa', 'Hafsah', 'Humphrey', '$2y$10$NQsMl4d4vHM43bWCnT7OAO9idXPnQirOgmsVbTGKhrU6pJKbNBmU2', 'Female', '1985-08-23', 'P.O. Box 518, 8571 Pellentesque St.', '1-197-120-3396', 'tortor@molestieSedid.edu', 'Student', 'Y'),
-(36, 'Merritt', 'Fawn', 'Kramer', '$2y$10$6Jand7mvz8WowSpoLCK5Xe6dasXDeOZgWaezDupDXlAgmf6Y/EpYS', 'Male', '1989-10-01', 'P.O. Box 570, 139 Duis St.', '1-480-624-4498', 'sed.sem@commodo.net', 'Student', 'Y'),
-(37, 'Hedda', 'Fleur', 'Skinner', '$2y$10$rWloLu2us4H9z.AhdbZdZuTJPIDOCzNH/rxsFMN1lWa.VsE9IsmX6', 'Female', '1990-06-13', 'P.O. Box 322, 473 Purus. St.', '484-7266', 'pede.Nunc@montur.org', 'Student', 'Y'),
-(38, 'Baker', 'Gwenyth', 'Pearson', '$2y$10$8Sr3NbYUz9UYbwFJbpmgeufkM29qOxxHiJmfROiMPo84N3m41Iisi', 'Male', '1983-07-14', 'P.O. Box 572, 6124 Venenatis Rd.', '366-0998', 'magna.nec@interdum.edu', 'Student', 'Y'),
-(39, 'Jada', 'Narayan', 'Patel', '$2y$10$2O7KWhtcn5Zs8pqEILdeDe2f82Pv6YgB4GTHnRHDldq4/1sHxnhE.', 'Other', '1988-09-28', '178-3114 Pharetra. Rd.', '546-7735', 'neque.tellus@tint.com', 'Student', 'Y'),
-(40, 'Brandon', 'Griffith', 'Fowler', '$2y$10$MPU7hQ51pGOZZP2paVC4feAArwIa10KDOI8miwgagqnpprTesTVZu', 'Other', '1981-10-03', 'Ap #510-773 Aliquet Ave', '1-398-502-1721', 'ornare.elit@quama.ca', 'Student', 'Y');
+(45, 'Buckminster', 'Fayth', 'Manning', '$2y$10$Sx9HULQH86AshTpVC/5Bou5aPAfwiliN7Jp1rnVtNHY7Mxr6IKxw2', 'Other', '1990-04-28', 'Ap #253-5483 Ipsum St.', '541-3486', 'etiam.dictum@tellit.com', 'Student', 'Y'),
+(46, 'Dorothy', 'Saffiyah', 'Welch', '$2y$10$NC/41Z4eKg1VgwvmVI7iGu3/HOn36sKXYNPtiFw2KAbkzylWAwsOW', 'Male', '2001-09-01', '768-436 Ac Rd.', '284-1074', 'mauris.ut.mi@molestie.co.uk', 'Student', 'Y'),
+(47, 'Alisa', 'Hafsah', 'Humphrey', '$2y$10$.42FsVedESBLAm8mVhaiauj/pRgpflik7NiUpmEoR8HwXjWY788aq', 'Female', '1985-08-23', 'P.O. Box 518, 8571 Pellentesque St.', '1-197-120-3396', 'tortor@molestieSedid.edu', 'Student', 'Y'),
+(48, 'Merritt', 'Fawn', 'Kramer', '$2y$10$27zWNgbeAnYyVy.ibw7jZ.YmcaVNGgqbXrjN69CPipFKT9RPTo41e', 'Male', '1989-10-01', 'P.O. Box 570, 139 Duis St.', '1-480-624-4498', 'sed.sem@commodo.net', 'Student', 'Y'),
+(49, 'Hedda', 'Fleur', 'Skinner', '$2y$10$WhjBkJC7SUx9D1uXF5BnsOsGuL2uUECg/7MpHslyUnPIhKmxxcB1S', 'Female', '1990-06-13', 'P.O. Box 322, 473 Purus. St.', '484-7266', 'pede.Nunc@montur.org', 'Student', 'Y'),
+(50, 'Baker', 'Gwenyth', 'Pearson', '$2y$10$EcDsh2ErdA4zILZsr8y1mOABFC8DOyIF4jh1HchfShxmI0AwNDb9m', 'Male', '1983-07-14', 'P.O. Box 572, 6124 Venenatis Rd.', '366-0998', 'magna.nec@interdum.edu', 'Student', 'Y'),
+(51, 'Jada', 'Narayan', 'Patel', '$2y$10$lpZanvq7d/SgNyOrGBkD3u158Jphwrpr0w3MKtGVbNrNxxnGFb5WG', 'Other', '1988-09-28', '178-3114 Pharetra. Rd.', '546-7735', 'neque.tellus@tint.com', 'Student', 'Y'),
+(52, 'Brandon', 'Griffith', 'Fowler', '$2y$10$cTgYzIdo7V4ExaRWbO4JKu6/VBMLr3rqsoy6DuSpS1sfBxkptltga', 'Other', '1981-10-03', 'Ap #510-773 Aliquet Ave', '1-398-502-1721', 'ornare.elit@quama.ca', 'Student', 'Y'),
+(53, 'Kevyn', 'Tudfwlch', 'Nixon', '$2y$10$PEgFgfkX38c/YTRxOgUYiO5ZhzISkshB2tJdhuJJO0QY4BUKfbds6', 'Male', '1980-10-01', 'P.O. Box 878, 8469 Eget Avenue', '510-6955', 'nunc.est@facilisis.net', 'Student', 'Y'),
+(54, 'Prescott', 'Fridolph', 'Bradshaw', '$2y$10$sJpDFIdf9KmQkOKN2qwuuOX6JtzQlv5h370HNKdAovA3Qmmk3HzHq', 'Female', '1998-02-10', 'P.O. Box 449, 8473 Pellentesque Road', '596-1316', 'ac@ac.ca', 'Student', 'Y');
 
 --
 -- Indexes for dumped tables
@@ -616,6 +646,13 @@ ALTER TABLE `modules`
   ADD KEY `mlvid` (`mlvid`);
 
 --
+-- Indexes for table `module_announcements`
+--
+ALTER TABLE `module_announcements`
+  ADD PRIMARY KEY (`maid`),
+  ADD KEY `matid` (`matid`);
+
+--
 -- Indexes for table `resources`
 --
 ALTER TABLE `resources`
@@ -652,7 +689,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `announcements`
 --
 ALTER TABLE `announcements`
-  MODIFY `anid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `anid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `assignments`
@@ -676,13 +713,13 @@ ALTER TABLE `attendances`
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `forums`
 --
 ALTER TABLE `forums`
-  MODIFY `fid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `fid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `forum_messages`
@@ -700,13 +737,19 @@ ALTER TABLE `grades`
 -- AUTO_INCREMENT for table `levels`
 --
 ALTER TABLE `levels`
-  MODIFY `lvid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `lvid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `modules`
 --
 ALTER TABLE `modules`
-  MODIFY `mid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `mid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+
+--
+-- AUTO_INCREMENT for table `module_announcements`
+--
+ALTER TABLE `module_announcements`
+  MODIFY `maid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `resources`
@@ -718,13 +761,13 @@ ALTER TABLE `resources`
 -- AUTO_INCREMENT for table `terms`
 --
 ALTER TABLE `terms`
-  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `uid` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `uid` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- Constraints for dumped tables
@@ -789,6 +832,12 @@ ALTER TABLE `modules`
   ADD CONSTRAINT `fk_m_courses` FOREIGN KEY (`mcid`) REFERENCES `courses` (`cid`),
   ADD CONSTRAINT `fk_m_lecturers` FOREIGN KEY (`mluid`) REFERENCES `lecturers` (`luid`),
   ADD CONSTRAINT `fk_m_levels` FOREIGN KEY (`mlvid`) REFERENCES `levels` (`lvid`);
+
+--
+-- Constraints for table `module_announcements`
+--
+ALTER TABLE `module_announcements`
+  ADD CONSTRAINT `fk_ma_terms` FOREIGN KEY (`matid`) REFERENCES `terms` (`tid`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `resources`

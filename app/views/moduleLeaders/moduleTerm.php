@@ -7,6 +7,24 @@
   <li><?php echo $module['mname'].' - '.$term['tname'];?></li>
 </ul>
 
+<?php if($var!="") {?>
+  <div class = "adminManageTable">
+    <?php
+    if($var=="addsuccess"){
+      echo '<b>Successfully Added Announcement for '.$module['mname'].' - '.$term['tname'].'</b>';
+    }
+    else if($var == 'editsuccess'){
+      echo '<b>Successfully Edited Announcement for '.$module['mname'].' - '.$term['tname'].'</b>';
+    }
+    else if($var == 'delete'){
+      echo '<b>Successfully Deleted Announcement for '.$module['mname'].' - '.$term['tname'].'</b>';
+    }
+    else{
+      echo '<b>Error</b>';
+    }
+?>
+</div>
+<?php } ?>
 
 <div class = "adminManageTable">
   <div class = "tableTitle">
@@ -18,6 +36,64 @@
     <b>Term Start Date: </b><?php echo date("l\, jS-F-Y", strtotime($term['tsdate']));?><br>
     <b>Term End Date: </b><?php echo date("l\, jS-F-Y", strtotime($term['tedate']));?><br>
     <br>
+  </div>
+</div>
+
+
+<button class="collapsible" style="background: DarkCyan;">
+  <b>Announcements </b>
+</button>
+<!-- Buttons for displaying announcement description -->
+<div class="collapsedcontent" style="margin-bottom: 10px;">
+  <!-- Content inside the collapsible -->
+  <div style="margin: 10px; min-height: 90px;">
+  <?php
+  $announcements = getAnnouncementsByTermId($term['tid']);
+  if($announcements->rowCount()>0){
+    while($announcement = $announcements->fetch()){
+    echo '<br>';
+    ?>
+    <div class = "resourceHolder">
+      <!-- Assignment Left Column -->
+      <div class = "formHolder">
+        <div class = "formColumn1">
+          <p>
+            <b>Title: </b><?php echo $announcement['matitle'];?><br>
+            <b>Post Date: </b><?php echo $announcement['madate'];?><br>
+            <b>Description: </b><?php echo $announcement['madescription'];?><br>
+          </p>
+        </div>
+
+        <div class = "formColumnSeparator" style="background: white; border-right: 0px dashed grey;"></div>
+
+        <div class = "formColumn2">
+          <p style = "text-align: center;">
+            <a href = "/GroupProject/public/ModuleLeaderModules/browseAnnouncement/<?php echo $announcement['maid'];?>"
+              style="color: white;">
+              <button class="btn btn-submit">Edit Announcement</button>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <?php } ?>
+    <?php
+  }
+else{ // -- If no assignment is uploaded, display Add Assignment Button
+  ?>
+  <h2 style = "text-align: center;">No Announcements Available</h2>
+  <?php
+}
+?>
+<br>
+<div style = "text-align: center;">
+  <a class = "courseModuleLink" href = "/GroupProject/public/ModuleLeaderModules/addAnnouncement/<?php echo $term['tid']?>">
+    <div class = "courseModuleBox" style = "background: #e68c4d;">
+      Add Announcement
+    </div>
+  </a>
+</div>
+<br><br>
   </div>
 </div>
 

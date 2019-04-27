@@ -166,6 +166,13 @@
     return $assignments;
   }
 
+  function getAnnouncementsByTermId($id){
+    $maClass = new DatabaseTable('module_announcements');
+    $announcements = $maClass->findReverse('madate', 'matid', $id);
+    return $announcements;
+  }
+
+
 
 // Sets term's current status by checking the date and returns the term
   function setTermStatus($term){
@@ -248,6 +255,10 @@
                            WHERE a.aid = '.$asaid);
     $stmt->execute();
     return $stmt;
+  }
+
+  function getTermByAnnouncementId($anid){
+
   }
 
 

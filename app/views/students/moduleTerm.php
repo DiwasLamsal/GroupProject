@@ -22,6 +22,53 @@
 </div>
 
 
+
+<button class="collapsible" style="background: DarkCyan;">
+  <b>Announcements </b>
+</button>
+<!-- Buttons for displaying announcement description -->
+<div class="collapsedcontent" style="margin-bottom: 10px;">
+  <!-- Content inside the collapsible -->
+  <div style="margin: 10px; min-height: 90px;">
+  <?php
+  $announcements = getAnnouncementsByTermId($term['tid']);
+  if($announcements->rowCount()>0){
+		$count = 0;
+    while($announcement = $announcements->fetch()){
+			if($count == 5)break;
+			++$count;
+    	echo '<br>';
+    ?>
+    <div class = "resourceHolder">
+      <!-- Assignment Left Column -->
+      <div class = "formHolder flex-top">
+        <div class = "formColumn1">
+          <p>
+            <b>Title: </b><?php echo $announcement['matitle'];?><br>
+            <b>Post Date: </b><?php echo $announcement['madate'];?><br>
+          </p>
+        </div>
+        <div class = "formColumnSeparator" style="background: white; border-right: 0px dashed grey;"></div>
+        <div class = "formColumn2">
+					<b>Description: </b><?php echo $announcement['madescription'];?><br>
+        </div>
+      </div>
+    </div>
+    <?php } ?>
+    <?php
+  }
+else{ // -- If no assignment is uploaded, display Add Assignment Button
+  ?>
+  <h2 style = "text-align: center;">No Announcements Available</h2>
+  <?php
+}
+?>
+<br>
+  </div>
+</div>
+
+
+
 <button class="collapsible  active" style="background: DarkCyan;">
 	<b>Assignment</b>
 </button>
