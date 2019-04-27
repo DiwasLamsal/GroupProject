@@ -38,7 +38,7 @@
       $levels = $levelClass->findAll();
 
       if(isset($_POST['submitStudents'])){
-        for($i = 1; $i<$_POST['totalStudents']; $i++){
+        for($i = 1; $i<($_POST['totalStudents']+1); $i++){
 
           $_POST[$i]['user']['urole']="Student";
           $_POST[$i]['user']['ustatus']="Y";

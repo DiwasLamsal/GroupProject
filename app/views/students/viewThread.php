@@ -59,13 +59,15 @@
     <div class = "forumDiv">
       <br>
       <span><b>Date Posted:</b> <?php echo $reply['fmdate'];?></span>
+			<br>
+			<div class = "avatar" style="background: <?php echo generateRandomColor();?>; padding-top: 12px; height: 55px;">
+				<?php echo getInitials($user['fname'].' '.$user['lname']);?>
+			</div>
       <h2><?php echo $user['fname'].' '.$user['mname'].' '.$user['lname'];?></h2><br>
       <p><?php echo $reply['fmdescription'];?></p>
       <span><?php if($flag) echo '<br><a href = "/GroupProject/public/StudentForums/deleteMessage/'.$reply['fmid'].'" style = "color: red">Delete Reply</a>';?></span>
       <br><br><br>
     </div>
-
-
   <?php } ?>
 		<br>
 	</div>

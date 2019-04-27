@@ -74,6 +74,10 @@ if($modules->rowCount() > 0){
               <div class = "forumDiv">
                 <br>
                 <span><b>Date Posted:</b> <?php echo $forum['fdate'];?></span>
+								<br>
+								<div class = "avatar" style="background: <?php echo generateRandomColor();?>;">
+									<?php echo getInitials($user['fname'].' '.$user['lname']);?>
+								</div>
                 <h2><a style="color: black;" href = "/GroupProject/public/StudentForums/browseThread/<?php echo $forum['fid'];?>">
                   <?php echo $forum['ftitle'];?></a></h2><br>
                 <b>Posted By:</b> <?php echo $user['fname'].' '.$user['mname'].' '.$user['lname'];?>

@@ -63,8 +63,9 @@
   }
 
 
-  function getStudentModules($id){
-
+  function getInitials($name){
+    $initials = $name[0].$name[strrpos($name, " ") + 1];
+    return $initials;
   }
 
 

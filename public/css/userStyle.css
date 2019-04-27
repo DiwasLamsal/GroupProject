@@ -1211,6 +1211,25 @@ ul.breadcrumb li a:hover {
 }
 
 
+/* Forum Avatar */
+
+.avatar{
+	width: 65px;
+	color: white;
+	font-family: sans-serif;
+	font-size: 25px;
+	font-weight: bold;
+	background: DarkOrchid;
+	height: 48px;
+	text-align: center;
+	padding-top: 17px;
+	display: inline-block;
+	float: left;
+	margin-right: 30px;
+  border: 4px ridge white;
+  border-radius: 15px;
+}
+
 
 
 /**********************************************************************************************/
