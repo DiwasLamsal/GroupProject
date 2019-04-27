@@ -27,7 +27,7 @@
                           <img class = "tableIcon" src = "/GroupProject/public/resources/images/archive.svg">
                         </a>';
         $statusText = $student['rstatus']=="Live" ? '<font color = "green">Live</font>':
-                                                           '<font color = "red">Dormant</font>';
+                                                           '<font color = "red">'.$student['rstatus'].'</font>';
 
         $count++;
         echo '<tr>

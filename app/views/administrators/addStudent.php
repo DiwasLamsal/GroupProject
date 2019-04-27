@@ -55,9 +55,9 @@ if(isset($student))
                     <tr>
                       <th>Student Status:</th>
                       <td><?php echo $student['rstatus']=="Live"?'<font color = "green">Live</font>':
-                            '<font color = "red">Dormant</font>';?></td>
+                            '<font color = "red">'.$student['rstatus'].'</font>';?></td>
                     </tr>
-                    <?php if($student['rstatus']=="Dormant"){?>
+                    <?php if($student['rstatus']=="Dormant" || $student['rstatus']=="Provisional"){?>
                     <tr>
                         <th>Reason For Dormancy:</th>
                         <td>
@@ -78,7 +78,7 @@ if(isset($student))
                     <tr>
                       <th>Action</th>
                       <td>
-                        <a id="myBtn"><img src="/GroupProject/public/resources/images/deleteuser.png" width="150"></a>
+                        <a id="myBtn" style="cursor: pointer;"><img src="/GroupProject/public/resources/images/deleteuser.png" width="150"></a>
                       </td>
                     </tr>
                 </tbody>
@@ -200,7 +200,7 @@ else{
 <?php } ?>
 
 
-<?php if($student['rstatus']=="Dormant" && $student['rdormant']=="Pending Verification"){ ?>
+<?php if($student['rstatus']=="Provisional" && $student['rdormant']=="Pending Verification"){ ?>
 
 <div class="adminManageTable offerHolder">
 
@@ -232,7 +232,6 @@ else{
                     </button>
                 </a>
 
-
             </div>
             <div class="formColumnSeparator"></div>
             <div class="formColumn1">
@@ -244,7 +243,7 @@ else{
                     <button>
                         <img src="/GroupProject/public/resources/images/mail.png" width="20"
                             style="margin-bottom: -5px; float: left;">
-                        &nbsp;Mail Unonditional Letter
+                        &nbsp;Mail Unconditional Letter
                     </button>
                 </a>
 
@@ -252,27 +251,18 @@ else{
                     <button style="background: DodgerBlue;">
                         <img src="/GroupProject/public/resources/images/print.png" width="20"
                             style="margin-bottom: -5px; float: left;">
-                        &nbsp;Print Unonditional Letter
+                        &nbsp;Print Unconditional Letter
                     </button>
                 </a>
-
             </div>
-
         </div>
-
-
     </div>
 </div>
 
-
-
 <?php } ?>
 
-
 <?php
-
 }
-
 ?>
 
 <?php if(!isset($user)){?>

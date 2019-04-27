@@ -54,7 +54,7 @@
           $studentId = $studentId->fetch()['uid'];
           $_POST[$i]['student']['suid']=$studentId;
 
-          $_POST[$i]['student']['rstatus']="Dormant";
+          $_POST[$i]['student']['rstatus']="Provisional";
           $_POST[$i]['student']['rdormant']="Pending Verification";
           $_POST[$i]['student']['puid']=getPATWithLowest();
           $_POST[$i]['student']['slvid']=getFirstYearLevel()['lvid'];
@@ -81,6 +81,8 @@
         $studentId = $userClass->findLastRecordId('uid');
         $studentId = $studentId->fetch()['uid'];
         $_POST['student']['suid']=$studentId;
+        $_POST['student']['rstatus']="Provisional";
+        $_POST['student']['rdormant']="Pending Verification";
 
         $studentClass->save($_POST['student']);
 
