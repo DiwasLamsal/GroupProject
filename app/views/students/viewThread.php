@@ -60,7 +60,7 @@
       <br>
       <span><b>Date Posted:</b> <?php echo $reply['fmdate'];?></span>
 			<br>
-			<div class = "avatar" style="background: <?php echo generateRandomColor();?>; padding-top: 12px; height: 55px;">
+			<div class = "avatar" style="padding-top: 10px; height: 50px;">
 				<?php echo getInitials($user['fname'].' '.$user['lname']);?>
 			</div>
       <h2><?php echo $user['fname'].' '.$user['mname'].' '.$user['lname'];?></h2><br>

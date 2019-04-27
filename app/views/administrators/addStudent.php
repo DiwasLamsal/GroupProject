@@ -52,6 +52,11 @@ if(isset($student))
                         <th>Email Address:</th>
                         <td><?php echo $user['uemail'];?></td>
                     </tr>
+                    <tr>
+                      <th>Student Status:</th>
+                      <td><?php echo $student['rstatus']=="Live"?'<font color = "green">Live</font>':
+                            '<font color = "red">Dormant</font>';?></td>
+                    </tr>
                     <?php if($student['rstatus']=="Dormant"){?>
                     <tr>
                         <th>Reason For Dormancy:</th>

@@ -63,8 +63,8 @@ if(checkStudentSubmission($_SESSION['loggedin']['uid'], $assignment['aid'])){
 
 <br><br>
 <div style=" text-align: center;">
-  <a target = "_blank" href = "/GroupProject/public/<?php echo $submission['asfiles'];?>" style="color: white;">
-    <button class="btn btn-download">Download <i class="fa fa-download"></i></button>
+  <a href = "/GroupProject/public/<?php echo $submission['asfiles'];?>" style="color: white;">
+    <div class="btn btn-download">Download <i class="fa fa-download"></i></div>
   </a>
 </div>
 

@@ -1148,13 +1148,13 @@ ul.breadcrumb li a:hover {
   color:#fff;
   font-size: 14px;
   border-radius: 3px;
-  opacity: 0.8;
+  opacity: 1.0;
   transition: opacity 0.1s;
   margin-bottom: 5px;
 }
 .btn:hover{
   cursor: pointer;
-  opacity: 1.0;
+  opacity: 0.8;
 }
 .btn-hide{
   background: #FF6347;
@@ -1214,20 +1214,20 @@ ul.breadcrumb li a:hover {
 /* Forum Avatar */
 
 .avatar{
-	width: 65px;
+	width: 60px;
 	color: white;
 	font-family: sans-serif;
 	font-size: 25px;
 	font-weight: bold;
-	background: DarkOrchid;
-	height: 48px;
+	background: #696969;
+	height: 45px;
 	text-align: center;
-	padding-top: 17px;
+	padding-top: 15px;
 	display: inline-block;
 	float: left;
 	margin-right: 30px;
-  border: 4px ridge white;
-  border-radius: 15px;
+  margin-top: 5px;
+  border: 4px dashed white;
 }
 
 
@@ -1367,7 +1367,7 @@ ul.breadcrumb li a:hover {
   .avatar{
     display: none;
   }
-  
+
 }
 
 

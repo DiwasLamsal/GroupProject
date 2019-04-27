@@ -109,7 +109,8 @@ if($modules->rowCount() > 0){
                       else { ?>
                         <a href = "/GroupProject/public/ModuleLeaderSubmissions/markSubmission/<?php echo $submission['submission_id'];?>"
                           style="color: white;">
-                          <img class = "downloadImage" src = "/GroupProject/public/resources/images/markButton.png">
+                          <button class="btn btn-hide">Hide Grade</button>
+                          <!-- <img class = "downloadImage" src = "/GroupProject/public/resources/images/markButton.png"> -->
                         </a>
 
 

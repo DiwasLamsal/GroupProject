@@ -75,7 +75,7 @@ if($modules->rowCount() > 0){
                 <br>
                 <span><b>Date Posted:</b> <?php echo $forum['fdate'];?></span>
 								<br>
-								<div class = "avatar" style="background: <?php echo generateRandomColor();?>;">
+								<div class = "avatar">
 									<?php echo getInitials($user['fname'].' '.$user['lname']);?>
 								</div>
                 <h2><a style="color: black;" href = "/GroupProject/public/StudentForums/browseThread/<?php echo $forum['fid'];?>">
