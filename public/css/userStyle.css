@@ -1363,6 +1363,11 @@ ul.breadcrumb li a:hover {
   .searchStudent{
     display: none;
   }
+
+  .avatar{
+    display: none;
+  }
+  
 }
 
 
