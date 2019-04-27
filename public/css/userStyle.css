@@ -1227,7 +1227,12 @@ ul.breadcrumb li a:hover {
 	float: left;
 	margin-right: 30px;
   margin-top: 5px;
-  border: 3px dashed white;
+  border: 2px dashed white;
+  transition: .2s;
+}
+
+.forumDiv:hover .avatar{
+  box-shadow: 0px 0px 5px grey;
 }
 
 
