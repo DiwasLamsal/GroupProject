@@ -1219,7 +1219,7 @@ ul.breadcrumb li a:hover {
 	font-family: sans-serif;
 	font-size: 25px;
 	font-weight: bold;
-	background: #696969;
+	background: #3CB371;
 	height: 45px;
 	text-align: center;
 	padding-top: 15px;
@@ -1227,7 +1227,7 @@ ul.breadcrumb li a:hover {
 	float: left;
 	margin-right: 30px;
   margin-top: 5px;
-  border: 4px dashed white;
+  border: 3px dashed white;
 }
 
 
