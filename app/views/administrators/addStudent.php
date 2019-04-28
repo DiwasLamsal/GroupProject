@@ -65,8 +65,7 @@ if(isset($student))
                         </td>
                     </tr>
 
-                    <?php }
-    else {?>
+                  <?php } ?>
                     <tr>
                         <th>Previous GPA: </th>
                         <td><?php echo $student['gpa'];?></td>
@@ -74,7 +73,7 @@ if(isset($student))
                     <tr>
                         <th>Previous School: </th>
                         <td><?php echo $student['prevschool'];?></td>
-                    </tr> <?php }?>
+                    </tr>
                     <tr>
                       <th>Action</th>
                       <td>
