@@ -12,7 +12,7 @@
       $modules = $moduleClass->find('mluid', $_SESSION['loggedin']['uid']);
 
       if(isset($_POST['submitRecords'])){
-        for($i = 1; $i<$_POST['totalRecords']; $i++){
+        for($i = 1; $i<($_POST['totalRecords']+1); $i++){
           $date = date("Y-m-d");
           $_POST[$i]['attendance']['adate']= $date;
 

@@ -46,35 +46,21 @@ if(isset($_POST['submitAttendance'])){
         <?php
         $file = fopen($_FILES['csvpicker']['tmp_name'], "r");
         $count = 0;
+        $currentData = fgetcsv($file, 1000, ',');
         while(!feof($file)){
-          $flag = false;
-          $currentData = fgetcsv($file, 1000, ',');
-          if($currentData[0]=='End'){
-            $currentData[0]='';
-            $currentData[1]='';
-            $currentData[2]='';
-            $currentData[3]='';
-            $currentData[4]='';
-            $flag = true;
-          }
-
-          if($currentData==false)break;
           $count++;
           echo '<input type = "hidden" name = "'.$count.'[attendance][auid]" value = "'.$currentData[0].'">';
           echo '<input type = "hidden" name = "'.$count.'[attendance][astatus]" value = "'.$currentData[4].'">';
           echo '<input type = "hidden" name = "'.$count.'[attendance][atid]" value = "'.$term['tid'].'">';
-
           echo '<tr>';
-          if(!$flag)echo '<td>'.$count.'</td>';
+          echo '<td>'.$count.'</td>';
           echo '<td>'.$currentData[0].'</td>
                 <td>'.$currentData[1].' '.$currentData[2].' '.$currentData[3].'</td>
                 <td>'.$currentData[4].'</td>';
-
-          if(!$flag)
           echo '<td>'.$module['mname'].'</td>
                 <td>'.$term['tname'].'</td>';
           echo '</tr>';
-
+          $currentData = fgetcsv($file, 1000, ',');
         }
         fclose($file);
         ?>
@@ -82,7 +68,7 @@ if(isset($_POST['submitAttendance'])){
       </table>
 
       <input type="hidden" value=<?php echo $count;?> name="totalRecords">
-      <input type="submit" value="Add These <?php echo --$count;?> Attendance Records" name="submitRecords">
+      <input type="submit" value="Add These <?php echo $count;?> Attendance Records" name="submitRecords">
 
     </form>
   </div>

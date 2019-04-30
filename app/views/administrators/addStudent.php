@@ -301,9 +301,11 @@ else{
         <h1 class="tableHeading">UCAS Students</h1>
     </div>
 
+
     <form method="POST" class="userForm">
-
-
+      <b>Note: </b>Passwords for these students are generated automatically. <br>
+      The format is: FL-YYYY-MM-DD For example: for Ram Krishna Shrestha 1990-05-15, password:  RS-1990-05-15
+      <br><br>
         <table id="customers">
             <tr>
                 <th>S.N.</th>
