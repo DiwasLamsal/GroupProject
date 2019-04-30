@@ -381,6 +381,12 @@ else{
         </h1>
     </div>
 
+    <?php if(!isset($user)){ ?>
+    <b>Note: </b>Passwords for students are generated automatically. <br>
+    The format is: FL-YYYY-MM-DD For example: for Ram Krishna Shrestha 1990-05-15, password:  RS-1990-05-15
+    <br><br>
+  <?php } ?>
+
     <div class="formHolder flex-top">
 
         <div class="formColumn1">

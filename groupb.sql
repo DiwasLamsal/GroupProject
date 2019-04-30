@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 27, 2019 at 05:08 PM
+-- Generation Time: Apr 30, 2019 at 09:14 AM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.8
 
@@ -69,9 +69,10 @@ CREATE TABLE `assignments` (
 --
 
 INSERT INTO `assignments` (`aid`, `atid`, `atitle`, `adescription`, `adeadline`, `afiles`, `status`) VALUES
-(5, 25, 'Software Engineering III Term I Assignment', 'Software Engineering III Term I Assignment', '2019-09-16', 'resources/assignments/1555864419.0888-Software_Engineering.rar', 'Y'),
-(6, 31, 'Artificial Intelligence Term I Assignment', 'AI Assignment Term - I', '2019-09-16', 'resources/assignments/1555950741.7769-100-Records.zip', 'Y'),
-(7, 35, 'Dissertation', 'Dissertation Assignment Brief. Read it and submit your work in time.', '2019-09-16', 'resources/assignments/1555951014.4065-100-Records.zip', 'Y');
+(5, 25, 'Software Engineering III Term I Assignment', 'Software Engineering III Term I Assignment', '2019-09-16', 'resources/assignments/1556603878.7661-SoftwareEngineeringAssignmentWUC.zip', 'Y'),
+(6, 31, 'Artificial Intelligence Term I Assignment', 'AI Assignment Term - I', '2019-09-16', 'resources/assignments/1556607052.0795-AIAssignmentWUC.zip', 'Y'),
+(7, 35, 'Dissertation', 'Dissertation Assignment Brief. Read it and submit your work in time.', '2019-09-16', 'resources/assignments/1555951014.4065-100-Records.zip', 'Y'),
+(8, 32, 'Artificial Intelligence Term II Assignment', 'Artificial Intelligence Term II Assignment', '2020-03-19', 'resources/assignments/1556607066.953-AIAssignmentWUC.zip', 'Y');
 
 -- --------------------------------------------------------
 
@@ -93,10 +94,9 @@ CREATE TABLE `assignment_students` (
 --
 
 INSERT INTO `assignment_students` (`submission_id`, `asaid`, `asuid`, `asfiles`, `comments`, `submission_date`) VALUES
-(1, 5, 19, 'resources/submissions/1555936340.0269-100-Records.zip', 'My Submission', '2019-04-22 18:56:49'),
-(2, 5, 18, 'resources/submissions/1555940615.8368-100-Records.zip', 'This is my submission. I have completed all my work and everything is inside the zip folder. ', '2019-04-22 19:28:35'),
-(3, 6, 19, 'resources/submissions/1555950780.7027-100-Records.zip', 'Artificial Intelligence. Everything is completed and is inside the AI Tools Folder.', '2019-04-22 22:18:00'),
-(4, 7, 19, 'resources/submissions/1555951037.473-100-Records.zip', 'My Dissertation Work', '2019-04-22 22:22:17');
+(1, 5, 10000012, 'resources/submissions/1556603985.205-10000012-ayush-raj-moktan-zip-file.zip', 'I have placed all my files inside the MyAssignment Folder.', '2019-04-30 11:44:45'),
+(2, 5, 10000013, 'resources/submissions/1556604771.2521-10000013-binayak-dhakal-zip-file.zip.rar', 'Hello my Assignment Submission Test.', '2019-04-30 11:57:51'),
+(3, 6, 10000012, 'resources/submissions/1556608392.641-10000012-ayush-raj-moktan-zip-file.zip', 'All the files are inside the Submission folder.', '2019-04-30 12:58:12');
 
 -- --------------------------------------------------------
 
@@ -117,78 +117,60 @@ CREATE TABLE `attendances` (
 --
 
 INSERT INTO `attendances` (`aid`, `auid`, `astatus`, `adate`, `atid`) VALUES
-(1, 18, '0', '2019-04-23 00:00:00', 25),
-(2, 19, '0', '2019-04-23 00:00:00', 25),
-(3, 18, '0', '2019-04-23 00:00:00', 25),
-(4, 19, '0', '2019-04-23 00:00:00', 25),
-(5, 18, '0', '2019-04-23 00:00:00', 25),
-(6, 19, '0', '2019-04-23 00:00:00', 25),
-(7, 18, '0', '2019-04-23 00:00:00', 25),
-(8, 19, '0', '2019-04-23 00:00:00', 25),
-(9, 18, '0', '2019-04-23 00:00:00', 25),
-(10, 19, '0', '2019-04-23 00:00:00', 25),
-(11, 18, 'X', '2019-04-23 00:00:00', 25),
-(12, 19, '0', '2019-04-23 00:00:00', 25),
-(13, 18, 'X', '2019-04-23 00:00:00', 25),
-(14, 19, '0', '2019-04-23 00:00:00', 25),
-(15, 18, '0', '2019-04-23 00:00:00', 25),
-(16, 19, '0', '2019-04-23 00:00:00', 25),
-(17, 18, '0', '2019-04-23 00:00:00', 25),
-(18, 19, 'A', '2019-04-23 00:00:00', 25),
-(19, 18, '0', '2019-04-23 00:00:00', 25),
-(20, 19, '0', '2019-04-23 00:00:00', 25),
-(21, 18, '0', '2019-04-23 00:00:00', 25),
-(22, 19, '0', '2019-04-23 00:00:00', 25),
-(23, 18, '0', '2019-04-23 00:00:00', 25),
-(24, 19, '0', '2019-04-23 00:00:00', 25),
-(25, 18, '0', '2019-04-23 00:00:00', 31),
-(26, 19, 'A', '2019-04-23 00:00:00', 31),
-(27, 18, '0', '2019-04-23 00:00:00', 31),
-(28, 19, 'A', '2019-04-23 00:00:00', 31),
-(29, 18, '0', '2019-04-23 00:00:00', 31),
-(30, 19, 'A', '2019-04-23 00:00:00', 31),
-(31, 18, '0', '2019-04-23 00:00:00', 31),
-(32, 19, '0', '2019-04-23 00:00:00', 31),
-(33, 18, '0', '2019-04-23 00:00:00', 31),
-(34, 19, '0', '2019-04-23 00:00:00', 31),
-(35, 18, '0', '2019-04-23 00:00:00', 31),
-(36, 19, '0', '2019-04-23 00:00:00', 31),
-(37, 18, '0', '2019-04-23 00:00:00', 31),
-(38, 19, '0', '2019-04-23 00:00:00', 31),
-(39, 18, '0', '2019-04-23 00:00:00', 31),
-(40, 19, '0', '2019-04-23 00:00:00', 31),
-(41, 18, '0', '2019-04-23 00:00:00', 31),
-(42, 19, '0', '2019-04-23 00:00:00', 31),
-(43, 18, '0', '2019-04-23 00:00:00', 31),
-(44, 19, '0', '2019-04-23 00:00:00', 31),
-(45, 18, 'X', '2019-04-23 00:00:00', 35),
-(46, 19, '0', '2019-04-23 00:00:00', 35),
-(47, 18, 'X', '2019-04-23 00:00:00', 35),
-(48, 19, '0', '2019-04-23 00:00:00', 35),
-(49, 18, 'X', '2019-04-23 00:00:00', 35),
-(50, 19, '0', '2019-04-23 00:00:00', 35),
-(51, 18, '0', '2019-04-23 00:00:00', 35),
-(52, 19, '0', '2019-04-23 00:00:00', 35),
-(53, 18, '0', '2019-04-23 00:00:00', 35),
-(54, 19, '0', '2019-04-23 00:00:00', 35),
-(55, 18, '0', '2019-04-23 00:00:00', 35),
-(56, 19, '0', '2019-04-23 00:00:00', 35),
-(57, 18, '0', '2019-04-23 00:00:00', 35),
-(58, 19, '0', '2019-04-23 00:00:00', 35),
-(59, 18, '0', '2019-04-23 00:00:00', 35),
-(60, 19, '0', '2019-04-23 00:00:00', 35),
-(61, 18, '0', '2019-04-23 00:00:00', 35),
-(62, 19, '0', '2019-04-23 00:00:00', 35),
-(63, 18, '0', '2019-04-23 00:00:00', 35),
-(64, 19, '0', '2019-04-23 00:00:00', 35),
-(65, 18, '0', '2019-04-23 00:00:00', 35),
-(66, 19, '0', '2019-04-23 00:00:00', 35),
-(67, 18, 'X', '2019-04-23 00:00:00', 35),
-(68, 19, '0', '2019-04-23 00:00:00', 35),
-(69, 18, '0', '2019-04-23 00:00:00', 35),
-(70, 19, '0', '2019-04-23 00:00:00', 35),
-(71, 18, 'X', '2019-04-23 00:00:00', 35),
-(72, 19, '0', '2019-04-23 00:00:00', 35);
+(3, 10000013, '0', '2019-04-30 00:00:00', 25),
+(4, 10000012, '0', '2019-04-30 00:00:00', 25),
+(5, 10000013, '0', '2019-04-30 00:00:00', 25),
+(6, 10000012, '0', '2019-04-30 00:00:00', 25),
+(7, 10000013, '0', '2019-04-30 00:00:00', 25),
+(8, 10000012, '0', '2019-04-30 00:00:00', 25),
+(9, 10000013, '0', '2019-04-30 00:00:00', 25),
+(10, 10000012, '0', '2019-04-30 00:00:00', 25),
+(11, 10000013, '0', '2019-04-30 00:00:00', 25),
+(12, 10000012, '0', '2019-04-30 00:00:00', 25),
+(13, 10000013, '0', '2019-04-30 00:00:00', 25),
+(14, 10000012, '0', '2019-04-30 00:00:00', 25),
+(15, 10000013, 'X', '2019-04-30 00:00:00', 25),
+(16, 10000012, '0', '2019-04-30 00:00:00', 25),
+(17, 10000013, 'X', '2019-04-30 00:00:00', 19),
+(18, 10000012, '0', '2019-04-30 00:00:00', 19),
+(19, 10000013, '0', '2019-04-30 00:00:00', 19),
+(20, 10000012, '0', '2019-04-30 00:00:00', 19),
+(21, 10000013, '0', '2019-04-30 00:00:00', 19),
+(22, 10000012, '0', '2019-04-30 00:00:00', 19),
+(23, 10000013, '0', '2019-04-30 00:00:00', 19),
+(24, 10000012, '0', '2019-04-30 00:00:00', 19),
+(25, 10000013, '0', '2019-04-30 00:00:00', 19),
+(26, 10000012, '0', '2019-04-30 00:00:00', 19),
+(27, 10000013, '0', '2019-04-30 00:00:00', 19),
+(28, 10000012, '0', '2019-04-30 00:00:00', 19),
+(29, 10000013, '0', '2019-04-30 00:00:00', 19),
+(30, 10000012, '0', '2019-04-30 00:00:00', 19),
+(31, 10000013, 'X', '2019-04-30 00:00:00', 19),
+(32, 10000012, '0', '2019-04-30 00:00:00', 19),
+(33, 10000013, '0', '2019-04-30 00:00:00', 31),
+(34, 10000012, '0', '2019-04-30 00:00:00', 31),
+(35, 10000013, '0', '2019-04-30 00:00:00', 31),
+(36, 10000012, '0', '2019-04-30 00:00:00', 31),
+(37, 10000013, '0', '2019-04-30 00:00:00', 35),
+(38, 10000012, '0', '2019-04-30 00:00:00', 35),
+(39, 10000013, '0', '2019-04-30 00:00:00', 35),
+(40, 10000012, '0', '2019-04-30 00:00:00', 35),
+(41, 10000013, '0', '2019-04-30 00:00:00', 35),
+(42, 10000012, '0', '2019-04-30 00:00:00', 35),
+(43, 10000013, '0', '2019-04-30 00:00:00', 35),
+(44, 10000012, '0', '2019-04-30 00:00:00', 35),
+(45, 10000013, '0', '2019-04-30 00:00:00', 35),
+(46, 10000012, '0', '2019-04-30 00:00:00', 35),
+(47, 10000013, '0', '2019-04-30 00:00:00', 35),
+(48, 10000012, '0', '2019-04-30 00:00:00', 35),
+(49, 10000013, 'X', '2019-04-30 00:00:00', 35),
+(50, 10000012, '0', '2019-04-30 00:00:00', 35),
+(51, 10000013, 'X', '2019-04-30 00:00:00', 35),
+(52, 10000012, '0', '2019-04-30 00:00:00', 35),
+(53, 10000013, 'X', '2019-04-30 00:00:00', 35),
+(54, 10000012, '0', '2019-04-30 00:00:00', 35),
+(55, 10000013, '0', '2019-04-30 00:00:00', 35),
+(56, 10000012, '0', '2019-04-30 00:00:00', 35);
 
 -- --------------------------------------------------------
 
@@ -209,8 +191,8 @@ CREATE TABLE `courses` (
 --
 
 INSERT INTO `courses` (`cid`, `cuid`, `ctitle`, `cdescription`, `cstatus`) VALUES
-(2, 22, 'BSc. Computing', 'A bachelor\'s degree, usually in computer science, computer systems engineering, software engineering or mathematics or completion of a college program in computer science is usually required.', 'Y'),
-(3, 16, 'BSc. Hons Environment Science', 'Environmental science is an interdisciplinary academic field that integrates physical, biological and information sciences (including ecology, biology, physics, chemistry, plant science, zoology, mineralogy, oceanography, limnology, soil science, geology and physical geography (geodesy), and atmospheric science) to the ...', 'Y');
+(2, 10000001, 'BSc. Computing', 'A bachelor\'s degree, usually in computer science, computer systems engineering, software engineering or mathematics or completion of a college program in computer science is usually required.', 'Y'),
+(3, 10000009, 'BSc. Hons Environment Science', 'Environmental science is an interdisciplinary academic field that integrates physical, biological and information sciences (including ecology, biology, physics, chemistry, plant science, zoology, mineralogy, oceanography, limnology, soil science, geology and physical geography (geodesy), and atmospheric science) to the ...', 'Y');
 
 -- --------------------------------------------------------
 
@@ -232,9 +214,10 @@ CREATE TABLE `forums` (
 --
 
 INSERT INTO `forums` (`fid`, `fmid`, `fuid`, `ftitle`, `fdescription`, `fdate`) VALUES
-(16, 33, 19, 'I wanted to ask about when our results will be published', 'Hey guys do you know when will our results be published and we could get the certificates?', '2019-04-25 11:24:49'),
-(17, 33, 19, 'Good Recording Software', 'Hey guys does anybody know about a good software to record videos for the AI Assignment? I am not being able to come across one with easy to use features.', '2019-04-25 11:29:27'),
-(18, 33, 18, 'Good Text Editor?', 'Does anybody know a good text editor to code PHP, HTML and CSS?', '2019-04-25 11:30:30');
+(1, 33, 10000013, 'Good Text Editor?', 'Does anybody know of a good text editor?', '2019-04-30 12:47:11'),
+(2, 33, 10000013, 'When are our Vacations?', 'Do you know when our summer vacations will begin? Its getting too hot these days. ', '2019-04-30 12:47:37'),
+(4, 33, 10000012, 'How to write a CV?', 'What information do we need to include in our college resume for internships? Can anybody help me out?', '2019-04-30 12:51:33'),
+(5, 33, 10000013, 'Any Good Recording Software? ðŸ“¹ðŸ“·ðŸ“½ To record my screen?', 'Any Good Recording Software? ðŸ“¹ðŸ“·ðŸ“½ To record my screen?', '2019-04-30 12:57:19');
 
 -- --------------------------------------------------------
 
@@ -255,10 +238,14 @@ CREATE TABLE `forum_messages` (
 --
 
 INSERT INTO `forum_messages` (`fmid`, `fmfid`, `fmuid`, `fmdescription`, `fmdate`) VALUES
-(2, 16, 18, 'Yes ayush next week', '2019-04-25 12:23:49'),
-(3, 16, 18, 'And certificates after two weeks', '2019-04-25 12:23:59'),
-(4, 16, 19, 'Thank you binayak!', '2019-04-25 12:24:25'),
-(5, 18, 19, 'I think Atom is a wonderful text editor Binayak for all the mentioned languages. Sublime text could be another alternative.', '2019-04-25 12:28:36');
+(1, 2, 10000013, 'Anybody?', '2019-04-30 12:47:45'),
+(2, 2, 10000013, 'This heat is not good for our health.', '2019-04-30 12:48:09'),
+(3, 1, 10000012, 'I think Notepad++ is a good one Binayak.', '2019-04-30 12:48:42'),
+(4, 1, 10000012, 'I searched for some and found out that sublime text and atom are very good text editors. You can always Google these things you know. ', '2019-04-30 12:49:07'),
+(5, 2, 10000012, 'You are right. I think we will get a vacation really soon. Probably next week? ', '2019-04-30 12:49:29'),
+(6, 1, 10000013, 'Thanks for your response Ayush. I found the one for me - Visual Studio Code. It is very easy to code in this editor. I think everyone should try this one out ðŸ˜', '2019-04-30 12:52:44'),
+(7, 4, 10000013, 'ðŸ¤”ðŸ¤”ðŸ¤” I think you just include stuff about your education and experiences and aims and everything. It should not be that tough, why don\'t you go through some samples? ðŸ¤žðŸ¤žðŸ˜¬', '2019-04-30 12:54:04'),
+(9, 2, 10000013, 'ðŸ˜¥ðŸ˜¥ðŸ˜¥ðŸ˜¥ðŸ˜¥ Probably Ayush. I have really bad allergies against heat and I really wish they give us a break soon. ðŸ™„ðŸ™„ðŸ¤§', '2019-04-30 12:55:52');
 
 -- --------------------------------------------------------
 
@@ -280,10 +267,8 @@ CREATE TABLE `grades` (
 --
 
 INSERT INTO `grades` (`gid`, `guid`, `grade`, `publish_date`, `feedback`, `status`) VALUES
-(1, 1, 'A+', '2019-04-22 20:40:58', 'Very Nicely Done Ayush!', 'Y'),
-(2, 2, 'B+', '2019-04-22 21:16:55', 'Decent Work', 'N'),
-(3, 3, 'A', '2019-04-22 22:18:37', 'Nice Work.', 'Y'),
-(4, 4, 'B+', '2019-04-22 22:22:51', 'Nice overall. But need improvements in language and description. ', 'Y');
+(1, 1, 'A+', '2019-04-30 11:48:17', 'Excellent Work Ayush! You did a very good job.', 'Y'),
+(2, 3, 'A', '2019-04-30 12:58:39', 'Good Work!', 'N');
 
 -- --------------------------------------------------------
 
@@ -303,17 +288,16 @@ CREATE TABLE `lecturers` (
 --
 
 INSERT INTO `lecturers` (`luid`, `lrole`, `lbiography`, `lexperience`) VALUES
-(15, '', 'Best teacher', '5 years'),
-(16, '', 'He is a good teacher', '15 years'),
-(22, '', 'Very good teacher.', '10 years'),
-(24, '', 'Very good web development teacher', '15 years'),
-(25, '', 'Good teacher', '20 years'),
-(26, '', 'Nishant Neupane', '2 years'),
-(27, '', 'Database Lecturer', '10 years'),
-(28, '', 'AI Lecturer', '17  years'),
-(29, '', 'Gold Medalist and a very good hacker. ', '5 years'),
-(30, '', 'A formal software specification is a specification expressed in a language whose vocabulary, syntax and semantics are formally defined. This need for a formal definition means that the specification languages must be based on mathematical concepts whose properties are well understood.', '12 years'),
-(32, '', 'Very good teacher from Germany.', '3 years');
+(10000001, '', 'Very good teacher.', '10 years'),
+(10000002, '', 'Very good web development teacher', '15 years'),
+(10000003, '', 'Good teacher', '20 years'),
+(10000004, '', 'AI Lecturer', '17  years'),
+(10000005, '', 'Very good teacher from Germany.', '3 years'),
+(10000006, '', 'Very good Software Engineering teacher with good C++ skills.', '5 years'),
+(10000007, '', 'Nishant Neupane', '2 years'),
+(10000008, '', 'A formal software specification is a specification expressed in a language whose vocabulary, syntax and semantics are formally defined. This need for a formal definition means that the specification languages must be based on mathematical concepts whose properties are well understood.', '12 years'),
+(10000009, '', 'Best teacher', '5 years'),
+(10000010, '', 'Database Lecturer', '10 years');
 
 -- --------------------------------------------------------
 
@@ -359,17 +343,17 @@ CREATE TABLE `modules` (
 --
 
 INSERT INTO `modules` (`mid`, `mluid`, `mcid`, `mlvid`, `mname`, `mdescription`, `mcode`, `mstatus`) VALUES
-(30, 24, 2, 1, 'Web Development', 'Web development broadly refers to the tasks associated with developing websites for hosting via intranet or internet. The web development process includes web design, web content development, client-side/server-side scripting and network security configuration, among other tasks.', 'CSY 1018', 'Y'),
-(31, 26, 2, 1, 'Software Engineering I', 'Software engineering is the process of analyzing user needs and designing, constructing, and testing end user applications that will satisfy these needs through the use of software programming languages. It is the application of engineering principles to software development.', 'CSY 1010', 'Y'),
-(32, 29, 2, 2, 'Software Engineering II', 'Software engineering is the process of analyzing user needs and designing, constructing, and testing end user applications that will satisfy these needs through the use of software programming languages. It is the application of engineering principles to software development.', 'CSY 2023', 'Y'),
-(33, 25, 2, 3, 'Software Engineering III', 'Software engineering is the process of analyzing user needs and designing, constructing, and testing end user applications that will satisfy these needs through the use of software programming languages. It is the application of engineering principles to software development.', 'CSY 3038', 'Y'),
-(34, 32, 2, 1, 'Comptuer Systems', 'A complete, working computer. Computer systems will include the computer along with any software and peripheral devices that are necessary to make the computer function. Every computer system, for example, requires an operating system', 'CSY 1023', 'Y'),
-(35, 24, 2, 2, 'Web Programming', 'Web programming refers to the writing, markup and coding involved in Web development, which includes Web content, Web client and server scripting and network security. The most common languages used for Web programming are XML, HTML, JavaScript, Perl 5 and PHP.', 'CSY 2028', 'Y'),
-(36, 28, 2, 3, 'Artificial Intelligence', 'Artificial intelligence (AI) is an area of computer science that emphasizes the creation of intelligent machines that work and react like humans. Some of the activities computers with artificial intelligence are designed for include: Speech recognition.', 'CSY 3032', 'Y'),
-(37, 30, 2, 2, 'Formal Specification of Software Systems', 'A formal software specification is a specification expressed in a language whose vocabulary, syntax and semantics are formally defined. This need for a formal definition means that the specification languages must be based on mathematical concepts whose properties are well understood.', 'CSY 2031', 'Y'),
-(38, 15, 2, 3, 'Computing Dissertation', 'A thesis or dissertation is a document submitted in support of candidature for an academic degree or professional qualification presenting the author\'s research and findings.', 'CSY 4050', 'Y'),
-(39, 25, 2, 2, 'Group Project', 'Group Project Description. Over the course of the semester, your group will work as a team of communication consultants who will help a local non-profit organization in identifying, assessing, and improving some aspect of their organizations communication.', 'CSY 2027', 'Y'),
-(40, 22, 2, 2, 'Systems Design and Development', 'Welcome to 18/19 Systems Design and Development (NAMI) (CSY2030-NAM09)', 'CSY 2030', 'Y');
+(30, 10000002, 2, 1, 'Web Development', 'Web development broadly refers to the tasks associated with developing websites for hosting via intranet or internet. The web development process includes web design, web content development, client-side/server-side scripting and network security configuration, among other tasks.', 'CSY 1018', 'Y'),
+(31, 10000007, 2, 1, 'Software Engineering I', 'Software engineering is the process of analyzing user needs and designing, constructing, and testing end user applications that will satisfy these needs through the use of software programming languages. It is the application of engineering principles to software development.', 'CSY 1010', 'Y'),
+(32, 10000006, 2, 2, 'Software Engineering II', 'Software engineering is the process of analyzing user needs and designing, constructing, and testing end user applications that will satisfy these needs through the use of software programming languages. It is the application of engineering principles to software development.', 'CSY 2023', 'Y'),
+(33, 10000003, 2, 3, 'Software Engineering III', 'Software engineering is the process of analyzing user needs and designing, constructing, and testing end user applications that will satisfy these needs through the use of software programming languages. It is the application of engineering principles to software development.', 'CSY 3038', 'Y'),
+(34, 10000005, 2, 1, 'Comptuer Systems', 'A complete, working computer. Computer systems will include the computer along with any software and peripheral devices that are necessary to make the computer function. Every computer system, for example, requires an operating system', 'CSY 1023', 'Y'),
+(35, 10000002, 2, 2, 'Web Programming', 'Web programming refers to the writing, markup and coding involved in Web development, which includes Web content, Web client and server scripting and network security. The most common languages used for Web programming are XML, HTML, JavaScript, Perl 5 and PHP.', 'CSY 2028', 'Y'),
+(36, 10000004, 2, 3, 'Artificial Intelligence', 'Artificial intelligence (AI) is an area of computer science that emphasizes the creation of intelligent machines that work and react like humans. Some of the activities computers with artificial intelligence are designed for include: Speech recognition.', 'CSY 3032', 'Y'),
+(37, 10000008, 2, 2, 'Formal Specification of Software Systems', 'A formal software specification is a specification expressed in a language whose vocabulary, syntax and semantics are formally defined. This need for a formal definition means that the specification languages must be based on mathematical concepts whose properties are well understood.', 'CSY 2031', 'Y'),
+(38, 10000009, 2, 3, 'Computing Dissertation', 'A thesis or dissertation is a document submitted in support of candidature for an academic degree or professional qualification presenting the author\'s research and findings.', 'CSY 4050', 'Y'),
+(39, 10000003, 2, 2, 'Group Project', 'Group Project Description. Over the course of the semester, your group will work as a team of communication consultants who will help a local non-profit organization in identifying, assessing, and improving some aspect of their organizations communication.', 'CSY 2027', 'Y'),
+(40, 10000001, 2, 2, 'Systems Design and Development', 'Welcome to 18/19 Systems Design and Development (NAMI) (CSY2030-NAM09)', 'CSY 2030', 'Y');
 
 -- --------------------------------------------------------
 
@@ -417,13 +401,12 @@ CREATE TABLE `resources` (
 --
 
 INSERT INTO `resources` (`rid`, `rtid`, `rtitle`, `rdescription`, `rfilenames`, `rstatus`) VALUES
-(10, 37, 'Project Management Part I', 'A project is a set of related tasks that are coordinated to achieve a specific objective, usually in a given time limit. This teaches Project Management. \r\n', 'resources/uploads/1555839255.3909-01GP_SE_Project_Management_Part_I(1).doc', 'Y'),
-(11, 25, 'Support Notes', 'Software Engineering Required notes for the Group Project. Go through this file. It will help you to work on your Group Project. ', 'resources/uploads/1555839369.4974-Software_Engineering_Required_Documentation_Support_Notes_for_the_Group_Project.doc', 'Y'),
-(14, 37, 'Problem Domain Identification', 'The file contains the Problem Domain Identification Template. Download it from the link. ', 'resources/uploads/1555840517.3933-CSY2027_-_Problem_Domain_Identification_-_Template.doc', 'Y'),
-(15, 37, 'Project Management Part II', 'Project Management Part II For CSY2027 Group Project. ', 'resources/uploads/1555840563.8554-01GP_SE_Project_Management_Part_II(2).doc', 'Y'),
-(17, 25, 'Java for students', 'Java for students 6th edition. Study this for java reference. ', 'resources/uploads/1555842039.7028-Java_For_Students_(6th_Edition).pdf', 'Y'),
-(21, 25, 'Finding Classes Object', 'Finding Classes - Object Analysis Techniques.', 'resources/uploads/1555863472.7304-03GP_Review_of_Classes_and_Objects(1).doc', 'Y'),
-(22, 25, 'Classes and Objects', 'Review and revision of Classes and Objects which you have already studied. ', 'resources/uploads/1555863583.1801-03GP_Review_of_Classes_and_Objects(1).doc', 'Y');
+(24, 25, 'Software Engineering III - Week 1', 'Students, this is your first week material for Software Engineering Term I. Please go through these before coming for classes.', 'resources/uploads/1556603707.643-Software_Engineering_III_Term_II_All_Slides.zip', 'Y'),
+(25, 25, 'Software Engineering III - Week 2', 'Students, this is your second week material for Software Engineering Term I. Please go through these before coming for classes.', 'resources/uploads/1556603729.7929-Software_Engineering_III_Term_II_All_Slides.zip', 'Y'),
+(26, 25, 'Software Engineering III - Week 3', 'Students, this is your third week material for Software Engineering Term I. Please go through these before coming for classes.', 'resources/uploads/1556603745.2952-Software_Engineering_III_Term_II_All_Slides.zip', 'Y'),
+(27, 25, 'Software Engineering III - Week 4', 'Students, this is your fourth week material for Software Engineering Term I. Please go through these before coming for classes.', 'resources/uploads/1556603769.4236-Software_Engineering_III_Term_II_All_Slides.zip', 'Y'),
+(28, 37, 'Group Project - Week 1', 'Students, this is your first week material for Group Project Term I. Please go through these before coming for classes.', 'resources/uploads/1556603800.5084-Group_Project_All_Data.rar', 'Y'),
+(29, 37, 'Group Project - Week 2', 'Students, this is your second week material for Group Project Term I. Please go through these before coming for classes.', 'resources/uploads/1556603817.9436-Group_Project_All_Data.rar', 'Y');
 
 -- --------------------------------------------------------
 
@@ -447,20 +430,10 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`suid`, `cid`, `gpa`, `prevschool`, `rstatus`, `rdormant`, `puid`, `slvid`) VALUES
-(18, 2, '3.30', 'Naya Aayam Multidisciplinary Institute', 'Live', '', 25, 3),
-(19, 2, '0.00', 'Naya Aayam Multidisciplinary Institute', 'Live', '', 24, 3),
-(20, 2, '3.00', 'Cambridge University', 'Live', '', 16, 1),
-(23, 2, '2.80', 'Oxford University', 'Live', '', 22, 2),
-(45, 2, '4.00', 'University of Pennsylvania', 'Provisional', 'Pending Verification', 16, 1),
-(46, 2, '3.75', 'Harvard University', 'Provisional', 'Pending Verification', 22, 1),
-(47, 2, '2.20', 'Colorado School of Mines', 'Provisional', 'Pending Verification', 24, 1),
-(48, 2, '3.40', 'Drexel Unviersity', 'Provisional', 'Pending Verification', 25, 1),
-(49, 2, '3.20', 'Villanova University', 'Provisional', 'Pending Verification', 26, 1),
-(50, 2, '4.00', 'Lafayette College', 'Provisional', 'Pending Verification', 27, 1),
-(51, 2, '3.95', 'Lehigh Universtiy', 'Provisional', 'Pending Verification', 28, 1),
-(52, 2, '3.00', 'University of Illinois', 'Provisional', 'Pending Verification', 29, 1),
-(53, 2, '2.80', 'Rice University', 'Provisional', 'Pending Verification', 30, 1),
-(54, 2, '3.00', 'Cornell University', 'Live', '', 32, 1);
+(10000011, 2, '3.50', 'St Xavier\'s Jawlakhel', 'Live', '', 10000001, 1),
+(10000012, 2, '3.20', 'Global College', 'Live', '', 10000002, 3),
+(10000013, 2, '3.50', 'Islington College', 'Live', '', 10000003, 3),
+(10000016, 2, '3.80', 'Banasthali School', 'Provisional', 'Pending Verification', 10000001, 3);
 
 -- --------------------------------------------------------
 
@@ -531,35 +504,22 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`uid`, `fname`, `mname`, `lname`, `password`, `gender`, `birthdate`, `uaddress`, `ucontact`, `uemail`, `urole`, `ustatus`) VALUES
-(2, 'Diwas', '', 'Lamsal', '$2y$10$H63pohGdQ2HCm8Xs0gHYI.lOBvhRsblyY0e90bteaAUHSNB.Jpzhu', 'Male', '1972-05-15', 'Kathmandu', '9824524242', 'lamsal.diwas@yahoo.com', 'Administrator', 'Y'),
-(3, 'Ramesh', '', 'Thapa', '$2y$10$2OsYDyHJclHsXaqCbWoaFeAeIY4tqC7QktAtMKm6LU0d7Y3xlUJv.', 'Other', '1983-11-27', 'Lokanthali, Bhaktapur', '+977-9842351245', 'rameshthapa@wuc.edu.uk', 'Administrator', 'N'),
-(5, 'Bish\'OW\'', 'Nath', 'Dhakal', '$2y$10$VeoyTZmtIYkieznioIZqGu.Eam7LhQyhhhNjT6YkFfaFPkLV0NBmi', 'Female', '2002-03-22', 'Boudha, Jorpati', '+9779841534534', 'bishownathdhakal@wcu.edu.uk', 'Administrator', 'Y'),
-(7, 'Deepak', 'Kumar', 'Karna', '$2y$10$65ZIHFpL0MGeYf5M46LSl.cJNfTqyh49ksJ9kEuZ0wRa5Oo84KaIi', 'Male', '1986-07-25', 'Ekantakuna, Lalitpur', '+9779842156151', 'dkarna@gmail.com', 'Administrator', 'Y'),
-(15, 'Ramesh', 'Bahadur', 'Adhikari', '$2y$10$Rn0s30YFT3/ijFGYQRFYius5ylD69v9Z/.JbQJCERRCPQRR6otyNq', 'Other', '2000-03-30', 'Kavre', '153245648', 'rameshadhikari@gmail.com', 'Module Leader', 'Y'),
-(16, 'Deepak', 'Raj', 'Giri', '$2y$10$jnyj5ppQU16vnScrd6HTJe5989TFBESviCWDdySZ45xNCqRPHgAci', 'Male', '1988-02-09', 'Naxal', '9842135464', 'draj_giri@hotmail.com', 'Module Leader', 'Y'),
-(18, 'Binayak', '', 'Dhakal', '$2y$10$8YDKxHidtn0hpZDv3MfAqelGr5d7RPPv1Dt20D6z/XbrPHXw6TQZi', 'Male', '1994-11-02', 'Patan', '981651651351', 'binayak@gmail.com', 'Student', 'Y'),
-(19, 'Ayush', 'Raj', 'Moktan', '$2y$10$F0dEGcLW8dkYd8.pSHYqHOiK4FZModNilkTduziGfS4i.wb/o0OSe', 'Male', '1998-08-21', 'NAMI College, Jorpati', '9581651613', 'ayushmoktan@gmail.com', 'Student', 'Y'),
-(20, 'Rama', '', 'Upreti', '$2y$10$KRcFWaFSkUVRpZDpfjbfEuhzznP6S0HQw7zgQojnfsm1OelWfQiLi', 'Female', '2000-06-24', 'Gongabu, Kathmandu', '98165165121', 'ramaupreti@gmail.com', 'Student', 'Y'),
-(22, 'Anita', '', 'Gurung', '$2y$10$0Cmjh1g.YbGT3vGOUn/hc.vv4WO73faewcd1uDYsgY/xNDtg/I4Uq', 'Female', '1969-09-24', 'New Baneshwor', '98161513215', 'anitagurung@nami.edu.np', 'Module Leader', 'Y'),
-(23, 'Barun', '', 'Kuikel', '$2y$10$QySSwO9SunseUyiJIb1oxuVOCMvdGYmwv/pZ1XO8pYJfnc64mo1JO', 'Male', '1997-11-19', 'Melamchi', '98461231564', 'barunkuikel@gmail.com', 'Student', 'Y'),
-(24, 'Ganesh', '', 'Khatri', '$2y$10$2cXNvVEVrqcKb1F.MPtPhuOrk0W7I0Z7kwuSfK2T8y2F0vsTIoPUi', 'Male', '1980-06-25', 'Kathmandu', '981651321', 'ganeshkhatri@nami.edu.np', 'Module Leader', 'Y'),
-(25, 'Himalaya', '', 'Kakshapati', '$2y$10$JEne0aGm6FPjQMlqyqQykOvWehTprNKUa0MjxGhzsINbEuNtutEPm', 'Male', '1982-10-27', 'Kalanki', '9814651561', 'himalaya@gmail.com', 'Module Leader', 'Y'),
-(26, 'Nishant', '', 'Neupane', '$2y$10$50tXjOXzpVGbMF7TKZGZM.B2iXHh0g0s98Ksfa/87ty9KUb2MrZXe', 'Male', '1987-08-20', 'Gaushala', '9845612118', 'nishant@gmail.com', 'Module Leader', 'Y'),
-(27, 'Sangita', '', 'Satyal', '$2y$10$TkUGkimeLUdcQ9hJFjQWHezwCiZpMIYyAvI7FN/gECOpqUjv4NCom', 'Female', '1978-04-24', 'Sankhamul', '9845132165', 'sangitasatyal@nami.edu.np', 'Module Leader', 'Y'),
-(28, 'Mamta', '', 'Bhattarai', '$2y$10$eGIo3JtnTFMhPTH2J6zSD.mOMfP3W6P6Mcl0Fv5jbRFjKcoI54xme', 'Female', '1957-10-28', 'Koteshwor', '9815612342', 'mamta@gmail.com', 'Module Leader', 'Y'),
-(29, 'Nischal', '', 'Khadka', '$2y$10$6FsPV6Monb8K6sN88cu0VuaJzJLzxyiAjCnT6eqZHWKqupFJTRzUC', 'Male', '1979-10-27', 'New Baneshwor', '98156154', 'nischal.khadka@gmail.com', 'Module Leader', 'Y'),
-(30, 'Ram', 'Chandra', 'Dhungana', '$2y$10$GlmKZwd.lIgMyorw5CBHJekOPMmu.hZ0YDEKMXF3Zs9vq1KvBZWi6', 'Male', '1971-12-29', 'Chabahil', '9815615423', 'ramchandra@gmail.com', 'Module Leader', 'Y'),
-(32, 'Niresh', '', 'Dhakal', '$2y$10$zJvdExs39rAZ20HrpewnouSxOghAHoA9E9IkiDWwslP4s94D4yYz.', 'Male', '1978-01-31', 'Jorpati', '984981351465', 'niresh@gmail.com', 'Module Leader', 'Y'),
-(45, 'Buckminster', 'Fayth', 'Manning', '$2y$10$Sx9HULQH86AshTpVC/5Bou5aPAfwiliN7Jp1rnVtNHY7Mxr6IKxw2', 'Other', '1990-04-28', 'Ap #253-5483 Ipsum St.', '541-3486', 'etiam.dictum@tellit.com', 'Student', 'Y'),
-(46, 'Dorothy', 'Saffiyah', 'Welch', '$2y$10$NC/41Z4eKg1VgwvmVI7iGu3/HOn36sKXYNPtiFw2KAbkzylWAwsOW', 'Male', '2001-09-01', '768-436 Ac Rd.', '284-1074', 'mauris.ut.mi@molestie.co.uk', 'Student', 'Y'),
-(47, 'Alisa', 'Hafsah', 'Humphrey', '$2y$10$.42FsVedESBLAm8mVhaiauj/pRgpflik7NiUpmEoR8HwXjWY788aq', 'Female', '1985-08-23', 'P.O. Box 518, 8571 Pellentesque St.', '1-197-120-3396', 'tortor@molestieSedid.edu', 'Student', 'Y'),
-(48, 'Merritt', 'Fawn', 'Kramer', '$2y$10$27zWNgbeAnYyVy.ibw7jZ.YmcaVNGgqbXrjN69CPipFKT9RPTo41e', 'Male', '1989-10-01', 'P.O. Box 570, 139 Duis St.', '1-480-624-4498', 'sed.sem@commodo.net', 'Student', 'Y'),
-(49, 'Hedda', 'Fleur', 'Skinner', '$2y$10$WhjBkJC7SUx9D1uXF5BnsOsGuL2uUECg/7MpHslyUnPIhKmxxcB1S', 'Female', '1990-06-13', 'P.O. Box 322, 473 Purus. St.', '484-7266', 'pede.Nunc@montur.org', 'Student', 'Y'),
-(50, 'Baker', 'Gwenyth', 'Pearson', '$2y$10$EcDsh2ErdA4zILZsr8y1mOABFC8DOyIF4jh1HchfShxmI0AwNDb9m', 'Male', '1983-07-14', 'P.O. Box 572, 6124 Venenatis Rd.', '366-0998', 'magna.nec@interdum.edu', 'Student', 'Y'),
-(51, 'Jada', 'Narayan', 'Patel', '$2y$10$lpZanvq7d/SgNyOrGBkD3u158Jphwrpr0w3MKtGVbNrNxxnGFb5WG', 'Other', '1988-09-28', '178-3114 Pharetra. Rd.', '546-7735', 'neque.tellus@tint.com', 'Student', 'Y'),
-(52, 'Brandon', 'Griffith', 'Fowler', '$2y$10$cTgYzIdo7V4ExaRWbO4JKu6/VBMLr3rqsoy6DuSpS1sfBxkptltga', 'Other', '1981-10-03', 'Ap #510-773 Aliquet Ave', '1-398-502-1721', 'ornare.elit@quama.ca', 'Student', 'Y'),
-(53, 'Kevyn', 'Tudfwlch', 'Nixon', '$2y$10$PEgFgfkX38c/YTRxOgUYiO5ZhzISkshB2tJdhuJJO0QY4BUKfbds6', 'Male', '1980-10-01', 'P.O. Box 878, 8469 Eget Avenue', '510-6955', 'nunc.est@facilisis.net', 'Student', 'Y'),
-(54, 'Prescott', 'Fridolph', 'Bradshaw', '$2y$10$sJpDFIdf9KmQkOKN2qwuuOX6JtzQlv5h370HNKdAovA3Qmmk3HzHq', 'Female', '1998-02-10', 'P.O. Box 449, 8473 Pellentesque Road', '596-1316', 'ac@ac.ca', 'Student', 'Y');
+(10000000, 'Diwas', '', 'Lamsal', '$2y$10$j8BDtfGNEGvTwqjUSGkH/.uZp.mPLoBuWHEahRKle2LyDy015i48e', 'Male', '1990-07-02', 'New Baneshwor, Kathmandu', '98080808080', 'lamsal.diwas@yahoo.com', 'Administrator', 'Y'),
+(10000001, 'Anita', '', 'Gurung', '$2y$10$XjjAzA07K4hWv0nP3RVCwO18xzrDBDDAn3l9R9L.3K9VR4NtA0n0y', 'Female', '1969-09-04', 'New Baneshwor', '98161513215', 'anitagurung@nami.edu.np', 'Module Leader', 'Y'),
+(10000002, 'Ganesh', '', 'Khatri', '$2y$10$4M/pOe4JtwCDeX.RP0zSyOyJ0qbomEsFouHl0HtQnD6V/H/sUpqT2', 'Male', '1980-06-25', 'Kathmandu', '981651321', 'ganeshkhatri@nami.edu.np', 'Module Leader', 'Y'),
+(10000003, 'Himalaya', '', 'Kakshapati', '$2y$10$3zaxlrh0pPj2h3HohoojUeL1XH.KeTQyH1oCnRfNsV49upfTtOuyG', 'Male', '1982-10-27', 'Kalanki', '9814651561', 'himalaya@gmail.com', 'Module Leader', 'Y'),
+(10000004, 'Mamta', '', 'Bhattarai', '$2y$10$ZKUmDzc23aSgXY.ZP8ysk.tu1nMsfilOxQbzRV8NfnvBuuJqIGAK.', 'Female', '1975-10-28', 'Koteshwor', '9815612342', 'mamta@gmail.com', 'Module Leader', 'Y'),
+(10000005, 'Niresh', '', 'Dhakal', '$2y$10$b6gmjNUCKYoRw4sijqk.9.sylyk/S1FBTTXoHYjcrtiwAzGITaJD2', 'Male', '1978-01-31', 'Jorpati', '984981351465', 'niresh@gmail.com', 'Module Leader', 'Y'),
+(10000006, 'Nischal', '', 'Khadka', '$2y$10$VC2BK6qcjZfreTvzJpIoIuORK.Eax9tvPV0qOsRJncvTORlRXRel2', 'Male', '1985-02-11', 'New Baneshwor', '98156154', 'nischal.khadka@gmail.com', 'Module Leader', 'Y'),
+(10000007, 'Nishant', '', 'Neupane', '$2y$10$D2rc4X09mZMuK3BnLpqXJubsE3T5byULSlZFEKYBiESanftwVjcxW', 'Male', '1987-08-20', 'Gaushala', '9845612118', 'nishant@gmail.com', 'Module Leader', 'Y'),
+(10000008, 'Ram', 'Chandra', 'Dhungana', '$2y$10$8b1lxgN4hMe1d40GOQOTOeBByCtm7lrbwZJB5UvO6hgxtLYpsjzbq', 'Male', '1971-12-29', 'Chabahil', '9815615423', 'ramchandra@gmail.com', 'Module Leader', 'Y'),
+(10000009, 'Ramesh', 'Bahadur', 'Adhikari', '$2y$10$Z/hJ1gL/AFcniqgWikmnFeB3WqHDuH.bg.7FfaL7ZJOFRdiRkIH7C', 'Male', '1980-12-11', 'Kavre', '153245648', 'rameshadhikari@gmail.com', 'Module Leader', 'Y'),
+(10000010, 'Sangita', '', 'Satyal', '$2y$10$/vR2MJClUl8YNEiT6cdjneassjOK2I..RgXc4Au./VhKQSX/jx53.', 'Female', '1978-02-04', 'Sankhamul', '9845132165', 'sangitasatyal@nami.edu.np', 'Module Leader', 'Y'),
+(10000011, 'Barun', '', 'Kuikel', '$2y$10$eL0.FctCMGOza2AUHSNrW.9zM3m1wLm4rA0i/CL7LtJagNSxFBQcC', 'Male', '1997-02-02', 'Gothatar, Kathmandu', '981513243245', 'barunkuikel@gmail.com', 'Student', 'Y'),
+(10000012, 'Ayush', 'Raj', 'Moktan', '$2y$10$y9s.NNWCOuIBar792/7lBuB6/sbadMY8U84sWoieGBJJdrZUlvRCS', 'Male', '1999-02-10', 'Jorpati, Kathmandu', '98516542442', 'ayushmoktan@gmail.com', 'Student', 'Y'),
+(10000013, 'Binayak', '', 'Dhakal', '$2y$10$GJt4W8vKmbUacmuiaGf3DeRUFGcEej385thDgR1yDxZm8RmV2lV/2', 'Male', '1995-12-12', 'Khumaltar, Lalitpur', '985135432432', 'binayak@gmail.com', 'Student', 'Y'),
+(10000016, 'Rama', 'Kumari', 'Upreti', '$2y$10$WcG/mSjaPJvmO33J6.s.seOoa7PZXDZezqERoMpoTzYzIXZHAUWBq', 'Female', '1990-10-08', 'Gongabu, Buspark', '984354324815', 'ramaupreti@gmail.com', 'Student', 'Y'),
+(10000018, 'Bish\'OW\'', 'Nath', 'Dhakal', '$2y$10$.9liBx/Up1fWJfpQol5.CebofWTw44q/NmU703v8A/rKiTpOd2JtC', 'Male', '1995-05-05', 'Jorpati, Kathmandu', '9841351354', 'bishownathdhakal@wcu.edu.uk', 'Administrator', 'Y');
 
 --
 -- Indexes for dumped tables
@@ -695,19 +655,19 @@ ALTER TABLE `announcements`
 -- AUTO_INCREMENT for table `assignments`
 --
 ALTER TABLE `assignments`
-  MODIFY `aid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `aid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `assignment_students`
 --
 ALTER TABLE `assignment_students`
-  MODIFY `submission_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `submission_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `attendances`
 --
 ALTER TABLE `attendances`
-  MODIFY `aid` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `aid` int(25) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `courses`
@@ -719,19 +679,19 @@ ALTER TABLE `courses`
 -- AUTO_INCREMENT for table `forums`
 --
 ALTER TABLE `forums`
-  MODIFY `fid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `fid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `forum_messages`
 --
 ALTER TABLE `forum_messages`
-  MODIFY `fmid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `fmid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `grades`
 --
 ALTER TABLE `grades`
-  MODIFY `gid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `gid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `levels`
@@ -755,7 +715,7 @@ ALTER TABLE `module_announcements`
 -- AUTO_INCREMENT for table `resources`
 --
 ALTER TABLE `resources`
-  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `rid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `terms`
@@ -767,7 +727,7 @@ ALTER TABLE `terms`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `uid` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `uid` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10000019;
 
 --
 -- Constraints for dumped tables

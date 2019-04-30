@@ -81,7 +81,7 @@ if($modules->rowCount() > 0){
                 <h2><a style="color: black;" href = "/GroupProject/public/StudentForums/browseThread/<?php echo $forum['fid'];?>">
                   <?php echo $forum['ftitle'];?></a></h2><br>
                 <b>Posted By:</b> <?php echo $user['fname'].' '.$user['mname'].' '.$user['lname'];?>
-								<span><?php if($flag) echo '<br><a href = "/GroupProject/public/StudentForums/deleteThread/'.$forum['fid'].'" style = "color: red">Delete Reply</a>';?></span>
+								<span><?php if($flag) echo '<br><a href = "/GroupProject/public/StudentForums/deleteThread/'.$forum['fid'].'" style = "color: red">Delete Thread</a>';?></span>
 					      <br><br><br>
               </div>
             <?php } ?>
